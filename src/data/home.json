@@ -1,0 +1,129 @@
+{
+  "id": "P01",
+  "h1": "Productora audiovisual en Lima",
+  "metadatos": {
+    "title": {
+      "valor": "Productora Audiovisual | Rhino Audiovisuales",
+      "estado": "foco_y_texto_legado_F5",
+      "caracteres": 44
+    },
+    "h1": {
+      "valor": "Productora audiovisual en Lima",
+      "estado": "borrador_seguro",
+      "caracteres": 30
+    },
+    "description": {
+      "valor": "Conoce los servicios audiovisuales de Rhino Audiovisuales en Lima. Revisa las opciones para tu proyecto y solicita una cotización.",
+      "estado": "borrador_seguro",
+      "caracteres": 130
+    }
+  },
+  "intro": "Producción audiovisual, fotografía y servicios para eventos empresariales y sociales en Lima. Rhino reúne distintas líneas de trabajo para comunicar una idea, registrar una ocasión o preparar un encuentro.",
+  "image": "Fotografía real de una producción audiovisual de Rhino, con autorización de uso.",
+  "sections": [
+    {
+      "title": "Una pieza para lo que quieres comunicar",
+      "paragraphs": [
+        "Un video institucional, un comercial y el registro de un evento cumplen funciones distintas. La producción audiovisual parte de ese objetivo: qué necesita entender el público y dónde verá la pieza. Aquí puedes encontrar el servicio correspondiente a tu encargo."
+      ],
+      "items": [],
+      "pending": null,
+      "links": [
+        [
+          "P03",
+          "Producción audiovisual"
+        ],
+        [
+          "P04",
+          "Video corporativo"
+        ],
+        [
+          "P12",
+          "Spots publicitarios"
+        ]
+      ]
+    },
+    {
+      "title": "Para tus eventos: cobertura, streaming y catering",
+      "paragraphs": [
+        "Tres necesidades diferentes que puedes plantear en tu consulta. Cada servicio conserva su propio alcance; reunirlos en una solicitud permite explicar el contexto del evento."
+      ],
+      "items": [
+        "Cobertura: fotografía y video para conservar lo que ocurre y preparar material de comunicación.",
+        "Streaming y podcast: emisión en directo para espectadores a distancia o producción de episodios para publicar.",
+        "Catering y coffee break: atención de alimentos para reuniones y jornadas de empresa."
+      ],
+      "pending": null,
+      "links": [
+        [
+          "P05",
+          "Cobertura de eventos"
+        ],
+        [
+          "P06",
+          "Streaming y podcast"
+        ],
+        [
+          "P07",
+          "Catering corporativo"
+        ]
+      ]
+    },
+    {
+      "title": "Fotografía, estudio y otros servicios",
+      "paragraphs": [
+        "Estudio fotográfico propio, fotografía comercial, retratos, organización de eventos y soluciones digitales."
+      ],
+      "items": [],
+      "pending": null,
+      "links": [
+        [
+          "P09",
+          "Estudio fotográfico"
+        ],
+        [
+          "P21",
+          "Fotografía publicitaria"
+        ],
+        [
+          "P08",
+          "Organización de eventos"
+        ],
+        [
+          "P02",
+          "Ver todos los servicios"
+        ]
+      ]
+    },
+    {
+      "title": "El trabajo que te interesa ver",
+      "paragraphs": [
+        "Al comparar una productora, busca una muestra relacionada con el tipo de encargo: una pieza institucional, un registro de evento o una serie fotográfica. La imagen, la narración y el uso final permiten valorar cosas diferentes."
+      ],
+      "items": [
+        "[ESPACIO PARA MUESTRA AUTORIZADA: pieza, encargo y aportación de Rhino. Pendiente de material y permiso; no constituye prueba todavía.]"
+      ],
+      "pending": null,
+      "links": []
+    },
+    {
+      "title": "Empecemos por tu necesidad",
+      "paragraphs": [
+        "No necesitas llegar con un brief terminado. El primer contacto puede ser una idea, una fecha o un problema de comunicación. Para un evento, añade lugar y fecha si ya los conoces; para una pieza, el mensaje y el uso previsto."
+      ],
+      "items": [],
+      "pending": null,
+      "links": [
+        [
+          "P33",
+          "Cuéntanos tu proyecto"
+        ]
+      ]
+    }
+  ],
+  "cta": "Consultar mi proyecto",
+  "editorial_pending": [
+    "Precisar el alcance de coordinación entre servicios y el proceso de atención.",
+    "Seleccionar muestra y documentar rol y permiso antes de habilitarla."
+  ]
+}

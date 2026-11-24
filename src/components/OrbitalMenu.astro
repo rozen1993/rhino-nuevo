@@ -1,0 +1,192 @@
+---
+// Menú orbital del sitio (componente del dueño, Componentes_incompletos/menu, completado en el laboratorio de componentes;
+// elegida la variante C «Giro de órbita» el 23-11-2026, sin el texto «Ver todos»).
+// Primer nivel: Inicio, Servicios, Portafolio, Nosotros y Contacto alrededor del centro «R».
+// «Servicios» y «Portafolio» abren un segundo nivel: la opción pasa al centro y la rodean sus páginas hijas.
+// En pantallas pequeñas el segundo nivel es una lista por grupos. Comportamiento en src/scripts/navigation.ts.
+import { pages, getPage, getShortName } from '../lib/seo.mjs';
+import { getPageContent } from '../lib/content.mjs';
+import { ICONS, iconFor } from '../lib/iconos.mjs';
+
+const IC: Record<string, string> = {
+  ...(ICONS as Record<string, string>),
+  home: '<path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>',
+  briefcase: '<path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/>',
+};
+// Etiquetas cortas y grupos: los de la página de Servicios (P02), en su orden.
+const p02 = getPageContent(getPage('P02'));
+const GROUP_KEYS = ['comunicar', 'eventos', 'imagenes', 'digital'];
+const label: Record<string, string> = {}, group: Record<string, string> = {};
+p02.sections.forEach((s: any, i: number) => s.links.forEach(([id, l]: string[]) => { label[id] ??= l; group[id] ??= GROUP_KEYS[i] ?? 'otros'; }));
+const kids = pages.filter((p: any) => p.parentId === 'P02' && p.type === 'html')
+  .map((p: any) => ({ id: p.id, label: label[p.id] ?? getShortName(p), href: p.path, icon: iconFor(p.id), soon: !p.implemented, group: group[p.id] ?? 'otros' }));
+const GROUPS = [
+  { key: 'eventos', title: 'Eventos', ring: 'inner' },
+  { key: 'comunicar', title: 'Comunicar una idea', ring: 'outer' },
+  { key: 'imagenes', title: 'Imágenes', ring: 'outer' },
+  { key: 'digital', title: 'Contenido digital y web', ring: 'outer' },
+].map(g => ({ ...g, items: kids.filter(k => k.group === g.key) }));
+const CASE_IMG: Record<string, string> = { P28: 'redinter', P29: 'tasting', P30: 'bloom', P31: 'adidas' };
+const cases = pages.filter((p: any) => p.parentId === 'P27' && p.type === 'html')
+  .map((p: any) => ({ id: p.id, label: getShortName(p), href: p.path, img: CASE_IMG[p.id], soon: !p.implemented }));
+const page = (id: string) => getPage(id);
+const MAIN = [
+  { label: 'Inicio', href: '/', icon: 'home' },
+  { label: 'Servicios', sub: 'servicios', icon: 'briefcase' },
+  { label: 'Portafolio', sub: 'portafolio', icon: 'film' },
+  { label: 'Nosotros', href: page('P32').path, icon: 'users', soon: !page('P32').implemented },
+  { label: 'Contacto', href: page('P33').path, icon: 'mail', soon: !page('P33').implemented },
+];
+const svg = (name: string) => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IC[name] ?? ''}</svg>`;
+const ring = (cls: string) => `<svg class="om-ring ${cls}" viewBox="-101 -101 202 202" preserveAspectRatio="none" aria-hidden="true"><ellipse cx="0" cy="0" rx="100" ry="100" vector-effect="non-scaling-stroke"/></svg>`;
+const DOTS = [10, 56, 102, 148, 194, 240, 286, 332];
+---
+<dialog id="site-menu" class="site-menu om-menu" aria-label="Menú principal" data-om>
+  <svg class="om-waves" viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden="true"><g fill="none" stroke="currentColor"><path d="M-40 90 C 300 -10 620 210 1240 60"/><path d="M-40 140 C 320 40 640 260 1240 110"/><path d="M-40 190 C 340 90 660 310 1240 160"/><path d="M-40 700 C 300 600 620 790 1240 640"/><path d="M-40 750 C 320 650 640 840 1240 690"/></g></svg>
+  <a class="om-brand" href="/" aria-label="Rhino Audiovisuales, inicio"><span class="om-brand-mark" aria-hidden="true"></span><span>RHINO</span></a>
+  <button type="button" class="om-back" data-om-back hidden><Fragment set:html={svg('arrow')} />Volver al menú</button>
+  <button type="button" class="menu-close" data-menu-close aria-label="Cerrar menú"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" stroke="url(#om-ink)" stroke-width="2.5" stroke-linecap="round" fill="none"/></svg></button>
+  <svg width="0" height="0" class="om-defs" aria-hidden="true"><defs><linearGradient id="om-ink" x1="0" y1="24" x2="24" y2="0" gradientUnits="userSpaceOnUse"><stop stop-color="#fe802d"/><stop offset=".5" stop-color="#fe0840"/><stop offset="1" stop-color="#ac0bd9"/></linearGradient></defs></svg>
+
+  <nav class="om-nav" aria-label="Navegación principal">
+    <!-- Primer nivel -->
+    <div class="om-level om-main" data-level="main">
+      <Fragment set:html={ring('om-r1 om-spin')} /><Fragment set:html={ring('om-r2 om-spin om-rev')} />
+      <div class="om-dots" aria-hidden="true">{DOTS.map((a, i) => <span class="om-dot" style={`--a:${a}deg;--k:${i % 2 ? .62 : 1}`}></span>)}</div>
+      <div class="om-lines" aria-hidden="true">{MAIN.map((_, i) => <span class="om-line" style={`--a:${-90 + i * 72}deg`}></span>)}</div>
+      <span class="om-glow" aria-hidden="true"></span>
+      <span class="om-hub" aria-hidden="true"><b>R</b></span>
+      <ul class="om-items">
+        {MAIN.map((it, i) => (
+          <li class="om-li" data-a={-90 + i * 72} data-ring="main">
+            {it.sub
+              ? <button type="button" class="om-item has-sub" data-sub={it.sub} aria-expanded="false" aria-controls={`om-${it.sub}`}><span class="om-ic"><Fragment set:html={svg(it.icon)} /></span><span class="om-lb">{it.label}</span></button>
+              : <a class:list={['om-item', it.soon && 'soon']} href={it.href}><span class="om-ic"><Fragment set:html={svg(it.icon)} /></span><span class="om-lb">{it.label}</span>{it.soon && <span class="om-soon">pronto</span>}</a>}
+          </li>))}
+      </ul>
+    </div>
+
+    <!-- Segundo nivel: Servicios -->
+    <div class="om-level om-sub" id="om-servicios" data-level="servicios" hidden>
+      <Fragment set:html={ring('om-r-in om-spin')} /><Fragment set:html={ring('om-r-out om-spin om-rev')} />
+      <span class="om-glow" aria-hidden="true"></span>
+      <a class="om-hub om-hub-link" href={page('P02').path} aria-label="Servicios: ver todos los servicios"><Fragment set:html={svg('briefcase')} /><b>Servicios</b></a>
+      <div class="om-groups">
+        {GROUPS.map(g => (
+          <div class="om-group" data-group={g.key}>
+            <p class="om-gtitle">{g.title}</p>
+            <ul class="om-items">
+              {g.items.map(k => (
+                <li class="om-li" data-ring={g.ring}><a class:list={['om-item', k.soon && 'soon']} href={k.href}><span class="om-ic"><Fragment set:html={svg(k.icon)} /></span><span class="om-lb">{k.label}</span>{k.soon && <span class="om-soon">pronto</span>}</a></li>))}
+            </ul>
+          </div>))}
+      </div>
+    </div>
+
+    <!-- Segundo nivel: Portafolio -->
+    <div class="om-level om-sub" id="om-portafolio" data-level="portafolio" hidden>
+      <Fragment set:html={ring('om-r-port om-spin')} /><Fragment set:html={ring('om-r-port2 om-spin om-rev')} />
+      <span class="om-glow" aria-hidden="true"></span>
+      <a class="om-hub om-hub-link" href={page('P27').path} aria-label="Portafolio: ver todos los proyectos"><Fragment set:html={svg('film')} /><b>Portafolio</b></a>
+      <div class="om-groups">
+        <div class="om-group" data-group="proyectos">
+          <p class="om-gtitle">Proyectos</p>
+          <ul class="om-items">
+            {cases.map(c => (
+              <li class="om-li" data-ring="port"><a class:list={['om-item photo', c.soon && 'soon-quiet']} href={c.href}><span class="om-ic"><img src={`/media/${c.img}-480.webp`} width="480" height="270" alt="" loading="lazy" decoding="async" /></span><span class="om-lb">{c.label}</span></a></li>))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+</dialog>
+
+<style is:global>
+  /* ---------- Menú orbital (diálogo a pantalla completa) ---------- */
+  .om-menu { position: fixed; inset: 0; margin: 0; width: 100%; max-width: none; height: 100dvh; max-height: none; padding: 0; border: 0; border-radius: 0;
+    background: #fff; color: #2b2b33; overflow: hidden; overscroll-behavior: contain; font-family: 'Instrument Sans', Arial, sans-serif; }
+  .om-menu[open] { display: block; }
+  .om-menu::backdrop { background: transparent; }
+  .om-menu.list { overflow-y: auto; overflow-x: hidden; }
+  .om-defs { position: absolute; width: 0; height: 0; }
+  .om-waves { position: absolute; inset: 0; width: 100%; height: 100%; color: #ac0bd9; opacity: .06; pointer-events: none; }
+  /* Logo real de Rhino (el mismo dibujo blanco de la cabecera), teñido con el degradado de marca sobre el fondo blanco */
+  .om-brand { position: absolute; z-index: 3; left: 40px; top: 28px; display: flex; align-items: center; gap: 11px; min-height: 50px; color: #212529; text-decoration: none; font: 800 25px/1 var(--display, 'Poppins'); }
+  .om-brand-mark { width: 56px; height: 43px; background: linear-gradient(120deg, #fe802d, #fe0840 50%, #ac0bd9);
+    -webkit-mask: url('/media/logo-rhino.png') center / contain no-repeat; mask: url('/media/logo-rhino.png') center / contain no-repeat; }
+  .om-brand:focus-visible { outline: 3px solid #ac0bd9; outline-offset: 4px; border-radius: 6px; }
+  /* «Volver al menú»: botón con el degradado de marca para que se distinga a primera vista */
+  .om-back { position: absolute; z-index: 4; left: 40px; top: 100px; display: inline-flex; align-items: center; gap: 10px; min-height: 50px; padding: 12px 24px 12px 18px; border-radius: 999px; border: 0;
+    background: linear-gradient(105deg, #fe802d, #fe0840 35%, #ac0bd9); box-shadow: 0 10px 22px #f6125b3d; font: 700 15px 'Instrument Sans', sans-serif; color: #fff; cursor: pointer; transition: transform .2s, box-shadow .2s; }
+  .om-back svg { width: 18px; height: 18px; rotate: 180deg; stroke: #fff; stroke-width: 2.2; transition: translate .25s cubic-bezier(.2, .7, .2, 1); }
+  .om-back:hover { transform: translateY(-2px); box-shadow: 0 14px 26px #f6125b4d; }
+  .om-back:hover svg { translate: -4px 0; }
+  .om-back:focus-visible, .om-menu .menu-close:focus-visible { outline: 3px solid #ac0bd9; outline-offset: 3px; }
+  .om-menu .menu-close { position: fixed; z-index: 5; right: 20px; top: 20px; width: 50px; height: 50px; border-radius: 50%; border: 0; background: #fff; display: grid; place-items: center; box-shadow: 0 10px 28px rgba(120, 20, 90, .22); cursor: pointer; }
+  .om-menu .menu-close svg { width: 22px; height: 22px; }
+  .om-nav { position: absolute; inset: 0; }
+  /* Escena: cada nivel se dibuja en coordenadas de diseño y se escala a la pantalla (--s, desde navigation.ts) */
+  .om-level { position: absolute; left: 50%; top: 50%; width: 0; height: 0; scale: var(--s, 1); }
+  .om-level[hidden] { display: none; }
+  .om-items { list-style: none; margin: 0; padding: 0; }
+  .om-group, .om-group > .om-items { display: contents; }
+  .om-gtitle { display: none; }
+  .om-li { position: absolute; left: 0; top: 0; transform: translate(-50%, calc(var(--ic) / -2)); }
+  .om-li[data-ring="main"] { --ic: 64px; --lw: 140px; --fs: 12px; }
+  .om-li[data-ring="inner"] { --ic: 54px; --lw: 124px; --fs: 11px; }
+  .om-li[data-ring="outer"] { --ic: 42px; --lw: 128px; --fs: 10.5px; }
+  .om-li[data-ring="port"] { --ic: 92px; --lw: 150px; --fs: 11px; }
+  .om-item { width: var(--lw); display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 0; border: 0; background: none; text-align: center; text-decoration: none; color: #2b2b33; cursor: pointer; font: inherit; }
+  .om-ic { position: relative; width: var(--ic); height: var(--ic); min-width: 44px; min-height: 44px; border-radius: 50%; display: grid; place-items: center; border: 1.6px solid transparent;
+    background: linear-gradient(#fff, #fff) padding-box, linear-gradient(140deg, #fe802d, #fe0840, #ac0bd9) border-box; transition: transform .2s cubic-bezier(.34, 1.56, .64, 1), box-shadow .2s; }
+  .om-ic svg { width: 38%; height: 38%; stroke: #2b2b33; }
+  .om-lb { font: 700 var(--fs)/1.35 'Instrument Sans', sans-serif; letter-spacing: .13em; text-transform: uppercase; transition: color .2s; }
+  .om-soon { display: block; margin-top: -6px; font: 600 9px 'Instrument Sans', sans-serif; letter-spacing: .14em; text-transform: uppercase; color: #fe0840; }
+  .om-item.soon .om-ic { background: linear-gradient(#fff, #fff) padding-box, repeating-conic-gradient(from 0deg, #fe0840 0 8deg, transparent 8deg 16deg) border-box; }
+  .om-item.has-sub .om-ic::after { content: ''; position: absolute; width: 9px; height: 9px; border-radius: 50%; background: linear-gradient(135deg, #fe802d, #fe0840 50%, #ac0bd9); translate: calc(var(--ic) * .34) calc(var(--ic) * -.34); box-shadow: 0 0 0 2px #fff; }
+  .om-item.photo .om-ic { overflow: hidden; border-width: 2px; }
+  .om-item.photo .om-ic img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+  .om-item:hover .om-ic, .om-item:focus-visible .om-ic { transform: scale(1.12); box-shadow: 0 0 0 5px #fe08401a, 0 10px 26px #ac0bd947; }
+  .om-item:hover .om-lb, .om-item:focus-visible .om-lb { color: #ac0bd9; }
+  .om-item:focus-visible { outline: none; } .om-item:focus-visible .om-ic { box-shadow: 0 0 0 3px #fff, 0 0 0 6px #ac0bd9; }
+  .om-hub { position: absolute; left: 0; top: 0; width: var(--hub); height: var(--hub); translate: -50% -50%; border-radius: 50%; display: grid; place-items: center; align-content: center; gap: 6px; color: #fff; text-decoration: none;
+    background: linear-gradient(150deg, #fe802d 0%, #fe0840 46%, #ac0bd9 100%); box-shadow: inset 0 0 0 1.5px #ffffff8c, inset 0 -12px 30px #ac0bd959, 0 18px 48px #ac0bd952; }
+  .om-main { --hub: 168px; --R: 250px; } .om-sub { --hub: 136px; }
+  .om-hub b { font: 800 calc(var(--hub) * .38)/1 var(--display, 'Poppins'); letter-spacing: -.02em; }
+  .om-hub-link b { font-size: calc(var(--hub) * .15); letter-spacing: -.01em; }
+  .om-hub-link svg { width: calc(var(--hub) * .2); height: calc(var(--hub) * .2); stroke: #fff; }
+  .om-hub-link:focus-visible { outline: 3px solid #ac0bd9; outline-offset: 5px; }
+  .om-glow { position: absolute; left: 0; top: 0; width: calc(var(--hub) * 2.4); height: calc(var(--hub) * 2.4); translate: -50% -50%; border-radius: 50%; background: radial-gradient(closest-side, #fe08404d, #ac0bd924 55%, transparent 72%); pointer-events: none; }
+  .om-ring { position: absolute; left: 0; top: 0; translate: -50% -50%; overflow: visible; pointer-events: none; }
+  .om-ring ellipse { fill: none; stroke-width: 1; }
+  .om-r1 { width: calc(var(--R) * 2); height: calc(var(--R) * 2); } .om-r1 ellipse, .om-r-in ellipse, .om-r-port ellipse { stroke: #fe0840; stroke-dasharray: 1.5 6; opacity: .55; }
+  .om-r2 { width: calc(var(--R) * 2.6); height: calc(var(--R) * 2.6); } .om-r2 ellipse, .om-r-out ellipse, .om-r-port2 ellipse { stroke: #ac0bd9; stroke-dasharray: 1 10; opacity: .35; }
+  .om-r-in { width: 444px; height: 336px; } .om-r-out { width: 880px; height: 584px; }
+  .om-r-port { width: 512px; height: 410px; } .om-r-port2 { width: 700px; height: 560px; }
+  .om-spin { animation: om-spin 80s linear infinite; } .om-rev { animation-direction: reverse; animation-duration: 110s; }
+  @keyframes om-spin { to { rotate: 360deg; } }
+  .om-dots { position: absolute; left: 0; top: 0; }
+  .om-dot { position: absolute; left: 0; top: 0; width: 5px; height: 5px; margin: -2.5px; border-radius: 50%; background: #fe0840; opacity: .5; transform: rotate(var(--a)) translateY(calc(var(--R) * -1 * var(--k))); }
+  .om-line { position: absolute; left: 0; top: 0; width: var(--R); height: 1px; transform-origin: 0 50%; transform: rotate(var(--a)); background: linear-gradient(90deg, #ac0bd955, transparent); opacity: .5; }
+  /* Lista del segundo nivel en pantallas pequeñas */
+  .om-menu.list .om-main { --hub: 104px; }
+  .om-menu.list .om-li[data-ring="main"] { --ic: 50px; --lw: 104px; --fs: 10.5px; }
+  .om-menu.list .om-sub { position: relative; left: auto; top: auto; width: auto; height: auto; scale: none; padding: 156px 20px 48px; display: grid; justify-items: center; gap: 26px; }
+  .om-menu.list .om-sub[hidden] { display: none; }
+  .om-menu.list .om-sub .om-ring, .om-menu.list .om-sub .om-glow { display: none; }
+  .om-menu.list .om-sub .om-hub { position: relative; translate: none; --hub: 104px; }
+  .om-menu.list .om-groups { width: 100%; max-width: 560px; display: grid; gap: 20px; }
+  .om-menu.list .om-group { display: block; } .om-menu.list .om-gtitle { display: block; margin: 0 0 8px; font: 700 10px 'Instrument Sans', sans-serif; letter-spacing: .2em; text-transform: uppercase; color: #fe0840; }
+  .om-menu.list .om-group > .om-items { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .om-menu.list .om-sub .om-li { position: static; transform: none; --ic: 34px; }
+  .om-menu.list .om-sub .om-item { width: 100%; height: 100%; display: grid; grid-template-columns: auto minmax(0, 1fr); grid-template-rows: auto auto; align-content: center; align-items: center; column-gap: 10px; row-gap: 2px; padding: 9px 10px; border-radius: 10px; border: 1px solid #ecdff3; background: #fff; text-align: left; }
+  .om-menu.list .om-sub .om-item.soon { border-style: dashed; border-color: #fe084066; }
+  .om-menu.list .om-sub .om-ic { grid-row: 1 / span 2; min-width: 34px; min-height: 34px; }
+  .om-menu.list .om-sub .om-item.photo .om-ic { --ic: 40px; }
+  .om-menu.list .om-sub .om-lb:last-child { grid-row: 1 / span 2; }
+  .om-menu.list .om-sub .om-lb { min-width: 0; font-size: 13px; letter-spacing: 0; text-transform: none; font-weight: 600; line-height: 1.25; }
+  .om-menu.list .om-sub .om-soon { margin: 0; grid-column: 2; font-size: 9px; }
+  .om-menu.list .om-brand { left: 20px; top: 20px; font-size: 21px; } .om-menu.list .om-brand-mark { width: 46px; height: 35px; }
+  .om-menu.list .om-back { left: 20px; top: 82px; min-height: 46px; padding: 10px 20px 10px 16px; font-size: 14px; }
+  @media (prefers-reduced-motion: reduce) { .om-spin { animation: none; } .om-ic { transition: none; } }
+</style>

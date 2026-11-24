@@ -1,0 +1,58 @@
+---
+import home from '../data/home.json';
+import cases from '../data/cases.json';
+import Icon from './Icon.astro';
+import PageLink from './PageLink.astro';
+const section = home.sections[3];
+// Mosaico de tres columnas con seis espacios. Los espacios sin caso real se muestran como pendientes:
+// no se inventan títulos, descripciones ni vídeos (05 y 06 esperan material del dueño).
+const SLOTS = 6;
+const crops: Record<string, string> = { redinter: '51%', bloom: '39%', adidas: '58%', tasting: '50%' };
+const slots = Array.from({ length: Math.max(SLOTS, cases.length) }, (_, index) => ({ index, item: cases[index] ?? null }));
+const columns = [0, 1, 2].map(column => slots.filter(slot => slot.index % 3 === column));
+const imageFor = (id: string) => '/media/' + id + (['bloom', 'adidas'].includes(id) ? '-display.webp' : '-1280.webp');
+const altFor = (item: typeof cases[number]) => item.id === 'tasting' ? 'Expositor de Premium Tasting Lima' : 'Fotograma de ' + item.title;
+const number = (index: number) => String(index + 1).padStart(2, '0');
+---
+<section id="proyectos" class="projects wrap" aria-labelledby="projects-title">
+  <div class="section-tick" aria-hidden="true"></div>
+  <div class="section-heading">
+    <h2 id="projects-title">{section.title}</h2>
+    <div>{section.paragraphs.map(paragraph => <p>{paragraph}</p>)}</div>
+  </div>
+  <div class="project-grid">
+    {columns.map((column, columnIndex) =>
+      <div class={'project-col project-col-' + columnIndex}>
+        {column.map(({ index, item }) => item ?
+          <article class="project" style={`--order:${index};--crop:${crops[item.id] ?? '50%'}`}>
+            <span class="project-number" aria-hidden="true">{number(index)}</span>
+            <a href={'https://www.youtube.com/watch?v=' + item.video} target="_blank" rel="noopener noreferrer"
+              tabindex="-1" aria-hidden="true" class="project-photo" data-video={item.id}>
+              <img src={imageFor(item.id)} width="1280" height="720" loading="lazy" alt={altFor(item)}/>
+              <span class="project-play"><Icon name="play" size={26}/></span>
+            </a>
+            <h3>{item.title}</h3>
+            <p>{item.context}</p>
+            <a href={'https://www.youtube.com/watch?v=' + item.video} target="_blank" rel="noopener noreferrer"
+              class="inline-action" data-video={item.id} aria-label={'Ver video de ' + item.title}>Ver video <Icon size={18}/></a>
+          </article>
+        :
+          <article class="project project-pending" style={`--order:${index}`} data-pending="material">
+            <span class="project-number" aria-hidden="true">{number(index)}</span>
+            <div class="project-photo"><span>Proyecto {number(index)}<br/>Material pendiente</span></div>
+            <h3>Proyecto {number(index)}</h3>
+            <p>Pendiente de título, descripción y vídeo.</p>
+          </article>
+        )}
+      </div>
+    )}
+  </div>
+  <div class="project-bottom">
+    <PageLink pageId="P27" label="Portafolio" class="action gradient-action">
+      <span>Proyectos de Rhino Audiovisuales</span><Icon size={18}/>
+    </PageLink>
+    <PageLink pageId="P32" label="Nosotros" class="inline-action">
+      Conoce Rhino Audiovisuales <Icon size={18}/>
+    </PageLink>
+  </div>
+</section>

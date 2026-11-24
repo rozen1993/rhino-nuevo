@@ -1,0 +1,191 @@
+{
+  "_nota": "Datos de presentación por página que no están en el contenido editorial (src/data/contenido-paginas.json, copia de entrega-contenidos-png-v2). hero: imagen de cabecera ya convertida en public/media/<image>-640|1280.webp. samples: ids de src/data/cases.json que sustituyen el espacio de muestra. service: emitir schema Service porque la oferta está visible en la página. hero.caption: texto en la esquina del visor; hero.tag: línea bajo el rótulo del H1. moments: miniaturas de visor por sección (índice de sección → lista de {image, title, sub}).",
+  "P05": {
+    "hero": {
+      "image": "tasting",
+      "width": 1280,
+      "height": 720,
+      "alt": "Expositor durante Premium Tasting Lima",
+      "caption": "Premium Tasting Lima · portafolio",
+      "tag": "Fotografía y video · Lima"
+    },
+    "samples": [
+      "tasting",
+      "bloom"
+    ],
+    "whatsapp": "Hola Rhino, quiero consultar la cobertura de mi evento.",
+    "service": true,
+    "moments": {
+      "0": [
+        {
+          "image": "organizacion-de-eventos",
+          "title": "Conferencia",
+          "sub": "Registrar intervenciones"
+        },
+        {
+          "image": "spots-publicitarios",
+          "title": "Lanzamiento",
+          "sub": "La presentación y su ambiente"
+        },
+        {
+          "image": "activaciones-btl",
+          "title": "Celebración",
+          "sub": "Momentos y personas"
+        }
+      ]
+    }
+  },
+  "P02": {
+    "hero": {
+      "image": "servicios",
+      "width": 1280,
+      "height": 853,
+      "alt": "Camarógrafo preparando una toma con cámara de video",
+      "caption": "Imagen ilustrativa"
+    },
+    "service": true
+  },
+  "P03": {
+    "hero": {
+      "image": "produccion-audiovisual",
+      "width": 1280,
+      "height": 853,
+      "alt": "Lentes de cámara sobre una superficie blanca",
+      "caption": "Imagen ilustrativa"
+    },
+    "service": true
+  },
+  "P04": {
+    "hero": {
+      "image": "video-corporativo",
+      "width": 1280,
+      "height": 853,
+      "alt": "Equipo de trabajo reunido alrededor de una mesa con portátil",
+      "caption": "Imagen ilustrativa"
+    },
+    "service": true,
+    "samples": [
+      "redinter"
+    ]
+  },
+  "P06": {
+    "hero": {
+      "image": "streaming-y-podcast",
+      "width": 1088,
+      "height": 725,
+      "alt": "Composición de grabación de voz con micrófono y audífonos",
+      "caption": "Imagen ilustrativa"
+    },
+    "service": true
+  },
+  "P07": {
+    "hero": {
+      "image": "catering-corporativo",
+      "width": 1280,
+      "height": 853,
+      "alt": "Mesa de evento con copas y platos servidos",
+      "caption": "Imagen ilustrativa"
+    },
+    "service": true
+  },
+  "P08": {
+    "hero": {
+      "image": "organizacion-de-eventos",
+      "width": 1280,
+      "height": 853,
+      "alt": "Auditorio preparado para una conferencia",
+      "caption": "Imagen ilustrativa"
+    },
+    "service": true
+  },
+  "P10": {
+    "hero": {
+      "image": "fotografia-y-video-de-bodas",
+      "width": 1280,
+      "height": 853,
+      "alt": "Novia caminando por un jardín",
+      "caption": "Imagen ilustrativa"
+    },
+    "service": true
+  },
+  "P12": {
+    "hero": {
+      "image": "spots-publicitarios",
+      "width": 1280,
+      "height": 853,
+      "alt": "Brindis con champán entre luces",
+      "caption": "Imagen ilustrativa"
+    },
+    "service": true
+  },
+  "P14": {
+    "hero": {
+      "image": "drones",
+      "width": 1280,
+      "height": 853,
+      "alt": "Vista aérea de una avenida y edificios de la ciudad",
+      "caption": "Imagen ilustrativa"
+    },
+    "service": true
+  },
+  "P15": {
+    "hero": {
+      "image": "video-y-fotografia-inmobiliaria",
+      "width": 1280,
+      "height": 853,
+      "alt": "Edificio en construcción con grúa",
+      "caption": "Imagen ilustrativa"
+    },
+    "service": true
+  },
+  "P16": {
+    "hero": {
+      "image": "alquiler-de-sonido-y-proyectores",
+      "width": 1280,
+      "height": 853,
+      "alt": "Público frente a un escenario iluminado",
+      "caption": "Imagen ilustrativa"
+    },
+    "service": true
+  },
+  "P17": {
+    "hero": {
+      "image": "activaciones-btl",
+      "width": 1280,
+      "height": 853,
+      "alt": "Público celebrando en un festival al aire libre",
+      "caption": "Imagen ilustrativa"
+    },
+    "service": true
+  },
+  "P18": {
+    "hero": {
+      "image": "maestro-de-ceremonias",
+      "width": 1280,
+      "height": 853,
+      "alt": "Escenario iluminado con efectos de luz frente al público",
+      "caption": "Imagen ilustrativa"
+    },
+    "service": true
+  },
+  "P21": {
+    "hero": {
+      "image": "fotografia",
+      "width": 1280,
+      "height": 853,
+      "alt": "Sesión de fotos en estudio con iluminación",
+      "caption": "Imagen ilustrativa"
+    },
+    "service": true
+  },
+  "P23": {
+    "hero": {
+      "image": "marketing-digital",
+      "width": 1280,
+      "height": 853,
+      "alt": "Pantalla de teléfono con aplicaciones de redes sociales",
+      "caption": "Imagen ilustrativa"
+    },
+    "service": true
+  }
+}

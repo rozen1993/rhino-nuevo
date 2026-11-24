@@ -1,0 +1,895 @@
+[
+  {
+    "id": "P01",
+    "path": "/",
+    "type": "html",
+    "title": "Productora Audiovisual | Rhino Audiovisuales",
+    "h1": "Productora audiovisual en Lima",
+    "description": "Conoce los servicios audiovisuales de Rhino Audiovisuales en Lima. Revisa las opciones para tu proyecto y solicita una cotización.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": true,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": null,
+    "schemaCandidates": [
+      "Organization",
+      "WebSite",
+      "WebPage"
+    ],
+    "relatedIds": [
+      "P02",
+      "P05",
+      "P06",
+      "P07",
+      "P27",
+      "P32",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P01"
+  },
+  {
+    "id": "P02",
+    "path": "/servicios/",
+    "type": "html",
+    "title": "Servicios audiovisuales · Rhino Audiovisuales",
+    "h1": "Servicios audiovisuales y para eventos",
+    "description": "Encuentra servicios audiovisuales, fotografía, eventos y soluciones digitales. Identifica tu necesidad y consulta a Rhino Audiovisuales.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": true,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P01",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList"
+    ],
+    "relatedIds": [
+      "P03",
+      "P04",
+      "P05",
+      "P06",
+      "P07",
+      "P08",
+      "P09",
+      "P10",
+      "P11",
+      "P12",
+      "P13",
+      "P14",
+      "P15",
+      "P16",
+      "P17",
+      "P18",
+      "P19",
+      "P20",
+      "P21",
+      "P22",
+      "P23",
+      "P24",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P02"
+  },
+  {
+    "id": "P03",
+    "path": "/servicios/produccion-audiovisual/",
+    "type": "html",
+    "title": "Producción audiovisual · Rhino Audiovisuales",
+    "h1": "Servicios de producción audiovisual",
+    "description": "Consulta servicios de producción audiovisual en Lima. Define el objetivo de tu video y solicita una propuesta de producción a Rhino Audiovisuales.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": true,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P02",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList",
+      "Service_condicionado_a_oferta_visible"
+    ],
+    "relatedIds": [
+      "P04",
+      "P12",
+      "P13",
+      "P05",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P03"
+  },
+  {
+    "id": "P04",
+    "path": "/servicios/video-corporativo/",
+    "type": "html",
+    "title": "Video corporativo · Rhino Audiovisuales",
+    "h1": "Video corporativo para empresas en Lima",
+    "description": "Consulta la producción de video corporativo en Lima. Explica el uso de tu proyecto y solicita a Rhino Audiovisuales una propuesta.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": true,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P02",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList",
+      "Service_condicionado_a_oferta_visible"
+    ],
+    "relatedIds": [
+      "P03",
+      "P22",
+      "P28",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P04"
+  },
+  {
+    "id": "P05",
+    "path": "/servicios/cobertura-de-eventos/",
+    "type": "html",
+    "title": "Cobertura audiovisual de eventos en Lima",
+    "h1": "Cobertura audiovisual de eventos",
+    "description": "Consulta cobertura audiovisual de eventos en Lima. Define fecha, lugar y necesidades de foto o video para solicitar una cotización.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": true,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P02",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList",
+      "Service_condicionado_a_oferta_visible"
+    ],
+    "relatedIds": [
+      "P06",
+      "P07",
+      "P08",
+      "P14",
+      "P29",
+      "P30",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P05"
+  },
+  {
+    "id": "P06",
+    "path": "/servicios/streaming-y-podcast/",
+    "type": "html",
+    "title": "Streaming y podcast · Rhino Audiovisuales",
+    "h1": "Streaming de eventos y producción de podcast",
+    "description": "Consulta streaming de eventos y producción de podcast en Lima. Describe tu emisión o episodio y solicita una propuesta a Rhino Audiovisuales.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": true,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P02",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList",
+      "Service_condicionado_a_oferta_visible"
+    ],
+    "relatedIds": [
+      "P05",
+      "P03",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P06"
+  },
+  {
+    "id": "P07",
+    "path": "/servicios/catering-corporativo/",
+    "type": "html",
+    "title": "Catering corporativo · Rhino Audiovisuales",
+    "h1": "Catering corporativo en Lima",
+    "description": "Consulta catering corporativo y coffee break en Lima. Comparte fecha, lugar y número de asistentes para solicitar una cotización.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": true,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P02",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList",
+      "Service_condicionado_a_oferta_visible"
+    ],
+    "relatedIds": [
+      "P08",
+      "P05",
+      "P20",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P07"
+  },
+  {
+    "id": "P08",
+    "path": "/servicios/organizacion-de-eventos/",
+    "type": "html",
+    "title": "Organización de eventos corporativos en Lima",
+    "h1": "Organización de eventos corporativos",
+    "description": "Consulta organización de eventos corporativos en Lima. Define objetivos y necesidades para solicitar una propuesta a Rhino Audiovisuales.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": true,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P02",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList",
+      "Service_condicionado_a_oferta_visible"
+    ],
+    "relatedIds": [
+      "P05",
+      "P06",
+      "P07",
+      "P11",
+      "P16",
+      "P18",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P08"
+  },
+  {
+    "id": "P09",
+    "path": "/servicios/estudio-fotografico/",
+    "type": "html",
+    "title": "Estudio fotográfico · Rhino Audiovisuales",
+    "h1": "Estudio fotográfico en Lima",
+    "description": "Consulta sesiones en el estudio fotográfico de Rhino Audiovisuales en Lima. Indica el tipo de sesión y consulta las modalidades disponibles.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": false,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P02",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList",
+      "Service_condicionado_a_oferta_visible"
+    ],
+    "relatedIds": [
+      "P22",
+      "P21",
+      "P10",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P09"
+  },
+  {
+    "id": "P10",
+    "path": "/servicios/fotografia-y-video-de-bodas/",
+    "type": "html",
+    "title": "Fotografía y video de bodas en Lima",
+    "h1": "Fotografía y video de bodas en Lima",
+    "description": "Consulta fotografía y video de bodas en Lima. Comparte fecha y necesidades de cobertura para solicitar una propuesta a Rhino Audiovisuales.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": true,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P02",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList",
+      "Service_condicionado_a_oferta_visible"
+    ],
+    "relatedIds": [
+      "P05",
+      "P09",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P10"
+  },
+  {
+    "id": "P11",
+    "path": "/servicios/alquiler-de-pantallas-led/",
+    "type": "html",
+    "title": "Alquiler de pantallas LED en Lima",
+    "h1": "Alquiler de pantallas LED para eventos",
+    "description": "Consulta alquiler de pantallas LED para eventos en Lima. Indica espacio, fecha y necesidades de visualización para solicitar una cotización.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": false,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P02",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList",
+      "Service_condicionado_a_oferta_visible"
+    ],
+    "relatedIds": [
+      "P08",
+      "P16",
+      "P06",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P11"
+  },
+  {
+    "id": "P12",
+    "path": "/servicios/spots-publicitarios/",
+    "type": "html",
+    "title": "Producción de spots publicitarios en Lima",
+    "h1": "Producción de spots publicitarios",
+    "description": "Consulta producción de spots publicitarios en Lima. Define mensaje y canales de uso para solicitar una propuesta a Rhino Audiovisuales.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": true,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P02",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList",
+      "Service_condicionado_a_oferta_visible"
+    ],
+    "relatedIds": [
+      "P03",
+      "P13",
+      "P23",
+      "P31",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P12"
+  },
+  {
+    "id": "P13",
+    "path": "/servicios/animacion-y-motion-graphics/",
+    "type": "html",
+    "title": "Animación para empresas · Rhino Audiovisuales",
+    "h1": "Animación para empresas y motion graphics",
+    "description": "Consulta animación para empresas y motion graphics. Describe tu mensaje y las piezas que necesitas para solicitar una propuesta.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": false,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P02",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList",
+      "Service_condicionado_a_oferta_visible"
+    ],
+    "relatedIds": [
+      "P03",
+      "P12",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P13"
+  },
+  {
+    "id": "P14",
+    "path": "/servicios/drones/",
+    "type": "html",
+    "title": "Servicio de drone audiovisual en Lima",
+    "h1": "Servicio de drone audiovisual",
+    "description": "Consulta foto y video con drone en Lima. Describe el uso, ubicación y fecha de tu proyecto para evaluar una propuesta de registro aéreo.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": true,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P02",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList",
+      "Service_condicionado_a_oferta_visible"
+    ],
+    "relatedIds": [
+      "P05",
+      "P15",
+      "P03",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P14"
+  },
+  {
+    "id": "P15",
+    "path": "/servicios/video-y-fotografia-inmobiliaria/",
+    "type": "html",
+    "title": "Fotografía inmobiliaria · Rhino Audiovisuales",
+    "h1": "Fotografía y video inmobiliario",
+    "description": "Consulta fotografía y video inmobiliario en Lima. Describe el inmueble y las piezas que necesitas para solicitar una propuesta.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": true,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P02",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList",
+      "Service_condicionado_a_oferta_visible"
+    ],
+    "relatedIds": [
+      "P14",
+      "P21",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P15"
+  },
+  {
+    "id": "P16",
+    "path": "/servicios/alquiler-de-sonido-y-proyectores/",
+    "type": "html",
+    "title": "Alquiler de proyector y sonido en Lima",
+    "h1": "Alquiler de proyector y sonido para eventos",
+    "description": "Consulta alquiler de proyector y sonido para eventos en Lima. Indica espacio, fecha y necesidades técnicas para solicitar una cotización.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": true,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P02",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList",
+      "Service_condicionado_a_oferta_visible"
+    ],
+    "relatedIds": [
+      "P11",
+      "P08",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P16"
+  },
+  {
+    "id": "P17",
+    "path": "/servicios/activaciones-btl/",
+    "type": "html",
+    "title": "Activaciones BTL · Rhino Audiovisuales",
+    "h1": "Activaciones BTL para marcas",
+    "description": "Consulta activaciones BTL en Lima. Comparte objetivos y necesidades de ejecución para solicitar una propuesta a Rhino Audiovisuales.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": true,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P02",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList",
+      "Service_condicionado_a_oferta_visible"
+    ],
+    "relatedIds": [
+      "P08",
+      "P12",
+      "P37",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P17"
+  },
+  {
+    "id": "P18",
+    "path": "/servicios/maestro-de-ceremonias/",
+    "type": "html",
+    "title": "Maestro de ceremonias para eventos en Lima",
+    "h1": "Maestro de ceremonias para eventos en Lima",
+    "description": "Consulta un maestro de ceremonias para eventos en Lima. Comparte formato, fecha y necesidades de conducción para solicitar una propuesta.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": true,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P02",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList",
+      "Service_condicionado_a_oferta_visible"
+    ],
+    "relatedIds": [
+      "P08",
+      "P05",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P18"
+  },
+  {
+    "id": "P19",
+    "path": "/show-infantil-navideno/",
+    "type": "html",
+    "title": "Show Infantil Navideño | Rhino Audiovisuales",
+    "h1": "Show infantil navideño en Lima",
+    "description": "Consulta el show infantil navideño de Rhino Audiovisuales en Lima. Indica fecha, lugar y público para solicitar información y una cotización.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": false,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P01",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList",
+      "Service_condicionado_a_oferta_visible"
+    ],
+    "relatedIds": [
+      "P20",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P19"
+  },
+  {
+    "id": "P20",
+    "path": "/fiesta-de-fin-de-ano-para-empresas/",
+    "type": "html",
+    "title": "Fiesta de fin de año para empresas en Lima",
+    "h1": "Fiesta de fin de año para empresas",
+    "description": "Consulta opciones para una fiesta de fin de año de empresa en Lima. Comparte fecha, asistentes y necesidades para evaluar una propuesta.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": false,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P01",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList",
+      "Service_condicionado_a_oferta_visible"
+    ],
+    "relatedIds": [
+      "P08",
+      "P07",
+      "P03",
+      "P19",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P20"
+  },
+  {
+    "id": "P21",
+    "path": "/servicios/fotografia/",
+    "type": "html",
+    "title": "Fotografía publicitaria · Rhino Audiovisuales",
+    "h1": "Fotografía publicitaria y de productos",
+    "description": "Consulta fotografía publicitaria y de productos en Lima. Describe las imágenes que necesitas para solicitar una propuesta a Rhino Audiovisuales.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": true,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P02",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList",
+      "Service_condicionado_a_oferta_visible"
+    ],
+    "relatedIds": [
+      "P22",
+      "P09",
+      "P05",
+      "P23",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P21"
+  },
+  {
+    "id": "P22",
+    "path": "/servicios/fotos-corporativas/",
+    "type": "html",
+    "title": "Fotos corporativas · Rhino Audiovisuales",
+    "h1": "Fotos corporativas para equipos en Lima",
+    "description": "Consulta fotos corporativas para equipos y perfiles profesionales en Lima. Explica tu necesidad y solicita una propuesta a Rhino Audiovisuales.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": false,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P02",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList",
+      "Service_condicionado_a_oferta_visible"
+    ],
+    "relatedIds": [
+      "P09",
+      "P21",
+      "P04",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P22"
+  },
+  {
+    "id": "P23",
+    "path": "/servicios/marketing-digital/",
+    "type": "html",
+    "title": "Gestión de redes sociales · Rhino Audiovisuales",
+    "h1": "Gestión de redes sociales para empresas",
+    "description": "Consulta gestión de redes sociales con Rhino Audiovisuales. Define canales y necesidades de contenido para solicitar una propuesta.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": true,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P02",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList",
+      "Service_condicionado_a_oferta_visible"
+    ],
+    "relatedIds": [
+      "P12",
+      "P21",
+      "P24",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P23"
+  },
+  {
+    "id": "P24",
+    "path": "/servicios/desarrollo-web/",
+    "type": "html",
+    "title": "Diseño y desarrollo de páginas web en Lima",
+    "h1": "Diseño y desarrollo de páginas web",
+    "description": "Consulta diseño y desarrollo de páginas web con Rhino Audiovisuales. Describe los objetivos de tu sitio para solicitar una propuesta.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": false,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P02",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList",
+      "Service_condicionado_a_oferta_visible"
+    ],
+    "relatedIds": [
+      "P23",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P24"
+  },
+  {
+    "id": "P25",
+    "path": "/precios/",
+    "type": "reserva",
+    "title": null,
+    "h1": null,
+    "description": null,
+    "descriptionStatus": "null_reserva",
+    "implemented": false,
+    "publicationApproved": false,
+    "indexable": false,
+    "parentId": null,
+    "schemaCandidates": [],
+    "relatedIds": [],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P25"
+  },
+  {
+    "id": "P26",
+    "path": "/blog/",
+    "type": "reserva",
+    "title": null,
+    "h1": null,
+    "description": null,
+    "descriptionStatus": "null_reserva",
+    "implemented": false,
+    "publicationApproved": false,
+    "indexable": false,
+    "parentId": null,
+    "schemaCandidates": [],
+    "relatedIds": [],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P26"
+  },
+  {
+    "id": "P27",
+    "path": "/portafolio/",
+    "type": "html",
+    "title": "Portafolio · Rhino Audiovisuales",
+    "h1": "Proyectos de Rhino Audiovisuales",
+    "description": "Explora proyectos y conoce el trabajo documentado de Rhino Audiovisuales. Consulta los servicios relacionados con cada caso autorizado.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": false,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P01",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList"
+    ],
+    "relatedIds": [
+      "P28",
+      "P29",
+      "P30",
+      "P31",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P27"
+  },
+  {
+    "id": "P28",
+    "path": "/portafolio/redinter-25-anos/",
+    "type": "html",
+    "title": "Redinter 25 años · Rhino Audiovisuales",
+    "h1": "Redinter 25 años",
+    "description": null,
+    "descriptionStatus": "null_pendiente_rol",
+    "implemented": false,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P27",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList"
+    ],
+    "relatedIds": [
+      "P27",
+      "P04",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P28"
+  },
+  {
+    "id": "P29",
+    "path": "/portafolio/premium-tasting-lima/",
+    "type": "html",
+    "title": "Premium Tasting Lima · Rhino Audiovisuales",
+    "h1": "Premium Tasting Lima",
+    "description": null,
+    "descriptionStatus": "null_pendiente_rol",
+    "implemented": false,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P27",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList"
+    ],
+    "relatedIds": [
+      "P27",
+      "P05",
+      "P08",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P29"
+  },
+  {
+    "id": "P30",
+    "path": "/portafolio/bloom-of-colors/",
+    "type": "html",
+    "title": "Bloom of Colors · Rhino Audiovisuales",
+    "h1": "Bloom of Colors",
+    "description": null,
+    "descriptionStatus": "null_pendiente_rol",
+    "implemented": false,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P27",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList"
+    ],
+    "relatedIds": [
+      "P27",
+      "P05",
+      "P08",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P30"
+  },
+  {
+    "id": "P31",
+    "path": "/portafolio/heroe-adidas/",
+    "type": "html",
+    "title": "Héroe Adidas · Rhino Audiovisuales",
+    "h1": "Héroe Adidas",
+    "description": null,
+    "descriptionStatus": "null_pendiente_rol",
+    "implemented": false,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P27",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList"
+    ],
+    "relatedIds": [
+      "P27",
+      "P04",
+      "P12",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P31"
+  },
+  {
+    "id": "P32",
+    "path": "/nosotros/",
+    "type": "html",
+    "title": "Nosotros · Rhino Audiovisuales",
+    "h1": "Conoce Rhino Audiovisuales",
+    "description": "Conoce Rhino Audiovisuales y consulta sus servicios. Revisa la información del equipo y el trabajo documentado para tu proyecto.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": false,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P01",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList"
+    ],
+    "relatedIds": [
+      "P02",
+      "P27",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P32"
+  },
+  {
+    "id": "P33",
+    "path": "/contacto/",
+    "type": "html",
+    "title": "Contacto · Rhino Audiovisuales",
+    "h1": "Consulta y cotiza tu proyecto",
+    "description": "Contacta con Rhino Audiovisuales para consultar tu proyecto. Indica el servicio, fecha y necesidades para solicitar una cotización.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": false,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P01",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList"
+    ],
+    "relatedIds": [
+      "P02",
+      "P35"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P33"
+  },
+  {
+    "id": "P34",
+    "path": "/gracias/",
+    "type": "html",
+    "title": "Estado de tu solicitud · Rhino Audiovisuales",
+    "h1": "Estado de tu solicitud",
+    "description": null,
+    "descriptionStatus": "opcional_sin_objetivo_organico",
+    "implemented": false,
+    "publicationApproved": false,
+    "indexable": false,
+    "parentId": "P01",
+    "schemaCandidates": [],
+    "relatedIds": [
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P34"
+  },
+  {
+    "id": "P35",
+    "path": "/politica-de-privacidad/",
+    "type": "html",
+    "title": "Política de privacidad · Rhino Audiovisuales",
+    "h1": "Política de privacidad",
+    "description": "Información sobre el tratamiento de datos en los canales de Rhino Audiovisuales, sus responsables y las vías de contacto correspondientes.",
+    "descriptionStatus": "borrador_seguro",
+    "implemented": false,
+    "publicationApproved": false,
+    "indexable": true,
+    "parentId": "P01",
+    "schemaCandidates": [
+      "WebPage",
+      "BreadcrumbList"
+    ],
+    "relatedIds": [
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P35"
+  },
+  {
+    "id": "P36",
+    "path": null,
+    "type": "plantilla_404",
+    "title": "Página no encontrada · Rhino Audiovisuales",
+    "h1": "No encontramos esta página",
+    "description": null,
+    "descriptionStatus": "opcional_sin_objetivo_organico",
+    "implemented": true,
+    "publicationApproved": false,
+    "indexable": false,
+    "parentId": null,
+    "schemaCandidates": [],
+    "relatedIds": [
+      "P01",
+      "P02",
+      "P33"
+    ],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P36"
+  },
+  {
+    "id": "P37",
+    "path": "/Brochure.pdf",
+    "type": "pdf",
+    "title": null,
+    "h1": null,
+    "description": null,
+    "descriptionStatus": "no_aplica_html",
+    "implemented": false,
+    "publicationApproved": false,
+    "indexable": false,
+    "parentId": null,
+    "schemaCandidates": [],
+    "relatedIds": [],
+    "source": "docs/seo/fase6-2026-11-04/fichas-37.json#P37"
+  }
+]

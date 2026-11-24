@@ -1,0 +1,67 @@
+// Dibujos de iconos del sitio. Lucide (https://lucide.dev), licencia ISC:
+// Copyright (c) for portions of Lucide are held by Cole Bemis 2013-2022 as part of Feather (MIT). All other copyright (c) for Lucide are held by Lucide Contributors 2022.
+// Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
+// El dron es un dibujo propio con el mismo trazo. Generado por visuales-claude/paginas-completasv4/scripts (make_iconos.py); las clases lv-* marcan las partes que mueven los «iconos vivos».
+export const ICONS = {
+"arrow": "<path d=\"M5 12h14\"/> <path d=\"m12 5 7 7-7 7\"/>",
+"check": "<path d=\"M20 6 9 17l-5-5\"/>",
+"info": "<circle cx=\"12\" cy=\"12\" r=\"10\"/> <path d=\"M12 16v-4\"/> <path d=\"M12 8h.01\"/>",
+"play": "<polygon points=\"6 3 20 12 6 21 6 3\"/>",
+"aperture": "<circle cx=\"12\" cy=\"12\" r=\"10\"/> <path d=\"m14.31 8 5.74 9.94\"/> <path d=\"M9.69 8h11.48\"/> <path d=\"m7.38 12 5.74-9.94\"/> <path d=\"M9.69 16 3.95 6.06\"/> <path d=\"M14.31 16H2.83\"/> <path d=\"m16.62 12-5.74 9.94\"/>",
+"monitor": "<rect width=\"20\" height=\"14\" x=\"2\" y=\"3\" rx=\"2\"/> <line x1=\"8\" x2=\"16\" y1=\"21\" y2=\"21\"/> <line x1=\"12\" x2=\"12\" y1=\"17\" y2=\"21\"/>",
+"speaker": "<rect width=\"16\" height=\"20\" x=\"4\" y=\"2\" rx=\"2\"/> <path d=\"M12 6h.01\"/> <circle cx=\"12\" cy=\"14\" r=\"4\"/> <path d=\"M12 14h.01\"/>",
+"party": "<path d=\"M5.8 11.3 2 22l10.7-3.79\"/> <path d=\"M4 3h.01\"/> <path d=\"M22 8h.01\"/> <path d=\"M15 2h.01\"/> <path d=\"M22 20h.01\"/> <path d=\"m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10\"/> <path d=\"m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11c-.11.7-.72 1.22-1.43 1.22H17\"/> <path d=\"m11 2 .33.82c.34.86-.2 1.82-1.11 1.98C9.52 4.9 9 5.52 9 6.23V7\"/> <path d=\"M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z\"/>",
+"heart": "<path d=\"M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z\"/>",
+"building": "<path d=\"M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z\"/> <path d=\"M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2\"/> <path d=\"M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2\"/> <path d=\"M10 6h4\"/> <path d=\"M10 10h4\"/> <path d=\"M10 14h4\"/> <path d=\"M10 18h4\"/>",
+"megaphone": "<path d=\"m3 11 18-5v12L3 14v-3z\"/> <path d=\"M11.6 16.8a3 3 0 1 1-5.8-1.6\"/>",
+"wand": "<path d=\"m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72\"/> <path d=\"m14 7 3 3\"/> <path d=\"M5 6v4\"/> <path d=\"M19 14v4\"/> <path d=\"M10 2v2\"/> <path d=\"M7 8H3\"/> <path d=\"M21 16h-4\"/> <path d=\"M11 3H9\"/>",
+"users": "<path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\"/> <circle cx=\"9\" cy=\"7\" r=\"4\"/> <path d=\"M22 21v-2a4 4 0 0 0-3-3.87\"/> <path d=\"M16 3.13a4 4 0 0 1 0 7.75\"/>",
+"image": "<rect width=\"18\" height=\"18\" x=\"3\" y=\"3\" rx=\"2\" ry=\"2\"/> <circle cx=\"9\" cy=\"9\" r=\"2\"/> <path d=\"m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21\"/>",
+"share": "<circle cx=\"18\" cy=\"5\" r=\"3\"/> <circle cx=\"6\" cy=\"12\" r=\"3\"/> <circle cx=\"18\" cy=\"19\" r=\"3\"/> <line x1=\"8.59\" x2=\"15.42\" y1=\"13.51\" y2=\"17.49\"/> <line x1=\"15.41\" x2=\"8.59\" y1=\"6.51\" y2=\"10.49\"/>",
+"code": "<polyline points=\"16 18 22 12 16 6\"/> <polyline points=\"8 6 2 12 8 18\"/>",
+"sparkles": "<path d=\"M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z\"/> <path d=\"M20 3v4\"/> <path d=\"M22 5h-4\"/> <path d=\"M4 17v2\"/> <path d=\"M5 18H3\"/>",
+"gift": "<rect x=\"3\" y=\"8\" width=\"18\" height=\"4\" rx=\"1\"/> <path d=\"M12 8v13\"/> <path d=\"M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7\"/> <path d=\"M7.5 8a2.5 2.5 0 0 1 0-5A4.8 8 0 0 1 12 8a4.8 8 0 0 1 4.5-5 2.5 2.5 0 0 1 0 5\"/>",
+"projector": "<path d=\"M5 7 3 5\"/> <path d=\"M9 6V3\"/> <path d=\"m13 7 2-2\"/> <circle cx=\"9\" cy=\"13\" r=\"3\"/> <path d=\"M11.83 12H20a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h2.17\"/> <path d=\"M16 16h2\"/>",
+"cable": "<path d=\"M17 21v-2a1 1 0 0 1-1-1v-1a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1\"/> <path d=\"M19 15V6.5a1 1 0 0 0-7 0v11a1 1 0 0 1-7 0V9\"/> <path d=\"M21 21v-2h-4\"/> <path d=\"M3 5h4V3\"/> <path d=\"M7 5a1 1 0 0 1 1 1v1a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a1 1 0 0 1 1-1V3\"/>",
+"message": "<path d=\"M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z\"/> <path d=\"M13 8H7\"/> <path d=\"M17 12H7\"/>",
+"calendar": "<path d=\"M8 2v4\"/> <path d=\"M16 2v4\"/> <rect width=\"18\" height=\"18\" x=\"3\" y=\"4\" rx=\"2\"/> <path d=\"M3 10h18\"/> <path d=\"M8 14h.01\"/> <path d=\"M12 14h.01\"/> <path d=\"M16 14h.01\"/> <path d=\"M8 18h.01\"/> <path d=\"M12 18h.01\"/> <path d=\"M16 18h.01\"/>",
+"send": "<path d=\"M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z\"/> <path d=\"m21.854 2.147-10.94 10.939\"/>",
+"phone": "<path d=\"M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z\"/>",
+"mail": "<rect width=\"20\" height=\"16\" x=\"2\" y=\"4\" rx=\"2\"/> <path d=\"m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7\"/>",
+"close": "<path d=\"M18 6 6 18\"/> <path d=\"m6 6 12 12\"/>",
+"camera": "<path d=\"M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z\"/><circle class=\"lv-lens\" cx=\"12\" cy=\"13\" r=\"3\"/><g class=\"lv-flash\"><path d=\"M20.5 1v3\"/><path d=\"M19 2.5h3\"/></g>",
+"video": "<path d=\"m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5\"/><rect x=\"2\" y=\"6\" width=\"14\" height=\"12\" rx=\"2\"/><circle class=\"lv-rec\" cx=\"6\" cy=\"10\" r=\"1.5\"/>",
+"radio": "<path class=\"lv-w2\" d=\"M4.9 19.1C1 15.2 1 8.8 4.9 4.9\"/><path class=\"lv-w1\" d=\"M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5\"/><circle cx=\"12\" cy=\"12\" r=\"2\"/><path class=\"lv-w1\" d=\"M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5\"/><path class=\"lv-w2\" d=\"M19.1 4.9C23 8.8 23 15.1 19.1 19\"/>",
+"film": "<g class=\"lv-clap\"><path d=\"M20.2 6 3 11l-.9-2.4c-.3-1.1.3-2.2 1.3-2.5l13.5-4c1.1-.3 2.2.3 2.5 1.3Z\"/><path d=\"m6.2 5.3 3.1 3.9\"/><path d=\"m12.4 3.4 3.1 4\"/></g><path d=\"M3 11h18v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z\"/>",
+"calcheck": "<path d=\"M8 2v4\"/><path d=\"M16 2v4\"/><rect width=\"18\" height=\"18\" x=\"3\" y=\"4\" rx=\"2\"/><path d=\"M3 10h18\"/><path class=\"lv-tick\" pathLength=\"1\" d=\"m9 16 2 2 4-4\"/>",
+"mic": "<g class=\"lv-mic\"><path d=\"M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z\"/></g><path d=\"M19 10v2a7 7 0 0 1-14 0v-2\"/><path d=\"M12 19v3\"/><g class=\"lv-sound\"><path d=\"M21.5 7.5c.7 1.4.7 3.1 0 4.5\"/><path d=\"M2.5 7.5c-.7 1.4-.7 3.1 0 4.5\"/></g>",
+"drone": "<g class=\"lv-rotor\"><path d=\"M2 5h6\"/></g><g class=\"lv-rotor\"><path d=\"M16 5h6\"/></g><path d=\"M5 5v4\"/><path d=\"M19 5v4\"/><path d=\"M5 9h3\"/><path d=\"M16 9h3\"/><g class=\"lv-body\"><rect x=\"8\" y=\"7\" width=\"8\" height=\"6\" rx=\"2\"/><path d=\"M12 13v1.5\"/><circle cx=\"12\" cy=\"17\" r=\"2.5\"/><path d=\"M9 13l-2 3\"/><path d=\"M15 13l2 3\"/></g>",
+"platter": "<g class=\"lv-tray\"><g class=\"lv-lid\"><path d=\"M12 3V2\"/><path d=\"M5 10a7 7 0 0 1 14 0\"/></g><g class=\"lv-vap\"><path d=\"M9 7.5c.6-.7.6-1.3 0-2\"/><path d=\"M12 7c.6-.7.6-1.3 0-2\"/><path d=\"M15 7.5c.6-.7.6-1.3 0-2\"/></g><path d=\"M4 10h16\"/></g><path d=\"m15.4 17.4 3.2-2.8a2 2 0 1 1 2.8 2.9l-3.6 3.3c-.7.8-1.7 1.2-2.8 1.2h-4c-1.1 0-2.1-.4-2.8-1.2l-1.302-1.464A1 1 0 0 0 6.151 19H5\"/><path d=\"M2 14h12a2 2 0 0 1 0 4h-2\"/><path d=\"M5 14v6a1 1 0 0 1-1 1H2\"/>"
+};
+export const LIVE = new Set(["camera", "video", "radio", "film", "calcheck", "mic", "drone", "platter"]);
+export const PAGE_ICON = {
+"P02": "sparkles",
+"P03": "film",
+"P04": "video",
+"P05": "camera",
+"P06": "radio",
+"P07": "platter",
+"P08": "calcheck",
+"P09": "aperture",
+"P10": "heart",
+"P11": "monitor",
+"P12": "megaphone",
+"P13": "wand",
+"P14": "drone",
+"P15": "building",
+"P16": "speaker",
+"P17": "party",
+"P18": "mic",
+"P19": "gift",
+"P20": "sparkles",
+"P21": "image",
+"P22": "users",
+"P23": "share",
+"P24": "code"
+};
+export const iconFor = id => PAGE_ICON[id] ?? 'arrow';

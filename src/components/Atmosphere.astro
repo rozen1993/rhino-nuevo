@@ -1,0 +1,31 @@
+---
+const {waves = true, seed: initialSeed = 29} = Astro.props;
+let seed = initialSeed;
+function random() {
+  seed = (seed * 1664525 + 1013904223) >>> 0;
+  return seed / 4294967296;
+}
+const points = Array.from({length: 115}, () => ({
+  x: Math.round(random() * 1440),
+  y: Math.round(random() * 1000),
+  radius: 1 + random() * 2.5
+}));
+const lines = points.flatMap((point, index) =>
+  points.slice(index + 1)
+    .filter(next => Math.hypot(next.x - point.x, next.y - point.y) < 145)
+    .map(next => ({start: point, end: next}))
+);
+---
+<svg class="network" viewBox="0 0 1440 1000" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <g stroke="currentColor" stroke-width=".65" opacity=".24">
+    {lines.map(line => <path d={'M' + line.start.x + ' ' + line.start.y + 'L' + line.end.x + ' ' + line.end.y}/>)}
+  </g>
+  <g fill="currentColor" opacity=".48">
+    {points.map(point => <circle cx={point.x} cy={point.y} r={point.radius}/>)}
+  </g>
+</svg>
+{waves && <svg class="wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true">
+  <path fill="white" opacity=".22" d="M0 0C480 20 660 118 1440 2V90H0Z"/>
+  <path fill="white" opacity=".38" d="M0 30C550 80 880 108 1440 22V90H0Z"/>
+  <path fill="white" d="M0 48C550 110 1040 98 1440 46V90H0Z"/>
+</svg>}

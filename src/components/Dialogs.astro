@@ -1,0 +1,28 @@
+---
+import cases from '../data/cases.json';
+import Icon from './Icon.astro';
+---
+<dialog id="route-dialog" aria-labelledby="route-title">
+  <button class="dialog-close" aria-label="Cerrar"><Icon name="close"/></button>
+  <p class="dialog-kicker">Propuesta local</p>
+  <h2 id="route-title">Página en preparación</h2>
+  <p id="route-description"></p>
+  <p>Esta página todavía no forma parte de la propuesta. Mientras preparamos el detalle, puedes consultarnos sobre este servicio.</p>
+  <a class="dark-action" id="route-contact" href="https://wa.me/51965683542" target="_blank" rel="noopener noreferrer">
+    Consultar por WhatsApp <Icon/>
+  </a>
+</dialog>
+<dialog id="video-dialog" aria-labelledby="video-title">
+  <button class="dialog-close" aria-label="Cerrar"><Icon name="close"/></button>
+  <h2 id="video-title">Video del portafolio</h2>
+  <div class="video-stage">
+    <img id="video-poster" src="/media/tasting-1280.webp" loading="lazy" width="1280" height="720" alt=""/>
+    <button class="video-load" id="video-load">Cargar video de YouTube</button>
+  </div>
+  <p id="video-description"></p>
+  <a id="video-link" class="dark-action" href="https://www.youtube.com/watch?v=jGBn4_dsxNA" target="_blank" rel="noopener noreferrer">
+    Abrir en YouTube <Icon/>
+  </a>
+  <p class="small-note">Al cargar el reproductor te conectas con YouTube. Si el video no está disponible aquí, ábrelo en YouTube.</p>
+</dialog>
+<script define:vars={{cases}}>window.rhinoCases = cases;</script>

@@ -1,0 +1,36 @@
+---
+import { getBuildConfig, getSeo, serializeJsonLd } from '../lib/seo.mjs';
+interface Props {
+  page: ReturnType<typeof import('../lib/seo.mjs').getPage>;
+  config?: { target: 'preview' | 'production'; origin: string | null };
+  service?: { confirmedVisible: true; name: string; description?: string };
+}
+const { page, config = getBuildConfig(), service } = Astro.props;
+const seo = getSeo(page, { ...config, service });
+---
+<title>{seo.title}</title>
+{seo.description && <meta name="description" content={seo.description} />}
+<meta name="robots" content={seo.robots} />
+{seo.canonical && <link rel="canonical" href={seo.canonical} />}
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={seo.siteName} />
+<meta property="og:locale" content={seo.locale} />
+<meta property="og:title" content={seo.title} />
+{seo.description && <meta property="og:description" content={seo.description} />}
+{seo.url && <meta property="og:url" content={seo.url} />}
+{seo.image && <>
+  <meta property="og:image" content={seo.image.url} />
+  <meta property="og:image:secure_url" content={seo.image.url} />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content={String(seo.image.width)} />
+  <meta property="og:image:height" content={String(seo.image.height)} />
+  <meta property="og:image:alt" content={seo.image.alt} />
+</>}
+<meta name="twitter:card" content={seo.image ? 'summary_large_image' : 'summary'} />
+<meta name="twitter:title" content={seo.title} />
+{seo.description && <meta name="twitter:description" content={seo.description} />}
+{seo.image && <>
+  <meta name="twitter:image" content={seo.image.url} />
+  <meta name="twitter:image:alt" content={seo.image.alt} />
+</>}
+{seo.graph && <script type="application/ld+json" set:html={serializeJsonLd(seo.graph)} />}

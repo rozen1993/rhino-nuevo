@@ -1,0 +1,40 @@
+---
+// Genera cada página interior HTML del registro F6 marcada como construida (implemented: true).
+// La home (P01) tiene su propia ruta; reservas, 404 y PDF no pasan por aquí.
+// Las páginas con mapa en src/data/maquetas-v4.json usan el diseño v4 (piloto P05, 22-11-2026); las demás, el anterior.
+// Las HTML aún sin construir (salvo Gracias) tienen su dirección con el aviso «en construcción» (Construction.astro), sin indexar.
+import InteriorLayout from '../layouts/InteriorLayout.astro';
+import PageHero from '../components/page/PageHero.astro';
+import PageSection from '../components/page/PageSection.astro';
+import RelatedPages from '../components/page/RelatedPages.astro';
+import ContactBand from '../components/page/ContactBand.astro';
+import V4Page from '../components/v4/V4Page.astro';
+import Construction from '../components/Construction.astro';
+import maquetas from '../data/maquetas-v4.json';
+import { pages, getPage } from '../lib/seo.mjs';
+import { getPageContent } from '../lib/content.mjs';
+
+export function getStaticPaths() {
+  return pages
+    .filter(page => page.type === 'html' && page.path !== '/' && (page.implemented || page.id !== 'P34'))
+    .map(page => ({ params: { slug: page.path.replace(/^\/|\/$/g, '') }, props: { id: page.id, pending: !page.implemented } }));
+}
+
+const page = getPage(Astro.props.id);
+const pending = Astro.props.pending;
+const content = pending ? null : getPageContent(page);
+const { intro, cta, sections, closing, extra } = content ?? ({} as any);
+const layout = (maquetas as Record<string, any>)[page.id];
+const service = !pending && extra.service && page.schemaCandidates.some((type: string) => type.startsWith('Service'))
+  ? { confirmedVisible: true as const, name: page.h1, description: intro }
+  : undefined;
+---
+<InteriorLayout pageId={page.id} service={service || undefined} pending={pending}>
+  {pending ? <Construction page={page} /> : layout ? <V4Page page={page} content={content} layout={layout} /> : (
+  <main id="main" class="page-main">
+    <PageHero page={page} intro={intro} cta={cta} whatsapp={extra.whatsapp} hero={extra.hero} />
+    {sections.map((section, index) => <PageSection section={section} index={index} />)}
+    <RelatedPages page={page} />
+    {closing && <ContactBand section={closing} cta={cta} whatsapp={extra.whatsapp} page={page} />}
+  </main>)}
+</InteriorLayout>

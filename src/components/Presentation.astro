@@ -1,0 +1,26 @@
+---
+import home from '../data/home.json';
+import services from '../data/services.json';
+import BrandStrip from './BrandStrip.astro';
+const section = home.sections[0];
+---
+<section id="presentacion" class="presentation" aria-labelledby="presentation-title">
+  <div class="presentation-grid wrap">
+    <div class="presentation-copy">
+      <h2 id="presentation-title">Producción audiovisual<span class="presentation-accent" aria-hidden="true"></span></h2>
+      <p class="presentation-lead">{section.title}</p>
+      {section.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      <p>{services.P03.intro}</p>
+      <img class="presentation-signature" src="/media/firma-rhino-original.png"
+        width="1997" height="788" loading="lazy" decoding="async" alt="" aria-hidden="true"/>
+    </div>
+    <figure class="presentation-visual">
+      <img src="/media/intro-audiovisual-1088.webp"
+        srcset="/media/intro-audiovisual-640.webp 640w, /media/intro-audiovisual-1088.webp 1088w"
+        sizes="(max-width: 880px) calc(100vw - 40px), 560px"
+        width="1088" height="934" loading="lazy"
+        alt="Composición ilustrativa de grabación de voz y equipo de audio"/>
+    </figure>
+  </div>
+  <BrandStrip/>
+</section>

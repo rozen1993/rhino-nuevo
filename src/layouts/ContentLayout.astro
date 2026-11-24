@@ -1,0 +1,26 @@
+---
+import InteriorLayout from './InteriorLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { getPage } from '../lib/seo.mjs';
+interface Props { pageId: string; intro?: string; }
+const { pageId, intro } = Astro.props;
+const page = getPage(pageId);
+if (!['html', 'plantilla_404'].includes(page.type)) throw new Error('Esta plantilla solo admite páginas HTML y la 404.');
+---
+<InteriorLayout pageId={pageId}>
+  <main id="main" class="interior-main wrap">
+    <Breadcrumbs page={page} />
+    <header class="interior-heading">
+      <h1>{page.h1}</h1>
+      {intro && <p>{intro}</p>}
+    </header>
+    <slot />
+  </main>
+</InteriorLayout>
+<style>
+  .interior-main { padding-block: 40px 90px; min-height: 55vh; }
+  .interior-heading { max-width: 850px; margin-block: 30px 45px; }
+  .interior-heading h1 { font-size: clamp(32px, 4.5vw, 60px); line-height: 1.12; overflow-wrap: break-word; }
+  .interior-heading p { margin-top: 24px; max-width: 65ch; }
+  @media (max-width: 650px) { .interior-main { padding-block: 24px 60px; } }
+</style>

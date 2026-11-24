@@ -1,0 +1,25 @@
+---
+// Layout de todas las páginas que no son la home: misma Base (head/SEO), cabecera ondulada con particles.js, pie y diálogos.
+import Base from './Base.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import Dialogs from '../components/Dialogs.astro';
+import Atmosphere from '../components/Atmosphere.astro';
+import ParticleField from '../components/ParticleField.astro';
+interface Props {
+  pageId: string;
+  service?: { confirmedVisible: true; name: string; description?: string };
+  pending?: boolean;
+}
+const { pageId, service, pending } = Astro.props;
+---
+<Base pageId={pageId} service={service} pending={pending}>
+  <div class="interior-masthead color-field">
+    <Atmosphere seed={53} />
+    <ParticleField id="rhino-interior-particles" label="la cabecera" />
+    <Header />
+  </div>
+  <slot />
+  <Footer />
+  <Dialogs />
+</Base>

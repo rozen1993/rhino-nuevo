@@ -1,0 +1,19 @@
+---
+import Icon from '../Icon.astro';
+const { section, cta, whatsapp, page } = Astro.props;
+const waHref = 'https://wa.me/51965683542?text=' + encodeURIComponent(whatsapp ?? `Hola Rhino, quiero consultar sobre ${page.h1.toLowerCase()}.`);
+const mailHref = 'mailto:info@rhinoaudiovisuales.com?subject=' + encodeURIComponent(`Consulta: ${page.h1}`);
+---
+<section class="vc" aria-labelledby="page-contact-title">
+  <div class="wrapx">
+    <div class="vc-card">
+      <h2 id="page-contact-title">{section.title}</h2>
+      {section.paragraphs.map((paragraph: string) => <p>{paragraph}</p>)}
+      <div class="acts">
+        <a class="btn btn-brand" href={waHref} target="_blank" rel="noopener noreferrer">{cta ?? 'Consultar por WhatsApp'} <Icon size={20} /></a>
+        <a class="lnk" href={mailHref}>Escribir por correo</a>
+      </div>
+      <p class="vc-data mono">Teléfono <a href="tel:+51965683542">965 683 542</a> · <a href="mailto:info@rhinoaudiovisuales.com">info@rhinoaudiovisuales.com</a></p>
+    </div>
+  </div>
+</section>

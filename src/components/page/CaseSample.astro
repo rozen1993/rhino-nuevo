@@ -1,0 +1,37 @@
+---
+// Muestra del portafolio como reproductor: el primer caso en grande con rótulo y barra de avance,
+// los demás a su lado. Los enlaces abren el diálogo de video (data-video) o YouTube sin JavaScript.
+import cases from '../../data/cases.json';
+import Icon from '../Icon.astro';
+const { ids } = Astro.props;
+type Case = typeof cases[number];
+const items: Case[] = ids.map((id: string) => {
+  const item = cases.find(entry => entry.id === id);
+  if (!item) throw new Error(`Caso desconocido: ${id}`);
+  return item;
+});
+const image = (id: string) => '/media/' + id + (['bloom', 'adidas'].includes(id) ? '-display.webp' : '-1280.webp');
+const yt = (video: string) => 'https://www.youtube.com/watch?v=' + video;
+const [main, ...rest] = items;
+---
+<div class="player">
+  <figure class="player-main">
+    <a href={yt(main.video)} target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true" class="player-frame" data-video={main.id}>
+      <img src={image(main.id)} width="1280" height="720" loading="lazy" alt="" />
+      <span class="play"><Icon name="play" size={28} /></span>
+      <span class="lt lt-small lt-player"><span class="lt-main">{main.title}</span><span class="lt-sub">Proyecto del portafolio</span></span>
+    </a>
+    <span class="player-bar" aria-hidden="true"><span></span></span>
+  </figure>
+  <div class="player-side">
+    <p>{main.context}</p>
+    <a href={yt(main.video)} target="_blank" rel="noopener noreferrer" class="lnk" data-video={main.id} aria-label={'Ver video de ' + main.title}>Ver video <Icon size={18} /></a>
+    {rest.map((item: Case) => <figure class="player-more">
+      <a href={yt(item.video)} target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true" class="player-frame" data-video={item.id}>
+        <img src={image(item.id)} width="1280" height="720" loading="lazy" alt="" />
+        <span class="play small"><Icon name="play" size={22} /></span>
+      </a>
+      <figcaption><a href={yt(item.video)} target="_blank" rel="noopener noreferrer" data-video={item.id} aria-label={'Ver video de ' + item.title}><b>{item.title}</b></a> · {item.context}</figcaption>
+    </figure>)}
+  </div>
+</div>

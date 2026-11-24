@@ -1,0 +1,56 @@
+---
+// Sección de contenido en el lenguaje del visor:
+// - título a la izquierda y texto a la derecha;
+// - listas «Término: explicación» como rótulos escalonados;
+// - «Ver también» con varios enlaces en banda ciruela, con etiquetas tipo rótulo;
+// - miniaturas de visor (moments) y muestra del portafolio cuando existen.
+import Icon from '../Icon.astro';
+import PageLink from '../PageLink.astro';
+import CaseSample from './CaseSample.astro';
+const { section, index } = Astro.props;
+const id = `seccion-${index + 1}`;
+const splitItem = (text: string) => {
+  const at = text.indexOf(': ');
+  if (!(at > 0 && at < 40)) return [null, text];
+  const rest = text.slice(at + 2);
+  return [text.slice(0, at), rest.charAt(0).toLocaleUpperCase('es') + rest.slice(1)];
+};
+const dark = section.links.length >= 2 && !section.samples.length;
+const tones = ['t0', 't1', 't2'];
+---
+<section class:list={['vs', dark && 'vs-dark', section.samples.length > 0 && 'vs-sample']} aria-labelledby={id}>
+  <div class="wrapx">
+    <div class:list={['vs-grid', section.moments.length > 0 && 'has-media']}>
+      <div class="vs-head">
+        <h2 id={id}>{section.title}</h2>
+        {section.moments.length > 0 && section.paragraphs.map((paragraph: string) => <p>{paragraph}</p>)}
+        {section.moments.length > 0 && section.links.length > 0 && <p class="vs-small">Ver también: {section.links.map(([pageId, label]: string[], i: number) => <>{i > 0 && ', '}<PageLink pageId={pageId} label={label} /></>)}.</p>}
+      </div>
+      {section.moments.length > 0 ? (
+        <div class="vs-moments">
+          {section.moments.map((m: { image: string; title: string; sub: string }) => <figure class="vf-mini">
+            <img src={`/media/${m.image}-640.webp`} width="640" height="427" loading="lazy" alt="" />
+            <span class="vf-rec mono" aria-hidden="true"><i></i>REC</span>
+            <figcaption class="lt lt-small"><span class="lt-main">{m.title}</span><span class="lt-sub">{m.sub}</span></figcaption>
+          </figure>)}
+        </div>
+      ) : (
+        <div class="vs-body">
+          {section.paragraphs.map((paragraph: string) => <p>{paragraph}</p>)}
+          {dark && section.links.length > 0 && <>
+            <p class="vs-tags-label">Ver también</p>
+            <div class="vs-tags">{section.links.map(([pageId, label]: string[]) => <PageLink pageId={pageId} label={label} class="tag"><span>{label}</span><Icon size={18} /></PageLink>)}</div>
+          </>}
+          {!dark && section.links.length > 0 && <p class="vs-small">Ver también: {section.links.map(([pageId, label]: string[], i: number) => <>{i > 0 && ', '}<PageLink pageId={pageId} label={label} /></>)}.</p>}
+        </div>
+      )}
+    </div>
+    {section.items.length > 0 && <ul class="thirds">
+      {section.items.map((item: string, i: number) => { const [term, text] = splitItem(item); return <li class={tones[i % 3]} style={`--step:${Math.min(i, 2)}`}>
+        <span class="tab" aria-hidden="true"></span>
+        {term ? <><span class="nm">{term}</span><span class="ds">{text}</span></> : <span class="ds solo">{text}</span>}
+      </li>; })}
+    </ul>}
+    {section.samples.length > 0 && <CaseSample ids={section.samples} />}
+  </div>
+</section>

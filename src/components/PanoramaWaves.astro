@@ -1,0 +1,59 @@
+---
+// Open currents from the selected B composition. The middle stays clear for
+// the title; the strands intersect only along the shallow lower horizon.
+const strands = Array.from({ length: 38 }, (_, index) => {
+  const t = index / 37;
+  return {
+    d: `M-70 ${130 + 430 * t}
+      C100 ${210 + 370 * t} 155 ${550 + 115 * t} 590 ${640 + 65 * t}
+      C840 ${710 + 50 * t} 1020 ${605 + 80 * t} 1240 ${620 + 85 * t}
+      C1570 ${650 + 80 * t} 1775 ${490 + 50 * t} 1944 ${265 + 310 * t}`,
+    opacity: .24 + .12 * Math.sin(Math.PI * t),
+  };
+});
+const undercurrent = Array.from({ length: 18 }, (_, index) => {
+  const t = index / 17;
+  return {
+    d: `M180 ${760 + 28 * t}
+      C520 ${795 - 30 * t} 760 ${630 - 35 * t} 1045 ${625 + 35 * t}
+      C1370 ${610 + 90 * t} 1590 ${755 - 15 * t} 1944 ${730 - 45 * t}`,
+    opacity: .10 + .10 * Math.sin(Math.PI * t),
+  };
+});
+---
+<svg class="panorama-waves" viewBox="0 0 1874 839" preserveAspectRatio="none" aria-hidden="true" focusable="false">
+  <g class="wave-current" fill="none" stroke="white" stroke-width=".85">
+    {strands.map(strand => <path d={strand.d} opacity={strand.opacity}/>)}
+  </g>
+  <g class="wave-current wave-undercurrent" fill="none" stroke="white" stroke-width=".7">
+    {undercurrent.map(strand => <path d={strand.d} opacity={strand.opacity}/>)}
+  </g>
+</svg>
+<style>
+  .panorama-waves {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  .wave-current {
+    transform-box: view-box;
+    transform-origin: 50% 90%;
+    animation: panorama-drift 12s ease-in-out infinite alternate;
+    animation-play-state: paused;
+  }
+  .wave-undercurrent { animation-duration: 16s; animation-direction: alternate-reverse; }
+  :global(.hero:has(> [data-particles-state="active"])) .wave-current {
+    animation-play-state: running;
+  }
+  @keyframes panorama-drift {
+    from { transform: translateY(0); }
+    to { transform: translateY(5px); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .wave-current { animation: none; }
+  }
+</style>

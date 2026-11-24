@@ -1,0 +1,41 @@
+---
+import home from '../data/home.json';
+import Icon from './Icon.astro';
+const section = home.sections[1];
+const pictures = ['tasting', 'podcast', 'catering'];
+const icons = ['video', 'mic', 'coffee'];
+const routes = ['cobertura-de-eventos', 'streaming-y-podcast', 'catering-corporativo'];
+const captions = [
+  'Premium Tasting Lima · fotograma recuperado del portafolio',
+  'Streaming y podcast · imagen ilustrativa del legado',
+  'Catering · imagen ilustrativa del legado'
+];
+---
+<section id="eventos" class="events wrap" aria-labelledby="events-title">
+  <div class="section-heading">
+    <h2 id="events-title">{section.title}</h2>
+    <div>{section.paragraphs.map(p => <p>{p}</p>)}</div>
+  </div>
+  <div class="event-layout">
+    <div class="event-list">
+      {section.links.map(([id, label], index) =>
+        <article class="event-row">
+          <button class="event-select" aria-label={'Mostrar imagen de ' + label}
+            aria-pressed={index === 0 ? 'true' : 'false'} aria-controls="event-picture"
+            data-event-image={pictures[index]} data-event-caption={captions[index]}>
+            <Icon name={icons[index]}/>
+          </button>
+          <h3>{label}</h3>
+          <p>{section.items[index]}</p>
+          <a class="inline-action" href={'/servicios/' + routes[index] + '/'}>Consultar servicio <Icon size={18}/></a>
+        </article>
+      )}
+    </div>
+    <figure class="event-photo" id="event-picture">
+      <img id="event-image" src="/media/tasting-1280.webp" width="1280" height="720"
+        loading="lazy" alt={captions[0]}/>
+      <figcaption id="event-caption">{captions[0]}</figcaption>
+    </figure>
+  </div>
+  <p class="small-note">Páginas de detalle en preparación.</p>
+</section>

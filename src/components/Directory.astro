@@ -1,0 +1,45 @@
+---
+import home from '../data/home.json';
+import TopWave from './TopWave.astro';
+import Atmosphere from './Atmosphere.astro';
+import ParticleField from './ParticleField.astro';
+import Icon from './Icon.astro';
+import PageLink from './PageLink.astro';
+const section = home.sections[2];
+const nodes = [
+  ['P08','Organización de eventos','calendar'],
+  ['P05','Cobertura de eventos','camera'],
+  ['P06','Streaming y podcast','mic'],
+  ['P09','Estudio fotográfico','studio'],
+  ['P21','Fotografía publicitaria','camera'],
+  ['P07','Catering corporativo','coffee'],
+  ['P12','Spots publicitarios','play'],
+  ['P03','Producción audiovisual','film'],
+  ['P04','Video corporativo','video']
+];
+const positions = nodes.map((_, index) => {
+  const angle = (-70 + index * 40) * Math.PI / 180;
+  return {x: 50 + 41 * Math.cos(angle), y: 49 + 42 * Math.sin(angle)};
+});
+---
+<section id="servicios-extras" class="directory color-field" aria-labelledby="directory-title">
+  <Atmosphere seed={67}/><ParticleField id="rhino-directory-particles" label="servicios extras"/><TopWave/>
+  <div class="directory-inner wrap">
+    <svg class="constellation-lines" aria-hidden="true"><path fill="none" stroke="white" stroke-width="1"/></svg>
+    <div class="directory-copy">
+      <h2 id="directory-title">{section.title}</h2>
+      {section.paragraphs.map(paragraph => <p>{paragraph}</p>)}
+      <PageLink pageId="P02" label="Todos los servicios" class="action">
+        <span>Ver todos los servicios</span><span class="action-arrow"><Icon/></span>
+      </PageLink>
+    </div>
+    <div class="directory-nodes">
+      {nodes.map(([id,label,icon], index) =>
+        <PageLink pageId={id} label={label} class="directory-node" style={'left:' + positions[index].x + '%;top:' + positions[index].y + '%'}>
+          <span class="node-circle"><Icon name={icon} size={27}/></span>
+          <span class="node-label">{label}</span>
+        </PageLink>
+      )}
+    </div>
+  </div>
+</section>

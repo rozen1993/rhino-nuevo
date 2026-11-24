@@ -1,0 +1,5 @@
+---
+import Icon from './Icon.astro';
+const {href=Astro.url.pathname==='/'?'#consulta':'/#consulta',label='Consultar mi proyecto',variant='',external=false}=Astro.props;
+---
+<a class:list={['action',variant]} href={href} target={external?'_blank':undefined} rel={external?'noopener noreferrer':undefined}><span>{label}</span><span class="action-arrow"><Icon/></span></a>

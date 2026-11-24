@@ -1,0 +1,134 @@
+{
+  "_nota": "Mapa de secciones del diseño v4 aprobado (visuales-claude/paginas-completasv4, 22-11-2026). Cada página con entrada aquí se pinta con los componentes de src/components/v4. «index» es la posición de la sección en el contenido limpio de la ficha (getPageContent: sin huecos de muestra pendientes ni la de cierre). Tipos: split (T1), panels (PN), linkcards (T5), samples (E3), quote (T2, «accent» = parte que se ilumina), checklist (T7, lista editorial 2A), aside (T9, la última frase va en «A tener en cuenta»), text (TX), band (T4, título protagonista 3B), keys (T3, claves con línea). «sizes»: sufijos de los archivos de /media (por defecto 640 y 1280). Collage de cabecera: grande con el momento (1024 × 1024) y pequeña con la captura (1024 × 1536), fotos ilustrativas creadas con IA el 23-11-2026, sin rostros reconocibles; se sustituirán por fotos propias autorizadas antes del lanzamiento.",
+  "P02": {
+    "collage": { "image": "p02-momento", "alt": "Escenario de evento con una pantalla LED encendida y el público de espaldas", "second": "p02-captura" },
+    "belt": ["P03", "P05", "P06", "P07", "P08", "P14", "P16", "P17", "P18", "P21", "P23"],
+    "related": false,
+    "sections": [
+      { "type": "linkcards", "index": 0, "descFromItems": true },
+      { "type": "panels", "index": 1, "icons": ["monitor", "speaker", "party", "mic"], "panelLinks": true },
+      { "type": "split", "index": 2, "image": "camara-detalle", "width": 1280, "height": 1024, "alt": "Cámara fotográfica sobre fondo oscuro" },
+      { "type": "linkcards", "index": 3 },
+      { "type": "band", "index": 4, "image": "temporada-navidad", "sizes": [640, 1280], "alt": "Dos niñas abriendo regalos junto a un árbol de Navidad" }
+    ]
+  },
+  "P03": {
+    "collage": { "image": "p03-momento", "alt": "Rodaje con luz cálida y una figura a contraluz que camina hacia una puerta iluminada", "second": "p03-captura" },
+    "sections": [
+      { "type": "panels", "index": 0, "icons": ["building", "megaphone", "camera"] },
+      { "type": "checklist", "index": 1 },
+      { "type": "split", "index": 2, "image": "production", "sizes": [960, 1600], "width": 1600, "height": 1067, "alt": "Camarógrafo con una cámara de cine al hombro" }
+    ]
+  },
+  "P04": {
+    "collage": { "image": "p04-momento", "alt": "Entrevista corporativa en una oficina luminosa", "second": "p04-captura" },
+    "sections": [
+      { "type": "checklist", "index": 0 },
+      { "type": "quote", "index": 1, "accent": "una forma de presentarlo" },
+      { "type": "split", "index": 2, "image": "production", "sizes": [960, 1600], "width": 1600, "height": 1067, "alt": "Camarógrafo con una cámara de cine al hombro" },
+      { "type": "samples", "index": 3 }
+    ]
+  },
+  "P06": {
+    "collage": { "image": "p06-momento", "alt": "Estudio de podcast con dos micrófonos frente a frente y luz cálida", "second": "p06-captura" },
+    "sections": [
+      { "type": "checklist", "index": 0 }
+    ]
+  },
+  "P07": {
+    "collage": { "image": "p07-momento", "alt": "Mesa de coffee break con bocaditos, pasteles y tazas de café", "second": "p07-captura" },
+    "sections": [
+      { "type": "split", "index": 0, "image": "catering", "sizes": [480, 960], "width": 960, "height": 640, "alt": "Mesa servida con copas y platos para un evento" },
+      { "type": "checklist", "index": 1 },
+      { "type": "quote", "index": 2, "accent": "antes de cerrar el menú" }
+    ]
+  },
+  "P08": {
+    "collage": { "image": "p08-momento", "alt": "Conferencia vista desde el público, con el orador a contraluz en el escenario", "second": "p08-captura" },
+    "sections": [
+      { "type": "quote", "index": 0, "accent": "prepara y coordina" },
+      { "type": "panels", "index": 1, "icons": ["calendar", "users", "building", "check"] },
+      { "type": "linkcards", "index": 2 }
+    ]
+  },
+  "P10": {
+    "collage": { "image": "p10-momento", "alt": "Primer baile de una pareja de novios bajo luces cálidas", "second": "p10-captura" },
+    "sections": [
+      { "type": "split", "index": 0, "image": "bodas-pareja", "width": 1280, "height": 1024, "alt": "Pareja de novios abrazados frente a un edificio" },
+      { "type": "quote", "index": 1, "accent": "revisar y compartir" },
+      { "type": "aside", "index": 2 }
+    ]
+  },
+  "P12": {
+    "collage": { "image": "p12-momento", "alt": "Botella de vidrio iluminada en rosa y naranja con una salpicadura de líquido", "second": "p12-captura" },
+    "sections": [
+      { "type": "quote", "index": 0, "accent": "decisiones distintas de tono y narración" },
+      { "type": "split", "index": 1, "image": "production", "sizes": [960, 1600], "width": 1600, "height": 1067, "alt": "Camarógrafo con una cámara de cine al hombro" },
+      { "type": "aside", "index": 2 }
+    ]
+  },
+  "P14": {
+    "collage": { "image": "p14-momento", "alt": "Vista aérea de acantilados frente al mar al atardecer", "second": "p14-captura" },
+    "sections": [
+      { "type": "split", "index": 0, "image": "drone-vuelo", "width": 610, "height": 488, "alt": "Drone en vuelo sobre un bosque" },
+      { "type": "linkcards", "index": 1 },
+      { "type": "aside", "index": 2 }
+    ]
+  },
+  "P15": {
+    "collage": { "image": "p15-momento", "alt": "Sala de un departamento moderno con ventanales y luz de atardecer", "second": "p15-captura" },
+    "sections": [
+      { "type": "quote", "index": 0, "accent": "características relevantes" },
+      { "type": "split", "index": 1, "image": "inmobiliario-interior", "width": 1280, "height": 1024, "alt": "Interior de un edificio con patio central" },
+      { "type": "aside", "index": 2 }
+    ]
+  },
+  "P16": {
+    "collage": { "image": "p16-momento", "alt": "Sala de evento con un proyector sobre una pantalla grande y el público de espaldas", "second": "p16-captura" },
+    "sections": [
+      { "type": "keys", "indexes": [0, 1], "icons": ["projector", "speaker"] }
+    ]
+  },
+  "P17": {
+    "collage": { "image": "p17-momento", "alt": "Activación de marca con confeti y personas de espaldas frente a un módulo iluminado", "second": "p17-captura" },
+    "sections": [
+      { "type": "quote", "index": 0, "accent": "una participación concreta" },
+      { "type": "band", "index": 1, "image": "alquiler-de-sonido-y-proyectores", "sizes": [640, 1280], "alt": "Público frente a un escenario durante un concierto" },
+      { "type": "aside", "index": 2 }
+    ]
+  },
+  "P18": {
+    "collage": { "image": "p18-momento", "alt": "Maestro de ceremonias en el escenario con un micrófono, a contraluz", "second": "p18-captura" },
+    "sections": [
+      { "type": "split", "index": 0, "image": "organizacion-de-eventos", "width": 1280, "height": 853, "alt": "Auditorio con asistentes durante una conferencia" },
+      { "type": "quote", "index": 1, "accent": "preparar el guion" },
+      { "type": "text", "index": 2 }
+    ]
+  },
+  "P21": {
+    "collage": { "image": "p21-momento", "alt": "Frasco de perfume sin marca sobre un pedestal con luz naranja y rosa", "second": "p21-captura" },
+    "sections": [
+      { "type": "split", "index": 0, "image": "camara-detalle", "width": 1280, "height": 1024, "alt": "Cámara fotográfica sobre fondo oscuro" },
+      { "type": "quote", "index": 1, "accent": "coherencia entre productos" },
+      { "type": "aside", "index": 2 }
+    ]
+  },
+  "P23": {
+    "collage": { "image": "p23-momento", "alt": "Teléfono en un trípode grabando una composición de café y cuaderno sobre un escritorio", "second": "p23-captura" },
+    "sections": [
+      { "type": "quote", "index": 0, "accent": "necesidades distintas" },
+      { "type": "checklist", "index": 1 },
+      { "type": "aside", "index": 2 },
+      { "type": "split", "index": 3, "image": "branding-escritorio", "width": 1280, "height": 1024, "alt": "Escritorio con portátil, cuaderno y taza de café" }
+    ]
+  },
+  "P05": {
+    "collage": { "image": "cobertura-brindis", "width": 1024, "height": 1024, "alt": "Brindis con copas de espumante en una recepción nocturna", "second": "cobertura-camara-brindis", "secondWidth": 1024, "secondHeight": 1536 },
+    "sections": [
+      { "type": "split", "index": 0, "image": "recinto-evento", "width": 1280, "height": 1024, "alt": "Asistentes en un recinto de eventos al atardecer" },
+      { "type": "panels", "index": 1, "icons": ["camera", "video", "film"], "images": ["activaciones-btl", "servicios", "organizacion-de-eventos"] },
+      { "type": "linkcards", "index": 2 },
+      { "type": "samples", "index": 3 }
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+---
+import Presentation from '../components/Presentation.astro';
+import Base from '../layouts/Base.astro';import Hero from '../components/Hero.astro';import ServicePanels from '../components/ServicePanels.astro';import Directory from '../components/Directory.astro';import Projects from '../components/Projects.astro';import Consultation from '../components/Consultation.astro';import Footer from '../components/Footer.astro';import Dialogs from '../components/Dialogs.astro';import home from '../data/home.json';
+---
+<Base pageId="P01"><main id="main"><Hero/><Presentation/><ServicePanels section={home.sections[1]} group="events" id="servicios" title="Servicios para tu proyecto"/><Directory/><Projects/><Consultation/></main><Footer/><Dialogs/></Base>

@@ -1,0 +1,3086 @@
+[
+  {
+    "id": "P01",
+    "h1": "Productora audiovisual en Lima",
+    "metadatos": {
+      "title": {
+        "valor": "Productora Audiovisual | Rhino Audiovisuales",
+        "estado": "foco_y_texto_legado_F5",
+        "caracteres": 44
+      },
+      "h1": {
+        "valor": "Productora audiovisual en Lima",
+        "estado": "borrador_seguro",
+        "caracteres": 30
+      },
+      "description": {
+        "valor": "Conoce los servicios audiovisuales de Rhino Audiovisuales en Lima. Revisa las opciones para tu proyecto y solicita una cotización.",
+        "estado": "borrador_seguro",
+        "caracteres": 130
+      }
+    },
+    "intro": "Producción audiovisual, fotografía y servicios para eventos empresariales y sociales en Lima. Rhino reúne distintas líneas de trabajo para comunicar una idea, registrar una ocasión o preparar un encuentro.",
+    "image": "Fotografía real de una producción audiovisual de Rhino, con autorización de uso.",
+    "sections": [
+      {
+        "title": "Una pieza para lo que quieres comunicar",
+        "paragraphs": [
+          "Un video institucional, un comercial y el registro de un evento cumplen funciones distintas. La producción audiovisual parte de ese objetivo: qué necesita entender el público y dónde verá la pieza. Aquí puedes encontrar el servicio correspondiente a tu encargo."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P03",
+            "Producción audiovisual"
+          ],
+          [
+            "P04",
+            "Video corporativo"
+          ],
+          [
+            "P12",
+            "Spots publicitarios"
+          ]
+        ]
+      },
+      {
+        "title": "Para tus eventos: cobertura, streaming y catering",
+        "paragraphs": [
+          "Tres necesidades diferentes que puedes plantear en tu consulta. Cada servicio conserva su propio alcance; reunirlos en una solicitud permite explicar el contexto del evento."
+        ],
+        "items": [
+          "Cobertura: fotografía y video para conservar lo que ocurre y preparar material de comunicación.",
+          "Streaming y podcast: emisión en directo para espectadores a distancia o producción de episodios para publicar.",
+          "Catering y coffee break: atención de alimentos para reuniones y jornadas de empresa."
+        ],
+        "pending": null,
+        "links": [
+          [
+            "P05",
+            "Cobertura de eventos"
+          ],
+          [
+            "P06",
+            "Streaming y podcast"
+          ],
+          [
+            "P07",
+            "Catering corporativo"
+          ]
+        ]
+      },
+      {
+        "title": "Fotografía, estudio y otros servicios",
+        "paragraphs": [
+          "Rhino cuenta con estudio fotográfico propio. El catálogo también contempla fotografía comercial, retratos, organización de eventos y soluciones digitales. Elegir según la necesidad evita confundir una sesión de fotos con el registro de un evento o su organización."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P09",
+            "Estudio fotográfico"
+          ],
+          [
+            "P21",
+            "Fotografía publicitaria"
+          ],
+          [
+            "P08",
+            "Organización de eventos"
+          ],
+          [
+            "P02",
+            "Ver todos los servicios"
+          ]
+        ]
+      },
+      {
+        "title": "El trabajo que te interesa ver",
+        "paragraphs": [
+          "Al comparar una productora, busca una muestra relacionada con el tipo de encargo: una pieza institucional, un registro de evento o una serie fotográfica. La imagen, la narración y el uso final permiten valorar cosas diferentes."
+        ],
+        "items": [
+          "[ESPACIO PARA MUESTRA AUTORIZADA: pieza, encargo y aportación de Rhino. Pendiente de material y permiso; no constituye prueba todavía.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Empecemos por tu necesidad",
+        "paragraphs": [
+          "No necesitas llegar con un brief terminado. El primer contacto puede ser una idea, una fecha o un problema de comunicación. Para un evento, añade lugar y fecha si ya los conoces; para una pieza, el mensaje y el uso previsto."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P33",
+            "Cuéntanos tu proyecto"
+          ]
+        ]
+      }
+    ],
+    "cta": "Consultar mi proyecto",
+    "editorial_pending": [
+      "Precisar el alcance de coordinación entre servicios y el proceso de atención.",
+      "Seleccionar muestra y documentar rol y permiso antes de habilitarla."
+    ]
+  },
+  {
+    "id": "P02",
+    "h1": "Servicios audiovisuales y para eventos",
+    "metadatos": {
+      "title": {
+        "valor": "Servicios audiovisuales · Rhino Audiovisuales",
+        "estado": "borrador_seguro",
+        "caracteres": 45
+      },
+      "h1": {
+        "valor": "Servicios audiovisuales y para eventos",
+        "estado": "borrador_seguro",
+        "caracteres": 38
+      },
+      "description": {
+        "valor": "Encuentra servicios audiovisuales, fotografía, eventos y soluciones digitales. Identifica tu necesidad y consulta a Rhino Audiovisuales.",
+        "estado": "borrador_seguro",
+        "caracteres": 136
+      }
+    },
+    "intro": "Elige el servicio según lo que necesitas resolver. Un mismo evento puede necesitar registro, transmisión o coordinación; una misma empresa puede necesitar imágenes, videos o contenido digital. Aquí se distinguen esos encargos.",
+    "image": "Selección de imágenes reales que represente las familias de servicios.",
+    "sections": [
+      {
+        "title": "Comunicar una idea o presentar una empresa",
+        "paragraphs": [
+          "Producción audiovisual es el punto de partida cuando necesitas definir y producir una pieza. Las páginas especializadas ayudan a precisar su finalidad."
+        ],
+        "items": [
+          "Video corporativo: presentar una organización, actividad o mensaje institucional.",
+          "Spots publicitarios: una pieza para una campaña y un mensaje comercial.",
+          "Animación y motion graphics: explicar una idea mediante recursos visuales; técnica y alcance por confirmar en cada propuesta."
+        ],
+        "pending": null,
+        "links": [
+          [
+            "P03",
+            "Producción audiovisual"
+          ],
+          [
+            "P04",
+            "Video corporativo"
+          ],
+          [
+            "P12",
+            "Spots"
+          ],
+          [
+            "P13",
+            "Animación y motion graphics"
+          ]
+        ]
+      },
+      {
+        "title": "Registrar, transmitir o preparar un evento",
+        "paragraphs": [
+          "Cobertura registra lo que sucede. Streaming permite verlo a distancia. Organización se refiere a las tareas necesarias para que el encuentro se realice. Catering atiende el momento de alimentos. Son responsabilidades diferentes."
+        ],
+        "items": [
+          "Pantallas LED: mostrar contenido en el espacio del evento.",
+          "Sonido y proyectores: amplificar intervenciones o presentar imagen.",
+          "Activaciones BTL: desarrollar una interacción de marca.",
+          "Maestro de ceremonias: conducir el programa."
+        ],
+        "pending": null,
+        "links": [
+          [
+            "P05",
+            "Cobertura"
+          ],
+          [
+            "P06",
+            "Streaming y podcast"
+          ],
+          [
+            "P07",
+            "Catering"
+          ],
+          [
+            "P08",
+            "Organización"
+          ],
+          [
+            "P11",
+            "Pantallas LED"
+          ],
+          [
+            "P16",
+            "Sonido y proyectores"
+          ],
+          [
+            "P17",
+            "Activaciones BTL"
+          ],
+          [
+            "P18",
+            "Maestro de ceremonias"
+          ]
+        ]
+      },
+      {
+        "title": "Crear imágenes para cada uso",
+        "paragraphs": [
+          "Los productos, las personas y los espacios necesitan enfoques distintos. Una serie para catálogo busca mostrar artículos; los retratos presentan al equipo; una cobertura conserva el desarrollo de una celebración."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P21",
+            "Fotografía publicitaria y productos"
+          ],
+          [
+            "P22",
+            "Fotos corporativas"
+          ],
+          [
+            "P09",
+            "Estudio fotográfico"
+          ],
+          [
+            "P10",
+            "Fotografía y video de bodas"
+          ],
+          [
+            "P14",
+            "Drone audiovisual"
+          ],
+          [
+            "P15",
+            "Fotografía y video inmobiliario"
+          ]
+        ]
+      },
+      {
+        "title": "Contenido digital y web",
+        "paragraphs": [
+          "La gestión de redes organiza una comunicación continuada; una web reúne información y funciones en un sitio propio."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P23",
+            "Gestión de redes"
+          ],
+          [
+            "P24",
+            "Desarrollo web"
+          ]
+        ]
+      },
+      {
+        "title": "Celebraciones de temporada",
+        "paragraphs": [
+          "El show infantil y la celebración empresarial tienen públicos y programas diferentes. Consulta oferta vigente y disponibilidad para la fecha que necesitas."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P19",
+            "Show infantil navideño"
+          ],
+          [
+            "P20",
+            "Fiesta empresarial"
+          ]
+        ]
+      },
+      {
+        "title": "Otros encargos y combinaciones",
+        "paragraphs": [
+          "Para quinceañeros, cumpleaños u otro evento social puedes consultar directamente desde contacto. También puedes explicar una necesidad que reúna varias líneas: no es necesario elegir una etiqueta exacta antes de escribir."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P33",
+            "Consultar mi necesidad"
+          ]
+        ]
+      }
+    ],
+    "cta": "Encontrar el servicio para mi proyecto",
+    "editorial_pending": [
+      "Validar modalidades vigentes y servicios combinables. Categorías de catálogo confirmadas; sus incluidos no se deducen del nombre.",
+      "Todas las rutas son maquetas locales; habilitar enlaces públicos solo a destinos aprobados."
+    ]
+  },
+  {
+    "id": "P03",
+    "h1": "Servicios de producción audiovisual",
+    "metadatos": {
+      "title": {
+        "valor": "Producción audiovisual · Rhino Audiovisuales",
+        "estado": "borrador_seguro",
+        "caracteres": 44
+      },
+      "h1": {
+        "valor": "Servicios de producción audiovisual",
+        "estado": "borrador_seguro",
+        "caracteres": 35
+      },
+      "description": {
+        "valor": "Consulta servicios de producción audiovisual en Lima. Define el objetivo de tu video y solicita una propuesta de producción a Rhino Audiovisuales.",
+        "estado": "borrador_seguro",
+        "caracteres": 146
+      }
+    },
+    "intro": "Producción audiovisual para comunicar una idea a través de imagen, sonido y edición. Rhino ofrece servicios audiovisuales para empresas y encargos sociales; el tipo de pieza y su uso permiten definir el trabajo.",
+    "image": "Fotografía autorizada del proceso de una producción de Rhino.",
+    "sections": [
+      {
+        "title": "Qué tipo de video necesitas",
+        "paragraphs": [
+          "El encargo cambia según lo que el espectador debe entender o recordar. Una presentación institucional explica una organización; una pieza publicitaria comunica una oferta; una cobertura registra una ocasión real."
+        ],
+        "items": [
+          "Empresa: presentación, procesos o mensajes dirigidos a un público concreto.",
+          "Campaña: mensaje comercial y versiones para los canales previstos.",
+          "Evento: registro de lo que ocurre y material para comunicarlo después."
+        ],
+        "pending": null,
+        "links": [
+          [
+            "P04",
+            "Video corporativo"
+          ],
+          [
+            "P12",
+            "Spots y comerciales"
+          ],
+          [
+            "P05",
+            "Cobertura de eventos"
+          ],
+          [
+            "P10",
+            "Foto y video de bodas"
+          ],
+          [
+            "P13",
+            "Consultar animación"
+          ]
+        ]
+      },
+      {
+        "title": "Preparación, grabación y edición",
+        "paragraphs": [
+          "Rhino ofrece preparación y guion, grabación y edición. Puedes encargar la producción completa o las etapas que necesitas. Si aportas guion o grabaciones, consulta primero su viabilidad, formatos y derechos de uso. La preparación ordena el mensaje; la grabación reúne imagen y sonido; la edición construye la pieza para su uso final."
+        ],
+        "items": [
+          "Decisiones del proyecto: público, mensaje, participantes y locaciones.",
+          "Decisiones de entrega: pieza principal, versiones, sonido, textos y destino de uso."
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Una pieza y sus versiones",
+        "paragraphs": [
+          "El mismo material no se usa igual en una presentación que en una publicación breve. Definir los canales permite decidir encuadre, duración y adaptaciones necesarias. Las versiones y revisiones se acuerdan según el proyecto."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Una muestra que permita comparar",
+        "paragraphs": [
+          "Para comparar una pieza, observa cómo se entiende el mensaje, cómo se relacionan imagen y sonido y si el ritmo encaja con su uso."
+        ],
+        "items": [
+          "[ESPACIO PARA VIDEO AUTORIZADO: contexto, aportación de Rhino y versión entregada.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Plantea tu pieza",
+        "paragraphs": [
+          "Cuéntanos qué quieres comunicar y dónde se usará. Puedes añadir una referencia y señalar si ya tienes guion, material o una fecha objetivo. No hace falta resolver todos los detalles antes del primer contacto."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      }
+    ],
+    "cta": "Evaluar mi pieza audiovisual",
+    "editorial_pending": [
+      "Precisar responsabilidades, recursos, permisos e incluidos de cada etapa contratada; las etapas están confirmadas por el dueño.",
+      "Concretar versiones, revisiones, formatos y calendario por proyecto. La correspondencia temática con video.html está documentada en cotejo-legado.md; equivalencia de migración pendiente de implementación."
+    ]
+  },
+  {
+    "id": "P04",
+    "h1": "Video corporativo para empresas en Lima",
+    "metadatos": {
+      "title": {
+        "valor": "Video corporativo · Rhino Audiovisuales",
+        "estado": "borrador_seguro",
+        "caracteres": 39
+      },
+      "h1": {
+        "valor": "Video corporativo para empresas en Lima",
+        "estado": "borrador_seguro",
+        "caracteres": 39
+      },
+      "description": {
+        "valor": "Consulta la producción de video corporativo en Lima. Explica el uso de tu proyecto y solicita a Rhino Audiovisuales una propuesta.",
+        "estado": "borrador_seguro",
+        "caracteres": 130
+      }
+    },
+    "intro": "Rhino ofrece video corporativo para presentar una empresa, explicar una actividad o comunicar un mensaje institucional. La pieza parte de un público y una idea principal.",
+    "image": "Fotograma de una pieza corporativa con autorización y rol de Rhino identificado.",
+    "sections": [
+      {
+        "title": "El mensaje que necesita tu audiencia",
+        "paragraphs": [
+          "Estos son motivos para encargar un video, no paquetes con prestaciones idénticas."
+        ],
+        "items": [
+          "Presentar la organización a clientes o colaboradores.",
+          "Explicar un proceso, una actividad o información de inducción.",
+          "Comunicar un aniversario o un mensaje interno."
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Información real, estructura clara",
+        "paragraphs": [
+          "Un video institucional combina el contenido que la empresa puede comunicar con una forma de presentarlo. Conviene distinguir datos, testimonios e imágenes de apoyo: cada recurso aporta información diferente. La persona que aprueba el contenido debe poder validar nombres, mensajes y uso de marca."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Formato y versiones según el uso",
+        "paragraphs": [
+          "Una presentación en un evento y una pieza para la web pueden requerir estructuras diferentes. El alcance se concreta con el canal, la duración orientativa, el material disponible y las versiones solicitadas. Al consultar con Rhino puedes plantear qué trabajo necesitas en guion, grabación, edición y versiones."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Ejemplo de una pieza corporativa",
+        "paragraphs": [
+          "Una muestra útil permite reconocer el objetivo del video y la contribución de la productora."
+        ],
+        "items": [
+          "[ESPACIO PARA PIEZA AUTORIZADA: objetivo, público y rol de Rhino.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Conversemos sobre tu mensaje",
+        "paragraphs": [
+          "Indica a quién va dirigido, qué necesita entender y cuándo se utilizará. Si además buscas retratos del equipo, puedes consultar fotografía corporativa como otro encargo."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P22",
+            "Fotos corporativas"
+          ]
+        ]
+      }
+    ],
+    "cta": "Plantear mi video corporativo",
+    "editorial_pending": [
+      "Operación: confirmar revisiones, formatos, entregables y plazos. No se utiliza Redinter como prueba hasta acreditar rol y permiso."
+    ]
+  },
+  {
+    "id": "P05",
+    "h1": "Cobertura audiovisual de eventos",
+    "metadatos": {
+      "title": {
+        "valor": "Cobertura audiovisual de eventos en Lima",
+        "estado": "borrador_seguro",
+        "caracteres": 40
+      },
+      "h1": {
+        "valor": "Cobertura audiovisual de eventos",
+        "estado": "borrador_seguro",
+        "caracteres": 32
+      },
+      "description": {
+        "valor": "Consulta cobertura audiovisual de eventos en Lima. Define fecha, lugar y necesidades de foto o video para solicitar una cotización.",
+        "estado": "borrador_seguro",
+        "caracteres": 131
+      }
+    },
+    "intro": "Rhino realiza cobertura en fotografía y video de eventos empresariales y sociales en Lima. Registra los momentos que necesitas conservar y el material con el que quieres comunicar el encuentro.",
+    "image": "Fotografía autorizada de una cobertura real, sin identificar asistentes sin permiso.",
+    "sections": [
+      {
+        "title": "Qué quieres conservar del evento",
+        "paragraphs": [
+          "Una conferencia puede necesitar registrar intervenciones; un lanzamiento, mostrar la presentación y su ambiente; una celebración, conservar momentos y personas. El programa y el uso posterior orientan la cobertura."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P10",
+            "Fotografía y video de bodas"
+          ]
+        ]
+      },
+      {
+        "title": "Fotografías, video resumen y registro completo",
+        "paragraphs": [
+          "Rhino ofrece fotografías, video resumen y registro completo, contratables por separado o combinados. Elige según lo que necesitas conservar y cómo utilizarás el material después del evento."
+        ],
+        "items": [
+          "Fotografías: imágenes de momentos, personas y espacios relevantes.",
+          "Video resumen: una selección editada que presenta el evento de forma breve.",
+          "Registro completo: conserva el contenido de las actividades o intervenciones acordadas, con necesidades de sonido y continuidad propias."
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "La cobertura tiene un alcance propio",
+        "paragraphs": [
+          "La filmación y la fotografía registran el evento. Organizarlo supone otras responsabilidades. Emitirlo en directo o incorporar tomas aéreas también requiere definir un encargo específico; no forma parte automática del registro."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P08",
+            "Organización de eventos"
+          ],
+          [
+            "P06",
+            "Streaming"
+          ],
+          [
+            "P14",
+            "Drone audiovisual"
+          ]
+        ]
+      },
+      {
+        "title": "Muestra de cobertura",
+        "paragraphs": [
+          "Compara imagen, sonido y selección de momentos con el tipo de evento que tienes previsto."
+        ],
+        "items": [
+          "[ESPACIO PARA MUESTRA AUTORIZADA: evento, tarea de Rhino y material entregado. Sin atribución de organización no acreditada.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Consulta por tu fecha",
+        "paragraphs": [
+          "Para empezar basta con fecha, lugar y tipo de evento. Indica si necesitas fotografías, un video resumen, registro completo o una combinación. Las actividades que se cubrirán, horas, edición, formatos y entrega se concretan en la propuesta."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      }
+    ],
+    "cta": "Consultar cobertura de mi evento",
+    "editorial_pending": [
+      "Operación: confirmar cantidades, selección, edición, formatos, plazos y derechos de uso por modalidad.",
+      "Operación: definir base, horas contratadas y opcionales. Dueño: aprobar las muestras de eventos que se mostrarán."
+    ]
+  },
+  {
+    "id": "P06",
+    "h1": "Streaming de eventos y producción de podcast",
+    "metadatos": {
+      "title": {
+        "valor": "Streaming y podcast · Rhino Audiovisuales",
+        "estado": "borrador_seguro",
+        "caracteres": 41
+      },
+      "h1": {
+        "valor": "Streaming de eventos y producción de podcast",
+        "estado": "borrador_seguro",
+        "caracteres": 44
+      },
+      "description": {
+        "valor": "Consulta streaming de eventos y producción de podcast en Lima. Describe tu emisión o episodio y solicita una propuesta a Rhino Audiovisuales.",
+        "estado": "borrador_seguro",
+        "caracteres": 141
+      }
+    },
+    "intro": "Rhino ofrece streaming de eventos y producción de podcast. El directo permite seguir una actividad a distancia; el podcast prepara episodios para escucharlos o verlos cuando se publiquen.",
+    "image": "Imagen real de una transmisión o grabación, identificando a qué modalidad corresponde.",
+    "sections": [
+      {
+        "title": "Streaming: tu evento para quienes están a distancia",
+        "paragraphs": [
+          "La transmisión en vivo conecta el desarrollo del evento con espectadores que no se encuentran en el recinto. Una conferencia, presentación o ceremonia plantea necesidades distintas de imagen y sonido. La conexión y las fuentes que se mostrarán forman parte de la evaluación previa."
+        ],
+        "items": [
+          "La emisión, la grabación de respaldo y una edición posterior son alcances diferentes.",
+          "Plataforma, pruebas y contingencia deben quedar definidos antes de confirmar el servicio."
+        ],
+        "pending": null,
+        "links": [
+          [
+            "P33",
+            "Consultar una transmisión"
+          ]
+        ]
+      },
+      {
+        "title": "Podcast: una conversación preparada para publicar",
+        "paragraphs": [
+          "Un episodio tiene un tema, participantes y una forma de presentarse. Decidir entre audio y video cambia la preparación; decidir entre registro y edición cambia el material de entrega. La grabación y las piezas derivadas se concretan según el encargo."
+        ],
+        "items": [
+          "[PENDIENTE: lugar de grabación y plataformas disponibles.]"
+        ],
+        "pending": null,
+        "links": [
+          [
+            "P33",
+            "Consultar producción de podcast"
+          ]
+        ]
+      },
+      {
+        "title": "Dos muestras para comparar dos servicios",
+        "paragraphs": [
+          "Una muestra de directo permite evaluar el tratamiento del evento; una muestra de podcast, el episodio y su edición. Compara cada ejemplo según el servicio que necesitas."
+        ],
+        "items": [
+          "[ESPACIO: muestra de streaming autorizada, con rol y alcance.]",
+          "[ESPACIO: muestra de episodio autorizada, con trabajo de Rhino identificado.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Empecemos por el formato",
+        "paragraphs": [
+          "Para streaming: fecha, lugar y actividad a transmitir. Para podcast: tema, participantes y si buscas audio, video o ambos. Puedes indicar lo que ya está resuelto y lo que necesitas evaluar."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      }
+    ],
+    "cta": "Consultar streaming o podcast",
+    "editorial_pending": [
+      "Operación: confirmar plataformas admitidas, audio, conexión, pruebas previas y plan de contingencia. No prometer continuidad sin esas condiciones.",
+      "Operación: confirmar lugar, modalidades, edición, número de revisiones y formatos. No se acredita un set propio de podcast.",
+      "Dueño: aportar una muestra autorizada de streaming y otra de podcast, identificando el alcance de cada encargo."
+    ]
+  },
+  {
+    "id": "P07",
+    "h1": "Catering corporativo en Lima",
+    "metadatos": {
+      "title": {
+        "valor": "Catering corporativo · Rhino Audiovisuales",
+        "estado": "borrador_seguro",
+        "caracteres": 42
+      },
+      "h1": {
+        "valor": "Catering corporativo en Lima",
+        "estado": "borrador_seguro",
+        "caracteres": 28
+      },
+      "description": {
+        "valor": "Consulta catering corporativo y coffee break en Lima. Comparte fecha, lugar y número de asistentes para solicitar una cotización.",
+        "estado": "borrador_seguro",
+        "caracteres": 129
+      }
+    },
+    "intro": "Rhino ofrece catering corporativo: coffee break, desayunos y almuerzos para reuniones y eventos de empresa. El formato se elige según el momento de la jornada, la atención que necesitas y los asistentes.",
+    "image": "Fotografía autorizada de un montaje de catering real; no usar stock como prueba de un servicio propio.",
+    "sections": [
+      {
+        "title": "Coffee break, desayuno o almuerzo",
+        "paragraphs": [
+          "Un coffee break acompaña una pausa entre actividades. Un desayuno reúne a los asistentes al comenzar la jornada; un almuerzo necesita su propio tiempo de atención. Elige el formato que encaje con el programa de tu reunión o evento."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Lo que conviene comparar en la propuesta",
+        "paragraphs": [
+          "Para contratar la atención, define qué se sirve, cómo se atiende y cuántas personas participarán. Estos puntos permiten comparar el alcance del servicio."
+        ],
+        "items": [
+          "Composición del menú y cantidades acordadas.",
+          "Horario y duración de la atención.",
+          "Montaje, utensilios, mobiliario y personal que correspondan al servicio.",
+          "Condiciones para confirmar asistentes o modificar el encargo."
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Preferencias y restricciones alimentarias",
+        "paragraphs": [
+          "Las preferencias y restricciones deben comunicarse antes de cerrar el menú. Consulta la preparación y los ingredientes antes de elegir una alternativa para una restricción alimentaria."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Una muestra del servicio real",
+        "paragraphs": [
+          "En una muestra de catering puedes valorar la presentación de los alimentos y la disposición de la atención."
+        ],
+        "items": [
+          "[ESPACIO PARA MONTAJE AUTORIZADO: formato, alimentos y alcance de Rhino. Proveedor y responsabilidad pendientes de confirmar.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Catering para tu jornada",
+        "paragraphs": [
+          "Comparte fecha, lugar, asistentes aproximados y si necesitas coffee break, desayuno o almuerzo. Indica con cuánta anticipación estás organizando el servicio para consultar disponibilidad y condiciones de reserva. También puedes consultar cobertura o streaming para el mismo evento."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P05",
+            "Cobertura del evento"
+          ],
+          [
+            "P06",
+            "Streaming del evento"
+          ]
+        ]
+      }
+    ],
+    "cta": "Consultar catering para mi evento",
+    "editorial_pending": [
+      "Formatos confirmados: coffee break, desayuno y almuerzo. Faltan menús, opciones e incluidos de cada formato.",
+      "Operación: validar ingredientes, alérgenos y posibilidades de atención. No prometer un servicio libre de alérgenos sin respaldo.",
+      "Dueño/operación: confirmar proveedores, capacidad, mínimos, personal y condiciones; revisión competente de requisitos aplicables.",
+      "Operación: confirmar anticipación necesaria para reservar y plazos para cambios en asistentes o menú."
+    ]
+  },
+  {
+    "id": "P08",
+    "h1": "Organización de eventos corporativos",
+    "metadatos": {
+      "title": {
+        "valor": "Organización de eventos corporativos en Lima",
+        "estado": "borrador_seguro",
+        "caracteres": 44
+      },
+      "h1": {
+        "valor": "Organización de eventos corporativos",
+        "estado": "borrador_seguro",
+        "caracteres": 36
+      },
+      "description": {
+        "valor": "Consulta organización de eventos corporativos en Lima. Define objetivos y necesidades para solicitar una propuesta a Rhino Audiovisuales.",
+        "estado": "borrador_seguro",
+        "caracteres": 137
+      }
+    },
+    "intro": "Rhino ofrece organización de eventos. El encargo parte de las tareas que necesitas resolver y de lo que tu empresa ya tiene preparado.",
+    "image": "Fotografía real de un evento con autorización y responsabilidad de Rhino acreditada.",
+    "sections": [
+      {
+        "title": "Organizar y registrar son encargos diferentes",
+        "paragraphs": [
+          "La organización prepara y coordina el encuentro. La cobertura conserva lo que sucede mediante fotografía y video. Si necesitas ambos servicios, define las tareas de organización y de registro que quieres encargar."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P05",
+            "Cobertura audiovisual"
+          ]
+        ]
+      },
+      {
+        "title": "Qué responsabilidades necesita tu evento",
+        "paragraphs": [
+          "Estas son áreas para definir el encargo; no una lista de incluidos automáticos."
+        ],
+        "items": [
+          "Programa: secuencia de actividades, horarios y participantes.",
+          "Coordinación: relación con el recinto y proveedores.",
+          "Logística: accesos, montaje y condiciones de operación.",
+          "Ejecución: responsables y coordinación durante la jornada."
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Servicios que pueden intervenir",
+        "paragraphs": [
+          "Sonido, pantallas, conducción, alimentos y registro audiovisual resuelven necesidades distintas. Indica las contrataciones ya resueltas para delimitar las responsabilidades que deseas encargar a Rhino."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P07",
+            "Catering"
+          ],
+          [
+            "P11",
+            "Pantallas LED"
+          ],
+          [
+            "P16",
+            "Sonido y proyectores"
+          ],
+          [
+            "P18",
+            "Maestro de ceremonias"
+          ],
+          [
+            "P06",
+            "Streaming"
+          ]
+        ]
+      },
+      {
+        "title": "Experiencia que permita valorar el alcance",
+        "paragraphs": [
+          "En un ejemplo de organización interesa conocer las tareas realizadas y la responsabilidad del proveedor durante el encuentro."
+        ],
+        "items": [
+          "[ESPACIO PARA CASO AUTORIZADO: tareas contratadas, responsabilidades de Rhino y evidencia del trabajo.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Revisemos tu evento",
+        "paragraphs": [
+          "Cuéntanos el objetivo, la fecha aproximada y qué está resuelto: local, programa o proveedores. Con ese contexto puede delimitarse lo que falta; no necesitas tener un plan completo para consultar."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      }
+    ],
+    "cta": "Revisar la organización de mi evento",
+    "editorial_pending": [
+      "Dueño: confirmar responsabilidad contractual, tareas y límites. No afirmar un contrato único ni un equipo único.",
+      "Operación: confirmar contrataciones, logística, montaje y opcionales; no atribuir organización de casos sin evidencia."
+    ]
+  },
+  {
+    "id": "P09",
+    "h1": "Estudio fotográfico en Lima",
+    "metadatos": {
+      "title": {
+        "valor": "Estudio fotográfico · Rhino Audiovisuales",
+        "estado": "borrador_seguro",
+        "caracteres": 41
+      },
+      "h1": {
+        "valor": "Estudio fotográfico en Lima",
+        "estado": "borrador_seguro",
+        "caracteres": 27
+      },
+      "description": {
+        "valor": "Consulta sesiones en el estudio fotográfico de Rhino Audiovisuales en Lima. Indica el tipo de sesión y consulta las modalidades disponibles.",
+        "estado": "borrador_seguro",
+        "caracteres": 140
+      }
+    },
+    "intro": "Rhino cuenta con estudio fotográfico propio. Para elegir una sesión, el punto de partida es qué quieres fotografiar y para qué utilizarás las imágenes.",
+    "image": "Fotografía real del estudio y del área disponible para la modalidad ofrecida.",
+    "sections": [
+      {
+        "title": "Una sesión según el sujeto y su uso",
+        "paragraphs": [
+          "Rhino ofrece sesiones fotográficas y alquiler del estudio a terceros. Fotografiar una persona, una serie de productos o un equipo exige preparaciones distintas. Si necesitas alquilar el espacio, indica el trabajo previsto, la fecha y los recursos que necesitas."
+        ],
+        "items": [
+          "[PENDIENTE: ratificar las sesiones personales, familiares, artísticas y de retrato del sitio anterior; no son modalidades confirmadas por este texto.]"
+        ],
+        "pending": null,
+        "links": [
+          [
+            "P21",
+            "Fotografía de productos"
+          ],
+          [
+            "P22",
+            "Retratos corporativos"
+          ]
+        ]
+      },
+      {
+        "title": "Preparación antes de la sesión",
+        "paragraphs": [
+          "Las referencias visuales ayudan a acordar fondo, encuadre y estilo. Para personas, importa la preparación de vestuario y horarios; para productos, el estado de las piezas, sus variantes y accesorios. Los recursos incluidos y la preparación a cargo de cada parte deben quedar claros."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Conoce el espacio",
+        "paragraphs": [
+          "El espacio y una muestra de sesión ayudan a valorar si el estudio responde al trabajo que necesitas."
+        ],
+        "items": [
+          "[ESPACIO PARA FOTOGRAFÍA REAL DEL ESTUDIO Y UNA MUESTRA DE SESIÓN AUTORIZADA.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Atención y visita",
+        "paragraphs": [
+          "Antes de acudir, consulta la ubicación y disponibilidad para tu sesión. [PENDIENTE: dirección o distrito publicable, horario, atención con cita e indicaciones de acceso.]"
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Consulta una sesión",
+        "paragraphs": [
+          "Indica qué quieres fotografiar, cuántas personas o productos participarían y la fecha que prefieres. Selección, retoque y material de entrega se precisan según la modalidad."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      }
+    ],
+    "cta": "Consultar una sesión en estudio",
+    "editorial_pending": [
+      "Alquiler a terceros confirmado por el dueño. Precisar condiciones y modalidades de sesión; las modalidades personales/familiares/artísticas del legado no se enumeraron en la pregunta y siguen pendientes de ratificación específica.",
+      "Dueño: dirección autorizada para publicar, atención presencial, horarios, accesibilidad e instrucciones de llegada.",
+      "Operación: confirmar fondos, recursos, preparación, selección, retoque y entrega; aportar muestras reales con permiso."
+    ]
+  },
+  {
+    "id": "P10",
+    "h1": "Fotografía y video de bodas en Lima",
+    "metadatos": {
+      "title": {
+        "valor": "Fotografía y video de bodas en Lima",
+        "estado": "borrador_seguro",
+        "caracteres": 35
+      },
+      "h1": {
+        "valor": "Fotografía y video de bodas en Lima",
+        "estado": "borrador_seguro",
+        "caracteres": 35
+      },
+      "description": {
+        "valor": "Consulta fotografía y video de bodas en Lima. Comparte fecha y necesidades de cobertura para solicitar una propuesta a Rhino Audiovisuales.",
+        "estado": "borrador_seguro",
+        "caracteres": 139
+      }
+    },
+    "intro": "Rhino ofrece fotografía y video de bodas en Lima. Conserva el desarrollo de tu celebración y los momentos que importan a la pareja con una cobertura cuyo alcance se define según el programa.",
+    "image": "Imagen de una boda real con permiso de las personas retratadas.",
+    "sections": [
+      {
+        "title": "La historia de tu celebración",
+        "paragraphs": [
+          "Ceremonia, recepción y preparativos son momentos con ritmos y ubicaciones diferentes. Identificarlos ayuda a decidir qué registrar, sin asumir que todos estén incluidos ni que se puedan cubrir actividades simultáneas."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Fotografías y video permiten recuerdos distintos",
+        "paragraphs": [
+          "Una serie fotográfica reúne instantes para revisar y compartir. Un video incorpora movimiento, sonido y una estructura de edición. La combinación, las horas y los entregables dependen de la modalidad acordada."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Una muestra antes de decidir",
+        "paragraphs": [
+          "Observa el estilo de las imágenes y cómo se tratan los momentos y las personas de una celebración."
+        ],
+        "items": [
+          "[ESPACIO PARA GALERÍA O VIDEO AUTORIZADO. Identificar la cobertura y el trabajo de Rhino.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Entrega y uso del material",
+        "paragraphs": [
+          "La selección, edición, formatos y plazos deben constar en la propuesta. El permiso para mostrar imágenes en el portafolio se trata por separado del trabajo contratado."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Consulta tu fecha",
+        "paragraphs": [
+          "Comparte fecha, lugares y horario aproximado. Para quinceañeros o cumpleaños, puedes consultar cobertura social desde contacto; cada celebración mantiene su propio alcance."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P05",
+            "Cobertura de otros eventos"
+          ]
+        ]
+      }
+    ],
+    "cta": "Consultar mi fecha de boda",
+    "editorial_pending": [
+      "Operación: confirmar paquetes, horas, personal, fotografías, piezas de video y condiciones; no asignar cantidades sin aprobación.",
+      "Dueño: muestras autorizadas y condiciones de uso; operación: formatos y plazos."
+    ]
+  },
+  {
+    "id": "P11",
+    "h1": "Alquiler de pantallas LED para eventos",
+    "metadatos": {
+      "title": {
+        "valor": "Alquiler de pantallas LED en Lima",
+        "estado": "borrador_seguro",
+        "caracteres": 33
+      },
+      "h1": {
+        "valor": "Alquiler de pantallas LED para eventos",
+        "estado": "borrador_seguro",
+        "caracteres": 38
+      },
+      "description": {
+        "valor": "Consulta alquiler de pantallas LED para eventos en Lima. Indica espacio, fecha y necesidades de visualización para solicitar una cotización.",
+        "estado": "borrador_seguro",
+        "caracteres": 140
+      }
+    },
+    "intro": "Rhino ofrece alquiler de pantallas LED. El recinto, la distancia del público y el contenido permiten evaluar la configuración adecuada.",
+    "image": "Fotografía de una pantalla utilizada en un evento, con permiso y especificaciones confirmadas.",
+    "sections": [
+      {
+        "title": "La pantalla responde al contenido y al espacio",
+        "paragraphs": [
+          "Presentaciones, videos y señal en vivo tienen exigencias diferentes de lectura. Una pantalla visible desde lejos no se configura únicamente por su tamaño: también importan la distribución del público, la luz y las condiciones del lugar."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Qué comparar en la configuración",
+        "paragraphs": [
+          "Consulta con Rhino la solución disponible para tu recinto; estos datos definen el alcance del alquiler."
+        ],
+        "items": [
+          "Medidas y características de la pantalla propuesta.",
+          "Uso interior o exterior realmente admitido.",
+          "Estructura, ubicación, alimentación eléctrica y conexiones.",
+          "Horario de instalación, operación y retiro."
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Alquiler, montaje y operación",
+        "paragraphs": [
+          "Al consultar el alquiler, define si también necesitas transporte, montaje y asistencia durante el evento. Son tareas con alcance propio. [PENDIENTE: confirmar incluidos y opcionales.]"
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Una instalación real como referencia",
+        "paragraphs": [
+          "La muestra permite entender dimensiones, contexto y uso del equipo."
+        ],
+        "items": [
+          "[ESPACIO PARA MONTAJE AUTORIZADO: medidas y características verificadas; indicar proveedor cuando corresponda.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Evaluemos tu recinto",
+        "paragraphs": [
+          "Envía fecha, lugar, asistentes aproximados y qué contenido se mostrará. Una foto o plano del espacio ayuda a revisar la configuración."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P16",
+            "Sonido y proyección"
+          ],
+          [
+            "P06",
+            "Streaming"
+          ]
+        ]
+      }
+    ],
+    "cta": "Evaluar una pantalla para mi evento",
+    "editorial_pending": [
+      "Operación: confirmar inventario propio o provisto, medidas, pitch y condiciones de uso interior/exterior.",
+      "Operación: requisitos del recinto, traslado, montaje, pruebas, soporte y desmontaje."
+    ]
+  },
+  {
+    "id": "P12",
+    "h1": "Producción de spots publicitarios",
+    "metadatos": {
+      "title": {
+        "valor": "Producción de spots publicitarios en Lima",
+        "estado": "borrador_seguro",
+        "caracteres": 41
+      },
+      "h1": {
+        "valor": "Producción de spots publicitarios",
+        "estado": "borrador_seguro",
+        "caracteres": 33
+      },
+      "description": {
+        "valor": "Consulta producción de spots publicitarios en Lima. Define mensaje y canales de uso para solicitar una propuesta a Rhino Audiovisuales.",
+        "estado": "borrador_seguro",
+        "caracteres": 135
+      }
+    },
+    "intro": "Rhino ofrece producción de spots publicitarios y comerciales. Una pieza de campaña parte del mensaje que debe recordar el público y del canal donde se utilizará.",
+    "image": "Fotograma publicitario autorizado y atribuido al trabajo real de Rhino.",
+    "sections": [
+      {
+        "title": "Una campaña, un mensaje reconocible",
+        "paragraphs": [
+          "Una presentación de producto, una oferta o un posicionamiento de marca plantea decisiones distintas de tono y narración. El spot necesita concentrar el mensaje; no sustituye la planificación ni la inversión en difusión."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Guion y producción con alcance definido",
+        "paragraphs": [
+          "El proyecto puede partir de una idea o de materiales existentes. Indica qué tienes resuelto y qué necesitas contratar en concepto, guion, grabación y edición. Una referencia visual ayuda a explicar el tono y el tratamiento que buscas."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Versiones, revisiones y derechos",
+        "paragraphs": [
+          "Los canales de uso determinan las adaptaciones que se necesitan. Música, imágenes, personas y marcas requieren usos autorizados. Versiones y revisiones deben quedar identificadas antes de cerrar la pieza."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Muestra de una pieza publicitaria",
+        "paragraphs": [
+          "En una pieza publicitaria puedes valorar la claridad del mensaje, el tratamiento visual y cómo se presenta la marca."
+        ],
+        "items": [
+          "[ESPACIO PARA SPOT AUTORIZADO.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Plantea la pieza de tu campaña",
+        "paragraphs": [
+          "Comparte mensaje, público y canal previsto. Si ya tienes guion, imágenes o una fecha de publicación, inclúyelos para evaluar el trabajo."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      }
+    ],
+    "cta": "Evaluar la pieza de mi campaña",
+    "editorial_pending": [
+      "Operación: confirmar responsabilidades creativas, producción, participantes, locaciones y alcance.",
+      "Dueño/operación: licencias, canales, revisiones, versiones y plazos. No usar el caso Adidas como spot sin acreditar su finalidad."
+    ]
+  },
+  {
+    "id": "P13",
+    "h1": "Animación para empresas y motion graphics",
+    "metadatos": {
+      "title": {
+        "valor": "Animación para empresas · Rhino Audiovisuales",
+        "estado": "borrador_seguro",
+        "caracteres": 45
+      },
+      "h1": {
+        "valor": "Animación para empresas y motion graphics",
+        "estado": "borrador_seguro",
+        "caracteres": 41
+      },
+      "description": {
+        "valor": "Consulta animación para empresas y motion graphics. Describe tu mensaje y las piezas que necesitas para solicitar una propuesta.",
+        "estado": "borrador_seguro",
+        "caracteres": 128
+      }
+    },
+    "intro": "Rhino ofrece animación y motion graphics para explicar ideas, presentar información o dar movimiento a elementos gráficos. Consulta el tratamiento visual que corresponde a tu mensaje. [PENDIENTE: técnica disponible y muestra real del servicio.]",
+    "image": "Fotograma de una animación propia o autorizada, con técnica y autoría identificadas.",
+    "sections": [
+      {
+        "title": "Qué necesitas explicar",
+        "paragraphs": [
+          "Un proceso, un conjunto de datos y una presentación de producto no se construyen de la misma manera. La prioridad es identificar qué debe entender el espectador y qué información necesita ver, sin añadir movimiento que distraiga del mensaje."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "La técnica se demuestra con trabajo real",
+        "paragraphs": [
+          "La muestra permite valorar el tipo de animación, el tratamiento de textos y la relación entre imagen y sonido. [PENDIENTE: identificar las técnicas y recursos realmente disponibles; no afirmar 2D, 3D o personajes sin respaldo.]"
+        ],
+        "items": [
+          "[ESPACIO PARA PIEZA AUTORIZADA: técnica, trabajo de Rhino y alcance acreditados.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Del contenido a la pieza",
+        "paragraphs": [
+          "Textos, datos, identidad visual y recursos existentes son la base del encargo. La revisión del contenido y del desarrollo visual cumple funciones diferentes. Las etapas contratadas, licencias y revisiones deben quedar descritas en la propuesta."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Entrega según el uso",
+        "paragraphs": [
+          "Duración, formato y versiones dependen del canal donde se mostrará la pieza. Los archivos de trabajo y sus derechos de uso deben aclararse cuando formen parte de la solicitud."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Cuéntanos qué quieres explicar",
+        "paragraphs": [
+          "Puedes empezar con una idea, un texto o una presentación existente. Indica el público y el lugar de uso para evaluar qué tratamiento visual corresponde."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      }
+    ],
+    "cta": "Consultar una pieza animada",
+    "editorial_pending": [
+      "Operación: acreditar técnicas disponibles; no prometer producción 2D o 3D sin muestras y alcance aprobados.",
+      "Operación: confirmar proceso, revisiones, licencias, duración y formatos; aportar piezas autorizadas."
+    ]
+  },
+  {
+    "id": "P14",
+    "h1": "Servicio de drone audiovisual",
+    "metadatos": {
+      "title": {
+        "valor": "Servicio de drone audiovisual en Lima",
+        "estado": "borrador_seguro",
+        "caracteres": 37
+      },
+      "h1": {
+        "valor": "Servicio de drone audiovisual",
+        "estado": "borrador_seguro",
+        "caracteres": 29
+      },
+      "description": {
+        "valor": "Consulta foto y video con drone en Lima. Describe el uso, ubicación y fecha de tu proyecto para evaluar una propuesta de registro aéreo.",
+        "estado": "borrador_seguro",
+        "caracteres": 136
+      }
+    },
+    "intro": "Rhino ofrece servicio de drone audiovisual para obtener imágenes aéreas de un evento, una empresa o un inmueble. La ubicación y el objetivo de las tomas orientan la evaluación del encargo.",
+    "image": "Toma aérea autorizada con lugar y condiciones de uso documentados.",
+    "sections": [
+      {
+        "title": "Qué aporta una perspectiva aérea",
+        "paragraphs": [
+          "Una toma aérea permite mostrar un entorno, la relación entre espacios o la dimensión de una locación. Puede complementar una pieza de evento, empresa o inmueble con una vista de conjunto."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Fotografía, video y uso del material",
+        "paragraphs": [
+          "Las fotografías y las secuencias en movimiento responden a necesidades distintas. También debe definirse si se necesita solo registro o material integrado en una pieza editada."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P15",
+            "Fotografía y video inmobiliario"
+          ],
+          [
+            "P05",
+            "Cobertura de eventos"
+          ]
+        ]
+      },
+      {
+        "title": "Primero se evalúa la ubicación",
+        "paragraphs": [
+          "Accesos, entorno, restricciones y condiciones de operación deben revisarse antes de confirmar. La ubicación y la fecha permiten revisar la viabilidad de las tomas antes de contratar."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Muestra audiovisual",
+        "paragraphs": [
+          "Una toma permite valorar el encuadre y la forma de mostrar el espacio. Cada ubicación requiere su propia evaluación."
+        ],
+        "items": [
+          "[ESPACIO PARA FOTOGRAFÍA O VIDEO AÉREO AUTORIZADO.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Evaluemos tus tomas",
+        "paragraphs": [
+          "Comparte ubicación, fecha orientativa y qué necesitas mostrar. El operador, los requisitos aplicables y las condiciones de reprogramación se verifican para el encargo."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      }
+    ],
+    "cta": "Evaluar mi ubicación y tomas",
+    "editorial_pending": [
+      "Operación y revisor competente: operador, viabilidad, autorizaciones y condiciones. No presentar la consulta como vuelo confirmado.",
+      "Operación: confirmar muestras, formatos, selección, edición, entregas y condiciones de reprogramación.",
+      "El servicio descrito es audiovisual; no acredita una inspección técnica certificada."
+    ]
+  },
+  {
+    "id": "P15",
+    "h1": "Fotografía y video inmobiliario",
+    "metadatos": {
+      "title": {
+        "valor": "Fotografía inmobiliaria · Rhino Audiovisuales",
+        "estado": "borrador_seguro",
+        "caracteres": 45
+      },
+      "h1": {
+        "valor": "Fotografía y video inmobiliario",
+        "estado": "borrador_seguro",
+        "caracteres": 31
+      },
+      "description": {
+        "valor": "Consulta fotografía y video inmobiliario en Lima. Describe el inmueble y las piezas que necesitas para solicitar una propuesta.",
+        "estado": "borrador_seguro",
+        "caracteres": 127
+      }
+    },
+    "intro": "Rhino ofrece fotografía y video inmobiliario para presentar espacios y sus características. El uso del material orienta qué necesita ver quien evalúa una propiedad.",
+    "image": "Fotografía real de un inmueble con autorización del titular y permiso de uso.",
+    "sections": [
+      {
+        "title": "Mostrar el inmueble con información útil",
+        "paragraphs": [
+          "Las vistas generales ayudan a entender ambientes y distribución; los detalles muestran características relevantes. Un recorrido en video añade continuidad entre espacios. Son decisiones de contenido, no cantidades de entrega predeterminadas."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Preparar los espacios",
+        "paragraphs": [
+          "El estado del inmueble influye en lo que puede mostrarse. Orden, acceso a ambientes, iluminación disponible y objetos que no deben aparecer se revisan antes del registro. La preparación de la propiedad y la del equipo deben tener responsables definidos."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Foto, video y opciones por evaluar",
+        "paragraphs": [
+          "Puedes plantear fotografías, recorrido en video o ambos. Un tour virtual 360 y las tomas aéreas requieren confirmar capacidad y condiciones específicas. En 360 también importan alojamiento, duración del acceso y mantenimiento; no están incluidos por defecto."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P14",
+            "Registro aéreo audiovisual"
+          ]
+        ]
+      },
+      {
+        "title": "Ejemplo de presentación inmobiliaria",
+        "paragraphs": [
+          "Compara cómo se entienden los ambientes, la relación entre espacios y los detalles del inmueble."
+        ],
+        "items": [
+          "[ESPACIO PARA SERIE O VIDEO AUTORIZADO: modalidad y contribución de Rhino.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Consulta por tu inmueble",
+        "paragraphs": [
+          "Indica ubicación, tipo de propiedad, ambientes y fecha disponible para el registro. Añade dónde se publicará el material para revisar formatos y uso."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      }
+    ],
+    "cta": "Consultar material para mi inmueble",
+    "editorial_pending": [
+      "Operación: confirmar modalidades, ejemplos, selección, retoque, formatos y plazos.",
+      "Operación: acreditar capacidad 360 y definir alojamiento, duración del acceso y mantenimiento; evaluar por separado las tomas con drone."
+    ]
+  },
+  {
+    "id": "P16",
+    "h1": "Alquiler de proyector y sonido para eventos",
+    "metadatos": {
+      "title": {
+        "valor": "Alquiler de proyector y sonido en Lima",
+        "estado": "borrador_seguro",
+        "caracteres": 38
+      },
+      "h1": {
+        "valor": "Alquiler de proyector y sonido para eventos",
+        "estado": "borrador_seguro",
+        "caracteres": 43
+      },
+      "description": {
+        "valor": "Consulta alquiler de proyector y sonido para eventos en Lima. Indica espacio, fecha y necesidades técnicas para solicitar una cotización.",
+        "estado": "borrador_seguro",
+        "caracteres": 137
+      }
+    },
+    "intro": "Rhino ofrece alquiler de sonido y proyectores. Mostrar una presentación y amplificar una intervención requieren soluciones distintas según el espacio.",
+    "image": "Fotografía de los equipos realmente disponibles, con identificación del proveedor cuando corresponda.",
+    "sections": [
+      {
+        "title": "Proyección: que el contenido pueda leerse",
+        "paragraphs": [
+          "La luz del recinto, el tamaño de la imagen y el equipo de origen condicionan una presentación. La propuesta debe confirmar proyector, conexiones y superficie de proyección cuando corresponda; no basta con elegir por nombre de equipo."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Sonido: qué se escuchará y en qué espacio",
+        "paragraphs": [
+          "Intervenciones habladas, reproducción de música y otras actividades requieren configuraciones distintas. Asistentes, distribución y entorno abierto o cerrado ayudan a evaluar la solución disponible."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Montaje, pruebas y asistencia",
+        "paragraphs": [
+          "Transporte, instalación, comprobación y atención durante el evento deben quedar delimitados. El alquiler no implica automáticamente un técnico presente durante toda la jornada."
+        ],
+        "items": [
+          "[ESPACIO PARA EQUIPO O MONTAJE REAL: ficha de configuración disponible y proveedor si corresponde.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Consulta una configuración",
+        "paragraphs": [
+          "Comparte fecha, lugar, público aproximado y contenido a reproducir. Indica también los equipos desde los que se enviará imagen o sonido."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P11",
+            "Pantallas LED"
+          ],
+          [
+            "P18",
+            "Maestro de ceremonias"
+          ]
+        ]
+      }
+    ],
+    "cta": "Consultar sonido y proyección",
+    "editorial_pending": [
+      "Operación: catálogo, luminosidad, conexiones y elementos incluidos; no asignar especificaciones sin comprobar inventario.",
+      "Operación: equipos, micrófonos, cobertura adecuada y configuración disponible.",
+      "Operación: traslado, montaje, pruebas, asistencia y duración del alquiler."
+    ]
+  },
+  {
+    "id": "P17",
+    "h1": "Activaciones BTL para marcas",
+    "metadatos": {
+      "title": {
+        "valor": "Activaciones BTL · Rhino Audiovisuales",
+        "estado": "borrador_seguro",
+        "caracteres": 38
+      },
+      "h1": {
+        "valor": "Activaciones BTL para marcas",
+        "estado": "borrador_seguro",
+        "caracteres": 28
+      },
+      "description": {
+        "valor": "Consulta activaciones BTL en Lima. Comparte objetivos y necesidades de ejecución para solicitar una propuesta a Rhino Audiovisuales.",
+        "estado": "borrador_seguro",
+        "caracteres": 132
+      }
+    },
+    "intro": "Rhino ofrece activaciones BTL. Define la interacción que buscas con el público y la parte del trabajo que necesitas contratar.",
+    "image": "Imagen de una activación con permiso y tareas de Rhino acreditadas.",
+    "sections": [
+      {
+        "title": "Del objetivo a la interacción",
+        "paragraphs": [
+          "Una activación busca una participación concreta: conocer una propuesta, probar una dinámica o acercarse a la marca. El formato depende del lugar y del público."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Concepto, producción y operación",
+        "paragraphs": [
+          "Definir la idea, producir materiales y operar la acción son responsabilidades diferentes. Delimita las tareas que quieres encargar a Rhino, las que asumirá la marca y las de otros proveedores."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Espacio, materiales y registro",
+        "paragraphs": [
+          "Una acción en un recinto comercial y una actividad en un espacio abierto tienen condiciones diferentes. Accesos, autorizaciones y montaje forman parte de la preparación. La fotografía o el video de la activación se acuerdan como alcance específico."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P05",
+            "Cobertura audiovisual"
+          ]
+        ]
+      },
+      {
+        "title": "Experiencia atribuible",
+        "paragraphs": [
+          "Un ejemplo de activación permite valorar la interacción con el público, los materiales y la presentación de la marca."
+        ],
+        "items": [
+          "[ESPACIO PARA ACTIVACIÓN AUTORIZADA: encargo, tareas y materiales. Muestras del brochure sujetas a vigencia y permiso.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Revisemos tu activación",
+        "paragraphs": [
+          "Indica objetivo, lugar, fechas y público. Si ya existe una idea o materiales de marca, pueden servir como punto de partida."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      }
+    ],
+    "cta": "Revisar mi activación BTL",
+    "editorial_pending": [
+      "Dueño: confirmar roles, formatos ofrecidos, recursos y responsabilidades; no atribuir a Rhino toda la acción sin evidencia.",
+      "Operación: capacidades y condiciones; dueño: muestras vigentes y permisos, incluidas las procedentes del brochure."
+    ]
+  },
+  {
+    "id": "P18",
+    "h1": "Maestro de ceremonias para eventos en Lima",
+    "metadatos": {
+      "title": {
+        "valor": "Maestro de ceremonias para eventos en Lima",
+        "estado": "borrador_seguro",
+        "caracteres": 42
+      },
+      "h1": {
+        "valor": "Maestro de ceremonias para eventos en Lima",
+        "estado": "borrador_seguro",
+        "caracteres": 42
+      },
+      "description": {
+        "valor": "Consulta un maestro de ceremonias para eventos en Lima. Comparte formato, fecha y necesidades de conducción para solicitar una propuesta.",
+        "estado": "borrador_seguro",
+        "caracteres": 137
+      }
+    },
+    "intro": "Rhino ofrece servicio de maestro de ceremonias. El tono, la audiencia y el programa orientan la elección de un conductor; su perfil y disponibilidad se confirman para el encargo.",
+    "image": "Retrato y muestra del conductor propuesto, con autorización.",
+    "sections": [
+      {
+        "title": "Perfil y muestra del conductor",
+        "paragraphs": [
+          "La conducción la realiza una persona concreta. Antes de decidir conviene conocer su perfil y una muestra pertinente al formato del evento."
+        ],
+        "items": [
+          "[PENDIENTE: nombre, perfil verificable, fotografía y muestra autorizada del conductor propuesto. No se anuncia una persona todavía.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "El tono que necesita tu programa",
+        "paragraphs": [
+          "Una ceremonia formal, una presentación y un encuentro de equipo requieren formas distintas de relacionarse con el público. Idioma, protocolo y experiencia deben confirmarse para el perfil que se proponga."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Preparación y coordinación",
+        "paragraphs": [
+          "Orden de intervenciones, nombres, cargos, pronunciaciones y mensajes de marca ayudan a preparar el guion. Ensayos, coordinación previa y cambios admitidos deben estar definidos; no se dan por incluidos."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Disponibilidad y alcance",
+        "paragraphs": [
+          "Fecha, duración, lugar y preparación requerida influyen en la propuesta. Compártelos para consultar disponibilidad y definir el alcance de la conducción."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Consulta por tu evento",
+        "paragraphs": [
+          "Comparte fecha, lugar y programa aproximado. Si todavía no tienes el programa cerrado, indica el tipo de encuentro y el tono que buscas."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      }
+    ],
+    "cta": "Consultar conductor para mi evento",
+    "editorial_pending": [
+      "Operación: confirmar preparación incluida, ensayo, coordinación y cambios admitidos.",
+      "Dueño: nombre, experiencia acreditada, muestra autorizada, disponibilidad y condiciones. No se incorpora una tarifa inventada."
+    ]
+  },
+  {
+    "id": "P19",
+    "h1": "Show infantil navideño en Lima",
+    "metadatos": {
+      "title": {
+        "valor": "Show Infantil Navideño | Rhino Audiovisuales",
+        "estado": "candidato_legado_sin_ano",
+        "caracteres": 44
+      },
+      "h1": {
+        "valor": "Show infantil navideño en Lima",
+        "estado": "borrador_seguro",
+        "caracteres": 30
+      },
+      "description": {
+        "valor": "Consulta el show infantil navideño de Rhino Audiovisuales en Lima. Indica fecha, lugar y público para solicitar información y una cotización.",
+        "estado": "borrador_seguro",
+        "caracteres": 141
+      }
+    },
+    "intro": "Rhino ofrece show infantil navideño en Lima para celebraciones con niños y familias. Cuéntanos las edades del público y el tipo de encuentro para consultar el programa y la disponibilidad para tu fecha.",
+    "image": "Imagen autorizada de un show real; personajes y elementos sujetos a oferta confirmada.",
+    "sections": [
+      {
+        "title": "Una celebración pensada para su público",
+        "paragraphs": [
+          "El contenido infantil debe poder comprenderse y disfrutarse según la edad de los asistentes. Una celebración familiar y una actividad empresarial con niños pueden necesitar duración y dinámica diferentes. [PENDIENTE: programa vigente adecuado al público indicado.]"
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Contenido del show y participación",
+        "paragraphs": [
+          "Para elegir el show necesitas conocer su programa, cómo participa el público y los materiales de la presentación."
+        ],
+        "items": [
+          "[PENDIENTE: programa real, actividades, personajes si corresponden, edades, duración y aforo. Las referencias históricas a Santa, elfos y actividades no acreditan la oferta actual.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Qué comprende la presentación",
+        "paragraphs": [
+          "Artistas, sonido, iluminación, materiales y preparación del espacio deben identificarse en el alcance confirmado. [PENDIENTE: confirmar artistas, equipos, materiales y preparación incluidos.] La disponibilidad requiere confirmación para la fecha y el lugar."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Una muestra del show real",
+        "paragraphs": [
+          "Una muestra de la presentación ayuda a valorar el ritmo, la dinámica y la participación de los niños."
+        ],
+        "items": [
+          "[ESPACIO PARA MUESTRA AUTORIZADA DEL SHOW. Falta documentar el programa concreto que se presentará y sus permisos de imagen.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Consulta la celebración",
+        "paragraphs": [
+          "Indica fecha, distrito, edades y asistentes aproximados. La consulta permite evaluar el encargo; no confirma una reserva ni cupos disponibles."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P20",
+            "Celebración de fin de año para empresas"
+          ]
+        ]
+      }
+    ],
+    "cta": "Consultar disponibilidad del show",
+    "editorial_pending": [
+      "Operación: contenido, edades, duración, aforo, personal e incluidos reales; editor: cotejo de contenido heredado de show.html.",
+      "Oferta de temporada confirmada por el dueño. Concretar disponibilidad para cada fecha, requisitos, anticipación y condiciones de reserva."
+    ]
+  },
+  {
+    "id": "P20",
+    "h1": "Fiesta de fin de año para empresas",
+    "metadatos": {
+      "title": {
+        "valor": "Fiesta de fin de año para empresas en Lima",
+        "estado": "borrador_seguro",
+        "caracteres": 42
+      },
+      "h1": {
+        "valor": "Fiesta de fin de año para empresas",
+        "estado": "borrador_seguro",
+        "caracteres": 34
+      },
+      "description": {
+        "valor": "Consulta opciones para una fiesta de fin de año de empresa en Lima. Comparte fecha, asistentes y necesidades para evaluar una propuesta.",
+        "estado": "borrador_seguro",
+        "caracteres": 136
+      }
+    },
+    "intro": "Rhino ofrece servicios para fiestas de fin de año de empresas. Plantea una celebración que responda al objetivo del encuentro, desde reconocer al equipo hasta compartir el cierre del año. Consulta las necesidades de tu evento y la disponibilidad para tu fecha.",
+    "image": "Fotografía de una celebración empresarial con permiso y participación acreditada.",
+    "sections": [
+      {
+        "title": "El encuentro que quiere tu empresa",
+        "paragraphs": [
+          "Reconocer al equipo, compartir una jornada o cerrar el año son objetivos que orientan el formato. La duración, el espacio y la participación de los asistentes ayudan a definir una celebración coherente."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "El formato de tu celebración",
+        "paragraphs": [
+          "Una reunión breve, una jornada compartida y una fiesta plantean programas y necesidades diferentes. Define el tiempo disponible, el espacio y la experiencia que quieres ofrecer al equipo para concretar los servicios del encuentro."
+        ],
+        "items": [
+          "[PENDIENTE: definir el programa comercial, las responsabilidades y qué se contrata por separado o como conjunto. La oferta está confirmada; no hay un paquete de incluidos documentado.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Componentes que necesitan un alcance",
+        "paragraphs": [
+          "Coordinación, atención de alimentos, conducción, sonido y registro audiovisual son necesidades posibles del encuentro. Puedes consultar esos servicios como encargos separados. [PENDIENTE: confirmar si existe una oferta conjunta y su alcance.]"
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P08",
+            "Consultar organización"
+          ],
+          [
+            "P07",
+            "Consultar catering"
+          ],
+          [
+            "P16",
+            "Consultar sonido"
+          ],
+          [
+            "P18",
+            "Consultar conducción"
+          ],
+          [
+            "P05",
+            "Consultar cobertura"
+          ]
+        ]
+      },
+      {
+        "title": "Fecha, capacidad y reserva",
+        "paragraphs": [
+          "Asistentes, recinto y preparación permiten evaluar el formato y la disponibilidad del encuentro. La celebración empresarial requiere su propio programa y condiciones de contratación."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "¿Necesitas un saludo audiovisual?",
+        "paragraphs": [
+          "Un video de saludo al equipo es un encargo diferente de organizar la celebración. Puedes consultar su mensaje y uso dentro de producción audiovisual."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P03",
+            "Producción de una pieza audiovisual"
+          ]
+        ]
+      },
+      {
+        "title": "Conversemos sobre la celebración",
+        "paragraphs": [
+          "Comparte objetivo, fecha orientativa y asistentes. Cualquier oferta requiere confirmar primero servicios, responsabilidades y disponibilidad."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      }
+    ],
+    "cta": "Consultar celebración empresarial",
+    "editorial_pending": [
+      "Oferta vigente confirmada por el dueño. Concretar programa, responsabilidades, incluidos y opcionales; no hay paquete comercial documentado.",
+      "Operación: fechas, capacidad, paquetes y condiciones de reserva; no extrapolar la oferta del show infantil."
+    ]
+  },
+  {
+    "id": "P21",
+    "h1": "Fotografía publicitaria y de productos",
+    "metadatos": {
+      "title": {
+        "valor": "Fotografía publicitaria · Rhino Audiovisuales",
+        "estado": "borrador_seguro",
+        "caracteres": 45
+      },
+      "h1": {
+        "valor": "Fotografía publicitaria y de productos",
+        "estado": "borrador_seguro",
+        "caracteres": 38
+      },
+      "description": {
+        "valor": "Consulta fotografía publicitaria y de productos en Lima. Describe las imágenes que necesitas para solicitar una propuesta a Rhino Audiovisuales.",
+        "estado": "borrador_seguro",
+        "caracteres": 144
+      }
+    },
+    "intro": "Rhino ofrece fotografía publicitaria y de productos para presentar artículos y sus características en la comunicación comercial. Las imágenes se preparan según su uso y el criterio visual del proyecto.",
+    "image": "Fotografía real de producto con autorización de marca y uso.",
+    "sections": [
+      {
+        "title": "Qué necesita ver quien evalúa el producto",
+        "paragraphs": [
+          "Una vista general muestra el artículo; un detalle permite reconocer textura o acabado; una composición reúne elementos en un contexto. Elegir esas vistas evita tratar todas las fotografías como intercambiables."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Catálogo, campaña y otros canales",
+        "paragraphs": [
+          "Un catálogo necesita coherencia entre productos. Una pieza de campaña puede requerir una composición específica. Los canales y sus requisitos orientan encuadre, fondo y formatos; no implican un paquete ni técnicas de producción ya incluidas."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Preparación, selección y retoque",
+        "paragraphs": [
+          "Al definir la sesión con Rhino, distingue la preparación de productos y accesorios, la selección de imágenes y el retoque que necesitas. Cantidades, formatos, entrega y derechos de uso se concretan por encargo."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Una serie para comparar",
+        "paragraphs": [
+          "Una muestra coherente permite valorar detalle, color y presentación de los productos."
+        ],
+        "items": [
+          "[ESPACIO PARA FOTOGRAFÍAS COMERCIALES AUTORIZADAS: rol de Rhino y usos acreditados.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Consulta por tus productos",
+        "paragraphs": [
+          "Indica productos, variantes y uso previsto de las imágenes. Para retratos de personas o sesiones en estudio, revisa sus páginas específicas; el lugar de cada sesión debe confirmarse."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P22",
+            "Fotos corporativas"
+          ],
+          [
+            "P09",
+            "Estudio fotográfico"
+          ],
+          [
+            "P05",
+            "Fotografía de eventos"
+          ]
+        ]
+      }
+    ],
+    "cta": "Consultar fotografía publicitaria o de productos",
+    "editorial_pending": [
+      "Operación: modalidades, lugar de sesión, preparación, recursos y alcance real.",
+      "Dueño: muestras y permisos; operación: cantidades, retoque, formatos, plazos y derechos; editor: equivalencia completa del legado de fotografía."
+    ]
+  },
+  {
+    "id": "P22",
+    "h1": "Fotos corporativas para equipos en Lima",
+    "metadatos": {
+      "title": {
+        "valor": "Fotos corporativas · Rhino Audiovisuales",
+        "estado": "borrador_seguro",
+        "caracteres": 40
+      },
+      "h1": {
+        "valor": "Fotos corporativas para equipos en Lima",
+        "estado": "borrador_seguro",
+        "caracteres": 39
+      },
+      "description": {
+        "valor": "Consulta fotos corporativas para equipos y perfiles profesionales en Lima. Explica tu necesidad y solicita una propuesta a Rhino Audiovisuales.",
+        "estado": "borrador_seguro",
+        "caracteres": 143
+      }
+    },
+    "intro": "Rhino ofrece fotos corporativas para presentar a las personas de tu organización. Una serie coherente ayuda a integrar los retratos en la web, perfiles profesionales y materiales de comunicación.",
+    "image": "Retratos reales autorizados; no representar al equipo con fotografías de stock.",
+    "sections": [
+      {
+        "title": "Un criterio común para el equipo",
+        "paragraphs": [
+          "Encuadre, fondo y tratamiento visual influyen en cómo se ve el conjunto. Acordar un criterio permite incorporar retratos a distintos soportes sin que cada imagen parezca pertenecer a una serie distinta."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Preparación de las personas",
+        "paragraphs": [
+          "Vestuario, referencias y horarios se organizan antes de la sesión. El número de participantes y su disponibilidad ayudan a definir la dinámica. La preparación recomendada no equivale a maquillaje, vestuario o servicios incluidos."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Modalidad y entrega",
+        "paragraphs": [
+          "El lugar de la sesión, la selección y el retoque deben confirmarse. [PENDIENTE: confirmar modalidad en estudio, en oficinas u otra ubicación.] Los formatos y usos se definen según la necesidad del equipo."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Muestra de retratos",
+        "paragraphs": [
+          "Compara encuadre, iluminación y coherencia entre los retratos de una misma serie."
+        ],
+        "items": [
+          "[ESPACIO PARA SERIE AUTORIZADA: encargo y trabajo de Rhino.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Consulta por tu equipo",
+        "paragraphs": [
+          "Indica participantes aproximados, uso de las fotografías y fecha deseada. Un video institucional puede consultarse como encargo adicional."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P04",
+            "Video corporativo"
+          ]
+        ]
+      }
+    ],
+    "cta": "Consultar retratos para mi equipo",
+    "editorial_pending": [
+      "Operación: instrucciones de preparación, dinámica, tiempos y capacidad por sesión.",
+      "Dueño: modalidades y muestras con permiso; operación: selección, retoque, formatos, entrega y derechos de uso."
+    ]
+  },
+  {
+    "id": "P23",
+    "h1": "Gestión de redes sociales para empresas",
+    "metadatos": {
+      "title": {
+        "valor": "Gestión de redes sociales · Rhino Audiovisuales",
+        "estado": "borrador_seguro",
+        "caracteres": 47
+      },
+      "h1": {
+        "valor": "Gestión de redes sociales para empresas",
+        "estado": "borrador_seguro",
+        "caracteres": 39
+      },
+      "description": {
+        "valor": "Consulta gestión de redes sociales con Rhino Audiovisuales. Define canales y necesidades de contenido para solicitar una propuesta.",
+        "estado": "borrador_seguro",
+        "caracteres": 131
+      }
+    },
+    "intro": "Rhino ofrece gestión de redes sociales para empresas. El encargo distingue planificación, producción de contenido y tareas de gestión continuada en tus canales.",
+    "image": "Ejemplo autorizado de contenido y planificación, sin métricas ni datos de terceros inventados.",
+    "sections": [
+      {
+        "title": "Cada canal necesita un propósito",
+        "paragraphs": [
+          "Informar, presentar servicios o mantener una comunicación con la audiencia plantea necesidades distintas. Los perfiles existentes y el público permiten definir qué contenido resulta pertinente."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Planificación, contenido y publicación",
+        "paragraphs": [
+          "Un calendario ordena temas y fechas. La creación de textos, fotografías o videos produce las piezas. Publicación y atención de mensajes son tareas diferentes que deben confirmarse dentro del alcance."
+        ],
+        "items": [
+          "Define los canales y piezas que necesitas, y las tareas que quieres encargar a Rhino.",
+          "El cliente necesita saber qué revisará y en qué momento se solicitará su aprobación."
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Aprobación y seguimiento",
+        "paragraphs": [
+          "El flujo de revisión evita publicar información sin validar. Los reportes deben corresponder a las tareas contratadas y a datos disponibles. Una métrica de interacción no demuestra por sí sola una venta o una consulta cualificada."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Branding y logotipos para tu marca",
+        "paragraphs": [
+          "Rhino también ofrece branding y diseño de logotipos. La identidad de marca define cómo se presenta el negocio; la gestión de redes organiza su comunicación continuada. Puedes consultar ambos trabajos y definir el alcance de cada uno."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Muestra del trabajo",
+        "paragraphs": [
+          "Un calendario y una selección de piezas permiten valorar los temas, el lenguaje y la coherencia de la comunicación."
+        ],
+        "items": [
+          "[ESPACIO PARA EJEMPLO REAL AUTORIZADO: canal, piezas y responsabilidad de Rhino.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Revisemos tus canales",
+        "paragraphs": [
+          "Comparte los perfiles actuales y qué necesitas organizar. Si buscas también una web, se evalúa como proyecto independiente."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P24",
+            "Desarrollo web"
+          ]
+        ]
+      }
+    ],
+    "cta": "Consultar gestión de redes",
+    "editorial_pending": [
+      "Gestión de redes, branding y logotipos confirmados por el dueño. Precisar alcance de publicidad, diseño creativo y análisis de mercado del legado; no inferirlos de una confirmación sin modalidades enumeradas.",
+      "Operación: volumen de trabajo, recursos, aprobaciones, publicación y modalidades contratables.",
+      "Operación: periodicidad, reportes, accesos y atención de mensajes; dueño: casos autorizados."
+    ]
+  },
+  {
+    "id": "P24",
+    "h1": "Diseño y desarrollo de páginas web",
+    "metadatos": {
+      "title": {
+        "valor": "Diseño y desarrollo de páginas web en Lima",
+        "estado": "borrador_seguro",
+        "caracteres": 42
+      },
+      "h1": {
+        "valor": "Diseño y desarrollo de páginas web",
+        "estado": "borrador_seguro",
+        "caracteres": 34
+      },
+      "description": {
+        "valor": "Consulta diseño y desarrollo de páginas web con Rhino Audiovisuales. Describe los objetivos de tu sitio para solicitar una propuesta.",
+        "estado": "borrador_seguro",
+        "caracteres": 133
+      }
+    },
+    "intro": "Rhino ofrece diseño y desarrollo de páginas web. El proyecto reúne información y funciones según lo que necesita hacer el visitante y lo que tu negocio necesita comunicar.",
+    "image": "Captura autorizada de una web realizada, con alcance de Rhino identificado.",
+    "sections": [
+      {
+        "title": "Qué debe resolver tu web",
+        "paragraphs": [
+          "Presentar servicios, mostrar productos o recibir consultas requiere estructuras diferentes. Identificar público, páginas y funciones permite delimitar el encargo. Si necesitas una tienda online u otra función específica, inclúyela en la consulta para evaluar su viabilidad. [PENDIENTE: tipos de sitio y funciones disponibles.]"
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Qué recibe y administra el cliente",
+        "paragraphs": [
+          "Para contratar tu web, delimita con Rhino páginas, funciones y materiales de entrega. Dominio, alojamiento, cuentas y licencias necesitan responsables claros; los accesos del cliente forman parte de esa definición."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Revisión y calendario",
+        "paragraphs": [
+          "Textos, imágenes y aprobaciones influyen en el avance. El calendario y las revisiones se acuerdan con el alcance y la disponibilidad de materiales. [PENDIENTE: calendario y revisiones del servicio; no hay plazos estándar confirmados.]"
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Después de la entrega",
+        "paragraphs": [
+          "Cambios de contenido, mantenimiento y asistencia son trabajos posteriores con condiciones propias. Debe distinguirse qué acompaña al proyecto y qué requiere otra contratación."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Muestra de un proyecto web",
+        "paragraphs": [
+          "En una muestra web puedes valorar la organización de la información, la navegación y las funciones del proyecto."
+        ],
+        "items": [
+          "[ESPACIO PARA WEB AUTORIZADA: contribución, páginas y funciones acreditadas.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Plantea tu sitio",
+        "paragraphs": [
+          "Cuéntanos qué necesita hacer el visitante, qué contenido tienes y qué recursos ya están contratados. Si la fecha es importante, inclúyela para evaluar la viabilidad del encargo."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      }
+    ],
+    "cta": "Revisar el alcance de mi web",
+    "editorial_pending": [
+      "Operación: entregables, propiedad, accesos, licencias y responsabilidades. No elegir tecnología ni hosting sin el encargo correspondiente.",
+      "Operación: calendario y revisiones aprobados. Los plazos históricos de 7, 11 o 18 días no se mantienen sin ratificación; editor: cotejo del legado.",
+      "Operación: confirmar cobertura, duración y condiciones del soporte. No garantizar resultados futuros de rendimiento o ventas."
+    ]
+  },
+  {
+    "id": "P27",
+    "h1": "Proyectos de Rhino Audiovisuales",
+    "metadatos": {
+      "title": {
+        "valor": "Portafolio · Rhino Audiovisuales",
+        "estado": "borrador_seguro",
+        "caracteres": 32
+      },
+      "h1": {
+        "valor": "Proyectos de Rhino Audiovisuales",
+        "estado": "borrador_seguro",
+        "caracteres": 32
+      },
+      "description": {
+        "valor": "Explora proyectos y conoce el trabajo documentado de Rhino Audiovisuales. Consulta los servicios relacionados con cada caso autorizado.",
+        "estado": "borrador_seguro",
+        "caracteres": 135
+      }
+    },
+    "intro": "Los proyectos permiten valorar el trabajo de una productora cuando se conoce el encargo y su aportación. [PENDIENTE: selección de casos con documentación y permisos.]",
+    "image": "Selección de fotogramas de casos aprobados; espacio sin material hasta acreditar permisos.",
+    "sections": [
+      {
+        "title": "Qué debe mostrar un caso",
+        "paragraphs": [
+          "Una ficha útil reúne necesidad del cliente, trabajo realizado por Rhino y material que puede exhibirse. El contexto del evento no sustituye la descripción del servicio."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Selección documental en revisión",
+        "paragraphs": [
+          "[PENDIENTE: completar los cuatro expedientes antes de mostrar los casos. Los nombres no acreditan rol, permiso ni recomendación del cliente.]"
+        ],
+        "items": [
+          "Redinter 25 años — rol y permiso pendientes.",
+          "Premium Tasting Lima — rol y permiso pendientes.",
+          "Bloom of Colors — rol y permiso pendientes.",
+          "Héroe Adidas — rol y permiso pendientes."
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Cómo comparar el trabajo",
+        "paragraphs": [
+          "Al revisar un caso, observa si el tipo de encargo y la pieza se parecen a tu necesidad. [PENDIENTE: filtros por servicio después de documentar el rol de cada caso.]"
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Tu proyecto puede empezar por una necesidad",
+        "paragraphs": [
+          "Puedes empezar por el tipo de trabajo que necesitas y el uso que tendrá el material."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P02",
+            "Explorar servicios"
+          ],
+          [
+            "P33",
+            "Consultar proyecto"
+          ]
+        ]
+      }
+    ],
+    "cta": "Consultar un proyecto",
+    "editorial_pending": [
+      "Dueño: validar expediente, rol y permiso de cada caso antes de presentarlo públicamente.",
+      "Editor: asociar cada caso únicamente a los servicios realmente acreditados; no crear filtros por servicios inferidos."
+    ]
+  },
+  {
+    "id": "P28",
+    "h1": "Redinter 25 años",
+    "metadatos": {
+      "title": {
+        "valor": "Redinter 25 años · Rhino Audiovisuales",
+        "estado": "borrador_seguro",
+        "caracteres": 38
+      },
+      "h1": {
+        "valor": "Redinter 25 años",
+        "estado": "borrador_seguro",
+        "caracteres": 16
+      },
+      "description": {
+        "valor": null,
+        "estado": "null_pendiente_rol",
+        "caracteres": null
+      }
+    },
+    "intro": "Redinter 25 años. [PENDIENTE: contexto, contribución de Rhino, material y permiso para presentar este caso.]",
+    "image": "Material original de Redinter 25 años, solo tras confirmar derechos de uso.",
+    "sections": [
+      {
+        "title": "Contexto y necesidad del cliente",
+        "paragraphs": [
+          "[NOTA EDITORIAL: Qué necesitaba comunicar la conmemoración, a qué público y en qué fecha.]"
+        ],
+        "items": [
+          "[PENDIENTE: relato factual del contexto, fecha y necesidad.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Qué realizó Rhino",
+        "paragraphs": [
+          "[NOTA EDITORIAL: Precisar si el trabajo consistió en una pieza audiovisual, registro u otro encargo; no deducirlo del aniversario.]"
+        ],
+        "items": [
+          "[PENDIENTE: encargo, tareas, responsables y límites de participación.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Material entregado y muestra",
+        "paragraphs": [
+          "[NOTA EDITORIAL: Pieza entregada, uso autorizado y aportación exacta; no atribuir resultados corporativos.]"
+        ],
+        "items": [
+          "[ESPACIO PARA MATERIAL AUTORIZADO. Pendiente de identificar pieza y permiso.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Resultado documentable",
+        "paragraphs": [
+          "[NOTA EDITORIAL: El caso puede describir la entrega realizada y su uso si existe respaldo. Impacto en ventas, asistentes, alcance o satisfacción exige evidencia adicional; no se deduce de las imágenes.]"
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Consulta un encargo",
+        "paragraphs": [
+          "Describe el trabajo que necesitas y el uso de las piezas. [PENDIENTE: asociar el caso a un servicio solo cuando el rol esté documentado.]"
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P27",
+            "Volver a proyectos"
+          ],
+          [
+            "P33",
+            "Consultar proyecto"
+          ]
+        ]
+      }
+    ],
+    "cta": "Consultar un proyecto",
+    "editorial_pending": [
+      "Dueño: Contexto de la conmemoración, fecha y público de la pieza.",
+      "Dueño: documentar la necesidad de comunicación y las condiciones que debía resolver la pieza; no inventar objetivos ni resultados.",
+      "Dueño: Aportación exacta de Rhino y entregables del encargo; no inferir resultados corporativos.",
+      "Dueño: identificar piezas, autoría, fecha, permisos y canales. Editor: redactar el caso a partir del expediente."
+    ]
+  },
+  {
+    "id": "P29",
+    "h1": "Premium Tasting Lima",
+    "metadatos": {
+      "title": {
+        "valor": "Premium Tasting Lima · Rhino Audiovisuales",
+        "estado": "borrador_seguro",
+        "caracteres": 42
+      },
+      "h1": {
+        "valor": "Premium Tasting Lima",
+        "estado": "borrador_seguro",
+        "caracteres": 20
+      },
+      "description": {
+        "valor": null,
+        "estado": "null_pendiente_rol",
+        "caracteres": null
+      }
+    },
+    "intro": "Premium Tasting Lima. [PENDIENTE: contexto, contribución de Rhino, material y permiso para presentar este caso.]",
+    "image": "Material original de Premium Tasting Lima, solo tras confirmar derechos de uso.",
+    "sections": [
+      {
+        "title": "Contexto y necesidad del cliente",
+        "paragraphs": [
+          "[NOTA EDITORIAL: Contexto de la actividad y necesidad que originó el encargo.]"
+        ],
+        "items": [
+          "[PENDIENTE: relato factual del contexto, fecha y necesidad.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Qué realizó Rhino",
+        "paragraphs": [
+          "[NOTA EDITORIAL: Separar registro audiovisual, producción y organización. El nombre del evento no acredita que Rhino lo organizara.]"
+        ],
+        "items": [
+          "[PENDIENTE: encargo, tareas, responsables y límites de participación.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Material entregado y muestra",
+        "paragraphs": [
+          "[NOTA EDITORIAL: Material entregado y canales de uso; muestra de cobertura solo si el rol se demuestra.]"
+        ],
+        "items": [
+          "[ESPACIO PARA MATERIAL AUTORIZADO. Pendiente de identificar pieza y permiso.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Resultado documentable",
+        "paragraphs": [
+          "[NOTA EDITORIAL: El caso puede describir la entrega realizada y su uso si existe respaldo. Impacto en ventas, asistentes, alcance o satisfacción exige evidencia adicional; no se deduce de las imágenes.]"
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Consulta un encargo",
+        "paragraphs": [
+          "Describe el trabajo que necesitas y el uso de las piezas. [PENDIENTE: asociar el caso a un servicio solo cuando el rol esté documentado.]"
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P27",
+            "Volver a proyectos"
+          ],
+          [
+            "P33",
+            "Consultar proyecto"
+          ]
+        ]
+      }
+    ],
+    "cta": "Consultar un proyecto",
+    "editorial_pending": [
+      "Dueño: Contexto del evento y encargo solicitado a Rhino.",
+      "Dueño: Contribución audiovisual, piezas entregadas y uso autorizado. No atribuir organización sin contrato o evidencia.",
+      "Dueño: identificar piezas, autoría, fecha, permisos y canales. Editor: redactar el caso a partir del expediente."
+    ]
+  },
+  {
+    "id": "P30",
+    "h1": "Bloom of Colors",
+    "metadatos": {
+      "title": {
+        "valor": "Bloom of Colors · Rhino Audiovisuales",
+        "estado": "borrador_seguro",
+        "caracteres": 37
+      },
+      "h1": {
+        "valor": "Bloom of Colors",
+        "estado": "borrador_seguro",
+        "caracteres": 15
+      },
+      "description": {
+        "valor": null,
+        "estado": "null_pendiente_rol",
+        "caracteres": null
+      }
+    },
+    "intro": "Bloom of Colors. [PENDIENTE: contexto, contribución de Rhino, material y permiso para presentar este caso.]",
+    "image": "Material original de Bloom of Colors, solo tras confirmar derechos de uso.",
+    "sections": [
+      {
+        "title": "Contexto y necesidad del cliente",
+        "paragraphs": [
+          "[NOTA EDITORIAL: Contexto del encuentro y tarea solicitada a Rhino.]"
+        ],
+        "items": [
+          "[PENDIENTE: relato factual del contexto, fecha y necesidad.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Qué realizó Rhino",
+        "paragraphs": [
+          "[NOTA EDITORIAL: Distinguir el festival de las responsabilidades del proveedor. No atribuir organización ni éxito del evento.]"
+        ],
+        "items": [
+          "[PENDIENTE: encargo, tareas, responsables y límites de participación.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Material entregado y muestra",
+        "paragraphs": [
+          "[NOTA EDITORIAL: Fotografías o piezas acreditadas, condiciones del encargo y permisos de exhibición.]"
+        ],
+        "items": [
+          "[ESPACIO PARA MATERIAL AUTORIZADO. Pendiente de identificar pieza y permiso.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Resultado documentable",
+        "paragraphs": [
+          "[NOTA EDITORIAL: El caso puede describir la entrega realizada y su uso si existe respaldo. Impacto en ventas, asistentes, alcance o satisfacción exige evidencia adicional; no se deduce de las imágenes.]"
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Consulta un encargo",
+        "paragraphs": [
+          "Describe el trabajo que necesitas y el uso de las piezas. [PENDIENTE: asociar el caso a un servicio solo cuando el rol esté documentado.]"
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P27",
+            "Volver a proyectos"
+          ],
+          [
+            "P33",
+            "Consultar proyecto"
+          ]
+        ]
+      }
+    ],
+    "cta": "Consultar un proyecto",
+    "editorial_pending": [
+      "Dueño: Contexto y fecha del evento, diferenciados de la participación de Rhino.",
+      "Dueño: Tarea contratada y material entregado. Describir el festival no demuestra resultados de Rhino.",
+      "Dueño: identificar piezas, autoría, fecha, permisos y canales. Editor: redactar el caso a partir del expediente."
+    ]
+  },
+  {
+    "id": "P31",
+    "h1": "Héroe Adidas",
+    "metadatos": {
+      "title": {
+        "valor": "Héroe Adidas · Rhino Audiovisuales",
+        "estado": "borrador_seguro",
+        "caracteres": 34
+      },
+      "h1": {
+        "valor": "Héroe Adidas",
+        "estado": "borrador_seguro",
+        "caracteres": 12
+      },
+      "description": {
+        "valor": null,
+        "estado": "null_pendiente_rol",
+        "caracteres": null
+      }
+    },
+    "intro": "Héroe Adidas. [PENDIENTE: contexto, contribución de Rhino, material y permiso para presentar este caso.]",
+    "image": "Material original de Héroe Adidas, solo tras confirmar derechos de uso.",
+    "sections": [
+      {
+        "title": "Contexto y necesidad del cliente",
+        "paragraphs": [
+          "[NOTA EDITORIAL: Finalidad de la pieza y audiencia a la que se dirigía.]"
+        ],
+        "items": [
+          "[PENDIENTE: relato factual del contexto, fecha y necesidad.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Qué realizó Rhino",
+        "paragraphs": [
+          "[NOTA EDITORIAL: Identificar rol y autoría. No clasificar la pieza como spot ni afirmar difusión nacional sin evidencia.]"
+        ],
+        "items": [
+          "[PENDIENTE: encargo, tareas, responsables y límites de participación.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Material entregado y muestra",
+        "paragraphs": [
+          "[NOTA EDITORIAL: Versión entregada, canales autorizados y participación de Rhino, diferenciada de otros autores.]"
+        ],
+        "items": [
+          "[ESPACIO PARA MATERIAL AUTORIZADO. Pendiente de identificar pieza y permiso.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Resultado documentable",
+        "paragraphs": [
+          "[NOTA EDITORIAL: El caso puede describir la entrega realizada y su uso si existe respaldo. Impacto en ventas, asistentes, alcance o satisfacción exige evidencia adicional; no se deduce de las imágenes.]"
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Consulta un encargo",
+        "paragraphs": [
+          "Describe el trabajo que necesitas y el uso de las piezas. [PENDIENTE: asociar el caso a un servicio solo cuando el rol esté documentado.]"
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P27",
+            "Volver a proyectos"
+          ],
+          [
+            "P33",
+            "Consultar proyecto"
+          ]
+        ]
+      }
+    ],
+    "cta": "Consultar un proyecto",
+    "editorial_pending": [
+      "Dueño: Contexto de la pieza, audiencia y canales de uso acreditados.",
+      "Dueño: Autoría y aportación exacta. No clasificar como spot ni afirmar difusión nacional sin respaldo.",
+      "Dueño: identificar piezas, autoría, fecha, permisos y canales. Editor: redactar el caso a partir del expediente."
+    ]
+  },
+  {
+    "id": "P32",
+    "h1": "Conoce Rhino Audiovisuales",
+    "metadatos": {
+      "title": {
+        "valor": "Nosotros · Rhino Audiovisuales",
+        "estado": "borrador_seguro",
+        "caracteres": 30
+      },
+      "h1": {
+        "valor": "Conoce Rhino Audiovisuales",
+        "estado": "borrador_seguro",
+        "caracteres": 26
+      },
+      "description": {
+        "valor": "Conoce Rhino Audiovisuales y consulta sus servicios. Revisa la información del equipo y el trabajo documentado para tu proyecto.",
+        "estado": "borrador_seguro",
+        "caracteres": 128
+      }
+    },
+    "intro": "Rhino Audiovisuales ofrece producción audiovisual, fotografía y servicios para eventos empresariales y sociales. Cuenta con estudio fotográfico propio y un catálogo que permite plantear necesidades de comunicación y de eventos.",
+    "image": "Fotografía real y autorizada de las personas o instalaciones de Rhino.",
+    "sections": [
+      {
+        "title": "Trabajo audiovisual y servicios para eventos",
+        "paragraphs": [
+          "Las líneas de Rhino incluyen producción, fotografía, cobertura, streaming y catering. Puedes reunir varias necesidades en una misma consulta. El alcance y las responsabilidades se definen para cada servicio."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Personas y responsabilidades",
+        "paragraphs": [
+          "Conocer quién atiende y quién asume el trabajo permite entender cómo se organiza el proyecto."
+        ],
+        "items": [
+          "[PENDIENTE: nombre, rol y fotografía autorizada de las personas que se presentarán. No se inventa un equipo.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Un espacio propio para fotografía",
+        "paragraphs": [
+          "Rhino cuenta con estudio propio para fotografía y ofrece su alquiler a terceros. Consulta la modalidad de sesión o el espacio que necesitas. [PENDIENTE: ubicación publicable, modalidades específicas y recursos concretos.]"
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P09",
+            "Estudio fotográfico"
+          ]
+        ]
+      },
+      {
+        "title": "Nuestra trayectoria",
+        "paragraphs": [
+          "[PENDIENTE: relato de trayectoria respaldado por fechas y trabajos. No hay antigüedad actual acreditada en este contenido.]"
+        ],
+        "items": [
+          "[PENDIENTE: hitos, fecha de inicio verificable y recursos que puedan mostrarse.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Conversemos sobre tu proyecto",
+        "paragraphs": [
+          "Puedes empezar explicando qué quieres comunicar o preparar. No necesitas conocer todos los términos del catálogo para consultar."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P33",
+            "Contacto"
+          ]
+        ]
+      }
+    ],
+    "cta": "Conversar sobre mi proyecto",
+    "editorial_pending": [
+      "Dueño: nombres, cargos, responsabilidades y autorización de fotografías. No se inventa equipo humano.",
+      "Dueño: fechas verificables, historia, recursos reales y modalidades del estudio. No actualizar automáticamente la antigüedad citada en material histórico.",
+      "Dueño: confirmar el alcance de coordinación; no afirmar equipo único, contrato único o ejecución integral sin respaldo."
+    ]
+  },
+  {
+    "id": "P33",
+    "h1": "Consulta y cotiza tu proyecto",
+    "metadatos": {
+      "title": {
+        "valor": "Contacto · Rhino Audiovisuales",
+        "estado": "borrador_seguro",
+        "caracteres": 30
+      },
+      "h1": {
+        "valor": "Consulta y cotiza tu proyecto",
+        "estado": "borrador_seguro",
+        "caracteres": 29
+      },
+      "description": {
+        "valor": "Contacta con Rhino Audiovisuales para consultar tu proyecto. Indica el servicio, fecha y necesidades para solicitar una cotización.",
+        "estado": "borrador_seguro",
+        "caracteres": 131
+      }
+    },
+    "intro": "Cuéntanos qué necesitas resolver. Puedes empezar con una idea, un evento o una pieza concreta; si todavía no tienes fecha o alcance definido, indícalo en tu consulta.",
+    "image": null,
+    "sections": [
+      {
+        "title": "Contacto directo",
+        "paragraphs": [
+          "Teléfono: 965 683 542. Correo: info@rhinoaudiovisuales.com. Puedes utilizar estos canales para explicar tu necesidad. [PENDIENTE: confirmar WhatsApp autorizado y horarios de atención.]"
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Lo necesario para empezar",
+        "paragraphs": [
+          "En el formulario: nombre, correo de respuesta y una descripción breve de la necesidad. Fecha, lugar, cantidad de participantes y referencias pueden añadirse si ya los conoces. No hace falta completar un documento de producción para iniciar el contacto."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Formulario de consulta",
+        "paragraphs": [
+          "Maqueta de campos mínimos; todavía no realiza envíos."
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Qué ocurre después",
+        "paragraphs": [
+          "La consulta inicia la evaluación del encargo; no equivale a una reserva. Si el envío no muestra una confirmación, puedes utilizar teléfono o correo. [PENDIENTE: responsable de atención y compromiso real de respuesta.]"
+        ],
+        "items": [],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Una consulta con varias necesidades",
+        "paragraphs": [
+          "Si necesitas más de un servicio, puedes describirlos en el mismo mensaje. Esto permite entender el contexto sin suponer que exista un paquete único."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P02",
+            "Consultar el catálogo"
+          ]
+        ]
+      }
+    ],
+    "cta": "Enviar consulta",
+    "editorial_pending": [
+      "Dueño/revisor: confirmar datos necesarios, responsable del tratamiento y aviso de privacidad. Desarrollo: implementar aceptación y recepción verificables.",
+      "Atención: confirmar responsable y horario. WhatsApp no se incorpora hasta confirmar el canal autorizado.",
+      "Atención: definir respuesta y plazo real. Desarrollo: probar aceptación y recepción; una visita a la página de gracias no acredita un envío."
+    ]
+  },
+  {
+    "id": "P34",
+    "h1": "Estado de tu solicitud",
+    "metadatos": {
+      "title": {
+        "valor": "Estado de tu solicitud · Rhino Audiovisuales",
+        "estado": "borrador_seguro",
+        "caracteres": 44
+      },
+      "h1": {
+        "valor": "Estado de tu solicitud",
+        "estado": "borrador_seguro",
+        "caracteres": 22
+      },
+      "description": {
+        "valor": null,
+        "estado": "opcional_sin_objetivo_organico",
+        "caracteres": null
+      }
+    },
+    "intro": "[NOTA EDITORIAL: variantes alternativas del estado de una solicitud. Mostrar únicamente el mensaje correspondiente al resultado comprobado del envío.]",
+    "image": null,
+    "sections": [
+      {
+        "title": "Variante A · Sin comprobante de envío",
+        "paragraphs": [
+          "No podemos confirmar que tu solicitud se haya enviado desde esta página. Vuelve al formulario o utiliza el teléfono 965 683 542 o el correo info@rhinoaudiovisuales.com."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P33",
+            "Volver a contacto"
+          ]
+        ]
+      },
+      {
+        "title": "Variante B · Envío aceptado por el sistema",
+        "paragraphs": [
+          "Tu solicitud ha sido aceptada por el sistema. Esta confirmación no significa que una persona ya la haya leído. Mientras tanto, puedes revisar los servicios."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P02",
+            "Ver servicios"
+          ]
+        ]
+      },
+      {
+        "title": "Variante C · Error de envío",
+        "paragraphs": [
+          "No se pudo completar el envío. Puedes intentarlo de nuevo o llamar al 965 683 542 o escribir a info@rhinoaudiovisuales.com."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P33",
+            "Volver a contacto"
+          ]
+        ]
+      }
+    ],
+    "cta": "Ver servicios",
+    "editorial_pending": [
+      "Las tres variantes son alternativas documentales, nunca mensajes simultáneos para un visitante.",
+      "B solo tras aceptación verificable del envío; recepción real requiere prueba independiente. C solo tras error comprobado.",
+      "Mantener noindex y evitar contabilizar carga de esta página como lead. Responsable/proceso de respuesta pendientes."
+    ]
+  },
+  {
+    "id": "P35",
+    "h1": "Política de privacidad",
+    "metadatos": {
+      "title": {
+        "valor": "Política de privacidad · Rhino Audiovisuales",
+        "estado": "borrador_seguro",
+        "caracteres": 44
+      },
+      "h1": {
+        "valor": "Política de privacidad",
+        "estado": "borrador_seguro",
+        "caracteres": 22
+      },
+      "description": {
+        "valor": "Información sobre el tratamiento de datos en los canales de Rhino Audiovisuales, sus responsables y las vías de contacto correspondientes.",
+        "estado": "borrador_seguro",
+        "caracteres": 138
+      }
+    },
+    "intro": "[PENDIENTE: completar la política con la identidad del responsable y el flujo real de datos. Documento de trabajo; no constituye una política aprobada.]",
+    "image": null,
+    "sections": [
+      {
+        "title": "Responsable y contacto",
+        "paragraphs": [
+          "Rhino Audiovisuales es el nombre comercial utilizado en esta entrega. El contacto empresarial confirmado es info@rhinoaudiovisuales.com."
+        ],
+        "items": [
+          "[PENDIENTE: identidad del responsable, datos exigibles y canal validado para solicitudes sobre datos personales.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Datos y finalidades",
+        "paragraphs": [
+          "El formulario propuesto solicita nombre, correo de respuesta y descripción del proyecto. Los campos definitivos y sus usos deben reflejar el flujo que realmente se implemente."
+        ],
+        "items": [
+          "[PENDIENTE: inventario de datos, finalidades, fundamento aplicable y tratamiento de comunicaciones opcionales.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Proveedores y conservación",
+        "paragraphs": [
+          "No se han elegido en esta entrega el proveedor de formularios, alojamiento ni herramientas de medición."
+        ],
+        "items": [
+          "[PENDIENTE: proveedores reales, acceso a datos, transferencias si corresponden, conservación y procedimiento de eliminación.]"
+        ],
+        "pending": null,
+        "links": []
+      },
+      {
+        "title": "Atención de solicitudes",
+        "paragraphs": [
+          "La política debe explicar cómo contactar al responsable y cómo se atienden las solicitudes relativas a los datos."
+        ],
+        "items": [
+          "[PENDIENTE: procedimiento efectivo y revisión competente antes de activar el formulario.]"
+        ],
+        "pending": null,
+        "links": []
+      }
+    ],
+    "cta": "[PENDIENTE: canal para solicitudes sobre datos personales]",
+    "editorial_pending": [
+      "Dueño y revisor competente: identificar al responsable del tratamiento, los datos que corresponda publicar y el canal de atención de solicitudes.",
+      "Dueño/desarrollo: inventariar campos del formulario, canales de contacto, registros y herramientas realmente utilizados. Revisor: definir finalidades y fundamento aplicable.",
+      "Dueño/desarrollo: confirmar alojamiento, recepción de consultas, analítica, terceros, transferencias y plazos o criterios de conservación. No inventar proveedores.",
+      "Revisor competente: redactar procedimiento y derechos aplicables, canales y requisitos. Validar que el texto corresponde al funcionamiento real del sitio.",
+      "Registrar fecha y aprobación tras cerrar el inventario. Esta maqueta no sustituye la revisión competente."
+    ]
+  },
+  {
+    "id": "P36",
+    "h1": "No encontramos esta página",
+    "metadatos": {
+      "title": {
+        "valor": "Página no encontrada · Rhino Audiovisuales",
+        "estado": "borrador_seguro",
+        "caracteres": 42
+      },
+      "h1": {
+        "valor": "No encontramos esta página",
+        "estado": "borrador_seguro",
+        "caracteres": 26
+      },
+      "description": {
+        "valor": null,
+        "estado": "opcional_sin_objetivo_organico",
+        "caracteres": null
+      }
+    },
+    "intro": "La dirección que buscas no está disponible. Puedes volver al inicio, encontrar un servicio o contactar con Rhino para explicar lo que necesitas.",
+    "image": null,
+    "sections": [
+      {
+        "title": "Encuentra lo que buscas",
+        "paragraphs": [
+          "El catálogo reúne servicios audiovisuales, fotografía, eventos y soluciones digitales."
+        ],
+        "items": [],
+        "pending": null,
+        "links": [
+          [
+            "P01",
+            "Volver al inicio"
+          ],
+          [
+            "P02",
+            "Buscar un servicio"
+          ],
+          [
+            "P33",
+            "Contactar con Rhino"
+          ]
+        ]
+      }
+    ],
+    "cta": "Volver al inicio",
+    "editorial_pending": [
+      "Propuesta de texto; verificar respuesta HTTP 404 real y navegación cuando exista implementación. No crear una URL editorial indexable para esta plantilla."
+    ]
+  }
+]

@@ -1,0 +1,6 @@
+---
+// H2 de sección con la barrita de degradado. data-rotulo: v4-motion.ts lo parte en líneas que entran como rótulos (animación 2).
+interface Props { text: string; tag?: 'h2' | 'h3'; class?: string }
+const { text, tag: Tag = 'h2', class: extra } = Astro.props;
+---
+<Tag class:list={['v4-h2', extra]} data-rotulo><span class="v4-h2-text">{text}</span><span class="presentation-accent" aria-hidden="true"></span></Tag>

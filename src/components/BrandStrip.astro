@@ -1,0 +1,23 @@
+---
+// Slider de logos como en la web antigua: cajas de 200 × 102 px, 5 visibles en escritorio y un paso por segundo.
+// La segunda copia solo sirve para el bucle continuo y se oculta a lectores de pantalla.
+const logos = [
+  ['redinter', 'Redinter', 'is-tall'],
+  ['dunkin', 'Dunkin', ''],
+  ['bembos', 'Bembos', ''],
+  ['esan', 'Universidad ESAN', 'is-short'],
+  ['popeyes', 'Popeyes', ''],
+  ['papajohns', "Papa John's", '']
+];
+---
+<div class="brand-strip wrap" role="group" aria-label="Marcas presentes en la web anterior" data-logo-slider>
+  <div class="logo-track">
+    {logos.map(([key, name, size]) =>
+      <div class="logo-slide"><img class={size} src={`/media/logo-${key}.png`} alt={name} width="200" height="102" loading="lazy"/></div>
+    )}
+    {logos.map(([key, , size]) =>
+      <div class="logo-slide is-copy" aria-hidden="true"><img class={size} src={`/media/logo-${key}.png`} alt="" width="200" height="102" loading="lazy"/></div>
+    )}
+  </div>
+</div>
+<script src="../scripts/logo-slider.ts"></script>

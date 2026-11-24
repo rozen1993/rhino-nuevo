@@ -1,0 +1,65 @@
+@font-face { font-family: 'Rhino Presentation'; src: url('/fonts/poppins-400.woff2') format('woff2'); font-weight: 400; font-display: swap; }
+.presentation { position: relative; isolation: isolate; padding-top: 85px; overflow: clip; }
+.presentation-grid { display: grid; grid-template-columns: 1.08fr 1fr; gap: 42px; align-items: start; }
+.presentation-copy { min-width: 0; position: relative; }
+.presentation-copy h2 { font-size: clamp(32px, 2.8vw, 40px); font-weight: 600; line-height: 1.18; letter-spacing: -1.4px; text-wrap: initial; }
+.presentation-accent { display: inline-block; width: 42px; height: 4px; margin: 0 0 .24em 15px; background: var(--accent); vertical-align: middle; border-radius: 2px; }
+.presentation-copy > p { color: var(--ink); font-family: 'Rhino Presentation', Poppins, Arial, sans-serif; font-size: 17px; line-height: 1.65; margin-top: 24px; }
+.presentation-copy .presentation-lead { color: var(--ink); font-size: 22px; font-weight: 400; line-height: 1.5; margin-top: 20px; }
+/* A standalone brand flourish: keep breathing room without adding a personal attribution. */
+/* La firma tiene un margen transparente a la izquierda (168/1997 del ancho): se compensa para alinear el trazo con el texto. */
+.presentation-signature { display: block; width: 230px; max-width: 70%; height: auto; margin-top: 22px; margin-left: calc(-230px * 168 / 1997); }
+.presentation-visual { position: relative; margin: 0; }
+.presentation-visual img { width: 100%; height: auto; }
+.presentation-visual::after { content: ""; position: absolute; z-index: -1; right: -80px; bottom: -25px; width: 245px; height: 300px; background: repeating-linear-gradient(-29deg, transparent 0 14px, #eae5ef 15px 18px, transparent 19px 28px); clip-path: ellipse(50% 50%); opacity: .75; }
+.presentation-visual figcaption { margin-top: 12px; text-align: right; font-size: 13px; color: #64616b; }
+.presentation .brand-strip { padding-block: 55px 70px; }
+.events.service-section { padding-top: 30px; padding-bottom: 110px; }
+.events .section-heading { grid-template-columns: 1.5fr 1fr; gap: 45px; align-items: start; margin-bottom: 42px; }
+.events .section-heading h2 { font-size: 43px; letter-spacing: -.6px; line-height: 1.15; }
+.events .section-heading p { font-size: 16px; line-height: 1.6; }
+.events .section-heading .service-context { font-weight: 700; color: var(--ink); margin-bottom: 9px; }
+.events .section-heading p + p { margin-top: 0; }
+.events .service-image { min-height: 520px; }
+.events .service-image img { object-position: 58% center; }
+.events .service-panel.is-active { grid-template-rows: 1fr auto; }
+.events .is-active .panel-heading { align-self: end; padding-top: 32px; }
+.events .service-copy { align-self: start; padding-bottom: 62px; gap: 24px; }
+.events .service-copy .service-prompt { font-size: 15px; border-left: 3px solid #ff7045; padding-left: 14px; color: var(--ink); line-height: 1.65; }
+.events .service-copy .dark-action { font-size: 13px; }
+@media (max-width: 1120px) {
+  .presentation-grid { gap: 35px; }
+  .presentation-copy h2 { font-size: 34px; }
+  .events .section-heading h2 { font-size: 38px; }
+  .events .service-copy { padding-bottom: 38px; }
+}
+@media (max-width: 880px) {
+  .presentation { padding-top: 55px; }
+  .presentation-grid { grid-template-columns: 1fr; gap: 45px; }
+  .presentation-copy h2 { font-size: 40px; }
+  .presentation-copy { max-width: 690px; }
+  .presentation-visual { width: min(100%, 560px); margin-inline: auto; }
+  .presentation .brand-strip { padding-block: 45px 65px; }
+  .events .section-heading { grid-template-columns: 1fr; gap: 20px; }
+  .events .service-panel.is-active { grid-template-columns: 40% 60%; }
+  .events .service-copy { padding-inline: 22px; }
+  .events .is-active .panel-title { font-size: 25px; }
+}
+@media (max-width: 650px) {
+  .presentation { padding-top: 45px; }
+  .presentation-copy h2 { font-size: 32px; letter-spacing: -.6px; }
+  .presentation-copy .presentation-lead { font-size: 20px; }
+  .presentation-copy > p { font-size: 16px; line-height: 1.7; }
+  .presentation-signature { width: 200px; margin-top: 16px; margin-left: calc(-200px * 168 / 1997); }
+  .presentation-grid { gap: 35px; }
+  .presentation-accent { width: 38px; margin-left: 12px; }
+  .presentation-visual::after { right: -22px; width: 140px; height: 190px; }
+  .presentation .brand-strip { padding-block: 30px 45px; }
+  .events.service-section { padding-top: 10px; padding-bottom: 65px; }
+  .events .section-heading h2 { font-size: 33px; }
+  .events .service-panel.is-active { display: block; }
+  .events .is-active .panel-heading { padding: 0; }
+  .events .is-active .panel-title { font-size: 22px; }
+  .events .service-image { min-height: 0; aspect-ratio: 4/3; }
+  .events .service-copy { padding: 25px 22px 30px; gap: 20px; }
+}

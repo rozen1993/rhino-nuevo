@@ -1,0 +1,76 @@
+---
+// Página «en construcción» para las páginas HTML del registro que aún no están hechas (pedido del dueño, 23-11-2026):
+// en vez de llevar a la home o a un contenido cualquiera, cada enlace abre su propia dirección con este aviso.
+// Tema de rodaje: una claqueta que se cierra cada pocos segundos (quieta con «reducir movimiento»). No se indexa.
+import Breadcrumbs from './Breadcrumbs.astro';
+import Icon from './Icon.astro';
+import { getShortName } from '../lib/seo.mjs';
+interface Props { page: any }
+const { page } = Astro.props;
+const name = getShortName(page);
+const wa = 'https://wa.me/51965683542?text=' + encodeURIComponent(`Hola Rhino, quiero consultar sobre ${page.h1.toLowerCase()}.`);
+---
+<main id="main" class="uc-main">
+  <section class="uc wrap" aria-labelledby="uc-title">
+    <div class="uc-copy">
+      <Breadcrumbs page={page} />
+      <p class="uc-eyebrow"><span class="uc-rec" aria-hidden="true"></span>Página en construcción</p>
+      <h1 id="uc-title">Esta escena todavía está en rodaje<span class="presentation-accent" aria-hidden="true"></span></h1>
+      <p class="uc-lead">Estamos preparando la página de <strong>{name}</strong>: luces, cámara y un poco más de edición.</p>
+      <p>Vuelve pronto. Y si no quieres esperar al estreno, escríbenos y te contamos lo que necesites.</p>
+      <div class="uc-acts">
+        <a class="action gradient-action" href={wa} target="_blank" rel="noopener noreferrer"><span>Consultar por WhatsApp</span><span class="action-arrow"><Icon /></span></a>
+        <a class="inline-action" href="/servicios/">Ver servicios <Icon size={18} /></a>
+        <a class="inline-action" href="/">Volver al inicio <Icon size={18} /></a>
+      </div>
+    </div>
+    <div class="uc-art" aria-hidden="true">
+      <div class="uc-slate">
+        <div class="uc-stick"><i></i></div>
+        <div class="uc-board">
+          <div class="uc-row"><span>Página</span><b>{name}</b></div>
+          <div class="uc-cols"><div class="uc-row"><span>Toma</span><b>1</b></div><div class="uc-row"><span>Estado</span><b>En edición</b></div></div>
+          <div class="uc-render"><span>Renderizando</span><i></i></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<style>
+  .uc-main { background: #fff; overflow: clip; font-family: 'Instrument Sans', Arial, sans-serif; color: var(--ink); }
+  .uc { display: grid; grid-template-columns: 1.05fr 1fr; gap: 64px; align-items: center; padding-block: 56px 120px; }
+  .uc-copy :global(.breadcrumbs ol) { margin: 0 0 22px; color: #54545a; }
+  .uc-eyebrow { display: inline-flex; align-items: center; gap: 10px; margin: 0; font: 700 13px var(--display); letter-spacing: .12em; text-transform: uppercase; color: #df005e; }
+  .uc-rec { width: 10px; height: 10px; border-radius: 50%; background: #fe0840; box-shadow: 0 0 0 4px #fe084026; animation: uc-blink 1.4s steps(1) infinite; }
+  .uc h1 { margin: 16px 0 0; font-size: clamp(34px, 3.6vw, 52px); line-height: 1.1; font-weight: 600; letter-spacing: -1.2px; max-width: 16ch; text-wrap: balance; }
+  .uc-lead { font-size: 22px; line-height: 1.5; margin-top: 24px; max-width: 34ch; }
+  .uc-copy > p:not(.uc-eyebrow):not(.uc-lead) { margin-top: 16px; font-size: 17px; line-height: 1.65; max-width: 46ch; color: #3f3f46; }
+  .uc-acts { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 30px; margin-top: 34px; }
+  .uc-art { position: relative; display: grid; place-items: center; min-height: 420px; isolation: isolate; }
+  .uc-art::before { content: ''; position: absolute; z-index: -1; right: 0; top: 10px; width: 300px; height: 340px; background: repeating-linear-gradient(-29deg, transparent 0 14px, #eae5ef 15px 18px, transparent 19px 28px); clip-path: ellipse(50% 50%); }
+  .uc-art::after { content: ''; position: absolute; z-index: -1; left: 6%; bottom: 20px; width: 220px; height: 220px; border-radius: 50%; background: radial-gradient(circle, #fe084022, transparent 70%); }
+  /* Claqueta */
+  .uc-slate { width: min(440px, 100%); rotate: -4deg; filter: drop-shadow(0 26px 30px #17132230); }
+  .uc-stick { position: relative; height: 54px; margin-bottom: 6px; }
+  .uc-stick i { position: absolute; inset: 0; border-radius: 6px 6px 2px 2px; transform-origin: 3% 100%;
+    background: repeating-linear-gradient(-55deg, #151820 0 34px, #fff 34px 60px); border: 3px solid #151820; animation: uc-clap 3.6s cubic-bezier(.6, 0, .3, 1) infinite; }
+  .uc-board { background: #151820; color: #fff; border-radius: 6px; padding: 22px 24px 24px; display: grid; gap: 16px;
+    background-image: linear-gradient(135deg, #fe802d22, transparent 40%, #ac0bd922); }
+  .uc-row { display: grid; gap: 4px; padding-bottom: 12px; border-bottom: 1px solid #ffffff2e; }
+  .uc-row span { font: 600 11px var(--display); letter-spacing: .16em; text-transform: uppercase; color: #ffffff99; }
+  .uc-row b { font: 600 24px/1.2 var(--display); letter-spacing: -.3px; }
+  .uc-cols { display: grid; grid-template-columns: .6fr 1.4fr; gap: 18px; }
+  .uc-cols b { font-size: 20px; }
+  .uc-render { display: grid; gap: 8px; }
+  .uc-render span { font: 600 11px var(--display); letter-spacing: .16em; text-transform: uppercase; color: #ffffff99; }
+  .uc-render span::after { content: '…'; }
+  .uc-render i { position: relative; display: block; height: 6px; border-radius: 3px; background: #ffffff1f; overflow: hidden; }
+  .uc-render i::after { content: ''; position: absolute; inset: 0; width: 40%; border-radius: 3px; background: linear-gradient(90deg, #fe802d, #fe0840 50%, #ac0bd9); animation: uc-render 2.4s cubic-bezier(.65, 0, .35, 1) infinite; }
+  @keyframes uc-clap { 0%, 62%, 100% { transform: rotate(0); } 72% { transform: rotate(-16deg); } 80% { transform: rotate(-16deg); } 84% { transform: rotate(0); } 88% { transform: rotate(-3deg); } 92% { transform: rotate(0); } }
+  @keyframes uc-render { from { transform: translateX(-100%); } to { transform: translateX(250%); } }
+  @keyframes uc-blink { 50% { opacity: .25; } }
+  @media (prefers-reduced-motion: reduce) { .uc-stick i, .uc-render i::after, .uc-rec { animation: none; } }
+  @media (max-width: 880px) { .uc { grid-template-columns: 1fr; gap: 40px; padding-block: 40px 90px; } .uc-art { min-height: 0; } .uc-art::before { width: 200px; height: 230px; } }
+  @media (max-width: 650px) { .uc-lead { font-size: 19px; } .uc-acts .gradient-action { width: 100%; } .uc-row b { font-size: 20px; } }
+</style>

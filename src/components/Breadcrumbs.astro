@@ -1,0 +1,16 @@
+---
+import { getBreadcrumbs, getBuildConfig } from '../lib/seo.mjs';
+const { page, config = getBuildConfig() } = Astro.props;
+const crumbs = getBreadcrumbs(page, config);
+---
+{crumbs.length > 1 && <nav class="breadcrumbs" aria-label="Ruta de navegación">
+  <ol>{crumbs.map(crumb => <li>
+    {crumb.current ? <span aria-current="page">{crumb.name}</span> : <a href={crumb.path}>{crumb.name}</a>}
+  </li>)}</ol>
+</nav>}
+<style>
+  .breadcrumbs ol { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; padding: 0; list-style: none; font-size: .875rem; }
+  .breadcrumbs li { display: inline-flex; align-items: center; gap: .5rem; }
+  .breadcrumbs li + li::before { content: '/'; color: #626269; }
+  .breadcrumbs a { display: inline-flex; align-items: center; min-height: 44px; text-underline-offset: .2em; }
+</style>

@@ -1,0 +1,63 @@
+.hero { min-height: 990px; padding-bottom: 160px; overflow: clip; }
+.site-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-top: 25px; position: relative; z-index: 10; }
+.site-header.wrap { width: 100%; padding-inline: max(32px, calc((100% - 1140px) / 2)); }
+.brand { display: flex; align-items: center; gap: 11px; font-size: 25px; font-weight: 800; font-family: var(--display); min-height: 50px; }
+.brand img { width: 56px; height: 43px; object-fit: contain; }
+.menu-toggle, .menu-close {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 50px; height: 50px; border-radius: 50%; padding: 0;
+}
+.menu-toggle { position: absolute; top: 20px; right: 20px; background: #f5f5f5; }
+.nojs-nav { display: none; }
+html.menu-open, body.menu-open { overflow: hidden; }
+html:not(.js) .menu-toggle { display: none; }
+html:not(.js) .nojs-nav { display: flex; flex-wrap: wrap; gap: 12px 24px; }
+html:not(.js) .nojs-nav a { min-height: 44px; display: inline-flex; align-items: center; }
+html:not(.js) .site-header { flex-wrap: wrap; }
+@media (max-width: 650px) {
+  .site-header.wrap { padding-inline: 20px; }
+}
+.hero-grid { display: grid; grid-template-columns: 560px minmax(0, 1fr); gap: 30px; padding-top: 112px; align-items: start; }
+.hero-copy { position: relative; padding-top: 43px; z-index: 2; }
+.hero h1 { font-size: 76px; font-weight: 800; line-height: .99; letter-spacing: -.4px; text-transform: uppercase; }
+.hero h1 > span { display: block; }
+.outline { color: transparent; -webkit-text-stroke: 1.7px #fff; }
+.hero-intro { margin-top: 32px; max-width: 545px; }
+.hero-lead { display: block; font-size: 21px; line-height: 1.55; }
+.hero-context { display: block; margin-top: 21px; padding-left: 18px; border-left: 2px solid #ffffffaa; font-size: 16px; line-height: 1.65; }
+.hero-actions { display: flex; align-items: center; gap: 30px; margin-top: 35px; }
+.text-action { display: inline-flex; align-items: center; gap: 13px; font-size: 12px; font-weight: 700; letter-spacing: 1.1px; text-transform: uppercase; min-height: 50px; }
+.circle-arrow { width: 50px; height: 50px; border: 1px solid #ffffffaa; border-radius: 50%; display: grid; place-items: center; }
+.collage { position: relative; height: 600px; min-width: 0; }
+.camera-frame { position: absolute; width: 370px; height: 545px; right: 0; top: 0; border-radius: 38px; overflow: hidden; transform: rotate(3deg); box-shadow: 0 22px 35px #530b3228; }
+.camera-frame > img { width: 100%; height: 100%; object-fit: cover; object-position: 57% center; }
+.viewfinder { position: absolute; inset: 20px; background: linear-gradient(white, white) left top/25px 2px no-repeat, linear-gradient(white, white) left top/2px 25px no-repeat, linear-gradient(white, white) right top/25px 2px no-repeat, linear-gradient(white, white) right top/2px 25px no-repeat, linear-gradient(white, white) left bottom/25px 2px no-repeat, linear-gradient(white, white) left bottom/2px 25px no-repeat, linear-gradient(white, white) right bottom/25px 2px no-repeat, linear-gradient(white, white) right bottom/2px 25px no-repeat; }
+.rec, .timecode { position: absolute; padding: 3px 10px; border: 1px solid #fff8; border-radius: 20px; background: #39303d; color: #fff; font-size: 13px; letter-spacing: 1px; }
+.rec { top: 8px; left: 38px; display: flex; align-items: center; gap: 5px; }
+.rec i { width: 8px; height: 8px; border-radius: 50%; background: #ff3879; }
+.timecode { bottom: 7px; right: 8px; }
+.tasting-frame { position: absolute; width: 235px; height: 300px; top: 282px; left: 50px; border: 5px solid #fff; border-radius: 25px; overflow: hidden; transform: rotate(-8deg); box-shadow: 0 22px 35px #50072d35; background: #e00070; }
+.tasting-frame img { width: 100%; height: 100%; object-fit: cover; object-position: 62% center; mix-blend-mode: luminosity; }
+.hero-play { position: absolute; top: 273px; left: 216px; width: 104px; height: 104px; border: 1px solid #fff9; border-radius: 50%; background: #ffffff38; color: #fff; display: grid; place-items: center; box-shadow: 0 0 0 12px #ffffff26; z-index: 3; transition: transform .2s; }
+.hero-play:hover { transform: scale(1.06); }
+.orbit { position: absolute; inset: -25px -62px 0 -16px; border: 1px dashed #ffffff80; border-radius: 50%; transform: rotate(15deg); }
+.orbit-two { inset: 35px -4px 48px 45px; border-style: solid; opacity: .35; transform: rotate(-12deg); }
+.orbit-icon { position: absolute; width: 67px; height: 67px; border-radius: 50%; background: #fff; color: #df005d; display: grid; place-items: center; box-shadow: 0 0 0 9px #ffffff40; animation: float 7s ease-in-out infinite; }
+.icon-camera { top: 12px; left: 92px; }
+.icon-mic { top: 250px; right: -12px; animation-delay: -2s; }
+.icon-coffee { bottom: 0; left: 300px; animation-delay: -4s; }
+.image-caption { position: absolute; bottom: -56px; right: 0; font-size: 13px; line-height: 1.4; text-align: right; }
+/* Logos de clientes. Estado base (sin JavaScript o con movimiento reducido): los 6 logos quietos en una fila. */
+.brand-strip { overflow: hidden; padding-block: 28px 36px; }
+.logo-track { display: flex; flex-wrap: wrap; justify-content: center; }
+.logo-slide { flex: 0 0 calc(100% / 6); height: 133px; display: grid; place-items: center; }
+.logo-slide img { width: min(200px, 88%); height: 102px; object-fit: contain; }
+.logo-slide img.is-tall { height: 133px; }
+.logo-slide img.is-short { height: 84px; }
+.logo-slide.is-copy { display: none; }
+/* Slider como en la web antigua: cajas de 200 × 102 px, 5 visibles a 1140 px y bucle con una copia de la tira. */
+.brand-strip.is-sliding { -webkit-mask-image: linear-gradient(90deg, transparent, #000 40px, #000 calc(100% - 40px), transparent); mask-image: linear-gradient(90deg, transparent, #000 40px, #000 calc(100% - 40px), transparent); }
+.is-sliding .logo-track { flex-wrap: nowrap; justify-content: flex-start; width: max-content; }
+.is-sliding .logo-slide { flex: 0 0 228px; }
+.is-sliding .logo-slide img { width: 200px; }
+.is-sliding .logo-slide.is-copy { display: grid; }

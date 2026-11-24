@@ -1,0 +1,306 @@
+---
+// Página interior con el diseño v4 aprobado el 22-11-2026 (visuales-claude/paginas-completasv4).
+// El orden y el tipo de cada sección salen de src/data/maquetas-v4.json; el texto, de la ficha (getPageContent).
+import Breadcrumbs from '../Breadcrumbs.astro';
+import Icon from '../Icon.astro';
+import PageLink from '../PageLink.astro';
+import Atmosphere from '../Atmosphere.astro';
+import ParticleField from '../ParticleField.astro';
+import LiveIcon from './LiveIcon.astro';
+import Heading from './Heading.astro';
+import SeeAlso from './SeeAlso.astro';
+import cases from '../../data/cases.json';
+import { getPage, getShortName } from '../../lib/seo.mjs';
+import { iconFor, ICONS } from '../../lib/iconos.mjs';
+
+const { page, content, layout } = Astro.props;
+const IC = ICONS as Record<string, string>;
+const { intro, cta, sections, closing, extra } = content;
+const waText = extra.whatsapp ?? `Hola Rhino, quiero consultar sobre ${page.h1.toLowerCase()}.`;
+const wa = 'https://wa.me/51965683542?text=' + encodeURIComponent(waText);
+const mail = 'mailto:info@rhinoaudiovisuales.com?subject=' + encodeURIComponent(`Consulta: ${page.h1}`);
+const [lead, ...restParts] = intro.split('. ');
+const rest = restParts.join('. ');
+const media = (name: string, size: number) => `/media/${name}-${size}.webp`;
+const caseImage = (id: string) => '/media/' + id + (['bloom', 'adidas'].includes(id) ? '-display.webp' : '-1280.webp');
+const yt = (video: string) => 'https://www.youtube.com/watch?v=' + video;
+const shortName = (p: any) => getShortName(p);
+
+// Fondos alternos blanco/lila en recto (las ondas quedan solo en cabecera, banda de relacionados y pie).
+// La banda de imagen (band) lleva su propio fondo y no cuenta en la alternancia.
+let band = 0, splits = 0;
+const blocks = layout.sections.map((spec: any) => {
+  const group = (spec.indexes ?? [spec.index]).map((i: number) => sections[i]);
+  if (group.some((s: any) => !s)) throw new Error(`${page.id}: la maqueta v4 pide una sección que no existe (${spec.indexes ?? spec.index})`);
+  const bg = spec.type === 'band' ? '' : (band++ % 2 === 0 ? 'bg-l' : 'bg-w');
+  const rev = spec.type === 'split' && splits++ % 2 === 1;
+  return { ...spec, index: spec.index ?? spec.indexes[0], section: group[0], group, bg, rev };
+});
+const used = new Set(blocks.flatMap((b: any) => b.indexes ?? [b.index]));
+const missing = sections.map((_: any, i: number) => i).filter((i: number) => !used.has(i));
+if (missing.length) throw new Error(`${page.id}: secciones sin bloque en la maqueta v4: ${missing.join(', ')}`);
+const lastBg = blocks.at(-1)?.bg || 'bg-w';
+const related = layout.related === false ? [] : page.relatedIds.map((id: string) => getPage(id))
+  .filter((p: any) => p.type === 'html' && p.id !== 'P33' && p.id !== page.id && !p.path?.startsWith('/portafolio/'));
+const belt = (layout.belt ?? []).map((id: string) => getPage(id));
+const srcset = (name: string, sizes: number[] = [640, 1280]) => sizes.map(w => `${media(name, w)} ${w}w`).join(', ');
+const cap = (t: string) => t.charAt(0).toUpperCase() + t.slice(1);
+// T2 · frase destacada: la primera frase en grande, con la parte «accent» que se ilumina; el resto debajo.
+function quoteParts(s: any, accent?: string) {
+  const [first, ...more] = s.paragraphs[0].split('. ');
+  const big = first.endsWith('.') || first.endsWith('?') ? first : first + '.';
+  if (accent && !big.includes(accent)) throw new Error(`${page.id}: la frase destacada no contiene «${accent}»`);
+  const [before, after] = accent ? big.split(accent) : [big, ''];
+  return { before, accent, after, rest: [more.join('. '), ...s.paragraphs.slice(1)].filter(Boolean) };
+}
+// T9 · la última frase pasa a la nota «A tener en cuenta».
+function asideParts(s: any) {
+  const text = s.paragraphs.join(' ');
+  const cut = text.lastIndexOf('. ', text.length - 2);
+  if (cut < 0) throw new Error(`${page.id}: «${s.title}» necesita al menos dos frases para la nota`);
+  return { body: text.slice(0, cut + 1), note: text.slice(cut + 2) };
+}
+// T7 · «Término: descripción» con el término en negrita.
+const listItem = (i: string) => { const [t, ...d] = i.split(': '); return d.length && t.length < 40 ? { t, d: d.join(': ') } : { t: '', d: i }; };
+// T5 de P02 · cada «Término: descripción» va en la tarjeta de su enlace (por la primera palabra).
+const firstWord = (t: string) => t.toLowerCase().split(/\s+/)[0];
+function descsFromItems(s: any) {
+  const out: Record<string, string> = {};
+  for (const it of s.items) { const [term, d] = it.split(': '); const l = s.links.find(([, label]: string[]) => firstWord(label) === firstWord(term)); if (l) out[l[0]] = cap(d); }
+  return out;
+}
+const STEPS = [
+  ['message', 'Cuéntanos tu necesidad.', 'Puede ser una idea, una fecha o un problema de comunicación.'],
+  ['calendar', 'Comparte el contexto.', 'Para un evento: lugar y fecha, si los conoces. Para una pieza: mensaje y uso previsto.'],
+  ['send', 'Hablemos de tu proyecto.', 'Elige WhatsApp o correo para iniciar la conversación.'],
+];
+---
+<main id="main" class="v4-main" data-v4>
+  <svg width="0" height="0" class="v4-defs" aria-hidden="true"><defs>
+    <linearGradient id="v4-brand" gradientUnits="userSpaceOnUse" x1="2" y1="2" x2="22" y2="22"><stop stop-color="#fe802d"/><stop offset=".5" stop-color="#fe0840"/><stop offset="1" stop-color="#ac0bd9"/></linearGradient>
+  </defs></svg>
+
+  <!-- Introducción: como «Producción audiovisual» de la home -->
+  <section class="v4-intro wrap" aria-labelledby="page-title">
+    <div class="v4-intro-copy">
+      <Breadcrumbs page={page} />
+      <h1 id="page-title" class="v4-title">{page.h1}<span class="presentation-accent" aria-hidden="true"></span></h1>
+      <p class="v4-lead">{lead}{rest ? '.' : ''}</p>
+      {rest && <p>{rest}</p>}
+      <div class="v4-acts">
+        <a class="action gradient-action" data-magnet href={wa} target="_blank" rel="noopener noreferrer"><span>{cta}</span><span class="action-arrow"><Icon /></span></a>
+        <a class="inline-action" href={mail}>Escribir por correo <Icon size={18} /></a>
+      </div>
+    </div>
+    <!-- Collage elegido el 23-11-2026 (visuales-claude/2026-11-22-fotos-collage, N2): grande cuadrada con el momento del evento,
+         pequeña vertical 2:3 con la captura. Fotos ilustrativas creadas con IA; los anchos de «sizes» son los huecos medidos con object-fit: cover. -->
+    <figure class="v4-collage" data-parallax>
+      <img class="v4-big" src={media(layout.collage.image, 1024)} srcset={`${media(layout.collage.image, 640)} 640w, ${media(layout.collage.image, 1024)} 1024w`}
+        sizes="(max-width: 650px) 270px, (max-width: 880px) 66vw, 400px" width={layout.collage.width ?? 1024} height={layout.collage.height ?? 1024} alt={layout.collage.alt} fetchpriority="high" decoding="async" />
+      <img class="v4-small" src={media(layout.collage.second, 1024)} srcset={`${media(layout.collage.second, 640)} 640w, ${media(layout.collage.second, 1024)} 1024w`}
+        sizes="(max-width: 650px) 140px, (max-width: 880px) 37vw, 210px" width={layout.collage.secondWidth ?? 1024} height={layout.collage.secondHeight ?? 1536} alt="" decoding="async" />
+    </figure>
+  </section>
+
+  <!-- 11 · Cinta de servicios (P02): se desplaza sola; se detiene con el cursor, el foco o el botón, y con «reducir movimiento» queda quieta. -->
+  {belt.length > 0 && (
+    <section class="v4-belt" aria-label="Servicios principales" data-belt>
+      <button type="button" class="v4-belt-pause" aria-pressed="false" data-belt-pause>Pausar cinta</button>
+      <div class="v4-belt-in">
+        <ul class="v4-belt-track">
+          {belt.map((p: any) => <li><PageLink pageId={p.id} label={shortName(p)}>{shortName(p)}</PageLink></li>)}
+          {belt.map((p: any) => <li aria-hidden="true"><span>{shortName(p)}</span></li>)}
+        </ul>
+      </div>
+    </section>)}
+
+  {blocks.map((b: any, k: number) => {
+    const s = b.section;
+    const id = `sec-${b.index + 1}`;
+    if (b.type === 'split') return (
+      <section id={id} class:list={['v4-sec v4-split', b.bg]} data-live-group>
+        <div class:list={['wrap v4-split-in', b.rev && 'rev']}>
+          <figure class="v4-photo" data-curtain>
+            <span class="v4-photo-in">
+              <img src={media(b.image, (b.sizes ?? [640, 1280]).at(-1))} srcset={srcset(b.image, b.sizes)} sizes="(max-width: 880px) 100vw, 560px"
+                width={b.width} height={b.height} alt={b.alt} loading="lazy" decoding="async" />
+              <span class="v4-curtain" aria-hidden="true"></span>
+            </span>
+          </figure>
+          <div class="v4-copy"><Heading text={s.title} />{s.paragraphs.map((p: string) => <p>{p}</p>)}<SeeAlso links={s.links} /></div>
+        </div>
+      </section>);
+    if (b.type === 'panels') {
+      const terms = s.items.map((it: string) => it.split(': '));
+      // P02: cada panel enlaza a su servicio (por la primera palabra); los demás enlaces quedan en «Ver también».
+      const panelLink = (t: string) => b.panelLinks ? s.links.find(([, label]: string[]) => firstWord(label) === firstWord(t)) : undefined;
+      const rest = s.links.filter((l: string[]) => !terms.some(([t]: string[]) => panelLink(t)?.[0] === l[0]));
+      return (
+      <section id={id} class:list={['v4-sec v4-panels', b.bg]} data-live-group>
+        <div class="wrap">
+          <div class="section-heading"><Heading text={s.title} /><div>{s.paragraphs.map((p: string) => <p>{p}</p>)}<SeeAlso links={rest} /></div></div>
+          <div class="v4-deck" data-deck-v4>
+            {terms.map(([t, d]: string[], j: number) => (
+              <article class:list={['v4-panel', j === 0 && 'on']} tabindex="0">
+                <LiveIcon name={b.icons?.[j] ?? 'check'} />
+                <h3>{t}</h3>
+                {b.images?.[j] && <span class="v4-panel-img"><span class="v4-panel-img-in"><img src={media(b.images[j], 640)} width="640" height="427" alt="" loading="lazy" decoding="async" /></span></span>}
+                <p>{cap(d)}</p>
+                {panelLink(t) && <PageLink pageId={panelLink(t)[0]} label={panelLink(t)[1]} class="v4-panel-go">Ver servicio <Icon size={18} /></PageLink>}
+              </article>))}
+          </div>
+        </div>
+      </section>);
+    }
+    if (b.type === 'linkcards') {
+      const descs: Record<string, string> = b.descFromItems ? descsFromItems(s) : {};
+      return (
+      <section id={id} class:list={['v4-sec v4-links', b.bg]} data-live-group>
+        <div class="wrap">
+          <div class="section-heading"><Heading text={s.title} /><div>{s.paragraphs.map((p: string) => <p>{p}</p>)}</div></div>
+          <ul class="v4-cards">
+            {s.links.map(([pid, label]: string[], j: number) => (
+              <li style={`--i:${j}`}><PageLink pageId={pid} label={label} class="v4-card">
+                <LiveIcon name={iconFor(pid)} />
+                <b>{label}</b><span class="v4-card-h1">{descs[pid] ?? getPage(pid).h1}</span>
+                <span class="v4-card-go">{getPage(pid).path?.startsWith('/servicios/') ? 'Ver servicio' : 'Ver página'} <Icon size={18} /></span>
+              </PageLink></li>))}
+          </ul>
+        </div>
+      </section>);
+    }
+    if (b.type === 'samples') {
+      const items = s.samples.map((cid: string) => cases.find(c => c.id === cid)).filter(Boolean);
+      const leadText = s.paragraphs[0] ?? '';
+      const guide = /imagen, sonido/i.test(leadText);
+      return (
+      <section id={id} class:list={['v4-sec v4-e3', b.bg]} data-slider data-live-group>
+        <div class="v4-e3-grid">
+          <div class="v4-e3-text">
+            <Heading text={s.title} />
+            {items.map((c: any, j: number) => (
+              <div class="v4-e3-item" hidden={j > 0} data-slide-text={j}>
+                <h3>{c.title}</h3><p>{c.context}</p>
+                <a class="action gradient-action" data-magnet href={yt(c.video)} target="_blank" rel="noopener noreferrer" data-video={c.id}><span>Ver video</span><span class="action-arrow"><Icon name="play" /></span></a>
+              </div>))}
+            {items.length > 1 && <>
+              <div class="v4-e3-ctrl"><span class="v4-count" aria-live="polite"><b>1</b> / {items.length}</span>
+                <button type="button" class="v4-arrow prev" data-prev aria-label="Proyecto anterior"><Icon /></button>
+                <button type="button" class="v4-arrow next" data-next aria-label="Proyecto siguiente"><Icon /></button></div>
+              <span class="v4-bars" aria-hidden="true">{items.map((_: any, j: number) => <i class:list={[j === 0 && 'on']}></i>)}</span></>}
+            {guide ? <div class="v4-e3-guide"><p>{leadText}</p><ul class="v4-chips">
+                <li><LiveIcon name="camera" size={22} bar={false} />Imagen</li><li><LiveIcon name="mic" size={22} bar={false} />Sonido</li><li><LiveIcon name="film" size={22} bar={false} />Selección de momentos</li></ul></div>
+              : leadText && <p class="v4-e3-lead">{leadText}</p>}
+          </div>
+          <div class="v4-e3-rail" data-cursor-video>
+            <div class="v4-e3-track">
+              {(items.length > 1 ? [...items, ...items, ...items] : items).map((c: any, k: number) => (
+                <a class:list={['v4-e3-slide', items.length === 1 && 'cur']} href={yt(c.video)} target="_blank" rel="noopener noreferrer" data-video={c.id} tabindex="-1" aria-hidden="true" draggable="false" data-slide={k % items.length}>
+                  <img src={caseImage(c.id)} width="1280" height="720" alt="" loading="lazy" decoding="async" draggable="false" />
+                  <span class="v4-play"><Icon name="play" size={30} /></span>
+                </a>))}
+            </div>
+            <span class="v4-cursor" aria-hidden="true"><svg class="vc-play" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><Fragment set:html={IC.play} /></svg><svg class="vc-next" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><Fragment set:html={IC.arrow} /></svg><em>Ver video</em></span>
+          </div>
+        </div>
+      </section>);
+    }
+    if (b.type === 'quote') {
+      const q = quoteParts(s, b.accent);
+      return (
+      <section id={id} class:list={['v4-sec v4-quote', b.bg]} data-quote>
+        <div class="wrap">
+          <Heading text={s.title} class="v4-quote-h" />
+          <p class="v4-state">{q.before}{q.accent && <em>{q.accent}</em>}{q.after}</p>
+          {(q.rest.length > 0 || s.links.length > 0) && <div class="v4-rest">{q.rest.map((p: string) => <p>{p}</p>)}<SeeAlso links={s.links} /></div>}
+        </div>
+      </section>);
+    }
+    if (b.type === 'checklist') return (
+      <section id={id} class:list={['v4-sec v4-check', b.bg]}>
+        <div class="wrap v4-check-grid">
+          <div class="v4-check-head"><Heading text={s.title} />{s.paragraphs.map((p: string) => <p>{p}</p>)}<SeeAlso links={s.links} /></div>
+          <ul class:list={['v4-list', `n${s.items.length}`]} data-list>
+            {s.items.map((it: string, j: number) => { const x = listItem(it); return (
+              <li style={`--i:${j}`}><svg class="v4-tick" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="url(#v4-brand)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><Fragment set:html={IC.check} /></svg>
+                <p>{x.t && <strong>{x.t}:</strong>} {x.d}</p></li>); })}
+          </ul>
+        </div>
+      </section>);
+    if (b.type === 'aside') {
+      const a = asideParts(s);
+      return (
+      <section id={id} class:list={['v4-sec v4-aside', b.bg]} data-live-group>
+        <div class="wrap v4-aside-grid">
+          <div><Heading text={s.title} /><p class="v4-aside-lead">{a.body}</p><SeeAlso links={s.links} /></div>
+          <aside class="v4-note"><LiveIcon name="info" size={28} /><p class="v4-note-label">A tener en cuenta</p><p>{a.note}</p></aside>
+        </div>
+      </section>);
+    }
+    if (b.type === 'text') return (
+      <section id={id} class:list={['v4-sec v4-text', b.bg]}>
+        <div class="wrap"><div class="section-heading"><Heading text={s.title} /><div>{s.paragraphs.map((p: string) => <p>{p}</p>)}<SeeAlso links={s.links} /></div></div></div>
+      </section>);
+    if (b.type === 'band') return (
+      <section id={id} class="v4-band">
+        <div class="v4-band-img">
+          <img src={media(b.image, (b.sizes ?? [640, 1280]).at(-1))} srcset={srcset(b.image, b.sizes)} sizes="100vw" alt={b.alt} loading="lazy" decoding="async" />
+          <div class="wrap"><Heading text={s.title} class="v4-band-title" /></div>
+        </div>
+        <div class="wrap"><div class="v4-band-card">{s.paragraphs.map((p: string) => <p>{p}</p>)}<SeeAlso links={s.links} /></div></div>
+      </section>);
+    if (b.type === 'keys') return (
+      <section id={id} class:list={['v4-sec v4-keys', b.bg]} data-live-group>
+        <div class="wrap">
+          <ol class:list={['v4-keys-list', `n${b.group.length}`]} data-keys>
+            <span class="v4-keys-track" aria-hidden="true"><i class="v4-keys-fill"></i></span>
+            {b.group.map((g: any, j: number) => (
+              <li><span class="v4-step-node"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><Fragment set:html={IC[b.icons?.[j] ?? 'check']} /></svg></span>
+                <Heading text={g.title} />{g.paragraphs.map((p: string) => <p>{p}</p>)}<SeeAlso links={g.links} /></li>))}
+          </ol>
+        </div>
+      </section>);
+    return null;
+  })}
+
+  {related.length > 0 && (
+    <section class:list={['v4-related color-field', lastBg === 'bg-l' && 'after-l']} aria-labelledby="v4-related-title">
+      <Atmosphere seed={71} waves={false} />
+      <ParticleField id="rhino-related-particles" label="servicios relacionados" />
+      <svg class="v4-top-wave" viewBox="0 0 1440 110" preserveAspectRatio="none" aria-hidden="true"><path fill="white" opacity=".2" d="M0 0H1440V105Q720 -35 0 105Z"/><path fill="white" opacity=".3" d="M0 0H1440V88Q720 -52 0 88Z"/><path class="v4-wave-solid" fill="white" d="M0 0H1440V70Q720 -70 0 70Z"/></svg>
+      <div class="wrap v4-related-in">
+        <h2 id="v4-related-title">Servicios relacionados</h2>
+        <p>Otros servicios que suelen acompañar este encargo. Se consultan y contratan por separado.</p>
+        <div class="v4-nodes">
+          {related.map((r: any) => (
+            <PageLink pageId={r.id} label={shortName(r)} class="directory-node v4-node">
+              <span class="node-circle"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><Fragment set:html={IC[iconFor(r.id)]} /></svg></span>
+              <span class="node-label">{shortName(r)}</span>
+            </PageLink>))}
+        </div>
+      </div>
+      <svg class="v4-bottom-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path fill="#fff" opacity=".22" d="M0 0C480 20 660 118 1440 2V90H0Z"/><path fill="#fff" opacity=".38" d="M0 30C550 80 880 108 1440 22V90H0Z"/><path fill="#fff" d="M0 48C550 110 1040 98 1440 46V90H0Z"/></svg>
+    </section>)}
+
+  {closing && (
+    <section class="v4-close" aria-labelledby="v4-close-title">
+      <div class="wrap v4-close-grid">
+        <div class="v4-close-copy">
+          <h2 id="v4-close-title" class="v4-h2" data-rotulo><span class="v4-h2-text">{closing.title}</span><span class="presentation-accent" aria-hidden="true"></span></h2>
+          {closing.paragraphs.map((p: string) => <p>{p}</p>)}
+          <div class="v4-acts">
+            <a class="action gradient-action" data-magnet href={wa} target="_blank" rel="noopener noreferrer"><span>{cta}</span><span class="action-arrow"><Icon /></span></a>
+            <a class="inline-action" href={mail}>Escribir por correo <Icon size={18} /></a>
+          </div>
+          <SeeAlso links={closing.links ?? []} />
+        </div>
+        <ol class="v4-steps" data-steps>
+          <span class="v4-track" aria-hidden="true"><i class="v4-fill"></i></span>
+          {STEPS.map(([icon, title, text]) => (
+            <li><span class="v4-step-node"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><Fragment set:html={IC[icon]} /></svg></span>
+              <div><h3>{title}</h3><p>{text}</p></div></li>))}
+        </ol>
+      </div>
+    </section>)}
+</main>
+<script src="../../scripts/v4-motion.ts"></script>

@@ -1,0 +1,34 @@
+---
+import '../styles/global.css';
+import SeoHead from '../components/SeoHead.astro';
+import { getPage } from '../lib/seo.mjs';
+interface Props { pageId: string; service?: { confirmedVisible: true; name: string; description?: string }; pending?: boolean; }
+// pending: página del registro aún sin construir que se muestra «en construcción» (no se indexa, sin schema).
+const { pageId, service, pending = false } = Astro.props;
+const page = getPage(pageId);
+const fonts = pageId === 'P01'
+  ? [{ href: '/fonts/proxima-nova-600.woff2', type: 'font/woff2' }, { href: '/fonts/proxima-nova-regular.woff', type: 'font/woff' }]
+  : [{ href: '/fonts/poppins-600.woff2', type: 'font/woff2' }, { href: '/fonts/instrument-sans-400.woff2', type: 'font/woff2' }];
+---
+<!doctype html>
+<html lang="es-PE" data-build="rhino-v3" data-page-id={pageId}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {pending ? <>
+      <title>{`En construcción · ${page.title}`}</title>
+      <meta name="robots" content="noindex, follow" />
+    </> : <SeoHead page={page} service={service} />}
+    <meta name="theme-color" content="#fe0840" />
+    <link rel="icon" href="/favicon.ico" sizes="48x48" />
+    <link rel="icon" href="/media/icon-192.png" type="image/png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    {fonts.map(font => <link rel="preload" href={font.href} as="font" type={font.type} crossorigin="anonymous" />)}
+    <script is:inline>document.documentElement.classList.add('js');</script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Saltar al contenido</a>
+    <slot />
+    <script src="../scripts/interactions.ts"></script>
+  </body>
+</html>

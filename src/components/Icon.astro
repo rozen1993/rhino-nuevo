@@ -1,0 +1,5 @@
+---
+const {name='arrow',size=24}=Astro.props;
+const paths:Record<string,string>={arrow:'M5 12h14m-6-6 6 6-6 6',down:'M12 4v16m-6-6 6 6 6-6',video:'M3 6h12v12H3z m12 4 6-4v12l-6-4',mic:'M9 4a3 3 0 0 1 6 0v8a3 3 0 0 1-6 0z M5 10v2a7 7 0 0 0 14 0v-2 M12 19v3m-4 0h8',coffee:'M4 8h12v9a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z M16 9h2a3 3 0 0 1 0 6h-2 M7 1v3m5-3v3',camera:'M3 6h5l2-3h4l2 3h5v15H3z M16 13a4 4 0 1 1-8 0 4 4 0 0 1 8 0',calendar:'M3 5h18v16H3z M7 2v6m10-6v6M3 10h18M7 14h4',film:'M3 7h18v14H3z M3 7V3h18v4M7 3l3 4m5-4 3 4',studio:'M5 2v11m-3 0h6M5 13v9m-3 0 3-6 3 6M15 2h6v8h-6z M18 10v12m-3 0 3-6 3 6',check:'m3 5 2 2 4-4m3 3h9M3 12l2 2 4-4m3 3h9M3 19l2 2 4-4m3 3h9',send:'m2 10 20-8-8 20-3-9z M11 13 22 2',phone:'m5 2 4 4-2 4c1 3 4 6 7 7l4-2 4 4-3 3C11 23 1 13 2 5z',mail:'M2 4h20v16H2z m0 0 10 9L22 4',close:'m5 5 14 14M19 5 5 19',menu:'M3 6h18M3 12h18M3 18h18',play:'m8 4 12 8-12 8z',tick:'m5 12 5 5 9-11'};
+---
+<svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d={paths[name]||paths.arrow}/></svg>

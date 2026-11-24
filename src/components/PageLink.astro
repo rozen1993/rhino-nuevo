@@ -1,0 +1,33 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import { getPage } from '../lib/seo.mjs';
+
+type Props = Omit<HTMLAttributes<'a'>, 'href'> & {
+  pageId: string;
+  label?: string;
+  fallbackHref?: string;
+};
+
+const { pageId, label, fallbackHref, ...attributes } = Astro.props;
+const page = getPage(pageId);
+// Reserves and the PDF have separate publication contracts. They must not
+// silently become links just because an entry exists in the SEO inventory.
+if (page.type !== 'html') {
+  throw new Error(`PageLink only accepts HTML pages: ${pageId}`);
+}
+const available = page.implemented && typeof page.path === 'string';
+// Desde el 23-11-2026 las páginas sin construir tienen su dirección «en construcción» ([...slug].astro):
+// se enlazan siempre por su ruta, nunca a una sección de la home. Gracias (P34) no se enlaza.
+const href = typeof page.path === 'string' && page.id !== 'P34' ? page.path : fallbackHref;
+const text = label ?? page.h1 ?? page.title;
+const hasContent = Astro.slots.has('default');
+---
+{href ? (
+  <a {...attributes} href={href} aria-current={available && Astro.url.pathname === page.path ? 'page' : undefined}>
+    {hasContent ? <slot/> : text}
+  </a>
+) : (
+  <button {...attributes} type="button" data-pending={text} data-path={page.path}>
+    {hasContent ? <slot/> : text}
+  </button>
+)}

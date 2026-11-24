@@ -1,0 +1,34 @@
+---
+import TopWave from './TopWave.astro';
+import Atmosphere from './Atmosphere.astro';
+import ParticleField from './ParticleField.astro';
+import Icon from './Icon.astro';
+import PageLink from './PageLink.astro';
+const homeAnchor = (anchor: string) => `${Astro.url.pathname === '/' ? '' : '/'}#${anchor}`;
+---
+<footer id="pie" class="site-footer color-field">
+  <Atmosphere waves={false} seed={103}/><ParticleField id="rhino-footer-particles" label="el pie de página"/><TopWave/>
+  <div class="wrap footer-content">
+    <a class="footer-logo" href={homeAnchor('inicio')} aria-label="Volver al inicio">
+      <img src="/media/logo-rhino.png" width="261" height="197" alt="Rhino Audiovisuales"/>
+    </a>
+    <p class="footer-tagline">Productora audiovisual en Lima.</p>
+    <div class="footer-contacts">
+      <a href="tel:+51965683542">
+        <span class="contact-icon"><Icon name="phone"/></span>
+        <span><small>Teléfono</small>965 683 542</span>
+      </a>
+      <a href="mailto:info@rhinoaudiovisuales.com">
+        <span class="contact-icon"><Icon name="mail"/></span>
+        <span><small>Correo</small>info@rhinoaudiovisuales.com</span>
+      </a>
+    </div>
+    <nav aria-label="Navegación de pie">
+      <PageLink pageId="P02" label="Servicios" fallbackHref={homeAnchor('servicios')}/>
+      <PageLink pageId="P32" label="Nosotros"/>
+      <PageLink pageId="P33" label="Contacto" fallbackHref={homeAnchor('consulta')}/>
+      <PageLink pageId="P35" label="Política de privacidad"/>
+    </nav>
+    <p class="footer-word" aria-hidden="true">RHINO</p>
+  </div>
+</footer>

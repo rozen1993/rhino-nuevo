@@ -1,0 +1,22 @@
+---
+import Icon from './Icon.astro';import services from '../data/services.json';
+import PageLink from './PageLink.astro';
+const {section,group='production',title=section.title,id=group==='production'?'servicios':'eventos'}=Astro.props;
+const assets:Record<string,string>={P03:'production',P04:'production',P12:'camera',P05:'tasting',P06:'podcast',P07:'catering'};
+const icons:Record<string,string>={P03:'film',P04:'video',P12:'play',P05:'video',P06:'mic',P07:'coffee'};
+const prompts:Record<string,string>={P05:'Cuéntanos el tipo de evento, la fecha, el lugar y qué material necesitas.',P06:'Indica dónde quieres emitir o publicar, el lugar y la duración aproximada.',P07:'Comparte la fecha, el lugar y el número aproximado de asistentes.'};
+const large:Record<string,number>={P03:1600,P04:1600,P12:1600,P05:1280,P06:960,P07:960};
+const heights:Record<string,number>={P03:1067,P04:1067,P12:1067,P05:720,P06:824,P07:640};
+---
+<section id={id} class:list={['service-section','wrap',group]} aria-labelledby={`${group}-title`}>
+  <div class="section-heading"><h2 id={`${group}-title`}>{title}<span class="presentation-accent" aria-hidden="true"></span></h2><div>{title!==section.title&&<p class="service-context">{section.title}</p>}{section.paragraphs.map((p:string)=><p>{p}</p>)}</div></div>
+  <div class="service-deck" data-deck={group}>
+    {section.links.map(([id,label]:string[],i:number)=><article class:list={['service-panel',i===0&&'is-active']}>
+      <h3 class="panel-heading"><button class="panel-trigger" id={`${id}-trigger`} aria-expanded="true" aria-controls={`${id}-body`}><span class="service-icon"><Icon name={icons[id]}/></span><span class="panel-title">{label}</span><span class="panel-number" aria-hidden="true" data-number={`0${i+1}`}></span></button></h3>
+      <div class="panel-content" id={`${id}-body`}>
+        <div class="service-image"><img src={`/media/${assets[id]}-${large[id]}.webp`} srcset={`/media/${assets[id]}-480.webp 480w, /media/${assets[id]}-${large[id]}.webp ${large[id]}w`} sizes="(max-width: 650px) calc(100vw - 40px), 450px" alt={id==='P05'?'Expositor en Premium Tasting Lima':`Imagen ilustrativa para ${label.toLowerCase()}`} width={large[id]} height={heights[id]} loading="lazy"/></div>
+        <div class="service-copy"><p>{group==='events'?section.items[i]:services[id as keyof typeof services].intro}</p><p class="service-prompt">{prompts[id]??'Cuéntanos el mensaje y el uso previsto de la pieza.'}</p><PageLink pageId={id} label={label} class="dark-action">{label}<Icon size={18}/></PageLink></div>
+      </div>
+    </article>)}
+  </div>
+</section>

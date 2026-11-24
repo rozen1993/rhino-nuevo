@@ -1,0 +1,11 @@
+---
+import home from '../data/home.json';import Icon from './Icon.astro';import Action from './Action.astro';
+const section=home.sections[4];
+const steps=[{title:'Cuéntanos tu necesidad.',text:'Puede ser una idea, una fecha o un problema de comunicación.',icon:'check'},{title:'Comparte el contexto.',text:'Para un evento: lugar y fecha, si los conoces. Para una pieza: mensaje y uso previsto.',icon:'calendar'},{title:'Hablemos de tu proyecto.',text:'Elige WhatsApp o correo para iniciar la conversación.',icon:'send'}];
+---
+<section id="consulta" class="consultation" aria-labelledby="consultation-title">
+ <div class="wrap"><div class="section-tick" aria-hidden="true"></div><h2 id="consultation-title">{section.title}</h2>{section.paragraphs.map(p=><p class="consultation-intro">{p}</p>)}</div>
+ <div class="steps-wrap"><svg class="steps-line" viewBox="0 0 1440 220" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="step-gradient"><stop stop-color="var(--brand-orange)"/><stop offset=".5" stop-color="var(--brand-pink)"/><stop offset="1" stop-color="var(--brand-violet)"/></linearGradient></defs><path d="M-50 130Q250 -70 550 105T1050 100T1490 70" fill="none" stroke="#f6e8f0" stroke-width="22"/><path d="M-50 130Q250 -70 550 105T1050 100T1490 70" fill="none" stroke="url(#step-gradient)" stroke-width="3"/></svg>
+ <ol class="steps wrap">{steps.map((step,i)=><li><span class="step-icon"><Icon name={step.icon} size={29}/><span aria-hidden="true">0{i+1}</span></span><h3>{step.title}</h3><p>{step.text}</p></li>)}</ol></div>
+ <div class="contact-actions"><Action href="https://wa.me/51965683542?text=Hola%20Rhino%2C%20quiero%20consultar%20un%20proyecto." label="Consultar por WhatsApp" variant="gradient-action" external/><div class="contact-secondary"><a class="inline-action" href="mailto:info@rhinoaudiovisuales.com?subject=Consulta%20de%20proyecto">Prefiero escribir por correo <Icon size={18}/></a><a class="inline-action" href="/contacto/">Cuéntanos tu proyecto <Icon size={18}/></a></div></div>
+</section>

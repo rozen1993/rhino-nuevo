@@ -1,0 +1,9 @@
+---
+// «Ver también» de una sección: enlaces subrayados en rosa a otras páginas del registro.
+import PageLink from '../PageLink.astro';
+import Icon from '../Icon.astro';
+interface Props { links: [string, string][] }
+const { links } = Astro.props;
+---
+{links.length > 0 && <p class="v4-see"><span>Ver también</span>{links.map(([id, label]) =>
+  <PageLink pageId={id} label={label} class="inline-action">{label} <Icon size={18} /></PageLink>)}</p>}

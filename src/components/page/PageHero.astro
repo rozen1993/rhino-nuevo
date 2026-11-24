@@ -1,0 +1,47 @@
+---
+// Cabecera «visor de cámara»: la imagen de la página en un visor (esquinas, REC, código de tiempo)
+// y el H1 en un rótulo de pie de pantalla, como los de los videos de eventos.
+import Breadcrumbs from '../Breadcrumbs.astro';
+import Icon from '../Icon.astro';
+const { page, intro, cta, whatsapp, hero } = Astro.props;
+const waHref = 'https://wa.me/51965683542?text=' + encodeURIComponent(whatsapp ?? `Hola Rhino, quiero consultar sobre ${page.h1.toLowerCase()}.`);
+const mailHref = 'mailto:info@rhinoaudiovisuales.com?subject=' + encodeURIComponent(`Consulta: ${page.h1}`);
+---
+<section class="vf-hero" aria-labelledby="page-title">
+  <div class="wrapx"><Breadcrumbs page={page} /></div>
+  <figure class="vf wrapx">
+    {hero && <img src={`/media/${hero.image}-1280.webp`}
+      srcset={`/media/${hero.image}-640.webp 640w, /media/${hero.image}-1280.webp 1280w`}
+      sizes="(max-width: 1240px) calc(100vw - 40px), 1180px"
+      width={hero.width} height={hero.height} alt={hero.alt} fetchpriority="high" decoding="async" />}
+    <span class="vf-corner c1" aria-hidden="true"></span><span class="vf-corner c2" aria-hidden="true"></span>
+    <span class="vf-corner c3" aria-hidden="true"></span><span class="vf-corner c4" aria-hidden="true"></span>
+    <span class="vf-rec mono" aria-hidden="true"><i></i>REC</span>
+    <span class="vf-tc mono" aria-hidden="true" data-timecode>00:00:00:00</span>
+    <div class="lt lt-hero">
+      <h1 id="page-title" class="lt-main">{page.h1}</h1>
+      <p class="lt-sub">{hero?.tag ?? 'Rhino Audiovisuales · Lima'}</p>
+    </div>
+  </figure>
+  <div class="wrapx vf-lead">
+    <p>{intro}</p>
+    <div class="acts">
+      <a class="btn btn-plum" href={waHref} target="_blank" rel="noopener noreferrer">{cta ?? 'Consultar por WhatsApp'} <Icon size={20} /></a>
+      <a class="lnk" href={mailHref}>Escribir por correo</a>
+    </div>
+  </div>
+</section>
+<script>
+  // Código de tiempo del visor a 25 fotogramas por segundo; quieto si el sistema pide reducir movimiento.
+  const node = document.querySelector<HTMLElement>('[data-timecode]');
+  if (node && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const start = performance.now();
+    const pad = (n: number) => String(n).padStart(2, '0');
+    const tick = () => {
+      const frames = Math.floor((performance.now() - start) / 40);
+      node.textContent = `${pad(Math.floor(frames / 90000))}:${pad(Math.floor(frames / 1500) % 60)}:${pad(Math.floor(frames / 25) % 60)}:${pad(frames % 25)}`;
+      requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+</script>

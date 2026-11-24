@@ -1,0 +1,14 @@
+---
+// Icono X2: dibujo Lucide en degradado, sin fondo, con la barrita de los títulos debajo.
+// Si el dibujo es «vivo» (LIVE), sus partes hacen un gesto propio (src/styles/v4.css) cuando v4-motion.ts añade .go.
+import { ICONS, LIVE } from '../../lib/iconos.mjs';
+interface Props { name: string; size?: number; bar?: boolean; class?: string }
+const { name, size = 34, bar = true, class: extra } = Astro.props;
+const IC = ICONS as Record<string, string>;
+if (!IC[name]) throw new Error(`Icono desconocido: ${name}`);
+const live = LIVE.has(name);
+---
+<span class:list={['v4-icon', !bar && 'no-bar', extra]} data-live={live ? name : undefined}>
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="url(#v4-brand)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><Fragment set:html={IC[name]} /></svg>
+  {bar && <i class="v4-bar" aria-hidden="true"></i>}
+</span>

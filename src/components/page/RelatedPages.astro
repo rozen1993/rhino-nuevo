@@ -1,0 +1,24 @@
+---
+// Enlazado interno de la ficha F6 (relatedIds) como etiquetas tipo rótulo. Contacto se omite: la página cierra con su consulta.
+import Icon from '../Icon.astro';
+import PageLink from '../PageLink.astro';
+import { getPage, getShortName } from '../../lib/seo.mjs';
+const { page } = Astro.props;
+type Entry = ReturnType<typeof getPage>;
+const CASES = new Set(['P28', 'P29', 'P30', 'P31']);
+const related = (page.relatedIds ?? []).map((id: string) => getPage(id))
+  .filter((entry: Entry) => entry.type === 'html' && entry.id !== 'P33' && entry.id !== page.id);
+const groups = [
+  { title: 'Servicios relacionados', items: related.filter((entry: Entry) => !CASES.has(entry.id)) },
+  { title: 'Proyectos relacionados', items: related.filter((entry: Entry) => CASES.has(entry.id)) },
+].filter(group => group.items.length);
+---
+{groups.length > 0 && <section class="vr" aria-labelledby="related-title">
+  <div class="wrapx">
+    <h2 id="related-title" class="sr-only">Páginas relacionadas</h2>
+    {groups.map(group => <div class="vr-group">
+      <h3>{group.title}</h3>
+      <ul>{group.items.map((entry: Entry) => <li><PageLink pageId={entry.id} label={getShortName(entry)} class="tag tag-light"><span>{getShortName(entry)}</span><Icon size={18} /></PageLink></li>)}</ul>
+    </div>)}
+  </div>
+</section>}
