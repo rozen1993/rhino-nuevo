@@ -1,5 +1,9 @@
 {
   "_nota": "Datos de presentación por página que no están en el contenido editorial (src/data/contenido-paginas.json, copia de entrega-contenidos-png-v2). hero: imagen de cabecera ya convertida en public/media/<image>-640|1280.webp. samples: ids de src/data/cases.json que sustituyen el espacio de muestra. service: emitir schema Service porque la oferta está visible en la página. hero.caption: texto en la esquina del visor; hero.tag: línea bajo el rótulo del H1. moments: miniaturas de visor por sección (índice de sección → lista de {image, title, sub}).",
+  "P19": {
+    "service": true,
+    "whatsapp": "Hola Rhino, quiero consultar por el show infantil navideño. La fecha es ___, en el distrito de ___, para aproximadamente ___ niños de ___ años."
+  },
   "P05": {
     "hero": {
       "image": "tasting",
@@ -187,5 +191,36 @@
       "caption": "Imagen ilustrativa"
     },
     "service": true
+  },
+  "P13": {
+    "temporal": {
+      "_nota": "CONTENIDO TEMPORAL autorizado por el dueño el 27-11-2026 solo para maquetar y mostrar avances (no publicar): quita las notas [PENDIENTE…] del texto de la ficha y rellena los huecos de muestra con material provisional. Sustituir por información real y muestras autorizadas antes de aprobar la publicación; el build impide aprobarla mientras exista «temporal».",
+      "stripPending": true,
+      "slots": {
+        "1": {
+          "items": []
+        }
+      }
+    }
+  },
+  "P09": {
+    "temporal": {
+      "_nota": "CONTENIDO TEMPORAL autorizado por el dueño el 27-11-2026 solo para maquetar y mostrar avances (no publicar): quita las notas [PENDIENTE…] del texto de la ficha y rellena los huecos de muestra con material provisional. Sustituir por información real y muestras autorizadas antes de aprobar la publicación; el build impide aprobarla mientras exista «temporal».",
+      "stripPending": true,
+      "slots": {
+        "0": {
+          "items": [
+            "Retratos personales: fondo, luz y encuadre acordados para una persona.",
+            "Sesiones familiares: fotografías de grupo en un mismo set.",
+            "Sesiones artísticas: propuestas con vestuario, color o movimiento.",
+            "Productos: series para catálogo, web o redes.",
+            "Alquiler del estudio: el espacio para el trabajo de tu propio equipo."
+          ]
+        },
+        "2": {
+          "items": []
+        }
+      }
+    }
   }
 }

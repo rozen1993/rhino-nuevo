@@ -1,4 +1,5 @@
 import registry from '../data/page-registry.json' with { type: 'json' };
+import extras from '../data/paginas-extra.json' with { type: 'json' };
 import { site } from '../config/site.mjs';
 
 export const pages = registry;
@@ -52,6 +53,8 @@ export function validateRegistry(entries = pages) {
       throw new Error(`Estados incompletos: ${page.id}`);
     }
     if (page.publicationApproved && !page.implemented) throw new Error(`No se puede aprobar una página sin construir: ${page.id}`);
+    // Contenido temporal de maqueta (27-11-2026): no se aprueba ni entra al sitemap hasta sustituirlo.
+    if (page.publicationApproved && extras[page.id]?.temporal) throw new Error(`No se puede aprobar una página con contenido temporal: ${page.id}`);
     if (!HTML_TYPES.has(page.type)) {
       if (page.title !== null || page.description !== null || page.h1 !== null || page.indexable) throw new Error(`Metadatos HTML en ${page.type}: ${page.id}`);
       if (page.type === 'reserva' && (page.implemented || page.publicationApproved)) throw new Error(`No construir reservas vacías: ${page.id}`);

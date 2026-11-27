@@ -1,134 +1,121 @@
 {
   "_nota": "Mapa de secciones del diseño v4 aprobado (visuales-claude/paginas-completasv4, 22-11-2026). Cada página con entrada aquí se pinta con los componentes de src/components/v4. «index» es la posición de la sección en el contenido limpio de la ficha (getPageContent: sin huecos de muestra pendientes ni la de cierre). Tipos: split (T1), panels (PN), linkcards (T5), samples (E3), quote (T2, «accent» = parte que se ilumina), checklist (T7, lista editorial 2A), aside (T9, la última frase va en «A tener en cuenta»), text (TX), band (T4, título protagonista 3B), keys (T3, claves con línea). «sizes»: sufijos de los archivos de /media (por defecto 640 y 1280). Collage de cabecera: grande con el momento (1024 × 1024) y pequeña con la captura (1024 × 1536), fotos ilustrativas creadas con IA el 23-11-2026, sin rostros reconocibles; se sustituirán por fotos propias autorizadas antes del lanzamiento.",
-  "P02": {
+  "P19": {
+    "collage": {
+      "image": "show-infantil-navideno",
+      "alt": "Ilustración fotográfica de una celebración infantil de Navidad",
+      "second": "temporada-navidad",
+      "largeSize": 1280,
+      "width": 1280,
+      "height": 853,
+      "secondWidth": 1200,
+      "secondHeight": 675
+    },
+    "related": false,
+    "sections": [
+      {
+        "type": "text",
+        "index": 0
+      },
+      {
+        "type": "checklist",
+        "index": 1
+      },
+      {
+        "type": "text",
+        "index": 2
+      }
+    ]
+  },
+  "P02": {"_nota": "Diseño «escena» aplicado el 26-11-2026 (resto de páginas, con Claudex): hero = cabecera viva con focos que respiran, pantalla LED y monitor de cámara; visor en modo foto en «Crear imágenes». El collage se conserva por si se vuelve atrás. Fotos ilustrativas creadas con IA.", "hero": {"image": "p02-escena", "sizes": [900, 1536], "width": 1536, "height": 1024, "alt": "Equipos de una productora audiovisual listos para un trabajo: cámaras de cine en trípode, pantalla LED, micrófonos y luces de estudio", "lead": "Video, fotografía, transmisión y organización para empresas y celebraciones en Lima. Elige por lo que necesitas resolver.", "scene": {"w": 1536, "h": 1024, "lights": [{"x": 1440, "y": 122, "r": 72}, {"x": 652, "y": 268, "r": 36}, {"x": 1130, "y": 150, "r": 96}, {"x": 925, "y": 170, "r": 12}], "led": {"x": 900, "y": 228, "w": 112, "h": 150, "period": 6}, "monitor": {"x": 1158, "y": 305, "w": 92, "h": 58}, "rec": {"x": 1300, "y": 470, "r": 5}, "bokeh": {"region": [600, 0, 1536, 700], "count": 14, "countSmall": 7, "hues": ["255,170,110", "255,90,150", "170,120,255"]}, "pos": [0.6, 0.5], "posMobile": [0.9, 0.5]}}, 
     "collage": { "image": "p02-momento", "alt": "Escenario de evento con una pantalla LED encendida y el público de espaldas", "second": "p02-captura" },
     "belt": ["P03", "P05", "P06", "P07", "P08", "P14", "P16", "P17", "P18", "P21", "P23"],
     "related": false,
-    "sections": [
-      { "type": "linkcards", "index": 0, "descFromItems": true },
-      { "type": "panels", "index": 1, "icons": ["monitor", "speaker", "party", "mic"], "panelLinks": true },
-      { "type": "split", "index": 2, "image": "camara-detalle", "width": 1280, "height": 1024, "alt": "Cámara fotográfica sobre fondo oscuro" },
-      { "type": "linkcards", "index": 3 },
-      { "type": "band", "index": 4, "image": "temporada-navidad", "sizes": [640, 1280], "alt": "Dos niñas abriendo regalos junto a un árbol de Navidad" }
-    ]
+    "sections": [{"type": "linkcards", "index": 0, "descFromItems": true}, {"type": "panels", "index": 1, "icons": ["monitor", "speaker", "party", "mic"], "panelLinks": true}, {"type": "visor", "index": 2, "mode": "photo", "image": "p02-foto", "sizes": [640, 1280], "width": 1280, "height": 853, "alt": "Sesión de fotografía de producto vista a través de la cámara: una mano ajusta un frasco de perfume en el set"}, {"type": "linkcards", "index": 3}, {"type": "band", "index": 4, "image": "temporada-navidad", "sizes": [640, 1280], "alt": "Dos niñas abriendo regalos junto a un árbol de Navidad"}]
   },
-  "P03": {
+  "P03": {"_nota": "Diseño «escena» aplicado el 26-11-2026 (resto de páginas, con Claudex): hero = cabecera viva con polvo en la luz, lámpara del set y monitor; línea de tiempo de edición en «Preparación, grabación y edición». El collage se conserva por si se vuelve atrás. Fotos ilustrativas creadas con IA.", "hero": {"image": "p03-escena", "sizes": [900, 1536], "width": 1536, "height": 1024, "alt": "Rodaje en un set de sala: camarógrafo de espaldas sobre una dolly, sonidista con la caña y una lámpara encendida al fondo", "lead": "Del guion a la edición, para que tu idea llegue clara a quien tiene que verla. Cuéntanos qué pieza necesitas y dónde se usará.", "scene": {"w": 1536, "h": 1024, "lights": [{"x": 1328, "y": 380, "r": 64}, {"x": 1420, "y": 262, "r": 18}, {"x": 1478, "y": 318, "r": 14}, {"x": 1450, "y": 412, "r": 12}], "monitor": {"x": 1015, "y": 242, "w": 80, "h": 52}, "rec": {"x": 1100, "y": 372, "r": 5}, "bokeh": {"region": [560, 0, 1300, 720], "count": 30, "countSmall": 14, "hues": ["255,170,110", "255,200,140", "255,140,90"]}, "pos": [0.6, 0.5], "posMobile": [0.72, 0.5]}}, 
     "collage": { "image": "p03-momento", "alt": "Rodaje con luz cálida y una figura a contraluz que camina hacia una puerta iluminada", "second": "p03-captura" },
-    "sections": [
-      { "type": "panels", "index": 0, "icons": ["building", "megaphone", "camera"] },
-      { "type": "checklist", "index": 1 },
-      { "type": "split", "index": 2, "image": "production", "sizes": [960, 1600], "width": 1600, "height": 1067, "alt": "Camarógrafo con una cámara de cine al hombro" }
-    ]
+    "sections": [{"type": "panels", "index": 0, "icons": ["building", "megaphone", "camera"]}, {"type": "timeline", "index": 1}, {"type": "split", "index": 2, "image": "production", "sizes": [960, 1600], "width": 1600, "height": 1067, "alt": "Camarógrafo con una cámara de cine al hombro"}]
   },
-  "P04": {
+  "P04": {"_nota": "Diseño «escena» aplicado el 26-11-2026 (tanda 1 del resto de páginas): hero = cabecera viva; claquetas sustituyen al checklist y el visor al split. El collage se conserva por si se vuelve atrás. Fotos ilustrativas creadas con IA.", "hero": {"image": "p04-escena", "sizes": [900, 1536], "width": 1536, "height": 1024, "alt": "Set de entrevista para un video corporativo en una oficina: sillón iluminado por un softbox, micrófono de caña y cámara en trípode", "lead": "Para presentar tu empresa, explicar una actividad o comunicar un mensaje institucional. Cuéntanos a quién va dirigido.", "scene": {"w": 1536, "h": 1024, "lights": [{"x": 603, "y": 122, "r": 44}, {"x": 1010, "y": 342, "r": 32}, {"x": 1330, "y": 110, "r": 80}], "monitor": {"x": 1328, "y": 352, "w": 118, "h": 74}, "rec": {"x": 1306, "y": 506, "r": 6}, "bokeh": {"region": [700, 60, 1536, 520], "count": 12, "countSmall": 6, "hues": ["255,190,120", "255,160,90", "255,220,170"]}, "pos": [0.6, 0.5], "posMobile": [0.7, 0.5]}}, 
     "collage": { "image": "p04-momento", "alt": "Entrevista corporativa en una oficina luminosa", "second": "p04-captura" },
-    "sections": [
-      { "type": "checklist", "index": 0 },
-      { "type": "quote", "index": 1, "accent": "una forma de presentarlo" },
-      { "type": "split", "index": 2, "image": "production", "sizes": [960, 1600], "width": 1600, "height": 1067, "alt": "Camarógrafo con una cámara de cine al hombro" },
-      { "type": "samples", "index": 3 }
-    ]
+    "sections": [{"type": "claquetas", "index": 0}, {"type": "quote", "index": 1, "accent": "una forma de presentarlo"}, {"type": "visor", "index": 2, "image": "p04-visor", "sizes": [640, 1280], "width": 1280, "height": 853, "alt": "Oficina abierta con un equipo trabajando junto a ventanales, vista como toma de apoyo de un video corporativo"}, {"type": "samples", "index": 3}]
   },
-  "P06": {
+  "P06": {"_nota": "Diseño «escena» aplicado el 26-11-2026 (tanda 1 del resto de páginas): hero = cabecera viva; visor «en vivo» sustituye al checklist. El collage se conserva por si se vuelve atrás. Fotos ilustrativas creadas con IA.", "hero": {"image": "p06-escena", "sizes": [900, 1536], "width": 1536, "height": 1024, "alt": "Estudio de podcast preparado para grabar, con dos micrófonos frente a frente, audífonos sobre la mesa y una cámara en trípode", "lead": "Para que tu evento se siga a distancia o tu conversación se convierta en episodios. Cuéntanos qué quieres emitir o grabar y dónde.", "scene": {"w": 1536, "h": 1024, "lights": [{"x": 768, "y": 160, "r": 46}, {"x": 967, "y": 487, "r": 40}, {"x": 1372, "y": 92, "r": 70}], "monitor": {"x": 1276, "y": 366, "w": 158, "h": 108}, "rec": {"x": 1452, "y": 372, "r": 6}, "bokeh": {"region": [560, 0, 1536, 700], "count": 14, "countSmall": 7, "hues": ["255,170,110", "255,90,150", "170,120,255"]}, "pos": [0.6, 0.5], "posMobile": [0.74, 0.5]}}, 
     "collage": { "image": "p06-momento", "alt": "Estudio de podcast con dos micrófonos frente a frente y luz cálida", "second": "p06-captura" },
-    "sections": [
-      { "type": "checklist", "index": 0 }
-    ]
+    "sections": [{"type": "visor", "index": 0, "live": true, "image": "p06-envivo", "sizes": [640, 1280], "width": 1280, "height": 853, "alt": "Conferencia vista por la cámara de la transmisión: el público de espaldas y la persona que expone a contraluz en el escenario"}]
   },
   "P07": {
+    "_nota": "Diseño «escena» aplicado el 26-11-2026 a pedido del dueño: hero = cabecera viva con vapor (foto: buffet caliente, opción 1 «La primera porción» del laboratorio buffet-d-afinada); «jornada» sustituye al split. El collage y el split anterior se conservan por si se vuelve atrás. Fotos ilustrativas creadas con IA; la muestra real del servicio sigue pendiente.",
+    "hero": {"image": "p07-buffet", "sizes": [900, 1536], "width": 1536, "height": 1024, "alt": "Buffet de almuerzo con fuentes abiertas de arroz chaufa, pollo al horno, guiso, tallarín saltado de pollo y rollos primavera, mientras un mozo con guantes sirve chaufa en un plato", "lead": "Coffee break, desayunos y almuerzos para reuniones y eventos de empresa en Lima. Cuéntanos la fecha, el lugar y cuántas personas asistirán.",
+      "scene": {"w": 1536, "h": 1024, "steam": [{"x": 760, "y": 650, "w": 280, "drift": 14, "alpha": 0.275, "size": 0.85, "every": 0.135}, {"x": 1000, "y": 470, "w": 220, "every": 0.24, "alpha": 0.175, "size": 0.85}, {"x": 1150, "y": 395, "w": 200, "every": 0.3, "alpha": 0.15, "size": 0.85}, {"x": 1290, "y": 310, "w": 180, "every": 0.33, "alpha": 0.15, "size": 0.85}], "bokeh": {"region": [0, 0, 1, 1], "count": 0, "countSmall": 0}, "pos": [0.5, 0.55], "posMobile": [0.8, 0.55]} },
     "collage": { "image": "p07-momento", "alt": "Mesa de coffee break con bocaditos, pasteles y tazas de café", "second": "p07-captura" },
     "sections": [
-      { "type": "split", "index": 0, "image": "catering", "sizes": [480, 960], "width": 960, "height": 640, "alt": "Mesa servida con copas y platos para un evento" },
+      { "type": "jornada", "index": 0, "moments": [
+        { "image": "p07-desayuno", "sizes": [640, 1024], "sun": 0.18, "time": "Al comenzar la jornada", "label": "Desayuno", "alt": "Mesa de reunión con fruta, pan, jugo y café a primera hora de la mañana" },
+        { "image": "p07-coffee", "sizes": [640, 1024], "sun": 0.34, "time": "Una pausa entre actividades", "label": "Coffee break", "alt": "Estación de café con tazas, bocaditos dulces y salados, y una mano sirviendo café" },
+        { "image": "p07-almuerzo", "sizes": [640, 1024], "sun": 0.5, "time": "Con su propio tiempo de atención", "label": "Almuerzo", "alt": "Platos servidos en una mesa con mantel blanco mientras se coloca otro plato al mediodía" }
+      ] },
       { "type": "checklist", "index": 1 },
       { "type": "quote", "index": 2, "accent": "antes de cerrar el menú" }
     ]
   },
-  "P08": {
+  "P08": {"_nota": "Diseño «escena» aplicado el 26-11-2026 (tanda 1 del resto de páginas): hero = cabecera viva; «escaleta» sustituye a los paneles. El collage se conserva por si se vuelve atrás. Fotos ilustrativas creadas con IA.", "hero": {"image": "p08-escena", "sizes": [900, 1536], "width": 1536, "height": 1024, "alt": "Salón de eventos minutos antes de empezar: escenario con pantalla LED, luces en la estructura y mesas redondas montadas mientras el equipo revisa los detalles", "lead": "Definimos contigo qué parte del evento encargas: programa, coordinación, logística o ejecución. Cuéntanos la fecha y el lugar.", "scene": {"w": 1536, "h": 1024, "lights": [{"x": 1010, "y": 218, "r": 24}, {"x": 1200, "y": 160, "r": 20}, {"x": 1310, "y": 198, "r": 20}, {"x": 1420, "y": 135, "r": 20}, {"x": 642, "y": 240, "r": 18}, {"x": 805, "y": 215, "r": 18}, {"x": 1268, "y": 265, "r": 13}, {"x": 1440, "y": 248, "r": 13}], "beams": [{"x": 1010, "y": 225, "angle": 118, "spread": 10, "len": 430, "sweep": 5, "period": 10, "alpha": 0.16, "color": "200,210,255"}, {"x": 1310, "y": 205, "angle": 124, "spread": 9, "len": 380, "sweep": 4, "period": 12, "alpha": 0.15, "color": "210,140,255"}, {"x": 720, "y": 262, "angle": 126, "spread": 11, "len": 380, "sweep": 4, "period": 9, "alpha": 0.15, "color": "180,200,255"}, {"x": 1420, "y": 140, "angle": 112, "spread": 9, "len": 420, "sweep": 5, "period": 11, "alpha": 0.13, "color": "255,140,220"}], "led": {"x": 858, "y": 296, "w": 624, "h": 326, "period": 8}, "bokeh": {"region": [560, 60, 1536, 700], "count": 20, "countSmall": 9, "hues": ["160,180,255", "210,120,255", "255,140,220"]}, "pos": [0.62, 0.5], "posMobile": [0.7, 0.5]}}, 
     "collage": { "image": "p08-momento", "alt": "Conferencia vista desde el público, con el orador a contraluz en el escenario", "second": "p08-captura" },
-    "sections": [
-      { "type": "quote", "index": 0, "accent": "prepara y coordina" },
-      { "type": "panels", "index": 1, "icons": ["calendar", "users", "building", "check"] },
-      { "type": "linkcards", "index": 2 }
-    ]
+    "sections": [{"type": "quote", "index": 0, "accent": "prepara y coordina"}, {"type": "escaleta", "index": 1, "icons": ["calendar", "users", "building", "check"]}, {"type": "linkcards", "index": 2}]
   },
-  "P10": {
+  "P10": {"_nota": "Diseño «escena» aplicado el 26-11-2026 (resto de páginas, con Claudex): hero = cabecera viva con guirnaldas que titilan y pétalos; álbum que se revela en «La historia de tu celebración». El collage se conserva por si se vuelve atrás. Fotos ilustrativas creadas con IA.", "hero": {"image": "p10-escena", "sizes": [900, 1536], "width": 1536, "height": 1024, "alt": "Novios de espaldas abrazados bajo guirnaldas de luces en la recepción nocturna de una boda en el jardín de una hacienda", "lead": "Para conservar la ceremonia, la fiesta y los momentos que importan a la pareja. Cuéntanos la fecha y cómo será el programa.", "scene": {"w": 1536, "h": 1024, "lights": [{"x": 800, "y": 152, "r": 16}, {"x": 838, "y": 160, "r": 16}, {"x": 898, "y": 155, "r": 16}, {"x": 935, "y": 165, "r": 16}, {"x": 975, "y": 163, "r": 16}, {"x": 1025, "y": 158, "r": 16}, {"x": 1060, "y": 233, "r": 16}, {"x": 1108, "y": 140, "r": 16}, {"x": 1157, "y": 126, "r": 16}, {"x": 1212, "y": 105, "r": 16}, {"x": 1283, "y": 82, "r": 16}, {"x": 1350, "y": 53, "r": 16}, {"x": 1300, "y": 227, "r": 16}, {"x": 1350, "y": 229, "r": 16}, {"x": 1398, "y": 226, "r": 16}, {"x": 1445, "y": 227, "r": 16}, {"x": 1490, "y": 222, "r": 16}, {"x": 955, "y": 205, "r": 16}], "bokeh": {"region": [500, 350, 1536, 720], "count": 16, "countSmall": 8, "hues": ["255,170,110", "255,200,140", "255,140,90"]}, "confetti": {"region": [560, -20, 1536, 1024], "count": 26, "countSmall": 12, "hues": ["255,244,246", "255,205,220", "250,250,240", "255,225,235"]}, "pos": [0.6, 0.5], "posMobile": [0.95, 0.5]}}, 
     "collage": { "image": "p10-momento", "alt": "Primer baile de una pareja de novios bajo luces cálidas", "second": "p10-captura" },
-    "sections": [
-      { "type": "split", "index": 0, "image": "bodas-pareja", "width": 1280, "height": 1024, "alt": "Pareja de novios abrazados frente a un edificio" },
-      { "type": "quote", "index": 1, "accent": "revisar y compartir" },
-      { "type": "aside", "index": 2 }
-    ]
+    "sections": [{"type": "album", "index": 0, "prints": [{"image": "p10-preparativos", "sizes": [640, 1024], "label": "Preparativos", "alt": "Novia de espaldas junto a una ventana ajustándose el velo"}, {"image": "p10-ceremonia", "sizes": [640, 1024], "label": "Ceremonia", "alt": "Novios de espaldas tomados de la mano frente a un altar de flores en un jardín"}, {"image": "p10-recepcion", "sizes": [640, 1024], "label": "Recepción", "alt": "Manos de los novios brindando con copas de espumante en una mesa con velas"}]}, {"type": "quote", "index": 1, "accent": "revisar y compartir"}, {"type": "aside", "index": 2}]
   },
-  "P12": {
+  "P12": {"_nota": "Diseño «escena» aplicado el 26-11-2026 (resto de páginas, con Claudex): hero = cabecera viva con humo que sube, luces del set y monitor; del boceto a la toma en «Guion y producción». El collage se conserva por si se vuelve atrás. Fotos ilustrativas creadas con IA.", "hero": {"image": "p12-escena", "sizes": [900, 1536], "width": 1536, "height": 1024, "alt": "Rodaje de un comercial: botella de vidrio sin etiqueta sobre una mesa negra mojada, con luces naranja y magenta y una cámara de cine en primer plano", "lead": "Una pieza para que tu campaña se recuerde, pensada para el canal donde se verá. Cuéntanos el mensaje y dónde se publicará.", "scene": {"w": 1536, "h": 1024, "lights": [{"x": 800, "y": 100, "r": 110}, {"x": 1415, "y": 140, "r": 62}], "monitor": {"x": 898, "y": 340, "w": 130, "h": 90}, "rec": {"x": 1040, "y": 328, "r": 5}, "steam": [{"x": 1180, "y": 640, "w": 320, "alpha": 0.1, "size": 1.5, "rise": 0.45, "drift": 10, "every": 0.5}, {"x": 1450, "y": 620, "w": 260, "alpha": 0.1, "size": 1.5, "rise": 0.4, "drift": -8, "every": 0.6}], "bokeh": {"region": [1100, 560, 1536, 760], "count": 10, "countSmall": 5, "hues": ["255,170,90", "255,80,170"]}, "pos": [0.6, 0.5], "posMobile": [0.88, 0.5]}}, 
     "collage": { "image": "p12-momento", "alt": "Botella de vidrio iluminada en rosa y naranja con una salpicadura de líquido", "second": "p12-captura" },
-    "sections": [
-      { "type": "quote", "index": 0, "accent": "decisiones distintas de tono y narración" },
-      { "type": "split", "index": 1, "image": "production", "sizes": [960, 1600], "width": 1600, "height": 1067, "alt": "Camarógrafo con una cámara de cine al hombro" },
-      { "type": "aside", "index": 2 }
-    ]
+    "sections": [{"type": "quote", "index": 0, "accent": "decisiones distintas de tono y narración"}, {"type": "storyboard", "index": 1, "frames": [{"image": "p12-toma-1", "sizes": [640, 1280], "alt": "Botella de vidrio sin etiqueta sobre una mesa negra brillante, iluminada por una luz de contorno"}, {"image": "p12-toma-2", "sizes": [640, 1280], "alt": "Mano que saca una botella fría de un balde con hielo"}, {"image": "p12-toma-3", "sizes": [640, 1280], "alt": "Amigos de espaldas brindando con botellas en una terraza al atardecer"}]}, {"type": "aside", "index": 2}]
   },
-  "P14": {
+  "P14": {"_nota": "Diseño «escena» aplicado el 26-11-2026 (resto de páginas, con Claudex): hero = cabecera viva con luces de navegación del drone y la ciudad que titila; vista que gana altura en «Qué aporta una perspectiva aérea». El collage se conserva por si se vuelve atrás. Fotos ilustrativas creadas con IA.", "hero": {"image": "p14-escena", "sizes": [900, 1536], "width": 1536, "height": 1024, "alt": "Drone con cámara suspendido al atardecer sobre los acantilados de la Costa Verde de Lima, con el mar y las luces de la ciudad", "lead": "Imágenes aéreas para mostrar un evento, una empresa o un inmueble desde arriba. Cuéntanos la ubicación y qué quieres mostrar.", "scene": {"w": 1536, "h": 1024, "blink": [{"x": 790, "y": 298, "r": 16, "period": 1.6, "duty": 0.55, "color": "60,255,120"}, {"x": 1297, "y": 203, "r": 18, "period": 1.6, "duty": 0.55, "color": "255,40,40"}, {"x": 1440, "y": 312, "r": 14, "period": 1.6, "duty": 0.55, "off": 0.8, "color": "255,40,40"}, {"x": 1110, "y": 236, "r": 34, "period": 2.4, "double": true, "color": "255,255,255"}], "lights": [{"x": 1478, "y": 520, "r": 12}, {"x": 1205, "y": 592, "r": 10}, {"x": 1365, "y": 568, "r": 10}, {"x": 1040, "y": 700, "r": 12}, {"x": 980, "y": 840, "r": 12}], "pos": [0.6, 0.5], "posMobile": [0.88, 0.5]}}, 
     "collage": { "image": "p14-momento", "alt": "Vista aérea de acantilados frente al mar al atardecer", "second": "p14-captura" },
-    "sections": [
-      { "type": "split", "index": 0, "image": "drone-vuelo", "width": 610, "height": 488, "alt": "Drone en vuelo sobre un bosque" },
-      { "type": "linkcards", "index": 1 },
-      { "type": "aside", "index": 2 }
-    ]
+    "sections": [{"type": "altura", "index": 0, "image": "p14-aerea", "sizes": [640, 1280], "width": 1280, "height": 1280, "alt": "Vista aérea cenital de un local de eventos en un jardín con toldos blancos, mesas redondas y senderos"}, {"type": "linkcards", "index": 1}, {"type": "aside", "index": 2}]
   },
-  "P15": {
+  "P15": {"_nota": "Diseño «escena» aplicado el 26-11-2026 (resto de páginas, con Claudex): hero = cabecera viva con sol de la tarde que cruza la sala; plano con recorrido en «Mostrar el inmueble». El collage se conserva por si se vuelve atrás. Fotos ilustrativas creadas con IA.", "hero": {"image": "p15-escena", "sizes": [900, 1536], "width": 1536, "height": 1024, "alt": "Sala de un departamento en Lima al atardecer, con ventanal al mar, sofá, una planta y una cámara en trípode lista para fotografiar el ambiente", "lead": "Fotos y recorridos en video para que se entiendan los ambientes antes de visitar. Cuéntanos qué inmueble quieres presentar.", "scene": {"w": 1536, "h": 1024, "sweep": [{"x": 575, "y": 250, "w": 330, "h": 320, "period": 11, "band": 120, "alpha": 0.16, "color": "255,190,120", "skew": 40}, {"x": 690, "y": 760, "w": 820, "h": 220, "period": 13, "band": 180, "alpha": 0.12, "color": "255,190,120", "skew": 60}], "lights": [{"x": 1500, "y": 400, "r": 64}], "monitor": {"x": 1388, "y": 424, "w": 40, "h": 24}, "bokeh": {"region": [600, 240, 1150, 720], "count": 22, "countSmall": 10, "hues": ["255,210,150", "255,230,190"]}, "pos": [0.6, 0.5], "posMobile": [0.85, 0.5]}}, 
     "collage": { "image": "p15-momento", "alt": "Sala de un departamento moderno con ventanales y luz de atardecer", "second": "p15-captura" },
-    "sections": [
-      { "type": "quote", "index": 0, "accent": "características relevantes" },
-      { "type": "split", "index": 1, "image": "inmobiliario-interior", "width": 1280, "height": 1024, "alt": "Interior de un edificio con patio central" },
-      { "type": "aside", "index": 2 }
-    ]
+    "sections": [{"type": "plano", "index": 0}, {"type": "split", "index": 1, "image": "inmobiliario-interior", "width": 1280, "height": 1024, "alt": "Interior de un edificio con patio central"}, {"type": "aside", "index": 2}]
   },
-  "P16": {
+  "P16": {"_nota": "Diseño «escena» aplicado el 26-11-2026 (resto de páginas, con Claudex): hero = cabecera viva con haz del proyector y ondas de los altavoces; proyección que se enfoca y ecualizador en sus dos secciones. El collage se conserva por si se vuelve atrás. Fotos ilustrativas creadas con IA.", "hero": {"image": "p16-escena", "sizes": [900, 1536], "width": 1536, "height": 1024, "alt": "Salón de eventos listo para una presentación: un proyector en el techo ilumina la pantalla y hay altavoces a ambos lados del escenario", "lead": "Para que tu presentación se lea y cada intervención se escuche en todo el espacio. Cuéntanos el lugar y cuántas personas asistirán.", "scene": {"w": 1536, "h": 1024, "beams": [{"x": 1330, "y": 135, "angle": 140, "spread": 24, "len": 470, "sweep": 1, "period": 12, "alpha": 0.13, "color": "190,220,255"}], "led": {"x": 722, "y": 255, "w": 598, "h": 330, "period": 9}, "pulse": [{"x": 607, "y": 360, "r": 170, "period": 2.4, "color": "200,170,255", "alpha": 0.22}, {"x": 1445, "y": 375, "r": 170, "period": 2.4, "color": "200,170,255", "alpha": 0.22}], "lights": [{"x": 525, "y": 618, "r": 30}, {"x": 668, "y": 618, "r": 30}, {"x": 1380, "y": 610, "r": 30}, {"x": 1488, "y": 612, "r": 30}], "pos": [0.6, 0.5], "posMobile": [0.8, 0.5]}}, 
     "collage": { "image": "p16-momento", "alt": "Sala de evento con un proyector sobre una pantalla grande y el público de espaldas", "second": "p16-captura" },
-    "sections": [
-      { "type": "keys", "indexes": [0, 1], "icons": ["projector", "speaker"] }
-    ]
+    "sections": [{"type": "dual", "indexes": [0, 1], "image": "p04-visor"}]
   },
-  "P17": {
+  "P17": {"_nota": "Diseño «escena» aplicado el 26-11-2026 (resto de páginas, con Claudex): hero = cabecera viva con confeti, pantalla que brilla y toque en la pantalla; banda con ráfaga de confeti. El collage se conserva por si se vuelve atrás. Fotos ilustrativas creadas con IA.", "hero": {"image": "p17-escena", "sizes": [900, 1536], "width": 1536, "height": 1024, "alt": "Activación de marca en un centro comercial: personas de espaldas juegan en un stand iluminado con una pantalla táctil y globos", "lead": "Acciones para que el público conozca, pruebe o participe con tu marca. Cuéntanos el objetivo, el lugar y el público.", "scene": {"w": 1536, "h": 1024, "led": {"x": 1190, "y": 190, "w": 230, "h": 570, "period": 5}, "pulse": [{"x": 1305, "y": 458, "r": 90, "period": 1.8, "rings": 2, "color": "255,255,255", "alpha": 0.45}], "confetti": {"region": [560, -20, 1536, 1024], "count": 40, "countSmall": 18}, "pos": [0.6, 0.5], "posMobile": [0.8, 0.5]}}, 
     "collage": { "image": "p17-momento", "alt": "Activación de marca con confeti y personas de espaldas frente a un módulo iluminado", "second": "p17-captura" },
-    "sections": [
-      { "type": "quote", "index": 0, "accent": "una participación concreta" },
-      { "type": "band", "index": 1, "image": "alquiler-de-sonido-y-proyectores", "sizes": [640, 1280], "alt": "Público frente a un escenario durante un concierto" },
-      { "type": "aside", "index": 2 }
-    ]
+    "sections": [{"type": "quote", "index": 0, "accent": "una participación concreta"}, {"type": "band", "index": 1, "image": "p17-banda", "sizes": [640, 1280], "confeti": true, "alt": "Personas de espaldas jugando en un stand de activación de marca, con confeti en el aire"}, {"type": "aside", "index": 2}]
   },
-  "P18": {
+  "P18": {"_nota": "Diseño «escena» aplicado el 26-11-2026 (resto de páginas, con Claudex): hero = cabecera viva con cenital que respira, polvo en el haz y la voz en el micrófono; tarjeta del conductor en «Preparación y coordinación». El collage se conserva por si se vuelve atrás. Fotos ilustrativas creadas con IA.", "hero": {"image": "p18-escena", "sizes": [900, 1536], "width": 1536, "height": 1024, "alt": "Escenario antes de empezar el programa: un micrófono en su pie bajo un cenital cálido, un atril de madera y el público de espaldas", "lead": "Un conductor que acompañe el tono de tu programa y su audiencia. Cuéntanos la fecha, el lugar y el tipo de evento.", "scene": {"w": 1536, "h": 1024, "beams": [{"x": 928, "y": 38, "angle": 66, "spread": 22, "len": 780, "sweep": 2, "period": 14, "alpha": 0.1, "color": "255,190,110"}], "lights": [{"x": 928, "y": 38, "r": 40}], "pulse": [{"x": 1108, "y": 388, "r": 80, "period": 2.8, "rings": 3, "color": "255,220,170", "alpha": 0.22, "width": 1.5}], "bokeh": {"region": [880, 80, 1220, 720], "count": 26, "countSmall": 12, "hues": ["255,170,110", "255,200,140", "255,140,90"]}, "pos": [0.6, 0.5], "posMobile": [0.88, 0.5]}}, 
     "collage": { "image": "p18-momento", "alt": "Maestro de ceremonias en el escenario con un micrófono, a contraluz", "second": "p18-captura" },
-    "sections": [
-      { "type": "split", "index": 0, "image": "organizacion-de-eventos", "width": 1280, "height": 853, "alt": "Auditorio con asistentes durante una conferencia" },
-      { "type": "quote", "index": 1, "accent": "preparar el guion" },
-      { "type": "text", "index": 2 }
-    ]
+    "sections": [{"type": "split", "index": 0, "image": "organizacion-de-eventos", "width": 1280, "height": 853, "alt": "Auditorio con asistentes durante una conferencia"}, {"type": "guion", "index": 1}, {"type": "text", "index": 2}]
   },
-  "P21": {
+  "P21": {"_nota": "Diseño «escena» aplicado el 26-11-2026 (resto de páginas, con Claudex): hero = cabecera viva con destellos del flash de estudio; vista general, detalle y composición en «Qué necesita ver quien evalúa el producto». El collage se conserva por si se vuelve atrás. Fotos ilustrativas creadas con IA.", "hero": {"image": "p21-escena", "sizes": [900, 1536], "width": 1536, "height": 1024, "alt": "Estudio de fotografía de producto: una zapatilla blanca sin marca sobre un pedestal ante un fondo naranja y magenta, con softboxes, plato de belleza y cámara", "lead": "Imágenes para mostrar tus productos en catálogo, campañas y redes. Cuéntanos qué productos son y dónde se usarán.", "scene": {"w": 1536, "h": 1024, "flash": [{"x": 1290, "y": 210, "r": 300, "every": 3.4, "off": 2.2}, {"x": 810, "y": 330, "r": 260, "every": 3.4, "off": 2.2}], "monitor": {"x": 1290, "y": 495, "w": 70, "h": 50}, "pos": [0.6, 0.5], "posMobile": [0.9, 0.5]}}, 
     "collage": { "image": "p21-momento", "alt": "Frasco de perfume sin marca sobre un pedestal con luz naranja y rosa", "second": "p21-captura" },
-    "sections": [
-      { "type": "split", "index": 0, "image": "camara-detalle", "width": 1280, "height": 1024, "alt": "Cámara fotográfica sobre fondo oscuro" },
-      { "type": "quote", "index": 1, "accent": "coherencia entre productos" },
-      { "type": "aside", "index": 2 }
-    ]
+    "sections": [{"type": "vistas", "index": 0, "views": [{"kind": "general", "image": "p21-producto", "sizes": [640, 1280], "label": "Vista general", "alt": "Zapatilla blanca de cuero sin marca fotografiada entera sobre fondo gris claro"}, {"kind": "detail", "image": "p21-producto", "sizes": [640, 1280], "label": "Detalle", "focus": [50, 55], "alt": "Detalle de las costuras y la textura del cuero de la zapatilla"}, {"kind": "composicion", "image": "p21-composicion", "sizes": [640, 1024], "label": "Composición", "alt": "Zapatilla blanca en una composición con tela de lino, una planta y bloques de piedra bajo luz de sol"}]}, {"type": "quote", "index": 1, "accent": "coherencia entre productos"}, {"type": "aside", "index": 2}]
   },
-  "P23": {
+  "P23": {"_nota": "Diseño «escena» aplicado el 26-11-2026 (resto de páginas, con Claudex): hero = cabecera viva con aro de luz, pantalla del calendario y notificaciones; calendario de contenidos en «Planificación, contenido y publicación». El collage se conserva por si se vuelve atrás. Fotos ilustrativas creadas con IA.", "hero": {"image": "p23-escena", "sizes": [900, 1536], "width": 1536, "height": 1024, "alt": "Escritorio de gestión de redes al anochecer: laptop con un calendario de colores, celular en trípode con una cuadrícula de publicaciones y un aro de luz", "lead": "Planificación, contenido y publicación para tus canales, con tareas acordadas. Cuéntanos qué redes usas y qué necesitas.", "scene": {"w": 1536, "h": 1024, "lights": [{"x": 905, "y": 150, "r": 62}, {"x": 1335, "y": 180, "r": 170}], "led": {"x": 965, "y": 455, "w": 330, "h": 290, "period": 7}, "monitor": {"x": 1345, "y": 428, "w": 140, "h": 210}, "pulse": [{"x": 1410, "y": 440, "r": 110, "period": 2.2, "rings": 2, "color": "254,8,64", "alpha": 0.45, "width": 2.5}], "pos": [0.6, 0.5], "posMobile": [0.9, 0.5]}}, 
     "collage": { "image": "p23-momento", "alt": "Teléfono en un trípode grabando una composición de café y cuaderno sobre un escritorio", "second": "p23-captura" },
-    "sections": [
-      { "type": "quote", "index": 0, "accent": "necesidades distintas" },
-      { "type": "checklist", "index": 1 },
-      { "type": "aside", "index": 2 },
-      { "type": "split", "index": 3, "image": "branding-escritorio", "width": 1280, "height": 1024, "alt": "Escritorio con portátil, cuaderno y taza de café" }
-    ]
+    "sections": [{"type": "quote", "index": 0, "accent": "necesidades distintas"}, {"type": "calendario", "index": 1}, {"type": "aside", "index": 2}, {"type": "split", "index": 3, "image": "branding-escritorio", "width": 1280, "height": 1024, "alt": "Escritorio con portátil, cuaderno y taza de café"}]
   },
   "P05": {
+    "_nota": "Diseño «escena» aprobado el 25-11-2026 (prueba en visuales-claude/2026-11-25-prueba-cobertura-diseno-show): hero = cabecera viva; visor y frames sustituyen a split y panels. El collage se conserva por si se vuelve atrás.",
+    "hero": {"image": "p05-escena", "sizes": [900, 1536], "width": 1536, "height": 768, "alt": "Evento corporativo en un salón con pantalla LED y un camarógrafo grabando el escenario", "lead": "Fotografía y video de eventos empresariales y sociales en Lima. Cuéntanos la fecha, el lugar y qué quieres conservar.",
+      "scene": {"w": 1536, "h": 768, "lights": [{"x": 862, "y": 118, "r": 34}, {"x": 1025, "y": 115, "r": 28}, {"x": 1101, "y": 103, "r": 30}, {"x": 1260, "y": 117, "r": 28}, {"x": 1416, "y": 74, "r": 52}, {"x": 838, "y": 162, "r": 22}], "beams": [{"x": 862, "y": 118, "angle": 152, "spread": 13, "len": 520, "sweep": 4, "period": 9, "alpha": 0.2, "color": "255,90,200"}, {"x": 1025, "y": 115, "angle": 128, "spread": 11, "len": 430, "sweep": 5, "period": 11, "alpha": 0.18, "color": "255,190,120"}, {"x": 1260, "y": 117, "angle": 145, "spread": 12, "len": 420, "sweep": 4, "period": 8, "alpha": 0.18, "color": "200,110,255"}, {"x": 1416, "y": 74, "angle": 122, "spread": 14, "len": 480, "sweep": 3, "period": 12, "alpha": 0.17, "color": "255,170,90"}], "led": {"x": 735, "y": 170, "w": 420, "h": 310, "period": 7}, "monitor": {"x": 1128, "y": 308, "w": 114, "h": 74}, "rec": {"x": 1262, "y": 268, "r": 7}, "bokeh": {"region": [600, 20, 1500, 490], "count": 26, "countSmall": 12}, "pos": [0.6, 0.5], "posMobile": [0.72, 0.5]} },
     "collage": { "image": "cobertura-brindis", "width": 1024, "height": 1024, "alt": "Brindis con copas de espumante en una recepción nocturna", "second": "cobertura-camara-brindis", "secondWidth": 1024, "secondHeight": 1536 },
     "sections": [
-      { "type": "split", "index": 0, "image": "recinto-evento", "width": 1280, "height": 1024, "alt": "Asistentes en un recinto de eventos al atardecer" },
-      { "type": "panels", "index": 1, "icons": ["camera", "video", "film"], "images": ["activaciones-btl", "servicios", "organizacion-de-eventos"] },
+      { "type": "visor", "index": 0, "image": "p05-momentos", "sizes": [640, 1280], "width": 1280, "height": 853, "alt": "Presentación en un escenario vista desde el público, con una pantalla iluminada" },
+      { "type": "frames", "index": 1, "frames": [
+        { "icon": "camera", "image": "p05-foto-boda", "sizes": [640, 1024], "effect": "photo", "alt": "Manos de un fotógrafo con la cámara fotografiando una boda al aire libre" },
+        { "icon": "video", "image": "p05-toma-boda", "sizes": [640, 1024], "effect": "reel", "reel": ["p05-toma-boda", "p05-toma-fiesta", "p05-toma-gala", "p05-toma-lanzamiento", "p05-toma-feria", "p05-toma-cumple"], "alt": "Novios de espaldas caminando hacia el altar en una boda en un jardín" },
+        { "icon": "film", "image": "p05-conferencia", "sizes": [640, 1024], "effect": "rec", "alt": "Cámara de video en trípode grabando una conferencia desde el fondo del auditorio" }
+      ] },
       { "type": "linkcards", "index": 2 },
       { "type": "samples", "index": 3 }
     ]
-  }
+  },
+  "P13": {"_nota": "Página construida el 27-11-2026 con el diseño «escena» (Claudex, revisión cruzada) y CONTENIDO TEMPORAL autorizado por el dueño (ver paginas-extra.json): fotos ilustrativas creadas con IA; las muestras animadas son demostraciones dibujadas en la página, no trabajos de clientes. Sustituir por muestras reales antes de publicar.", "hero": {"image": "p13-escena", "sizes": [900, 1536], "width": 1536, "height": 1024, "alt": "Estudio de motion graphics de noche: un monitor muestra un editor de animación con formas de colores en una línea de tiempo", "lead": "Movimiento para que una idea, un proceso o unos datos se entiendan mejor. Cuéntanos qué quieres explicar y dónde se verá.", "scene": {"w": 1536, "h": 1024, "led": {"x": 748, "y": 288, "w": 394, "h": 152, "period": 5}, "monitor": {"x": 1270, "y": 362, "w": 240, "h": 180}, "lights": [{"x": 912, "y": 198, "r": 52}, {"x": 1390, "y": 210, "r": 72}], "shapes": {"region": [560, 40, 1500, 700], "count": 14, "countSmall": 7}, "pos": [0.6, 0.5], "posMobile": [0.8, 0.5]}}, "sections": [{"type": "quote", "index": 0, "accent": "no se construyen de la misma manera"}, {"type": "reel", "index": 1, "caption": "Animaciones de ejemplo creadas para esta página.", "labels": ["Explicar un proceso", "Presentar datos", "Presentar un producto"]}, {"type": "curva", "index": 2}, {"type": "formatos", "index": 3, "formats": ["Horizontal 16:9", "Vertical 9:16", "Cuadrado 1:1"]}]},
+  "P09": {"_nota": "Página construida el 27-11-2026 con el diseño «escena» (Claudex, revisión cruzada) y CONTENIDO TEMPORAL autorizado por el dueño (ver paginas-extra.json): fotos ilustrativas creadas con IA; modalidades de sesión provisionales (del sitio anterior más el alquiler confirmado). Sustituir por muestras reales antes de publicar.", "hero": {"image": "p09-escena", "sizes": [900, 1536], "width": 1536, "height": 1024, "alt": "Estudio fotográfico vacío listo para una sesión: fondo de papel gris, un banco de madera, flashes con luz de modelado y una cámara en trípode", "lead": "Sesiones de fotos y alquiler del espacio en Lima. Cuéntanos qué quieres fotografiar y para qué usarás las imágenes.", "scene": {"w": 1536, "h": 1024, "flash": [{"x": 760, "y": 380, "r": 300, "every": 3.6, "off": 1.5}, {"x": 1370, "y": 350, "r": 300, "every": 3.6, "off": 1.5}], "lights": [{"x": 1125, "y": 283, "r": 46}], "monitor": {"x": 862, "y": 532, "w": 46, "h": 34}, "bokeh": {"region": [560, 150, 1500, 700], "count": 18, "countSmall": 8, "hues": ["255,210,150", "255,230,190"]}, "pos": [0.6, 0.5], "posMobile": [0.72, 0.5]}}, "sections": [{"type": "modalidades", "index": 0, "photos": [{"image": "p09-retrato", "sizes": [640, 1024], "alt": "Retrato en estudio de una mujer de espaldas con luz de contorno sobre fondo gris"}, {"image": "p09-familia", "sizes": [640, 1024], "alt": "Familia de cuatro de espaldas tomada de la mano en un estudio con fondo crema"}, {"image": "p09-artistica", "sizes": [640, 1024], "alt": "Bailarina en silueta en pleno movimiento con tela y luces de color magenta y naranja"}, {"image": "p09-producto", "sizes": [640, 1024], "alt": "Frasco de perfume ámbar sin marca sobre un bloque de piedra con fondo terracota"}, {"image": "p09-alquiler", "sizes": [640, 1024], "alt": "Set de estudio vacío con fondo de color, dos luces con softbox, un banco y un reflector"}]}, {"type": "quote", "index": 1, "accent": "fondo, encuadre y estilo"}, {"type": "contactos", "index": 2, "caption": "Imágenes ilustrativas.", "pick": 0, "frames": [{"image": "p09-espacio-1", "sizes": [640, 1280], "label": "Ciclorama", "alt": "Estudio fotográfico con pared ciclorama blanca, pies de luz y softboxes"}, {"image": "p09-espacio-2", "sizes": [640, 1280], "label": "Fondos", "alt": "Rincón del estudio con rollos de papel de fondo de varios colores"}, {"image": "p09-espacio-3", "sizes": [640, 1280], "label": "Mesa de producto", "alt": "Mesa de fotografía de producto con acrílico blanco, paneles LED y una cámara conectada a una laptop"}]}, {"type": "text", "index": 3}]}
 }

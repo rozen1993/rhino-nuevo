@@ -1,0 +1,68 @@
+/* Piezas propias del show navideño (P19), elegidas por el dueño el 25-11-2026 en el laboratorio de la página
+   (visuales-claude/2026-11-25-laboratorio-show-pagina): 1B arco de escenario, 2C escenas con telón y 3B banda con ficha.
+   Los estados iniciales («x-arm») solo los pone el script de ShowTelon; sin JavaScript o con movimiento reducido todo se ve abierto. */
+
+.x-crumbs { padding-top: 34px; }
+.x-crumbs .breadcrumbs ol { margin: 0; color: #54545a; }
+
+/* Telón de terciopelo compartido por el arco y las escenas */
+.x-velvet { position: absolute; top: 0; bottom: 0; width: 51%; z-index: 2; pointer-events: none; background: repeating-linear-gradient(90deg, #4f0a1c 0 6px, #7d1230 14px, #a3173f 20px, #7d1230 26px, #4f0a1c 34px); box-shadow: inset 0 -40px 60px #00000055; transition: transform 1.5s cubic-bezier(.7, 0, .25, 1) .25s; }
+.x-velvet.l { left: 0; transform-origin: left top; }
+.x-velvet.r { right: 0; transform-origin: right top; }
+html:not(.x-arm) .x-velvet { display: none; }
+
+/* 1B · arco de escenario */
+.x-arch-split { display: grid; grid-template-columns: 1.05fr 1fr; gap: 84px; align-items: center; }
+.x-arch-split .v4-copy p { font-size: 17px; line-height: 1.7; margin-top: 18px; }
+.x-arch { position: relative; margin: 0; aspect-ratio: 4 / 4.6; max-width: 470px; width: 100%; justify-self: end; isolation: isolate; }
+.x-arch-frame { position: absolute; inset: 0; border-radius: 999px 999px 6px 6px; overflow: hidden; box-shadow: 0 22px 40px #3a0d2a33; background: #170814; }
+.x-arch-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.x-arch-frame::after { content: ''; position: absolute; inset: 12px; z-index: 3; border-radius: 999px 999px 4px 4px; border: 1px solid #ffe2b0b3; pointer-events: none; }
+.x-arch-hatch { position: absolute; z-index: -1; left: -70px; bottom: -50px; width: 230px; height: 280px; background: repeating-linear-gradient(-29deg, transparent 0 14px, #eae5ef 15px 18px, transparent 19px 28px); clip-path: ellipse(50% 50%); }
+.x-arm .x-arch-frame img { transform: scale(1.06); transition: transform 2.4s cubic-bezier(.2, .7, .2, 1) .5s; }
+.x-arch.x-open .x-arch-frame img { transform: scale(1); }
+.x-arch.x-open .x-velvet.l { transform: translateX(-96%) scaleX(.35); }
+.x-arch.x-open .x-velvet.r { transform: translateX(96%) scaleX(.35); }
+
+/* 2C · tres escenas con telón */
+.x-scenes-head { max-width: 720px; }
+.x-scenes-head p { font-size: 17px; line-height: 1.7; margin-top: 18px; }
+.x-scenes { list-style: none; margin: 56px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.x-scene-stage { position: relative; aspect-ratio: 3 / 3.6; overflow: hidden; border-radius: 6px 6px 0 0; background: #170814; box-shadow: 0 18px 25px #17132222; }
+.x-scene-stage img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Cenefa de terciopelo (el borde dentado de arriba): en las escenas y en el arco. En la banda se quitó a pedido del dueño (25-11-2026). */
+.x-valance, .x-scene-stage::before { position: absolute; z-index: 3; inset: 0 0 auto; height: 34px; pointer-events: none; background: repeating-linear-gradient(90deg, #5a0b20 0 10px, #8c1434 18px, #5a0b20 28px); clip-path: polygon(0 0, 100% 0, 100% 60%, 95% 100%, 90% 60%, 85% 100%, 80% 60%, 75% 100%, 70% 60%, 65% 100%, 60% 60%, 55% 100%, 50% 60%, 45% 100%, 40% 60%, 35% 100%, 30% 60%, 25% 100%, 20% 60%, 15% 100%, 10% 60%, 5% 100%, 0 60%); filter: drop-shadow(0 3px 4px #00000040); }
+.x-scene-stage::before { content: ''; }
+.x-arch-frame .x-valance { height: 58px; }
+.x-scene-copy { padding: 26px 4px 0; }
+.x-scene-copy h3 { font: 600 22px/1.2 'Poppins', Arial, sans-serif; margin: 12px 0 10px; letter-spacing: -.3px; }
+.x-scene-copy p { margin: 0; font-size: 17px; line-height: 1.6; }
+.x-arm .x-scene-stage img { transform: scale(1.08); transition: transform 2s cubic-bezier(.2, .7, .2, 1) .4s; }
+.x-scene.x-open .x-scene-stage img { transform: scale(1); }
+.x-scene.x-open .x-velvet.l, .x-scene:hover .x-velvet.l { transform: translateX(-92%) scaleX(.3); }
+.x-scene.x-open .x-velvet.r, .x-scene:hover .x-velvet.r { transform: translateX(92%) scaleX(.3); }
+.x-scene:nth-child(2) .x-velvet { transition-delay: .45s; }
+.x-scene:nth-child(3) .x-velvet { transition-delay: .65s; }
+
+/* 3B · banda con ficha del espacio */
+.x-band-card { max-width: 760px; }
+.x-band-card p + p { margin-top: 14px; }
+.x-chips-wrap { display: grid; gap: 22px; margin-top: 28px; }
+.x-chips-wrap h3 { font: 600 15px/1.3 'Instrument Sans', Arial, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: #54545a; margin: 0 0 10px; }
+.x-chips { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.x-chips li { padding: 10px 18px; border-radius: 999px; background: #fff; border: 1px solid #f3b3cf; font: 600 15px/1.2 'Instrument Sans', Arial, sans-serif; color: #1d1b22; }
+.x-chips li::before { content: ''; display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 9px; vertical-align: 1px; background: linear-gradient(135deg, #fe802d, #fe0840); box-shadow: 0 0 0 4px #fe08401f, 0 0 12px #fe802d99; }
+.x-arm .x-chips li { border-color: #e3d6ea; transition: border-color .5s; transition-delay: calc(var(--i) * .14s + .3s); }
+.x-arm .x-chips li::before { background: #d9cfe0; box-shadow: none; transition: background .5s, box-shadow .5s; transition-delay: inherit; }
+.x-arm .x-lit .x-chips li { border-color: #f3b3cf; }
+.x-arm .x-lit .x-chips li::before { background: linear-gradient(135deg, #fe802d, #fe0840); box-shadow: 0 0 0 4px #fe08401f, 0 0 12px #fe802d99; }
+
+@media (max-width: 880px) {
+  .x-arch-split { grid-template-columns: 1fr; gap: 44px; }
+  .x-arch { justify-self: center; max-width: 380px; }
+  .x-scenes { grid-template-columns: 1fr; gap: 30px; }
+  .x-scene-stage { aspect-ratio: 4 / 3.4; }
+}
+@media (max-width: 650px) {
+  .x-arch-hatch { width: 150px; height: 180px; left: -40px; bottom: -36px; }
+}

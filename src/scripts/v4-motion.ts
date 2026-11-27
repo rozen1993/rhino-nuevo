@@ -32,7 +32,7 @@ if (main) {
     let top = -1;
     (Array.from(textEl.children) as HTMLSpanElement[]).forEach(el => {
       if (el === accent) return;
-      if (Math.abs(el.offsetTop - top) > 4) { lines.push([]); top = el.offsetTop; }
+      if (!lines.length || Math.abs(el.offsetTop - top) > 4) { lines.push([]); top = el.offsetTop; }
       lines[lines.length - 1].push(el);
     });
     textEl.replaceChildren(...lines.map((ws, i) => {

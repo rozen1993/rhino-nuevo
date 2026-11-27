@@ -1,16 +1,16 @@
 /* Diseño v4 de las páginas interiores (aprobado el 22-11-2026; referencia: visuales-claude/paginas-completasv4).
    Todo va bajo .v4-main salvo la transición entre páginas, que es de todo el sitio (animación 1). */
 
-/* ---------- 1 · Transición entre páginas «cortina de marca» (tanda 5, variante B, 23-11-2026) ----------
-   Chrome, Edge y Safari; Firefox cambia sin transición. La página actual sube y se desvanece sobre el
-   degradado de marca y la nueva se descubre de abajo arriba (1 s en total). */
-@view-transition { navigation: auto; }
-::view-transition { background: linear-gradient(135deg, #fe802d, #fe0840 50%, #ac0bd9); }
-::view-transition-old(root) { animation: rhino-vt-out .45s cubic-bezier(.65, 0, .35, 1) both; }
-::view-transition-new(root) { animation: rhino-vt-in .65s cubic-bezier(.76, 0, .24, 1) .35s both; }
-@keyframes rhino-vt-out { from { transform: none; opacity: 1; } to { transform: translateY(-6%); opacity: 0; } }
-@keyframes rhino-vt-in { from { clip-path: inset(100% 0 0 0); } to { clip-path: inset(0 0 0 0); } }
-@media (prefers-reduced-motion: reduce) { ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none !important; } }
+/* ---------- 1 · Transición entre páginas «cortina de marca» (tanda 5, variante B, 23-11-2026; rehecha el 26-11-2026) ----------
+   La nueva página se descubre de abajo arriba bajo el degradado de marca. Antes usaba la transición de Chrome
+   (@view-transition), que bloqueaba el scroll mientras duraba; ahora es una capa propia (.rhino-cortina, en Base.astro)
+   que no recibe el puntero ni la rueda, así que se puede desplazar desde el primer instante. Funciona en todos los
+   navegadores; solo aparece al llegar desde otra página del sitio (clase html.cortina) y nunca con «reducir movimiento». */
+.rhino-cortina { display: none; }
+html.cortina .rhino-cortina { display: block; position: fixed; inset: 0; z-index: 200; pointer-events: none;
+  background: linear-gradient(135deg, #fe802d, #fe0840 50%, #ac0bd9); animation: rhino-cortina .7s cubic-bezier(.76, 0, .24, 1) .08s both; }
+@keyframes rhino-cortina { from { clip-path: inset(0 0 0 0); } to { clip-path: inset(0 0 100% 0); visibility: hidden; } }
+@media (prefers-reduced-motion: reduce) { html.cortina .rhino-cortina { display: none; } }
 
 /* ---------- Base ---------- */
 .v4-main { --soft: #54545a; --lilac: #f7f3fa; --edge: #ecdff3; --line: #e8dfee; --ease: cubic-bezier(.2, .7, .2, 1);

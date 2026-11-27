@@ -10,16 +10,21 @@ interface Props {
   pageId: string;
   service?: { confirmedVisible: true; name: string; description?: string };
   pending?: boolean;
+  /** Cabecera a pantalla completa (show y páginas v4 con «hero»): la navegación va encima de la escena */
+  fullHero?: boolean;
 }
-const { pageId, service, pending } = Astro.props;
+const { pageId, service, pending, fullHero } = Astro.props;
 ---
 <Base pageId={pageId} service={service} pending={pending}>
-  <div class="interior-masthead color-field">
+  {(pageId === 'P19' || fullHero) && !pending ? <div class="theater-navigation"><Header /></div> : <div class="interior-masthead color-field">
     <Atmosphere seed={53} />
     <ParticleField id="rhino-interior-particles" label="la cabecera" />
     <Header />
-  </div>
+  </div>}
   <slot />
   <Footer />
   <Dialogs />
 </Base>
+<style>
+  .theater-navigation { position: absolute; inset: 0 0 auto; z-index: 20; color: white; }
+</style>

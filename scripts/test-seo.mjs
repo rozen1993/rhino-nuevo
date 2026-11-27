@@ -18,7 +18,7 @@ test('37 entries preserve exact F6 metadata and distinguish HTML/reserves/404/PD
   assert.equal(pages.filter(p => p.type === 'html').length, 33);
   assert.equal(pages.filter(p => p.type === 'reserva').length, 2);
   assert.deepEqual(pages.filter(p => p.implemented).map(p => p.id),
-    ['P01', 'P02', 'P03', 'P04', 'P05', 'P06', 'P07', 'P08', 'P10', 'P12', 'P14', 'P15', 'P16', 'P17', 'P18', 'P21', 'P23', 'P36']);
+    ['P01', 'P02', 'P03', 'P04', 'P05', 'P06', 'P07', 'P08', 'P09', 'P10', 'P12', 'P13', 'P14', 'P15', 'P16', 'P17', 'P18', 'P19', 'P21', 'P23', 'P36']);
   assert(pages.every(p => !p.publicationApproved));
   for (const page of pages) {
     const row = source.rows.find(row => row.id === page.id);
@@ -100,7 +100,7 @@ test('thanks, error, reserves and PDF cannot enter HTML sitemap/canonical by inh
   }
   assert.deepEqual(getSitemapPages(config), []);
   for (const id of ['P25', 'P26', 'P37']) assert.throws(() => getSeo(getPage(id), config), /No generar HTML/);
-  assert.throws(() => getSeo(getPage('P09'), config), /no construida/);
+  assert.throws(() => getSeo(getPage('P22'), config), /no construida/);
 });
 
 test('metadata validation detects duplicates, accidental approvals and unresolved case descriptions', () => {
@@ -114,7 +114,7 @@ test('metadata validation detects duplicates, accidental approvals and unresolve
   getPage('P02', entries).title = 'x'.repeat(61);
   assert.throws(() => validateRegistry(entries), /límite editorial/);
   entries = clone();
-  getPage('P09', entries).publicationApproved = true;
+  getPage('P22', entries).publicationApproved = true;
   assert.throws(() => validateRegistry(entries), /sin construir/);
   entries = clone();
   approved(entries, 'P28');
@@ -175,4 +175,16 @@ test('JSON-LD cannot close its script element and preserves its literal content'
   assert(!encoded.includes('<'));
   assert(!encoded.includes('&'));
   assert.deepEqual(JSON.parse(encoded), data);
+});
+
+test('temporary mock-up content never reaches approval or the production artifact', async () => {
+  const { getPageContent, hasTemporal } = await import('../src/lib/content.mjs');
+  for (const id of ['P09', 'P13']) {
+    assert.equal(hasTemporal(getPage(id)), true);
+    assert.throws(() => getPageContent({ ...getPage(id), publicationApproved: true }), /contenido temporal/);
+    const entries = clone(); getPage(id, entries).publicationApproved = true;
+    assert.throws(() => validateRegistry(entries), /contenido temporal/);
+  }
+  const slug = readFileSync(new URL('../src/pages/[...slug].astro', import.meta.url), 'utf8');
+  assert.match(slug, /production && hasTemporal\(page\)/);
 });

@@ -4,11 +4,31 @@
 // apagan, el centro se voltea y las páginas hijas entran girando hasta su sitio. En pantallas pequeñas el segundo
 // nivel es una lista. Escape vuelve al primer nivel y, desde ahí, cierra. Con «reducir movimiento» no hay animación.
 export const menuToggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+// El botón es fijo, pero la cabecera forma una capa aislada (isolation: isolate) y las secciones posteriores con
+// posición propia lo tapaban al desplazarse (p. ej., los botones de reproducir de Proyectos en la home). Se saca de la
+// cabecera al principio del <body>, tras «Saltar al contenido», para que quede siempre encima sin cambiar el orden de foco.
+if (menuToggle && menuToggle.parentElement !== document.body) {
+  const skip = document.querySelector('.skip-link');
+  if (skip?.parentElement === document.body) skip.after(menuToggle); else document.body.prepend(menuToggle);
+}
 const menu = document.querySelector<HTMLDialogElement>('#site-menu');
+// El menú vive al final del <body> (26-11-2026): cuando deja de ser modal durante el cierre, fuera de la cabecera
+// (que tiene su propio apilado) puede quedar por encima del botón del menú y de la barra de redes.
+if (menu && menu.parentElement !== document.body) document.body.append(menu);
 const closeButton = menu?.querySelector<HTMLButtonElement>('[data-menu-close]');
 const backButton = menu?.querySelector<HTMLButtonElement>('[data-om-back]');
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
 type Level = 'main' | 'servicios' | 'portafolio';
+// Temporada navideña: en noviembre y diciembre (hora de Lima), el Show navideño ocupa el lugar de Pantallas LED en el
+// menú; el resto del año se queda Pantallas LED. Se decide en cada visita, así que no hace falta volver a publicar.
+(() => {
+  const month = Number(new Intl.DateTimeFormat('en', { timeZone: 'America/Lima', month: 'numeric' }).format(new Date()));
+  if (month !== 11 && month !== 12) return;
+  const slot = document.querySelector('#site-menu [data-season-slot]');
+  const tpl = document.querySelector<HTMLTemplateElement>('#site-menu template[data-season-item]');
+  const item = tpl?.content.firstElementChild;
+  if (slot && item) slot.replaceWith(item.cloneNode(true));
+})();
 type Placed = HTMLElement & { _a?: number; _rx?: number; _ry?: number };
 const levels = {
   main: menu?.querySelector<HTMLElement>('[data-level="main"]'),
@@ -45,7 +65,8 @@ function layout() {
   if (!menu) return;
   list = innerWidth < 900 || innerHeight < 620;
   menu.classList.toggle('list', list);
-  const s = list ? Math.min(innerWidth / 390, innerHeight / 700, 1.3) : Math.min(innerWidth / 1100, (innerHeight - 40) / 720, 1.15);
+  // En móvil en horizontal la órbita no baja de 0,8 para que cada opción tenga al menos 44 px de toque.
+  const s = list ? Math.max(.8, Math.min(innerWidth / 390, innerHeight / 700, 1.3)) : Math.min(innerWidth / 1100, (innerHeight - 40) / 720, 1.15);
   menu.style.setProperty('--s', s.toFixed(3));
   const R = list ? 132 : 250;
   levels.main?.style.setProperty('--R', `${R}px`);
@@ -167,25 +188,87 @@ function openMenu() {
   if (levels.main) burst(levels.main, 300);
   focusFirst(levels.main);
 }
+let closing = false;
 function finishClose(returnFocus: boolean) {
   stop();
+  closing = false;
+  // Las opciones recuperan su sitio para la próxima apertura (el cierre las movió con estilos en línea).
+  menu?.querySelectorAll<HTMLElement>('.om-li').forEach(li => { li.style.opacity = ''; li.style.scale = ''; });
   if (menu?.open) menu.close();
+  if (menu) { menu.style.overscrollBehavior = ''; menu.style.zIndex = ''; }
   document.body.classList.remove('menu-open');
   menuToggle?.setAttribute('aria-expanded', 'false');
   level = 'closed';
   if (returnFocus) menuToggle?.focus({ preventScroll: true });
 }
+// Cierre «órbita que se recoge» (laboratorio de componentes, tanda 3, variante B; pedido del dueño el 24-11-2026:
+// el cierre anterior era brusco). Es la apertura al revés: las opciones giran hacia atrás mientras vuelven al centro,
+// una tras otra; los anillos se desvanecen girando; el centro se encoge y el círculo blanco se cierra despacio
+// hacia el botón (1,1 s, curva suave al empezar y al terminar).
 // Exportada: interactions.ts la usa para cerrar el menú al abrir otro diálogo desde él.
 export function closeMenu(returnFocus = false, immediate = false) {
-  if (!menu?.open) return;
+  if (!menu?.open || closing) return;
   if (immediate || reducedMotion.matches) { finishClose(returnFocus); return; }
   stop();
+  closing = true;
+  // El scroll se libera al empezar el cierre, no al terminar (26-11-2026): durante los 1,16 s de la animación el menú
+  // seguía siendo modal y un gesto de touchpad iniciado en ese tiempo quedaba enganchado al menú hasta acabar su inercia.
+  releaseScroll();
   const cur = level !== 'closed' ? levels[level] : null;
-  if (cur) collapse(cur);
+  if (cur) {
+    cur.querySelectorAll('.om-ring, .om-dots, .om-lines').forEach(r => anim(r, [{ opacity: 1, rotate: '0deg', scale: 1 }, { opacity: 0, rotate: '-35deg', scale: .88 }], { duration: 620, delay: 60, easing: 'cubic-bezier(.65,0,.35,1)' }));
+    const glow = cur.querySelector('.om-glow'), hub = cur.querySelector('.om-hub');
+    if (glow) anim(glow, [{ opacity: 1 }, { opacity: 0 }], { duration: 420, delay: 260, easing: 'ease-in-out' });
+    if (hub) anim(hub, [{ opacity: 1, scale: 1 }, { opacity: 0, scale: .62 }], { duration: 460, delay: 300, easing: 'cubic-bezier(.65,0,.35,1)' });
+    const items = itemsOf(cur), orbit = !(list && cur !== levels.main);
+    if (!orbit) items.forEach((li, i) => anim(li, [{ opacity: 1, translate: '0 0' }, { opacity: 0, translate: '0 12px' }], { duration: 320, delay: i * 14, easing: 'ease-in' }));
+    else if (items.length) {
+      const t0 = performance.now(), T = 640, stagger = 45;
+      const step = () => {
+        const now = performance.now();
+        items.forEach((li, i) => {
+          const e = ease(Math.max(0, Math.min(1, (now - t0 - i * stagger) / T)));
+          pos(li, (li._a ?? 0) - 70 * e, li._rx ?? 0, li._ry ?? 0, 1 - .78 * e);
+          li.style.opacity = String(1 - e); li.style.scale = String(1 - .35 * e);
+        });
+        if (now - t0 < T + stagger * items.length) raf = requestAnimationFrame(step);
+      };
+      raf = requestAnimationFrame(step);
+    }
+  }
   const { x, y } = origin(), R = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y)) + 20;
-  anim(menu, [{ clipPath: `circle(${R}px at ${x}px ${y}px)` }, { clipPath: `circle(25px at ${x}px ${y}px)` }], { duration: 300, delay: 220, easing: 'cubic-bezier(.7,0,.84,0)' });
-  timer = window.setTimeout(() => finishClose(returnFocus), 560);
+  anim(menu, [{ clipPath: `circle(${R}px at ${x}px ${y}px)` }, { clipPath: `circle(26px at ${x}px ${y}px)`, offset: .92 }, { clipPath: `circle(0px at ${x}px ${y}px)` }], { duration: 720, delay: 420, easing: 'cubic-bezier(.65,0,.35,1)' });
+  timer = window.setTimeout(() => finishClose(returnFocus), 1160);
 }
+
+// Al elegir una página en el menú (26-11-2026). El menú es un diálogo modal que bloquea el scroll de lo que hay debajo;
+// si el visitante empieza a deslizar (touchpad o rueda) justo al hacer clic, mientras carga la página nueva, Chrome
+// engancha ese gesto al menú y la página nueva no se mueve hasta que el gesto y su inercia terminan (2–5 s, medido
+// en el Chrome del dueño). Por eso, en el mismo clic, el menú deja de ser modal (se ve igual) y se libera el scroll.
+// El menú sigue visible igual, pero deja de ser modal y ya no retiene el scroll de la página.
+function releaseScroll() {
+  if (!menu) return;
+  if (menu.open && menu.matches(':modal')) {
+    // al volver a abrirse sin modal, el navegador enfoca el primer enlace del menú (el logo): se deja el foco donde estaba
+    const keep = menu.contains(document.activeElement) ? document.activeElement as HTMLElement : null;
+    menu.close(); menu.show();
+    if (keep) keep.focus({ preventScroll: true, focusVisible: false } as FocusOptions); else (document.activeElement as HTMLElement | null)?.blur();
+  }
+  // fuera de la capa superior, se mantiene por encima del botón del menú y de la barra de redes
+  menu.style.zIndex = '60';
+  menu.style.overscrollBehavior = 'auto';
+  document.body.classList.remove('menu-open');
+}
+menu?.addEventListener('click', event => {
+  const link = (event.target as Element | null)?.closest<HTMLAnchorElement>('a[href]');
+  if (!link || event.defaultPrevented || event.button !== 0 || event.ctrlKey || event.metaKey || event.shiftKey || event.altKey || link.target === '_blank') return;
+  releaseScroll();
+});
+// Si se vuelve con «atrás» y el navegador restaura la página tal como quedó, el menú aparece cerrado.
+addEventListener('pageshow', event => {
+  if (!event.persisted || !menu?.open) return;
+  finishClose(false);
+});
 
 menuToggle?.addEventListener('click', () => (menu?.open ? closeMenu(true) : openMenu()));
 closeButton?.addEventListener('click', () => closeMenu(true));
@@ -211,7 +294,7 @@ menu?.addEventListener('keydown', event => {
 });
 let resizeTimer = 0;
 addEventListener('resize', () => {
-  if (!menu?.open) return;
+  if (!menu?.open || closing) return;
   clearTimeout(resizeTimer);
   resizeTimer = window.setTimeout(() => { stop(); layout(); if (level !== 'closed') show(level); }, 150);
 });

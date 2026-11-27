@@ -1,0 +1,247 @@
+---
+// P19 · Show infantil navideño. Cabecera A con cinemagraph en vivo y secciones elegidas por el dueño el 25-11-2026
+// en el laboratorio de la página (visuales-claude/2026-11-25-laboratorio-show-pagina): 1B arco de escenario,
+// 2C tres escenas con telón, 3B banda con ficha del espacio y 4A cierre de la web (sin enlace de correo).
+import { site } from '../../config/site.mjs';
+import Breadcrumbs from '../Breadcrumbs.astro';
+import Icon from '../Icon.astro';
+import PageLink from '../PageLink.astro';
+import Atmosphere from '../Atmosphere.astro';
+import ParticleField from '../ParticleField.astro';
+import LiveIcon from '../v4/LiveIcon.astro';
+import { getPage, getShortName } from '../../lib/seo.mjs';
+import { iconFor, ICONS } from '../../lib/iconos.mjs';
+import '../../styles/show-navideno.css';
+const { page, content } = Astro.props;
+const { intro, sections: [family, program, venue], closing, extra, cta } = content;
+const whatsapp = 'https://wa.me/' + site.whatsapp + '?text=' + encodeURIComponent(extra.whatsapp);
+const media = '/media/show-telon';
+const IC = ICONS as Record<string, string>;
+const srcset = (name: string, sizes: number[]) => sizes.map(w => `/media/${name}-${w}.webp ${w}w`).join(', ');
+// 2C · cada tema del programa con su foto e icono, en el orden de la ficha (Personajes, Participación, Entrega de regalos).
+const SCENES = [
+  { icon: 'sparkles', photo: 'p19-personajes', sizes: [640, 1024], alt: 'Manos con guantes de un personaje navideño sostienen una estrella de luz sobre las manos de los niños' },
+  { icon: 'users', photo: 'p19-juegos', sizes: [640, 1280], alt: 'Niños de espaldas con los brazos en alto entre burbujas y nieve de papel' },
+  { icon: 'gift', photo: 'p19-regalos', sizes: [640, 1024], alt: 'Entrega de un regalo envuelto a las manos de dos niños al borde del escenario' },
+];
+if (program.items.length !== SCENES.length) throw new Error('P19: el programa debe tener tres temas para las escenas con telón');
+const scenes = program.items.map((item: string, i: number) => {
+  const cut = item.indexOf(': ');
+  const d = item.slice(cut + 2);
+  return { ...SCENES[i], title: item.slice(0, cut), text: d.replace(/^([¿¡]?)(\p{L})/u, (_m: string, q: string, l: string) => q + l.toUpperCase()) };
+});
+// 3B · la ficha resume lo que el texto de la sección pide compartir y pedir (mismas palabras).
+const SHARE = ['Distrito', 'Asistentes aproximados', 'Espacio disponible'];
+const ASK = ['Duración', 'Artistas', 'Materiales', 'Sonido', 'Iluminación'];
+// Enlaces de la ficha F6: Fiesta de fin de año (P20) y Contacto (P33, «Consulta y cotiza tu proyecto»).
+const related = [{ page: getPage('P20'), label: getShortName(getPage('P20')) }, { page: getPage('P33'), label: 'Consulta y cotiza tu proyecto' }];
+const STEPS = [
+  ['message', 'Cuéntanos tu necesidad.', 'Puede ser una idea, una fecha o un problema de comunicación.'],
+  ['calendar', 'Comparte el contexto.', 'Para un evento: lugar y fecha, si los conoces. Para una pieza: mensaje y uso previsto.'],
+  ['send', 'Hablemos de tu proyecto.', 'Elige WhatsApp o correo para iniciar la conversación.'],
+];
+---
+<main id="main" class="theater v4-main" data-v4>
+  <svg width="0" height="0" class="v4-defs" aria-hidden="true"><defs>
+    <linearGradient id="v4-brand" gradientUnits="userSpaceOnUse" x1="2" y1="2" x2="22" y2="22"><stop stop-color="#fe802d"/><stop offset=".5" stop-color="#fe0840"/><stop offset="1" stop-color="#ac0bd9"/></linearGradient>
+  </defs></svg>
+  <section class="stage" aria-labelledby="show-title">
+    <div class="cg" data-cinemagraph>
+      <img class="cg-still" src={media + '/escenario-1774.webp'} srcset={media + '/escenario-900.webp 900w, ' + media + '/escenario-1774.webp 1774w'} sizes="(max-width: 760px) 260vw, 100vw" width="1774" height="887" alt="" fetchpriority="high" />
+    </div>
+    <div class="shade" aria-hidden="true"></div>
+    <button class="cg-pause" type="button" hidden aria-label="Pausar animación">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path class="pause-icon" d="M3 2h3.6v12H3zm6.4 0H13v12H9.4z"/><path class="play-icon" d="M4 2.5v11l9.5-5.5z"/></svg>
+    </button>
+    <div class="stage-copy">
+      <h1 id="show-title">{page.h1}</h1>
+      <p>Para celebraciones con niños y familias. Cuéntanos las edades del público y consulta la disponibilidad para tu fecha.</p>
+      <a class="action gradient-action" href={whatsapp} target="_blank" rel="noopener noreferrer"><span>{cta}</span><span class="action-arrow"><Icon /></span></a>
+    </div>
+    <svg class="hem" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true">
+      <defs><linearGradient id="telon-onda" x1="0" x2="1"><stop offset="0" stop-color="#fe802d"/><stop offset=".45" stop-color="#fe0840"/><stop offset="1" stop-color="#ac0bd9"/></linearGradient></defs>
+      <path fill="#fff" d="M0 34C360 10 760 60 1440 18V64H0Z"/>
+      <path fill="none" stroke="url(#telon-onda)" stroke-width="5" d="M0 34C360 10 760 60 1440 18"/>
+    </svg>
+  </section>
+  <div class="wrap x-crumbs"><Breadcrumbs page={page}/></div>
+
+  <!-- 1B · arco de escenario: el telón se abre al aparecer -->
+  <section class="v4-sec bg-w"><div class="wrap x-arch-split">
+    <div class="v4-copy">
+      <h2 data-rotulo="true" class="v4-h2"><span class="v4-h2-text">{family.title}</span><span class="presentation-accent" aria-hidden="true"></span></h2>
+      <p>{intro}</p>
+      {family.paragraphs.map((p: string) => <p>{p}</p>)}
+    </div>
+    <figure class="x-arch" data-x-open>
+      <span class="x-arch-frame">
+        <img src="/media/p19-publico-1280.webp" srcset={srcset('p19-publico', [640, 1280])} sizes="(max-width: 880px) 380px, 470px" width="1280" height="853" alt="Niños de espaldas mirando un pequeño escenario navideño con telón rojo" loading="lazy" decoding="async" />
+        <span class="x-velvet l" aria-hidden="true"></span><span class="x-velvet r" aria-hidden="true"></span>
+        <span class="x-valance" aria-hidden="true"></span>
+      </span>
+      <span class="x-arch-hatch" aria-hidden="true"></span>
+    </figure>
+  </div></section>
+
+  <!-- 2C · tres escenas con telón -->
+  <section class="v4-sec bg-l" data-live-group><div class="wrap">
+    <div class="x-scenes-head">
+      <h2 data-rotulo="true" class="v4-h2"><span class="v4-h2-text">{program.title}</span><span class="presentation-accent" aria-hidden="true"></span></h2>
+      {program.paragraphs.map((p: string) => <p>{p}</p>)}
+    </div>
+    <ul class="x-scenes">
+      {scenes.map((sc: any) => (
+        <li class="x-scene" data-x-open>
+          <div class="x-scene-stage">
+            <img src={`/media/${sc.photo}-${sc.sizes[1]}.webp`} srcset={srcset(sc.photo, sc.sizes)} sizes="(max-width: 880px) 100vw, 380px" alt={sc.alt} loading="lazy" decoding="async" />
+            <span class="x-velvet l" aria-hidden="true"></span><span class="x-velvet r" aria-hidden="true"></span>
+          </div>
+          <div class="x-scene-copy"><LiveIcon name={sc.icon} /><h3>{sc.title}</h3><p>{sc.text}</p></div>
+        </li>))}
+    </ul>
+  </div></section>
+
+  <!-- 3B · banda con ficha del espacio: los puntos se encienden como focos -->
+  <section class="v4-band">
+    <div class="v4-band-img">
+      <img src="/media/p19-espacio-1536.webp" srcset={srcset('p19-espacio', [960, 1536])} sizes="100vw" alt="Salón preparado para un show infantil con telón rojo, parlantes, luces y cojines para los niños" loading="lazy" decoding="async" />
+      <div class="wrap"><h2 data-rotulo="true" class="v4-h2 v4-band-title"><span class="v4-h2-text">{venue.title}</span><span class="presentation-accent" aria-hidden="true"></span></h2></div>
+    </div>
+    <div class="wrap"><div class="v4-band-card x-band-card" data-x-lit>
+      {venue.paragraphs.map((p: string) => <p>{p}</p>)}
+      <div class="x-chips-wrap">
+        <div><h3>Comparte</h3><ul class="x-chips">{SHARE.map((t, i) => <li style={`--i:${i}`}>{t}</li>)}</ul></div>
+        <div><h3>Pide en la propuesta</h3><ul class="x-chips">{ASK.map((t, i) => <li style={`--i:${i + SHARE.length}`}>{t}</li>)}</ul></div>
+      </div>
+    </div></div>
+  </section>
+
+  <!-- Relacionados: los dos enlaces de la ficha F6 -->
+  <section class="v4-related color-field" aria-labelledby="v4-related-title">
+    <Atmosphere seed={71} waves={false} />
+    <ParticleField id="rhino-related-particles" label="servicios relacionados" />
+    <svg class="v4-top-wave" viewBox="0 0 1440 110" preserveAspectRatio="none" aria-hidden="true"><path fill="white" opacity=".2" d="M0 0H1440V105Q720 -35 0 105Z"/><path fill="white" opacity=".3" d="M0 0H1440V88Q720 -52 0 88Z"/><path class="v4-wave-solid" fill="white" d="M0 0H1440V70Q720 -70 0 70Z"/></svg>
+    <div class="wrap v4-related-in">
+      <h2 id="v4-related-title">Servicios relacionados</h2>
+      <p>Otros servicios para tu celebración de fin de año. Se consultan y contratan por separado.</p>
+      <div class="v4-nodes">
+        {related.map(r => (
+          <PageLink pageId={r.page.id} label={r.label} class="directory-node v4-node">
+            <span class="node-circle"><svg width="27" height="27" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><Fragment set:html={IC[r.page.id === 'P33' ? 'message' : iconFor(r.page.id)]} /></svg></span>
+            <span class="node-label">{r.label}</span>
+          </PageLink>))}
+      </div>
+    </div>
+    <svg class="v4-bottom-wave" viewBox="0 0 1440 90" preserveAspectRatio="none" aria-hidden="true"><path fill="#fff" opacity=".22" d="M0 0C480 20 660 118 1440 2V90H0Z"/><path fill="#fff" opacity=".38" d="M0 30C550 80 880 108 1440 22V90H0Z"/><path fill="#fff" d="M0 48C550 110 1040 98 1440 46V90H0Z"/></svg>
+  </section>
+
+  <!-- 4A · cierre de la web, sin enlace de correo (como la cabecera) -->
+  <section class="v4-close" aria-labelledby="v4-close-title">
+    <div class="wrap v4-close-grid">
+      <div class="v4-close-copy">
+        <h2 id="v4-close-title" class="v4-h2" data-rotulo><span class="v4-h2-text">{closing.title}</span><span class="presentation-accent" aria-hidden="true"></span></h2>
+        {closing.paragraphs.map((p: string) => <p>{p}</p>)}
+        <div class="v4-acts">
+          <a class="action gradient-action" data-magnet href={whatsapp} target="_blank" rel="noopener noreferrer"><span>{cta}</span><span class="action-arrow"><Icon /></span></a>
+        </div>
+      </div>
+      <ol class="v4-steps" data-steps>
+        <span class="v4-track" aria-hidden="true"><i class="v4-fill"></i></span>
+        {STEPS.map(([icon, title, text]) => (
+          <li><span class="v4-step-node"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><Fragment set:html={IC[icon]} /></svg></span>
+            <div><h3>{title}</h3><p>{text}</p></div></li>))}
+      </ol>
+    </div>
+  </section>
+</main>
+<script src="../../scripts/v4-motion.ts"></script>
+<script>
+  // Arco y escenas: el telón se abre al aparecer; la ficha enciende sus puntos. Con movimiento reducido no se arma nada.
+  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    document.documentElement.classList.add('x-arm');
+    const watch = (sel: string, cls: string, threshold: number) => {
+      const io = new IntersectionObserver(entries => entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add(cls); io.unobserve(e.target); }
+      }), { threshold });
+      document.querySelectorAll(sel).forEach(el => io.observe(el));
+    };
+    watch('[data-x-open]', 'x-open', .4);
+    watch('[data-x-lit]', 'x-lit', .4);
+  }
+</script>
+<script>
+  // Variante A del laboratorio (elegida por el dueño el 25-11-2026): la cabecera se mueve en vivo.
+  import { Cinemagraph } from '../../scripts/cinemagraph';
+  import { arranqueTranquilo } from '../../scripts/arranque-tranquilo';
+  const root = document.querySelector<HTMLElement>('[data-cinemagraph]');
+  const startScene = (root: HTMLElement) => {
+    const M = '/media/show-telon/';
+    const mobile = matchMedia('(max-width: 760px)').matches;
+    const scene = new Cinemagraph(root, {
+      w: 1774, h: 887, pos: mobile ? [.8, .5] : [.64, .5],
+      plate: { small: M + 'placa-900.webp', large: M + 'placa-1774.webp' },
+      star: { src: M + 'estrella.webp', x: 1070, y: 6, w: 457, h: 463, px: 232.67, py: 30, amp: 2.4, period: 8 },
+      cloth: [
+        { edge: [[0, 1010], [200, 962], [400, 885], [500, 842], [600, 800], [700, 745]], amp: 7, period: 7.2, phase: 0, depth: 46 },
+        { edge: [[0, 1545], [200, 1592], [400, 1655], [600, 1728], [887, 1774]], amp: 6, period: 6.4, phase: 1.9, depth: 46 },
+      ],
+      pin: [0, 260, 690, 770],
+      lights: [{ x: 1120, y: 28, r: 46 }, { x: 1477, y: 22, r: 46 }, { x: 1032, y: 30, r: 36 }],
+      motes: { region: [1040, 60, 1620, 660], count: 40, countSmall: 18 },
+    });
+    // Pausa solo visible al llegar con el teclado (convención del sitio)
+    const pause = root.parentElement?.querySelector<HTMLButtonElement>('.cg-pause');
+    if (pause && scene.running) {
+      pause.hidden = false;
+      pause.addEventListener('click', () => {
+        scene.pause(!scene.paused);
+        pause.classList.toggle('resume', scene.paused);
+        pause.setAttribute('aria-label', scene.paused ? 'Reanudar animación' : 'Pausar animación');
+      });
+      root.addEventListener('cinemagraph:stop', () => { pause.hidden = true; });
+    }
+  };
+  // Arranque diferido (26-11-2026): preparar la tarjeta gráfica bloquea el navegador 0,2–0,6 s y, al entrar, impedía
+  // hacer scroll. Se espera a que la página cargue y el visitante no se esté desplazando (src/scripts/arranque-tranquilo.ts).
+  if (root) arranqueTranquilo(root, () => startScene(root));
+</script>
+<style is:global>
+  /* Capas que crea el motor del cinemagraph (src/scripts/cinemagraph.ts) */
+  .cg-box { position: absolute; opacity: 0; transition: opacity .9s ease; pointer-events: none; }
+  .cg-live .cg-box { opacity: 1; }
+  .cg-gl, .cg-dust { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .cg-dust { mix-blend-mode: screen; }
+  .cg-star { position: absolute; height: auto; will-change: transform; }
+  .cg-light { position: absolute; aspect-ratio: 1; translate: -50% -50%; border-radius: 50%; mix-blend-mode: screen; background: radial-gradient(closest-side, #ffe2b0a6, #ffb46a33 55%, #0000); }
+</style>
+<style>
+  .theater { background: white; color: #202026; }
+  /* Cabecera · variante A del laboratorio del 25-11-2026 (pantalla completa con movimiento en vivo) */
+  .stage { position: relative; isolation: isolate; display: grid; align-items: center; min-height: clamp(600px,50vw,860px); background: #170814; color: white; }
+  .cg { position: absolute; inset: 0; overflow: hidden; z-index: -2; background: #1b0a14; }
+  .cg-still { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 64% 50%; display: block; }
+  .shade { position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(90deg,#170814e6 0%,#170814b0 30%,#17081400 58%), linear-gradient(0deg,#170814b3 0%,#17081400 32%); }
+  .cg-pause { position: absolute; z-index: 3; right: max(20px,6vw); bottom: clamp(56px,6vw,96px); width: 44px; height: 44px; display: grid; place-items: center; border: 1px solid #ffffff99; border-radius: 50%; background: #1b0a14b3; color: white; cursor: pointer; clip-path: inset(50%); }
+  .cg-pause:focus-visible { clip-path: none; outline: 3px solid white; outline-offset: 2px; }
+  .cg-pause[hidden], .cg-pause .play-icon, .cg-pause.resume .pause-icon { display: none; }
+  .cg-pause.resume .play-icon { display: block; }
+  /* El texto arranca donde el logo (mismo margen que la cabecera de la web, src/styles/hero.css) */
+  .stage-copy { padding-block: 8rem 7rem; padding-inline: clamp(32px, 6.5vw, 150px); }
+  @media (max-width: 650px) { .stage-copy { padding-inline: 20px; } }
+  .stage-copy > * { max-width: 560px; }
+  .stage-copy > h1 { max-width: 700px; }
+  .theater h1 { font-family: Poppins, Arial, sans-serif; font-weight: 700; letter-spacing: -.04em; line-height: 1.06; margin: 0; }
+  .theater h1 { text-wrap: balance; font-size: clamp(3rem,4.6vw,4.4rem); }
+  .stage-copy p { margin: 1.25rem 0 2rem; font-size: clamp(1.05rem,1.3vw,1.2rem); line-height: 1.55; max-width: 34ch; color: #fffffff0; }
+  .hem { position: absolute; z-index: 1; left: 0; bottom: -1px; width: 100%; height: clamp(36px,4.4vw,64px); pointer-events: none; }
+  @media(max-width: 760px) {
+    .stage { display: block; min-height: 0; }
+    .cg { position: relative; height: clamp(440px,125vw,540px); z-index: 0; }
+    .cg-still { object-position: 80% 50%; }
+    .shade { bottom: auto; height: clamp(440px,125vw,540px); z-index: 1; background: linear-gradient(0deg,#170814 0%,#17081400 34%), linear-gradient(180deg,#17081499 0%,#17081400 22%); }
+    .cg-pause { top: calc(clamp(440px,125vw,540px) - 140px); bottom: auto; right: 20px; }
+    .stage-copy { position: relative; z-index: 2; margin-top: -80px; padding-block: 0 5.5rem; }
+    .stage-copy .gradient-action { width: 100%; justify-content: space-between; }
+    .theater h1 { font-size: clamp(2.3rem,9.6vw,3rem); letter-spacing: -.03em; }
+  }
+</style>

@@ -9,15 +9,18 @@ import PageSection from '../components/page/PageSection.astro';
 import RelatedPages from '../components/page/RelatedPages.astro';
 import ContactBand from '../components/page/ContactBand.astro';
 import V4Page from '../components/v4/V4Page.astro';
+import ShowTelon from '../components/page/ShowTelon.astro';
 import Construction from '../components/Construction.astro';
 import maquetas from '../data/maquetas-v4.json';
-import { pages, getPage } from '../lib/seo.mjs';
-import { getPageContent } from '../lib/content.mjs';
+import { pages, getPage, getBuildConfig } from '../lib/seo.mjs';
+import { getPageContent, hasTemporal } from '../lib/content.mjs';
 
 export function getStaticPaths() {
+  // En el artefacto de producción, una página con contenido temporal de maqueta se genera «en construcción» (27-11-2026).
+  const production = getBuildConfig().target === 'production';
   return pages
     .filter(page => page.type === 'html' && page.path !== '/' && (page.implemented || page.id !== 'P34'))
-    .map(page => ({ params: { slug: page.path.replace(/^\/|\/$/g, '') }, props: { id: page.id, pending: !page.implemented } }));
+    .map(page => ({ params: { slug: page.path.replace(/^\/|\/$/g, '') }, props: { id: page.id, pending: !page.implemented || (production && hasTemporal(page)) } }));
 }
 
 const page = getPage(Astro.props.id);
@@ -29,8 +32,8 @@ const service = !pending && extra.service && page.schemaCandidates.some((type: s
   ? { confirmedVisible: true as const, name: page.h1, description: intro }
   : undefined;
 ---
-<InteriorLayout pageId={page.id} service={service || undefined} pending={pending}>
-  {pending ? <Construction page={page} /> : layout ? <V4Page page={page} content={content} layout={layout} /> : (
+<InteriorLayout pageId={page.id} service={service || undefined} pending={pending} fullHero={Boolean(layout?.hero)}>
+  {pending ? <Construction page={page} /> : page.id === 'P19' ? <ShowTelon page={page} content={content} /> : layout ? <V4Page page={page} content={content} layout={layout} /> : (
   <main id="main" class="page-main">
     <PageHero page={page} intro={intro} cta={cta} whatsapp={extra.whatsapp} hero={extra.hero} />
     {sections.map((section, index) => <PageSection section={section} index={index} />)}

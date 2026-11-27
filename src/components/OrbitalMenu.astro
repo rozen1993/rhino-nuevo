@@ -30,6 +30,11 @@ const CASE_IMG: Record<string, string> = { P28: 'redinter', P29: 'tasting', P30:
 const cases = pages.filter((p: any) => p.parentId === 'P27' && p.type === 'html')
   .map((p: any) => ({ id: p.id, label: getShortName(p), href: p.path, img: CASE_IMG[p.id], soon: !p.implemented }));
 const page = (id: string) => getPage(id);
+// Temporada (pedido del dueño, 25-11-2026): en noviembre y diciembre, el hueco de Pantallas LED (P11) lo ocupa el
+// Show navideño (P19). El cambio lo hace navigation.ts en el navegador según la fecha de Lima; sin JavaScript queda P11.
+const SEASON_SLOT = 'P11';
+const show = page('P19');
+const seasonItem = { id: show.id, label: 'Show navideño', href: show.path, icon: iconFor(show.id), soon: !show.implemented };
 const MAIN = [
   { label: 'Inicio', href: '/', icon: 'home' },
   { label: 'Servicios', sub: 'servicios', icon: 'briefcase' },
@@ -77,7 +82,10 @@ const DOTS = [10, 56, 102, 148, 194, 240, 286, 332];
             <p class="om-gtitle">{g.title}</p>
             <ul class="om-items">
               {g.items.map(k => (
-                <li class="om-li" data-ring={g.ring}><a class:list={['om-item', k.soon && 'soon']} href={k.href}><span class="om-ic"><Fragment set:html={svg(k.icon)} /></span><span class="om-lb">{k.label}</span>{k.soon && <span class="om-soon">pronto</span>}</a></li>))}
+                <li class="om-li" data-ring={g.ring} data-season-slot={k.id === SEASON_SLOT ? '' : undefined}><a class:list={['om-item', k.soon && 'soon']} href={k.href}><span class="om-ic"><Fragment set:html={svg(k.icon)} /></span><span class="om-lb">{k.label}</span>{k.soon && <span class="om-soon">pronto</span>}</a></li>))}
+              {g.items.some(k => k.id === SEASON_SLOT) && <template data-season-item>
+                <li class="om-li" data-ring={g.ring}><a class:list={['om-item', seasonItem.soon && 'soon']} href={seasonItem.href}><span class="om-ic"><Fragment set:html={svg(seasonItem.icon)} /></span><span class="om-lb">{seasonItem.label}</span></a></li>
+              </template>}
             </ul>
           </div>))}
       </div>
@@ -186,6 +194,9 @@ const DOTS = [10, 56, 102, 148, 194, 240, 286, 332];
   .om-menu.list .om-sub .om-lb:last-child { grid-row: 1 / span 2; }
   .om-menu.list .om-sub .om-lb { min-width: 0; font-size: 13px; letter-spacing: 0; text-transform: none; font-weight: 600; line-height: 1.25; }
   .om-menu.list .om-sub .om-soon { margin: 0; grid-column: 2; font-size: 9px; }
+  /* Al desplazar la lista, las opciones pasan bajo una franja blanca y no se cruzan con la X */
+  .om-menu.list::after { content: ''; position: fixed; z-index: 4; left: 0; right: 0; top: 0; height: 84px; pointer-events: none; background: linear-gradient(#fff 72%, #fff0); }
+  .om-menu.list .om-brand, .om-menu.list .om-back { z-index: 6; }
   .om-menu.list .om-brand { left: 20px; top: 20px; font-size: 21px; } .om-menu.list .om-brand-mark { width: 46px; height: 35px; }
   .om-menu.list .om-back { left: 20px; top: 82px; min-height: 46px; padding: 10px 20px 10px 16px; font-size: 14px; }
   @media (prefers-reduced-motion: reduce) { .om-spin { animation: none; } .om-ic { transition: none; } }

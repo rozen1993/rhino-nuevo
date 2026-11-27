@@ -12,6 +12,7 @@ import SeeAlso from './SeeAlso.astro';
 import cases from '../../data/cases.json';
 import { getPage, getShortName } from '../../lib/seo.mjs';
 import { iconFor, ICONS } from '../../lib/iconos.mjs';
+import '../../styles/escena.css';
 
 const { page, content, layout } = Astro.props;
 const IC = ICONS as Record<string, string>;
@@ -21,6 +22,11 @@ const wa = 'https://wa.me/51965683542?text=' + encodeURIComponent(waText);
 const mail = 'mailto:info@rhinoaudiovisuales.com?subject=' + encodeURIComponent(`Consulta: ${page.h1}`);
 const [lead, ...restParts] = intro.split('. ');
 const rest = restParts.join('. ');
+const collageSize = layout.collage?.largeSize ?? 1024;
+// Diseño «escena» (aprobado el 25-11-2026 en Cobertura): con layout.hero, cabecera a pantalla completa con escena viva
+// en lugar de la introducción con collage; la frase de la intro (con la keyword) baja a la primera sección.
+const hero = layout.hero;
+const introFirst = (k: number) => hero && k === 0 ? [intro] : [];
 const media = (name: string, size: number) => `/media/${name}-${size}.webp`;
 const caseImage = (id: string) => '/media/' + id + (['bloom', 'adidas'].includes(id) ? '-display.webp' : '-1280.webp');
 const yt = (video: string) => 'https://www.youtube.com/watch?v=' + video;
@@ -32,7 +38,8 @@ let band = 0, splits = 0;
 const blocks = layout.sections.map((spec: any) => {
   const group = (spec.indexes ?? [spec.index]).map((i: number) => sections[i]);
   if (group.some((s: any) => !s)) throw new Error(`${page.id}: la maqueta v4 pide una sección que no existe (${spec.indexes ?? spec.index})`);
-  const bg = spec.type === 'band' ? '' : (band++ % 2 === 0 ? 'bg-l' : 'bg-w');
+  // Con cabecera viva («hero») la alternancia empieza en blanco, para que las migas continúen en la primera sección.
+  const bg = spec.type === 'band' ? '' : ((band++ + (layout.hero ? 1 : 0)) % 2 === 0 ? 'bg-l' : 'bg-w');
   const rev = spec.type === 'split' && splits++ % 2 === 1;
   return { ...spec, index: spec.index ?? spec.indexes[0], section: group[0], group, bg, rev };
 });
@@ -69,6 +76,12 @@ function descsFromItems(s: any) {
   for (const it of s.items) { const [term, d] = it.split(': '); const l = s.links.find(([, label]: string[]) => firstWord(label) === firstWord(term)); if (l) out[l[0]] = cap(d); }
   return out;
 }
+// Datos fijos de los bloques «escena» del resto de páginas (26-11-2026): pistas de la línea de tiempo (izquierda %, ancho %, color),
+// días del calendario con pieza y su icono.
+const TRACKS = [['V2', [[8, 18, 'b'], [44, 20, 'c'], [76, 14, 'b']]], ['V1', [[0, 26, 'a'], [27, 22, 'c'], [50, 30, 'a'], [81, 19, 'c']]], ['A1', [[0, 62, 'w'], [63, 37, 'w']]]];
+const WEEK = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
+const CHIPS: Record<number, string> = { 1: 'camera', 3: 'video', 5: 'text', 8: 'camera', 10: 'text', 12: 'video', 15: 'camera', 17: 'text', 19: 'video', 22: 'camera', 24: 'text', 26: 'video', 29: 'camera', 31: 'text' };
+const CHIP_ICON: Record<string, string> = { camera: IC.camera, video: IC.video, text: '<path d="M4 7h16M4 12h12M4 17h8"/>' };
 const STEPS = [
   ['message', 'Cuéntanos tu necesidad.', 'Puede ser una idea, una fecha o un problema de comunicación.'],
   ['calendar', 'Comparte el contexto.', 'Para un evento: lugar y fecha, si los conoces. Para una pieza: mensaje y uso previsto.'],
@@ -78,9 +91,35 @@ const STEPS = [
 <main id="main" class="v4-main" data-v4>
   <svg width="0" height="0" class="v4-defs" aria-hidden="true"><defs>
     <linearGradient id="v4-brand" gradientUnits="userSpaceOnUse" x1="2" y1="2" x2="22" y2="22"><stop stop-color="#fe802d"/><stop offset=".5" stop-color="#fe0840"/><stop offset="1" stop-color="#ac0bd9"/></linearGradient>
+    <linearGradient id="xj-sol" gradientUnits="userSpaceOnUse" x1="4" y1="0" x2="60" y2="0"><stop stop-color="#fe802d"/><stop offset=".5" stop-color="#fe0840"/><stop offset="1" stop-color="#ac0bd9"/></linearGradient>
   </defs></svg>
 
-  <!-- Introducción: como «Producción audiovisual» de la home -->
+  <!-- Cabecera: con «hero», escena viva a pantalla completa (diseño «escena», 25-11-2026); si no, introducción como «Producción audiovisual» de la home,
+       con el collage elegido el 23-11-2026 (visuales-claude/2026-11-22-fotos-collage, N2): grande cuadrada con el momento del evento,
+       pequeña vertical 2:3 con la captura. Fotos ilustrativas creadas con IA; los anchos de «sizes» son los huecos medidos con object-fit: cover. -->
+  {hero ? (<>
+  <section class="xh" aria-labelledby="page-title">
+    <div class="xh-scene" data-escena={JSON.stringify(hero.scene)}>
+      <img class="xh-still" src={media(hero.image, hero.sizes[1])} srcset={srcset(hero.image, hero.sizes)} sizes="(max-width: 760px) 260vw, 100vw"
+        width={hero.width} height={hero.height} alt={hero.alt} fetchpriority="high" style={`object-position: ${hero.scene.pos[0] * 100}% ${hero.scene.pos[1] * 100}%; --pos-m: ${hero.scene.posMobile[0] * 100}% ${hero.scene.posMobile[1] * 100}%`} />
+    </div>
+    <div class="xh-shade" aria-hidden="true"></div>
+    <button class="xh-pause" type="button" hidden aria-label="Pausar animación">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path class="pause-icon" d="M3 2h3.6v12H3zm6.4 0H13v12H9.4z"/><path class="play-icon" d="M4 2.5v11l9.5-5.5z"/></svg>
+    </button>
+    <div class="xh-copy">
+      <h1 id="page-title">{page.h1}</h1>
+      <p>{hero.lead}</p>
+      <a class="action gradient-action" data-magnet href={wa} target="_blank" rel="noopener noreferrer"><span>{cta}</span><span class="action-arrow"><Icon /></span></a>
+    </div>
+    <svg class="xh-hem" viewBox="0 0 1440 64" preserveAspectRatio="none" aria-hidden="true">
+      <defs><linearGradient id="xh-onda" x1="0" x2="1"><stop offset="0" stop-color="#fe802d"/><stop offset=".45" stop-color="#fe0840"/><stop offset="1" stop-color="#ac0bd9"/></linearGradient></defs>
+      <path fill="#fff" d="M0 34C360 10 760 60 1440 18V64H0Z"/>
+      <path fill="none" stroke="url(#xh-onda)" stroke-width="5" d="M0 34C360 10 760 60 1440 18"/>
+    </svg>
+  </section>
+  <div class="wrap x-crumbs"><Breadcrumbs page={page} /></div>
+  </>) : (
   <section class="v4-intro wrap" aria-labelledby="page-title">
     <div class="v4-intro-copy">
       <Breadcrumbs page={page} />
@@ -92,15 +131,14 @@ const STEPS = [
         <a class="inline-action" href={mail}>Escribir por correo <Icon size={18} /></a>
       </div>
     </div>
-    <!-- Collage elegido el 23-11-2026 (visuales-claude/2026-11-22-fotos-collage, N2): grande cuadrada con el momento del evento,
-         pequeña vertical 2:3 con la captura. Fotos ilustrativas creadas con IA; los anchos de «sizes» son los huecos medidos con object-fit: cover. -->
     <figure class="v4-collage" data-parallax>
-      <img class="v4-big" src={media(layout.collage.image, 1024)} srcset={`${media(layout.collage.image, 640)} 640w, ${media(layout.collage.image, 1024)} 1024w`}
+      <img class="v4-big" src={media(layout.collage.image, collageSize)} srcset={`${media(layout.collage.image, 640)} 640w, ${media(layout.collage.image, collageSize)} ${collageSize}w`}
         sizes="(max-width: 650px) 270px, (max-width: 880px) 66vw, 400px" width={layout.collage.width ?? 1024} height={layout.collage.height ?? 1024} alt={layout.collage.alt} fetchpriority="high" decoding="async" />
-      <img class="v4-small" src={media(layout.collage.second, 1024)} srcset={`${media(layout.collage.second, 640)} 640w, ${media(layout.collage.second, 1024)} 1024w`}
+      <img class="v4-small" src={media(layout.collage.second, collageSize)} srcset={`${media(layout.collage.second, 640)} 640w, ${media(layout.collage.second, collageSize)} ${collageSize}w`}
         sizes="(max-width: 650px) 140px, (max-width: 880px) 37vw, 210px" width={layout.collage.secondWidth ?? 1024} height={layout.collage.secondHeight ?? 1536} alt="" decoding="async" />
     </figure>
   </section>
+  )}
 
   <!-- 11 · Cinta de servicios (P02): se desplaza sola; se detiene con el cursor, el foco o el botón, y con «reducir movimiento» queda quieta. -->
   {belt.length > 0 && (
@@ -117,6 +155,358 @@ const STEPS = [
   {blocks.map((b: any, k: number) => {
     const s = b.section;
     const id = `sec-${b.index + 1}`;
+    if (b.type === 'visor') return (
+      <section id={id} class:list={['v4-sec', b.bg]} data-live-group>
+        <div class="wrap xv-split">
+          <div class="v4-copy"><Heading text={s.title} />{[...introFirst(k), ...s.paragraphs].map((p: string) => <p>{p}</p>)}
+            {s.items.length > 0 && <ul class="xv-list">{s.items.map((it: string) => { const x = listItem(it); return (
+              <li><svg class="v4-tick" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="url(#v4-brand)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><Fragment set:html={IC.check} /></svg><p>{x.t && <strong>{x.t}:</strong>} {x.d}</p></li>); })}</ul>}
+            <SeeAlso links={s.links} /></div>
+          <figure class:list={['xv', b.live && 'xv-live', b.mode === 'photo' && 'xv-shoot']} data-x-open>
+            <span class="xv-in"><img src={media(b.image, b.sizes.at(-1))} srcset={srcset(b.image, b.sizes)} sizes="(max-width: 880px) 100vw, 540px" width={b.width} height={b.height} alt={b.alt} loading="lazy" decoding="async" /></span>
+            <span class="xv-ui" aria-hidden="true"><span class="xv-c tl"></span><span class="xv-c tr"></span><span class="xv-c bl"></span><span class="xv-c br"></span>{b.live ? <span class="xv-onair"><i></i>EN VIVO</span> : b.mode === 'photo' ? <span class="xv-rec xv-photo">1/160 · F4 · ISO 200</span> : <span class="xv-rec"><i></i>REC</span>}{b.mode === 'photo' ? <span class="xv-tc">[<span data-shots>36</span>]</span> : <span class="xv-tc" data-tc>00:00:00:00</span>}<span class="xv-focus"></span></span>
+            <span class="xv-hatch" aria-hidden="true"></span>
+          </figure>
+        </div>
+      </section>);
+    // Diseño «escena» en Catering (26-11-2026): los formatos como momentos de la jornada. Cada foto se «ilumina» al aparecer
+    // y un pequeño arco marca la altura del sol (mañana, media mañana, mediodía).
+    if (b.type === 'jornada') return (
+      <section id={id} class:list={['v4-sec', b.bg]}>
+        <div class="wrap">
+          <div class="xf-head"><Heading text={s.title} />{[...introFirst(k), ...s.paragraphs].map((p: string) => <p>{p}</p>)}<SeeAlso links={s.links} /></div>
+          <ul class="xj-list">
+            {b.moments.map((m: any, j: number) => (
+              <li class="xj-item" data-x-open style={`--sun:${m.sun}; --i:${j}`}>
+                <div class="xj-photo"><img src={media(m.image, m.sizes.at(-1))} srcset={srcset(m.image, m.sizes)} sizes="(max-width: 880px) 100vw, 380px" alt={m.alt} loading="lazy" decoding="async" /></div>
+                <div class="xj-copy">
+                  <svg class="xj-dial" viewBox="0 0 64 36" width="64" height="36" aria-hidden="true">
+                    <path class="xj-arc" d="M4 32 A28 28 0 0 1 60 32" />
+                    <path class="xj-trail" d="M4 32 A28 28 0 0 1 60 32" pathLength="100" />
+                    <line x1="0" y1="32.5" x2="64" y2="32.5" class="xj-horizon" />
+                    <g class="xj-rot"><circle class="xj-sun" r="5" cx="4" cy="32" /></g>
+                  </svg>
+                  <p class="xj-time">{m.time}</p>
+                  <h3>{m.label}</h3>
+                </div>
+              </li>))}
+          </ul>
+        </div>
+      </section>);
+    // Diseño «escena» en Organización de eventos (26-11-2026): las áreas del encargo como una escaleta de evento;
+    // cada fila enciende su luz de aviso al aparecer y la línea del programa avanza hasta ella.
+    if (b.type === 'escaleta') {
+      const terms = s.items.map((it: string) => it.split(': '));
+      return (
+      <section id={id} class:list={['v4-sec', b.bg]} data-live-group>
+        <div class="wrap xe-grid">
+          <div class="xe-head"><Heading text={s.title} />{[...introFirst(k), ...s.paragraphs].map((p: string) => <p>{p}</p>)}<SeeAlso links={s.links} /></div>
+          <ol class="xe-sheet">
+            {terms.map(([t, d]: string[], j: number) => (
+              <li class="xe-row" data-x-open style={`--i:${j}`}>
+                <span class="xe-cue" aria-hidden="true"></span>
+                <svg class="xe-ic" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><Fragment set:html={IC[b.icons?.[j] ?? 'check']} /></svg>
+                <div><h3>{t}</h3><p>{cap(d)}</p></div>
+              </li>))}
+          </ol>
+        </div>
+      </section>);
+    }
+    // Diseño «escena» en Video corporativo (26-11-2026): cada motivo en una claqueta que se cierra al aparecer.
+    if (b.type === 'claquetas') return (
+      <section id={id} class:list={['v4-sec', b.bg]} data-live-group>
+        <div class="wrap">
+          <div class="xf-head"><Heading text={s.title} />{[...introFirst(k), ...s.paragraphs].map((p: string) => <p>{p}</p>)}<SeeAlso links={s.links} /></div>
+          <ul class="xq-list">
+            {s.items.map((it: string, j: number) => (
+              <li class="xq" data-x-open style={`--i:${j}`}>
+                <span class="xq-top" aria-hidden="true"><span class="xq-arm"></span><span class="xq-base"></span></span>
+                <div class="xq-body"><p>{it}</p></div>
+              </li>))}
+          </ul>
+        </div>
+      </section>);
+    // ---- Bloques «escena» del resto de páginas (26-11-2026). Cada uno lleva la animación propia de su servicio. ----
+    const copy = (cls = 'xf-head') => <div class={cls}><Heading text={s.title} />{[...introFirst(k), ...s.paragraphs].map((p: string) => <p>{p}</p>)}<SeeAlso links={s.links} /></div>;
+    // Producción audiovisual: la preparación, grabación y edición como una línea de tiempo de edición que se arma y se reproduce.
+    if (b.type === 'timeline') return (
+      <section id={id} class:list={['v4-sec', b.bg]} data-live-group>
+        <div class="wrap">
+          {copy()}
+          <div class="xt" data-x-open aria-hidden="true">
+            <div class="xt-ruler">{Array.from({ length: 13 }, () => <i></i>)}</div>
+            {TRACKS.map(([n, clips]: any, r: number) => (
+              <div class="xt-track"><span class="xt-name">{n}</span><span class="xt-lane">{clips.map(([x, w, c]: any, j: number) => <span class:list={['xt-clip', c]} style={`left:${x}%;width:${w}%;--d:${r * .25 + j * .12}s`}></span>)}</span></div>))}
+            <span class="xt-head"></span>
+          </div>
+          {s.items.length > 0 && <ul class="xt-items">{s.items.map((it: string) => { const x = listItem(it); return <li><h3>{x.t || it}</h3>{x.t && <p>{cap(x.d)}</p>}</li>; })}</ul>}
+        </div>
+      </section>);
+    // Bodas: tres momentos de la celebración como copias que se revelan una tras otra.
+    if (b.type === 'album') return (
+      <section id={id} class:list={['v4-sec', b.bg]} data-live-group>
+        <div class="wrap">
+          {copy()}
+          <ul class="xa-list">
+            {b.prints.map((m: any, j: number) => (
+              <li class="xa" data-x-open style={`--i:${j}; --tilt:${[-2.4, 1.6, -1.2][j % 3]}deg`}>
+                <figure><span class="xa-photo"><img src={media(m.image, m.sizes.at(-1))} srcset={srcset(m.image, m.sizes)} sizes="(max-width: 880px) 90vw, 360px" alt={m.alt} loading="lazy" decoding="async" /></span>
+                <figcaption>{m.label}</figcaption></figure>
+              </li>))}
+          </ul>
+        </div>
+      </section>);
+    // Spots: del boceto a la toma. Cada viñeta pasa de dibujo a imagen final con un barrido.
+    if (b.type === 'storyboard') return (
+      <section id={id} class:list={['v4-sec', b.bg]} data-live-group>
+        <div class="wrap">
+          {copy()}
+          <ol class="xs-list">
+            {b.frames.map((f: any, j: number) => (
+              <li class="xs" data-x-open style={`--i:${j}`}>
+                <span class="xs-frame">
+                  <img class="xs-sketch" src={media(f.image, 640)} alt="" loading="lazy" decoding="async" aria-hidden="true" />
+                  <img class="xs-shot" src={media(f.image, f.sizes.at(-1))} srcset={srcset(f.image, f.sizes)} sizes="(max-width: 880px) 90vw, 380px" alt={f.alt} loading="lazy" decoding="async" />
+                  <span class="xs-tag" aria-hidden="true"><b>Boceto</b><b>Toma</b></span>
+                </span>
+              </li>))}
+          </ol>
+        </div>
+      </section>);
+    // Drones: la foto empieza a ras de suelo y se aleja hasta la vista de conjunto al desplazarse.
+    if (b.type === 'altura') return (
+      <section id={id} class:list={['v4-sec', b.bg]} data-live-group>
+        <div class="wrap xv-split">
+          {copy('v4-copy')}
+          <figure class="xd" data-x-open>
+            <span class="xd-in"><img src={media(b.image, b.sizes.at(-1))} srcset={srcset(b.image, b.sizes)} sizes="(max-width: 880px) 100vw, 540px" width={b.width} height={b.height} alt={b.alt} loading="lazy" decoding="async" /></span>
+            <span class="xd-ui" aria-hidden="true"><span class="xv-c tl"></span><span class="xv-c tr"></span><span class="xv-c bl"></span><span class="xv-c br"></span><span class="xd-cross"></span><span class="xd-alt"><i></i></span></span>
+          </figure>
+        </div>
+      </section>);
+    // Inmobiliario: el plano se dibuja y un recorrido lo atraviesa, ambiente por ambiente.
+    if (b.type === 'plano') return (
+      <section id={id} class:list={['v4-sec', b.bg]} data-live-group>
+        <div class="wrap xv-split">
+          {copy('v4-copy')}
+          <figure class="xp" data-x-open aria-hidden="true">
+            <svg viewBox="0 0 520 380" fill="none">
+              <g class="xp-rooms">
+                <rect class="xp-room" style="--i:0" x="20" y="20" width="280" height="200" /><rect class="xp-room" style="--i:1" x="300" y="20" width="200" height="130" />
+                <rect class="xp-room" style="--i:2" x="300" y="150" width="200" height="210" /><rect class="xp-room" style="--i:3" x="20" y="220" width="150" height="140" />
+                <rect class="xp-room" style="--i:4" x="170" y="220" width="130" height="140" />
+              </g>
+              <path class="xp-walls" pathLength="1" d="M20 20H500V360H20Z M300 20V112 M300 150V360 M300 150H500 M20 220H120 M150 220H300 M170 220V360" />
+              <path class="xp-win" pathLength="1" d="M70 20H230 M500 50V120 M500 200V320 M60 360H130" />
+              <path class="xp-route" pathLength="1" id="xp-ruta" d="M255 345C250 290 230 260 160 250C90 240 70 180 110 120C150 60 240 70 280 120C320 170 380 110 420 80C460 50 470 150 440 200C410 250 360 260 380 320" />
+              <circle class="xp-end" cx="380" cy="320" r="7" />
+              <circle class="xp-dot" r="7"><animateMotion dur="7s" begin="indefinite" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".45 0 .25 1"><mpath href="#xp-ruta" /></animateMotion></circle>
+            </svg>
+          </figure>
+        </div>
+      </section>);
+    // Sonido y proyectores: la imagen que se enfoca en la pantalla y el sonido que llena el espacio.
+    if (b.type === 'dual') return (
+      <section id={id} class:list={['v4-sec', b.bg]} data-live-group>
+        <div class="wrap">
+          {introFirst(k).length > 0 && <p class="xu-intro">{intro}</p>}
+          <div class="xu-grid">
+            {b.group.map((g: any, j: number) => (
+              <article class:list={['xu', j === 0 ? 'xu-proj' : 'xu-son']} data-x-open>
+                {j === 0
+                  ? <span class="xu-stage" aria-hidden="true"><span class="xu-beam"></span><span class="xu-screen"><img src={media(b.image, 640)} alt="" loading="lazy" decoding="async" /></span></span>
+                  : <span class="xu-stage" aria-hidden="true"><span class="xu-eq">{Array.from({ length: 24 }, (_, q) => <i style={`--q:${q}`}></i>)}</span></span>}
+                <Heading text={g.title} />{g.paragraphs.map((p: string) => <p>{p}</p>)}<SeeAlso links={g.links} />
+              </article>))}
+          </div>
+        </div>
+      </section>);
+    // Maestro de ceremonias: la tarjeta del conductor, con las frases marcadas como se marca un guion.
+    if (b.type === 'guion') {
+      const lines = s.paragraphs.join(' ').split(/(?<=\.)\s+/);
+      return (
+      <section id={id} class:list={['v4-sec', b.bg]} data-live-group>
+        <div class="wrap xg-grid">
+          <div class="xg-head"><Heading text={s.title} />{introFirst(k).map((p: string) => <p>{p}</p>)}<SeeAlso links={s.links} /></div>
+          <div class="xg-card" data-x-open>
+            <span class="xg-clip" aria-hidden="true"></span>
+            {lines.map((l: string, j: number) => <p style={`--i:${j}`}><mark>{l}</mark></p>)}
+          </div>
+        </div>
+      </section>);
+    }
+    // Fotografía de productos: vista general, detalle y composición del mismo artículo.
+    if (b.type === 'vistas') return (
+      <section id={id} class:list={['v4-sec', b.bg]} data-live-group>
+        <div class="wrap">
+          {copy()}
+          <ul class="xw-list">
+            {b.views.map((v: any, j: number) => (
+              <li class:list={['xw', `xw-${v.kind}`]} data-x-open style={`--i:${j}`}>
+                <span class="xw-frame"><img src={media(v.image, v.sizes.at(-1))} srcset={srcset(v.image, v.sizes)} sizes="(max-width: 880px) 90vw, 380px" alt={v.alt} loading="lazy" decoding="async" style={v.focus ? `--fx:${v.focus[0]}%; --fy:${v.focus[1]}%` : ''} />
+                  <span class="xw-af" aria-hidden="true"></span></span>
+                <h3>{v.label}</h3>
+              </li>))}
+          </ul>
+        </div>
+      </section>);
+    // Gestión de redes: un calendario de contenidos que se va llenando de piezas.
+    if (b.type === 'calendario') return (
+      <section id={id} class:list={['v4-sec', b.bg]} data-live-group>
+        <div class="wrap xv-split">
+          <div class="v4-copy"><Heading text={s.title} />{[...introFirst(k), ...s.paragraphs].map((p: string) => <p>{p}</p>)}
+            {s.items.length > 0 && <ul class="xv-list">{s.items.map((it: string) => (
+              <li><svg class="v4-tick" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="url(#v4-brand)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><Fragment set:html={IC.check} /></svg><p>{it}</p></li>))}</ul>}
+            <SeeAlso links={s.links} /></div>
+          <div class="xc-cal" data-x-open aria-hidden="true">
+            <div class="xc-week">{WEEK.map(d => <b>{d}</b>)}</div>
+            <div class="xc-days">{Array.from({ length: 35 }, (_, q) => (
+              <span class="xc-day">{CHIPS[q] && <i class:list={['xc-chip', CHIPS[q]]} style={`--i:${Object.keys(CHIPS).indexOf(String(q))}`}><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><Fragment set:html={CHIP_ICON[CHIPS[q]]} /></svg></i>}</span>))}</div>
+          </div>
+        </div>
+      </section>);
+    // ---- Animación y motion graphics, Estudio fotográfico (27-11-2026) ----
+    // Animación: tres muestras animadas en vivo (proceso, datos, producto). Rotan solas mientras se ven; se pueden elegir y pausar.
+    if (b.type === 'reel') return (
+      <section id={id} class:list={['v4-sec', b.bg]} data-live-group>
+        <div class="wrap">
+          {copy()}
+          <div class="xr" data-reel>
+            <div class="xr-stage" aria-hidden="true">
+              <div class="xr-scene on" data-k="0">
+                <svg viewBox="0 0 640 360"><path class="xr-link" pathLength="1" d="M150 180H320M320 180H490" />
+                  <circle class="xr-node n1" cx="150" cy="180" r="44" /><rect class="xr-node n2" x="278" y="138" width="84" height="84" rx="18" /><path class="xr-node n3" d="M490 132 538 216H442Z" />
+                  <circle class="xr-run" r="9" cx="150" cy="180" /></svg>
+              </div>
+              <div class="xr-scene" data-k="1">
+                <svg viewBox="0 0 640 360"><line class="xr-axis" x1="110" y1="290" x2="540" y2="290" />
+                  {[0, 1, 2, 3, 4].map(q => <rect class="xr-bar" style={`--q:${q}; --h:${[90, 140, 115, 190, 230][q]}px`} x={130 + q * 82} y="60" width="50" height="230" rx="8" />)}
+                  <path class="xr-line" pathLength="1" d="M155 210C200 180 230 150 237 160S300 190 319 170S380 110 401 120S460 70 483 60" /></svg>
+              </div>
+              <div class="xr-scene" data-k="2">
+                <svg viewBox="0 0 640 360"><rect class="xr-device" x="250" y="70" width="140" height="230" rx="22" />
+                  <rect class="xr-screen" x="262" y="84" width="116" height="190" rx="12" />
+                  <g class="xr-call c1"><path pathLength="1" d="M262 130H190" /><circle cx="180" cy="130" r="9" /></g>
+                  <g class="xr-call c2"><path pathLength="1" d="M378 180H450" /><circle cx="460" cy="180" r="9" /></g>
+                  <g class="xr-call c3"><path pathLength="1" d="M300 274V318H210" /><circle cx="200" cy="318" r="9" /></g></svg>
+              </div>
+              <span class="xr-progress"><i></i></span>
+            </div>
+            {b.caption && <p class="x-caption">{b.caption}</p>}
+            <div class="xr-ctrl">
+              {b.labels.map((l: string, q: number) => <button type="button" class="xr-chip" data-k={q} aria-pressed={q === 0 ? 'true' : 'false'}>{l}</button>)}
+              <button type="button" class="xr-pause" data-reel-pause aria-label="Pausar muestras"><svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path class="pause-icon" d="M3 2h3.6v12H3zm6.4 0H13v12H9.4z"/><path class="play-icon" d="M4 2.5v11l9.5-5.5z"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </section>);
+    // Animación: el editor de curvas. La curva se dibuja y el cuadro de arriba se mueve con esa misma aceleración.
+    if (b.type === 'curva') return (
+      <section id={id} class:list={['v4-sec', b.bg]} data-live-group>
+        <div class="wrap xv-split">
+          {copy('v4-copy')}
+          <figure class="xk" data-x-open aria-hidden="true">
+            <span class="xk-track"><i class="xk-box"></i></span>
+            <svg viewBox="0 0 320 220">
+              <path class="xk-grid" d="M20 20V200H300 M20 110H300 M160 20V200" />
+              <path class="xk-handle" d="M20 200L130 200M300 20L190 20" />
+              <circle class="xk-knob" cx="130" cy="200" r="6" /><circle class="xk-knob" cx="190" cy="20" r="6" />
+              <path class="xk-curve" id="xk-c" pathLength="1" d="M20 200C130 200 190 20 300 20" />
+              <circle class="xk-key" cx="20" cy="200" r="7" /><circle class="xk-key" cx="300" cy="20" r="7" />
+              <circle class="xk-dot" r="6"><animateMotion dur="1.8s" begin="indefinite" repeatCount="2" fill="freeze" calcMode="spline" keyTimes="0;1" keySplines=".7 0 .2 1"><mpath href="#xk-c" /></animateMotion></circle>
+            </svg>
+          </figure>
+        </div>
+      </section>);
+    // Animación: la misma pieza en horizontal, vertical y cuadrado, según el canal.
+    if (b.type === 'formatos') return (
+      <section id={id} class:list={['v4-sec', b.bg]} data-live-group>
+        <div class="wrap xv-split">
+          <figure class="xo" data-x-open data-formatos>
+            <span class="xo-stage" aria-hidden="true"><span class="xo-frame" data-f="0"><i class="xo-s1"></i><i class="xo-s2"></i><i class="xo-s3"></i></span></span>
+            <span class="xo-ctrl">{b.formats.map((f: string, q: number) => <button type="button" data-f={q} aria-pressed={q === 0 ? 'true' : 'false'}>{f}</button>)}</span>
+          </figure>
+          {copy('v4-copy')}
+        </div>
+      </section>);
+    // Estudio: las sesiones del estudio; al elegir una, salta el flash y cambia la foto del set.
+    if (b.type === 'modalidades') return (
+      <section id={id} class:list={['v4-sec', b.bg]} data-live-group>
+        <div class="wrap">
+          {copy()}
+          <div class="xm" data-modalidades>
+            <ul class="xm-list">
+              {s.items.map((it: string, q: number) => { const x = listItem(it); return (
+                <li><button type="button" class="xm-opt" data-m={q} aria-pressed={q === 0 ? 'true' : 'false'}><b>{x.t || it}</b>{x.t && <span>{cap(x.d)}</span>}</button></li>); })}
+            </ul>
+            <div class="xm-stage">
+              {b.photos.map((ph: any, q: number) => <img class:list={['xm-ph', q === 0 && 'on']} data-m={q} aria-hidden={q === 0 ? undefined : 'true'} src={media(ph.image, ph.sizes.at(-1))} srcset={srcset(ph.image, ph.sizes)} sizes="(max-width: 880px) 92vw, 460px" alt={ph.alt} loading="lazy" decoding="async" />)}
+              <span class="xm-flash" aria-hidden="true"></span>
+            </div>
+          </div>
+        </div>
+      </section>);
+    // Estudio: el espacio como hoja de contactos; un trazo de lápiz rojo marca la toma elegida.
+    if (b.type === 'contactos') return (
+      <section id={id} class:list={['v4-sec', b.bg]} data-live-group>
+        <div class="wrap">
+          {copy()}
+          <div class="xn" data-x-open>
+            <ul class="xn-strip">
+              {b.frames.map((f: any, q: number) => (
+                <li class="xn-frame" style={`--i:${q}`}>
+                  <figure><img src={media(f.image, f.sizes.at(-1))} srcset={srcset(f.image, f.sizes)} sizes="(max-width: 880px) 90vw, 380px" alt={f.alt} loading="lazy" decoding="async" /><figcaption>{f.label}</figcaption></figure>
+                  {q === b.pick && <svg class="xn-mark" viewBox="0 0 200 140" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M18 70C14 30 70 10 112 12C160 14 192 40 188 74C184 112 132 132 88 128C40 124 10 104 22 62C26 46 40 34 56 28" /></svg>}
+                </li>))}
+            </ul>
+          </div>
+          {b.caption && <p class="x-caption">{b.caption}</p>}
+        </div>
+      </section>);
+    if (b.type === 'frames') {
+      const terms = s.items.map((it: string) => it.split(': '));
+      if (terms.length !== b.frames.length) throw new Error(`${page.id}: «frames» necesita un fotograma por elemento (${terms.length})`);
+      return (
+      <section id={id} class:list={['v4-sec', b.bg]} data-live-group>
+        <div class="wrap">
+          <div class="xf-head"><Heading text={s.title} />{[...introFirst(k), ...s.paragraphs].map((p: string) => <p>{p}</p>)}<SeeAlso links={s.links} /></div>
+          <ul class="xf-list">
+            {terms.map(([t, d]: string[], j: number) => { const f = b.frames[j]; return (
+              <li class="xf-item" data-x-open>
+                {/* Pantalla de cámara, estilo C (monitor de dirección), elegido el 25-11-2026: photo = reencuadre y regla de tercios;
+                    reel = las imágenes pasan una tras otra (simplificado a pedido del dueño); rec = grabación con código de tiempo. */}
+                <div class="xf-frame" data-cam={f.effect}>
+                  <img src={media(f.image, f.sizes.at(-1))} srcset={srcset(f.image, f.sizes)} sizes="(max-width: 880px) 100vw, 380px" alt={f.alt} loading="lazy" decoding="async" />
+                  {f.effect === 'reel' && <span class="xc-mont" aria-hidden="true">{f.reel.map((n: string) => <img src={media(n, 640)} srcset={srcset(n, [640, 1024])} sizes="(max-width: 880px) 100vw, 380px" alt="" loading="lazy" decoding="async" />)}</span>}
+                  {f.effect === 'photo' && <span class="xc-g3" aria-hidden="true"><span class="xc-grid"></span><b class="xc-pt"></b></span>}
+                  <span class="xf-bar t" aria-hidden="true"></span><span class="xf-bar b" aria-hidden="true"></span>
+                  <span class="xc" aria-hidden="true">
+                    {f.effect !== 'reel' && (<>
+                      <span class="xc-safe"><i></i><i></i><i></i><i></i></span>
+                      {f.effect === 'rec' && <span class="xc-cross"></span>}
+                      <span class="xc-histo"><canvas data-histo width="176" height="92"></canvas></span>
+                    </>)}
+                    {f.effect === 'rec' && <span class="xc-meters">{['1', '2'].map(c => <span><span class="xc-meter"><i></i><u></u></span><span class="xc-ch">{c}</span></span>)}</span>}
+                    {f.effect === 'photo' && (<>
+                      <span class="xc-top"><span class="xc-grp"><span>1/125</span><span>F2.8</span><span>ISO 1600</span></span><span class="xc-bat"><b><i></i></b></span></span>
+                      <span class="xc-bot"><span class="xc-dim">FOTO · AF-C</span><span>[<span class="xc-cnt"><span data-shots>248</span></span>]</span></span>
+                    </>)}
+                    {f.effect === 'reel' && (<>
+                      <span class="xc-top"><span class="xc-dim">CLIP 012</span><span data-elapsed>00:00:00</span></span>
+                      <span class="xc-bot"><span></span><span class="xc-bat"><b><i></i></b></span></span>
+                    </>)}
+                    {f.effect === 'rec' && (<>
+                      <span class="xc-top"><span class="xc-grp"><span class="xc-red"></span><span>REC</span><span data-tc>00:00:00:00</span></span><span class="xc-bat"><b><i></i></b></span></span>
+                      <span class="xc-bot"><span class="xc-dim">ISO 800 · F4 · 1/50</span><span class="xc-dim">♪ 48 kHz</span></span>
+                    </>)}
+                  </span>
+                </div>
+                <div class="xf-copy"><LiveIcon name={f.icon} /><h3>{t}</h3><p>{cap(d)}</p></div>
+              </li>); })}
+          </ul>
+        </div>
+      </section>);
+    }
     if (b.type === 'split') return (
       <section id={id} class:list={['v4-sec v4-split', b.bg]} data-live-group>
         <div class:list={['wrap v4-split-in', b.rev && 'rev']}>
@@ -127,7 +517,7 @@ const STEPS = [
               <span class="v4-curtain" aria-hidden="true"></span>
             </span>
           </figure>
-          <div class="v4-copy"><Heading text={s.title} />{s.paragraphs.map((p: string) => <p>{p}</p>)}<SeeAlso links={s.links} /></div>
+          <div class="v4-copy"><Heading text={s.title} />{[...introFirst(k), ...s.paragraphs].map((p: string) => <p>{p}</p>)}<SeeAlso links={s.links} /></div>
         </div>
       </section>);
     if (b.type === 'panels') {
@@ -138,7 +528,7 @@ const STEPS = [
       return (
       <section id={id} class:list={['v4-sec v4-panels', b.bg]} data-live-group>
         <div class="wrap">
-          <div class="section-heading"><Heading text={s.title} /><div>{s.paragraphs.map((p: string) => <p>{p}</p>)}<SeeAlso links={rest} /></div></div>
+          <div class="section-heading"><Heading text={s.title} /><div>{[...introFirst(k), ...s.paragraphs].map((p: string) => <p>{p}</p>)}<SeeAlso links={rest} /></div></div>
           <div class="v4-deck" data-deck-v4>
             {terms.map(([t, d]: string[], j: number) => (
               <article class:list={['v4-panel', j === 0 && 'on']} tabindex="0">
@@ -157,7 +547,7 @@ const STEPS = [
       return (
       <section id={id} class:list={['v4-sec v4-links', b.bg]} data-live-group>
         <div class="wrap">
-          <div class="section-heading"><Heading text={s.title} /><div>{s.paragraphs.map((p: string) => <p>{p}</p>)}</div></div>
+          <div class="section-heading"><Heading text={s.title} /><div>{[...introFirst(k), ...s.paragraphs].map((p: string) => <p>{p}</p>)}</div></div>
           <ul class="v4-cards">
             {s.links.map(([pid, label]: string[], j: number) => (
               <li style={`--i:${j}`}><PageLink pageId={pid} label={label} class="v4-card">
@@ -212,14 +602,14 @@ const STEPS = [
         <div class="wrap">
           <Heading text={s.title} class="v4-quote-h" />
           <p class="v4-state">{q.before}{q.accent && <em>{q.accent}</em>}{q.after}</p>
-          {(q.rest.length > 0 || s.links.length > 0) && <div class="v4-rest">{q.rest.map((p: string) => <p>{p}</p>)}<SeeAlso links={s.links} /></div>}
+          {(q.rest.length > 0 || s.links.length > 0 || introFirst(k).length > 0) && <div class="v4-rest">{[...introFirst(k), ...q.rest].map((p: string) => <p>{p}</p>)}<SeeAlso links={s.links} /></div>}
         </div>
       </section>);
     }
     if (b.type === 'checklist') return (
       <section id={id} class:list={['v4-sec v4-check', b.bg]}>
         <div class="wrap v4-check-grid">
-          <div class="v4-check-head"><Heading text={s.title} />{s.paragraphs.map((p: string) => <p>{p}</p>)}<SeeAlso links={s.links} /></div>
+          <div class="v4-check-head"><Heading text={s.title} />{[...introFirst(k), ...s.paragraphs].map((p: string) => <p>{p}</p>)}<SeeAlso links={s.links} /></div>
           <ul class:list={['v4-list', `n${s.items.length}`]} data-list>
             {s.items.map((it: string, j: number) => { const x = listItem(it); return (
               <li style={`--i:${j}`}><svg class="v4-tick" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="url(#v4-brand)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><Fragment set:html={IC.check} /></svg>
@@ -239,11 +629,12 @@ const STEPS = [
     }
     if (b.type === 'text') return (
       <section id={id} class:list={['v4-sec v4-text', b.bg]}>
-        <div class="wrap"><div class="section-heading"><Heading text={s.title} /><div>{s.paragraphs.map((p: string) => <p>{p}</p>)}<SeeAlso links={s.links} /></div></div></div>
+        <div class="wrap"><div class="section-heading"><Heading text={s.title} /><div>{[...introFirst(k), ...s.paragraphs].map((p: string) => <p>{p}</p>)}<SeeAlso links={s.links} /></div></div></div>
       </section>);
     if (b.type === 'band') return (
       <section id={id} class="v4-band">
-        <div class="v4-band-img">
+        <div class:list={['v4-band-img', b.confeti && 'xb-confeti']} data-x-open={b.confeti ? '' : undefined}>
+          {b.confeti && <canvas class="xb-canvas" aria-hidden="true"></canvas>}
           <img src={media(b.image, (b.sizes ?? [640, 1280]).at(-1))} srcset={srcset(b.image, b.sizes)} sizes="100vw" alt={b.alt} loading="lazy" decoding="async" />
           <div class="wrap"><Heading text={s.title} class="v4-band-title" /></div>
         </div>
@@ -304,3 +695,5 @@ const STEPS = [
     </section>)}
 </main>
 <script src="../../scripts/v4-motion.ts"></script>
+<script src="../../scripts/escena-motion.ts"></script>
+<script src="../../scripts/fotogramas-camara.ts"></script>

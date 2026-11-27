@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import SeoHead from '../components/SeoHead.astro';
+import RedesFijas from '../components/RedesFijas.astro';
 import { getPage } from '../lib/seo.mjs';
 interface Props { pageId: string; service?: { confirmedVisible: true; name: string; description?: string }; pending?: boolean; }
 // pending: página del registro aún sin construir que se muestra «en construcción» (no se indexa, sin schema).
@@ -25,10 +26,19 @@ const fonts = pageId === 'P01'
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     {fonts.map(font => <link rel="preload" href={font.href} as="font" type={font.type} crossorigin="anonymous" />)}
     <script is:inline>document.documentElement.classList.add('js');</script>
+    <!-- Cortina de marca al llegar desde otra página del sitio (26-11-2026). Reemplaza la transición de Chrome
+         (@view-transition), que tapaba la página nueva con su propia capa y bloqueaba el scroll de 1,5 a 3,6 s si el
+         visitante giraba la rueda al llegar (medido en el Chrome del dueño). Esta cortina es una capa que deja pasar
+         el scroll; solo se activa al llegar desde otra página del sitio (navegación normal, no recarga) y nunca con
+         «reducir movimiento». Al volver con «atrás» desde la caché del navegador se retira. -->
+    <script is:inline>(function(){try{var n=performance.getEntriesByType('navigation')[0],r=document.referrer;if(n&&n.type==='navigate'&&r&&new URL(r).origin===location.origin&&!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('cortina')}catch(e){}addEventListener('pageshow',function(e){if(e.persisted)document.documentElement.classList.remove('cortina')})})();</script>
   </head>
   <body>
+    <div class="rhino-cortina" aria-hidden="true"></div>
     <a class="skip-link" href="#main">Saltar al contenido</a>
     <slot />
+    <RedesFijas />
     <script src="../scripts/interactions.ts"></script>
+    <script src="../scripts/origen-anuncio.ts"></script>
   </body>
 </html>

@@ -1,0 +1,6 @@
+{
+  "_nota": "Barra fija de contacto y redes (elegida por el dueño el 26-11-2026: «Bloque continuo», colores propios de cada red, plana). Facebook e Instagram: pegar aquí la dirección real; mientras esté vacía, el cuadrado se muestra sin enlace. Antes de publicar deben estar completas.",
+  "whatsapp": { "url": "https://wa.me/51965683542?text=Hola%20Rhino%2C%20quiero%20hacer%20una%20consulta.", "label": "Escríbenos por WhatsApp" },
+  "facebook": { "url": "", "label": "Síguenos en Facebook" },
+  "instagram": { "url": "", "label": "Síguenos en Instagram" }
+}

@@ -2,7 +2,7 @@ import {createServer} from 'node:http';
 import {readFile,stat} from 'node:fs/promises';
 import {resolve,extname,sep} from 'node:path';
 const root=resolve('dist');
-const types={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml','.woff2':'font/woff2','.txt':'text/plain','.pdf':'application/pdf','.ico':'image/x-icon'};
+const types={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/javascript','.webm':'video/webm','.webp':'image/webp','.png':'image/png','.svg':'image/svg+xml','.woff2':'font/woff2','.txt':'text/plain','.pdf':'application/pdf','.ico':'image/x-icon'};
 createServer(async(req,res)=>{
   try {
     let path=resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname));

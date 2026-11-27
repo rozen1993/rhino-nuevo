@@ -1740,58 +1740,45 @@
     "image": "Imagen autorizada de un show real; personajes y elementos sujetos a oferta confirmada.",
     "sections": [
       {
-        "title": "Una celebración pensada para su público",
+        "title": "Una Navidad a la medida de los niños",
         "paragraphs": [
-          "El contenido infantil debe poder comprenderse y disfrutarse según la edad de los asistentes. Una celebración familiar y una actividad empresarial con niños pueden necesitar duración y dinámica diferentes. [PENDIENTE: programa vigente adecuado al público indicado.]"
+          "En una reunión familiar, los más pequeños pueden preferir participar junto a sus padres. En una celebración de empresa suelen coincidir niños de distintas edades. Dinos quiénes vendrán y cuánto tiempo del encuentro quieres dedicar al show."
         ],
         "items": [],
         "pending": null,
         "links": []
       },
       {
-        "title": "Contenido del show y participación",
+        "title": "¿Qué te gustaría que ocurra en el show?",
         "paragraphs": [
-          "Para elegir el show necesitas conocer su programa, cómo participa el público y los materiales de la presentación."
+          "Si ya tienes en mente una escena o un momento especial, cuéntanoslo. Estas preguntas nos ayudan a conversar sobre el programa para tu fecha."
         ],
         "items": [
-          "[PENDIENTE: programa real, actividades, personajes si corresponden, edades, duración y aforo. Las referencias históricas a Santa, elfos y actividades no acreditan la oferta actual.]"
+          "Personajes: ¿te gustaría una visita de Papá Noel o una historia con elfos? Consulta qué personajes están disponibles.",
+          "Participación: ¿prefieres juegos en grupo, una historia que los niños puedan seguir desde sus asientos o un momento con las familias?",
+          "Entrega de regalos: si forma parte de tu celebración, indica cuántos niños participarán y en qué momento del evento quieres hacerla."
         ],
         "pending": null,
         "links": []
       },
       {
-        "title": "Qué comprende la presentación",
+        "title": "El espacio y los detalles de la presentación",
         "paragraphs": [
-          "Artistas, sonido, iluminación, materiales y preparación del espacio deben identificarse en el alcance confirmado. [PENDIENTE: confirmar artistas, equipos, materiales y preparación incluidos.] La disponibilidad requiere confirmación para la fecha y el lugar."
+          "¿El encuentro será en un salón, un patio o un local de la empresa? Comparte el distrito, el número aproximado de asistentes y el espacio disponible para que los niños puedan ver y participar.",
+          "Al solicitar la propuesta, pide el detalle de duración, artistas, materiales, sonido e iluminación para ese lugar. Así podrás saber qué comprende la presentación y qué necesita aportar el local."
         ],
         "items": [],
         "pending": null,
         "links": []
       },
       {
-        "title": "Una muestra del show real",
+        "title": "Consulta tu fecha para el show",
         "paragraphs": [
-          "Una muestra de la presentación ayuda a valorar el ritmo, la dinámica y la participación de los niños."
-        ],
-        "items": [
-          "[ESPACIO PARA MUESTRA AUTORIZADA DEL SHOW. Falta documentar el programa concreto que se presentará y sus permisos de imagen.]"
-        ],
-        "pending": null,
-        "links": []
-      },
-      {
-        "title": "Consulta la celebración",
-        "paragraphs": [
-          "Indica fecha, distrito, edades y asistentes aproximados. La consulta permite evaluar el encargo; no confirma una reserva ni cupos disponibles."
+          "Escríbenos con la fecha, el distrito, las edades y el número aproximado de asistentes. Si el local ya tiene un horario para la entrega de regalos o la reunión familiar, inclúyelo para coordinar la presentación."
         ],
         "items": [],
         "pending": null,
-        "links": [
-          [
-            "P20",
-            "Celebración de fin de año para empresas"
-          ]
-        ]
+        "links": []
       }
     ],
     "cta": "Consultar disponibilidad del show",

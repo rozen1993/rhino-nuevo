@@ -1,0 +1,61 @@
+---
+// Barra fija de WhatsApp, Facebook e Instagram en el borde derecho, centrada y siempre visible (todo el sitio).
+// Elegida por el dueño el 26-11-2026 (visuales-claude/2026-11-26-barra-redes): ubicación de la «cápsula» A,
+// acabado «Bloque continuo», colores propios de cada red, plana y sin sombras, pegada al borde derecho (pedido del dueño).
+// En móvil baja al tercio inferior.
+// Movimiento (pulido a pedido del dueño): los tres cuadrados entran desde el borde al cargar, uno tras otro, y al pasar
+// el cursor cualquiera de ellos sale hacia la izquierda con un leve rebote y muestra su etiqueta.
+// Las direcciones viven en src/data/redes.json; una red sin dirección se muestra igual, pero sin enlace.
+import redes from '../data/redes.json';
+const items = [
+  { key: 'wa', ...redes.whatsapp, svg: '<path d="M16 3a12.5 12.5 0 0 0-10.7 19L3.5 29l7-1.8A12.5 12.5 0 1 0 16 3Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="m11 9 2 4-1.4 1.3c1 2.3 2.5 3.8 4.8 4.8l1.3-1.4 4 2c-.2 2.4-2.2 3.3-4.2 2.5-4.8-1.9-8.7-5.8-9.6-9.7C7.5 10.8 8.9 9.1 11 9Z" fill="currentColor"/>' },
+  { key: 'fb', ...redes.facebook, svg: '<path fill="currentColor" d="M18.4 28.5V17.2h3.7l.6-4.4h-4.3V10c0-1.3.4-2.1 2.2-2.1h2.3V4c-.4 0-1.8-.2-3.3-.2-3.3 0-5.5 2-5.5 5.7v3.3H10.4v4.4h3.7v11.3z"/>' },
+  { key: 'ig', ...redes.instagram, svg: '<rect x="5" y="5" width="22" height="22" rx="6.5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="16" cy="16" r="5.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="22.4" cy="9.6" r="1.5" fill="currentColor"/>' },
+];
+---
+<nav class="redes" aria-label="Contacto y redes sociales">
+  {items.map((it, i) => it.url
+    ? <a class:list={['redes-a', it.key]} style={`--i:${i}`} href={it.url} target="_blank" rel="noopener noreferrer" aria-label={it.label}>
+        <span class="redes-c"><svg viewBox="0 0 32 32" aria-hidden="true" set:html={it.svg} /></span><span class="redes-t" aria-hidden="true">{it.label}</span>
+      </a>
+    : <span class:list={['redes-a', it.key, 'pendiente']} style={`--i:${i}`} aria-hidden="true">
+        <span class="redes-c"><svg viewBox="0 0 32 32" set:html={it.svg} /></span><span class="redes-t">{it.label}</span>
+      </span>)}
+</nav>
+
+<style>
+  .redes { position: fixed; z-index: 30; right: 0; top: 50%; translate: 0 -50%; display: grid; }
+  .redes-a { --s: 50px; position: relative; display: block; width: var(--s); height: var(--s); color: #fff; text-decoration: none; cursor: pointer;
+    transition: transform .42s cubic-bezier(.34, 1.56, .64, 1), border-radius .3s ease; }
+  .redes-a.pendiente { cursor: default; }
+  /* el color va en una capa propia para que el cuadrado pueda redondearse sin que se note el corte con el vecino */
+  .redes-c { position: absolute; inset: 0; display: grid; place-items: center; border-radius: inherit; background: var(--bg); }
+  .redes-c svg { width: 25px; height: 25px; transition: transform .42s cubic-bezier(.34, 1.56, .64, 1); }
+  .redes-a:first-child { border-radius: 14px 0 0 0; }
+  .redes-a:last-child { border-radius: 0 0 0 14px; }
+  .redes-a + .redes-a .redes-c { box-shadow: inset 0 1px 0 #ffffff66; }
+  .wa { --bg: #25d366; } .fb { --bg: #1877f2; } .ig { --bg: #e4405f; }
+  /* al salir hacia la izquierda, una prolongación del mismo color lo mantiene unido al borde */
+  .redes-a::after { content: ''; position: absolute; left: calc(100% - 1px); top: 0; bottom: 0; width: 14px; background: var(--bg); }
+  .redes-a + .redes-a::after { box-shadow: inset 0 1px 0 #ffffff66; }
+  .redes-a:hover + .redes-a::after, .redes-a:focus-visible + .redes-a::after { box-shadow: none; }
+  .redes-a:hover, .redes-a:focus-visible { transform: translateX(-10px); border-radius: 12px 0 0 12px; z-index: 2; }
+  .redes-a:hover .redes-c svg, .redes-a:focus-visible .redes-c svg { transform: scale(1.12); }
+  .redes-a:hover + .redes-a .redes-c, .redes-a:focus-visible + .redes-a .redes-c { box-shadow: none; }
+  .redes-a:active { transform: translateX(-10px) scale(.95); transition-duration: .12s; }
+  .redes-a:focus-visible { outline: 3px solid #fe0840; outline-offset: 3px; }
+  .redes-t { position: absolute; right: calc(100% + 14px); top: 50%; translate: 10px -50%; white-space: nowrap; padding: 8px 14px; border-radius: 10px;
+    background: #1b1822; color: #fff; font: 600 13px/1.2 'Poppins', Arial, sans-serif; opacity: 0; pointer-events: none;
+    transition: opacity .22s ease, translate .38s cubic-bezier(.2, .8, .2, 1); }
+  .redes-a:hover .redes-t, .redes-a:focus-visible .redes-t { opacity: 1; translate: 0 -50%; transition-delay: .06s; }
+  /* entrada al cargar: desde el borde derecho, uno tras otro */
+  .redes-a { animation: redes-in .6s cubic-bezier(.2, .8, .2, 1) backwards; animation-delay: calc(.35s + var(--i) * .09s); }
+  @keyframes redes-in { from { transform: translateX(calc(100% + 24px)); opacity: 0; } to { transform: none; opacity: 1; } }
+  @media (max-width: 760px) {
+    .redes { top: auto; bottom: 120px; translate: none; right: 0; }
+    .redes-a { --s: 42px; } .redes-c svg { width: 22px; height: 22px; }
+    .redes-t { display: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { .redes-a, .redes-c svg, .redes-t { transition: none; animation: none; } }
+  @media print { .redes { display: none; } }
+</style>

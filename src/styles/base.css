@@ -104,3 +104,5 @@ dialog p { margin-bottom: 18px; }
   :root { scroll-behavior: auto; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+/* «Saltar al contenido» por encima de la cortina de marca (z-index 200) cuando recibe el foco (26-11-2026) */
+.skip-link:focus { top: 12px; z-index: 201; }
