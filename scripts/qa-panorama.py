@@ -50,10 +50,10 @@ with sync_playwright() as p:
         check(f'{width} sin desbordamiento',page.evaluate('document.documentElement.scrollWidth===innerWidth'))
         measures=page.locator('.hero').evaluate('''e=>{
           const b=e.getBoundingClientRect();
-          const content=[...e.querySelectorAll('h1,.panorama-lead,.panorama-context,.panorama-action,.menu-toggle,.hero-motion-control,.panorama-whatsapp')];
+          const content=[...e.querySelectorAll('h1,.panorama-lead,.panorama-context,.panorama-action,.menu-toggle,.hero-motion-control')];
           const fit=content.every(n=>{const r=n.getBoundingClientRect();return r.left>=b.left-1&&r.right<=b.right+1&&r.top>=b.top-1&&r.bottom<=b.bottom+1});
           const text=[...e.querySelectorAll('h1,.panorama-lead,.panorama-context')].map(n=>n.getBoundingClientRect());
-          const controls=[...e.querySelectorAll('.panorama-action,.menu-toggle,.hero-motion-control,.panorama-whatsapp')].map(n=>n.getBoundingClientRect());
+          const controls=[...e.querySelectorAll('.panorama-action,.menu-toggle,.hero-motion-control')].map(n=>n.getBoundingClientRect());
           const overlap=controls.some(a=>text.some(b=>a.left<b.right&&a.right>b.left&&a.top<b.bottom&&a.bottom>b.top));
           const h=e.querySelector('h1'),r=document.createRange();r.selectNodeContents(h);
           return {fit,overlap,headlineLines:r.getClientRects().length,height:b.height};
@@ -93,7 +93,8 @@ with sync_playwright() as p:
     check('menu fullscreen funciona',page.locator('#site-menu').evaluate('e=>e.open&&Math.abs(e.getBoundingClientRect().width-innerWidth)<1'))
     page.keyboard.press('Escape');page.wait_for_function("!document.querySelector('#site-menu').open")
     check('escape devuelve foco',page.locator('.menu-toggle').evaluate('e=>e===document.activeElement'))
-    check('WhatsApp autorizado',page.locator('.panorama-whatsapp').get_attribute('href')=='https://wa.me/51965683542')
+    # 27-11-2026: el botón redondo de WhatsApp de la cabecera se quitó (lo cubre la barra fija de redes).
+    check('WhatsApp autorizado',page.locator('.redes-a.wa').get_attribute('href').startswith('https://wa.me/51965683542'))
     page.locator('.panorama-action').click();page.wait_for_timeout(1000)
     check('CTA lleva a consulta',page.evaluate('location.hash')=='#consulta' and page.locator('#consulta').evaluate('e=>e.getBoundingClientRect().top<innerHeight'))
     a=page.evaluate(points,hero);wa=page.evaluate(wave);page.wait_for_timeout(300)

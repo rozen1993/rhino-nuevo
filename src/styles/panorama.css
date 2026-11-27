@@ -34,11 +34,6 @@
   /* Only the reading area is cleared; the perimeter keeps full-strength motion. */
   mask-image: radial-gradient(ellipse 46% 22% at 50% 49%, transparent 0 80%, #000 100%);
 }
-.panorama-whatsapp {
-  position: absolute; bottom: 9px; right: 22px; z-index: 3;
-  width: 56px; height: 56px; display: grid; place-items: center;
-  color: #fff; background: var(--action-gradient); border: 2px solid #fff; border-radius: 50%;
-}
 .hero-panorama .hero-motion-control[data-placement="hero"] {
   top: auto; bottom: 105px; right: 22px; min-height: 32px;
   padding: 5px 12px; font-size: 11px;
@@ -66,5 +61,4 @@
   .panorama-context { margin-top: 12px; font-size: 16px; line-height: 1.65; }
   .panorama-action { margin-top: 25px; font-size: 15px; }
   .hero-panorama .hero-motion-control[data-placement="hero"] { bottom: 92px; right: 20px; }
-  .panorama-whatsapp { right: 18px; bottom: 4px; width: 52px; height: 52px; }
 }
