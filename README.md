@@ -22,7 +22,7 @@ npx astro preview --host 127.0.0.1 --port 4400   # http://127.0.0.1:4400
 
 Actualizado el 27-11-2026.
 
-- **Home** (`/`).
+- **Home** (`/`). La sección «Servicios para tu proyecto» muestra tres escenas vivas: Cobertura, Streaming y Catering, cada una con su foto y su efecto animado. El panel elegido se abre como escena.
 - **18 páginas de servicios con el diseño «escena»:** cada una abre con una cabecera a pantalla completa con animación propia sobre la foto, como luces, haces, pantallas LED, vapor, flashes, ondas de sonido, confeti o formas de motion graphics. Cada una tiene además al menos un bloque animado propio de su servicio:
   - **índice de servicios** (`/servicios/`): visor de cámara de fotos;
   - **cobertura de eventos:** visor y fotogramas de cámara;

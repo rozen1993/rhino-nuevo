@@ -1,15 +1,62 @@
 ---
 import Icon from './Icon.astro';import services from '../data/services.json';
 import PageLink from './PageLink.astro';
+import '../styles/servicios-vivos.css';
 const {section,group='production',title=section.title,id=group==='production'?'servicios':'eventos'}=Astro.props;
 const assets:Record<string,string>={P03:'production',P04:'production',P12:'camera',P05:'tasting',P06:'podcast',P07:'catering'};
 const icons:Record<string,string>={P03:'film',P04:'video',P12:'play',P05:'video',P06:'mic',P07:'coffee'};
 const prompts:Record<string,string>={P05:'Cuéntanos el tipo de evento, la fecha, el lugar y qué material necesitas.',P06:'Indica dónde quieres emitir o publicar, el lugar y la duración aproximada.',P07:'Comparte la fecha, el lugar y el número aproximado de asistentes.'};
 const large:Record<string,number>={P03:1600,P04:1600,P12:1600,P05:1280,P06:960,P07:960};
 const heights:Record<string,number>={P03:1067,P04:1067,P12:1067,P05:720,P06:824,P07:640};
+// «Tres escenas vivas» (laboratorio servicios-home, opción A, elegida por el dueño el 27-11-2026): cada servicio es una foto con
+// efecto vivo (foto-viva.ts); el elegido se abre como escena con su texto. Fotos ilustrativas creadas con IA, distintas de las
+// cabeceras de cada página. Coordenadas de los efectos en píxeles de la foto original.
+const escenas:Record<string,{img:string;sizes:number[];w:number;h:number;alt:string;fx:any}>={
+  P05:{img:'home-cobertura',sizes:[640,1024],w:1024,h:1024,alt:'Camarógrafo con estabilizador grabando una fiesta con confeti y luces de colores',
+    fx:{w:1024,h:1024,pos:[.45,.5],monitors:[{x:222,y:88,w:178,h:112}],rec:{x:398,y:100,r:6},
+      lights:[{x:900,y:95,r:50,color:'255,190,120'},{x:45,y:185,r:24},{x:700,y:262,r:22,color:'220,140,255'},{x:960,y:190,r:20,color:'220,140,255'}],
+      confetti:{region:[420,-20,1024,1024],count:34}}},
+  P06:{img:'home-streaming',sizes:[640,1024],w:1024,h:1024,alt:'Cámara de video en trípode transmitiendo una conferencia, con una grabadora de audio en primer plano',
+    fx:{w:1024,h:1024,pos:[.6,.5],monitors:[{x:700,y:262,w:140,h:96},{x:118,y:800,w:100,h:30}],rec:{x:640,y:228,r:6},led:{x:185,y:183,w:355,h:200,period:6},
+      lights:[[125,16],[100,45],[212,148],[307,133],[435,132],[510,124],[555,153],[625,153],[647,85],[838,77],[928,42],[985,30]].map(([x,y])=>({x,y,r:16,color:'255,190,120'}))}},
+  P07:{img:'home-coctel',sizes:[900,1536],w:1536,h:1024,alt:'Mozo con una bandeja de copas de espumante junto a una mesa de bocaditos en un cóctel de noche',
+    fx:{w:1536,h:1024,pos:[.7,.5],lights:[{x:745,y:45,r:42},{x:815,y:55,r:42},{x:868,y:285,r:38},{x:800,y:350,r:46}],candles:[{x:735,y:690,r:70}],
+      bubbles:[{x:980,y:232,w:60,h:108},{x:1060,y:246,w:40,h:92},{x:1120,y:226,w:62,h:116},{x:1250,y:226,w:62,h:116},{x:1367,y:228,w:60,h:110}]}},
+};
+const vivos = group==='events' && section.links.every(([pid]:string[])=>escenas[pid]);
+// Iconos y flecha con el mismo dibujo que el laboratorio (22 px, trazo 2).
+const LAB_IC:Record<string,string>={P05:'<path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5"/><rect x="2" y="6" width="14" height="12" rx="2"/>',
+  P06:'<path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><path d="M12 19v3"/>',
+  P07:'<path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/>',
+  arrow:'<path d="M5 12h14"/><path d="m12 5 7 7-7 7"/>'};
+const labSvg=(k:string,size:number)=>`<svg width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${LAB_IC[k]}</svg>`;
+const gesture=(pid:string)=>pid==='P05'?'rec':pid==='P06'?'live':'';
 ---
 <section id={id} class:list={['service-section','wrap',group]} aria-labelledby={`${group}-title`}>
   <div class="section-heading"><h2 id={`${group}-title`}>{title}<span class="presentation-accent" aria-hidden="true"></span></h2><div>{title!==section.title&&<p class="service-context">{section.title}</p>}{section.paragraphs.map((p:string)=><p>{p}</p>)}</div></div>
+  {vivos ? (
+  <div class="sv-deck" data-sv>
+    {section.links.map(([pid,label]:string[],i:number)=>{ const e=escenas[pid]; const [term,...rest]=section.items[i].split(': '); return (
+    <article class:list={['sv-p',i===1&&'on']} data-k={pid}>
+      <div class="sv-media" data-foto-viva={JSON.stringify(e.fx)}>
+        <img src={`/media/${e.img}-${e.sizes[1]}.webp`} srcset={e.sizes.map(w=>`/media/${e.img}-${w}.webp ${w}w`).join(', ')} sizes="(max-width: 700px) calc(100vw - 40px), 700px"
+          width={e.w} height={e.h} alt={e.alt} loading="lazy" decoding="async" style={`object-position:${e.fx.pos[0]*100}% ${e.fx.pos[1]*100}%`}/>
+      </div>
+      {gesture(pid)==='rec' && <span class="sv-fx sv-rec" aria-hidden="true"><i></i>REC</span>}
+      {gesture(pid)==='rec' && <span class="sv-fx sv-vf" aria-hidden="true"><b></b><b></b><b></b><b></b></span>}
+      {gesture(pid)==='live' && <span class="sv-fx sv-live" aria-hidden="true"><i></i>EN VIVO</span>}
+      {gesture(pid)==='live' && <span class="sv-fx sv-eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>}
+      {pid==='P07' && <span class="sv-fx sv-steam" aria-hidden="true"><i></i><i></i><i></i></span>}
+      <h3 class="sv-h"><button class="sv-trigger" type="button" id={`${pid}-trigger`} aria-expanded="true" aria-controls={`${pid}-body`}><span class="sv-ic" set:html={labSvg(pid,22)}></span><span class="sv-name">{label}</span></button></h3>
+      <div class="sv-copy" id={`${pid}-body`}>
+        <p class="sv-title" aria-hidden="true">{label}</p>
+        <p><strong>{term}:</strong> {rest.join(': ')}</p>
+        <p class="sv-prompt">{prompts[pid]}</p>
+        <PageLink pageId={pid} label={label} class="sv-cta">{label}<span class="sv-arrow" set:html={labSvg('arrow',18)}></span></PageLink>
+      </div>
+    </article>); })}
+  </div>
+  ) : (
   <div class="service-deck" data-deck={group}>
     {section.links.map(([id,label]:string[],i:number)=><article class:list={['service-panel',i===0&&'is-active']}>
       <h3 class="panel-heading"><button class="panel-trigger" id={`${id}-trigger`} aria-expanded="true" aria-controls={`${id}-body`}><span class="service-icon"><Icon name={icons[id]}/></span><span class="panel-title">{label}</span><span class="panel-number" aria-hidden="true" data-number={`0${i+1}`}></span></button></h3>
@@ -19,4 +66,6 @@ const heights:Record<string,number>={P03:1067,P04:1067,P12:1067,P05:720,P06:824,
       </div>
     </article>)}
   </div>
+  )}
 </section>
+<script src="../scripts/foto-viva.ts"></script>
